@@ -1,0 +1,22 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCodingDojo/algorithms.git"
+  },
+  "author": "neilm813",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheCodingDojo/algorithms/issues"
+  },
+  "homepage": "https://github.com/TheCodingDojo/algorithms#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}

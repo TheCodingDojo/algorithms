@@ -1,0 +1,122 @@
+/*
+  Draw a to do list or urgent care list with two columns: item, and importance
+    - the to do, is your queue item
+
+  Have students give you a to do and it's importance with 1 being most important
+  When the list is empty, where does it go?
+
+  Once first item is added, have students give more to dos,
+  explain the process for how you decide where to add the new to do,
+  based on it's importance, is essentially a loop. You visually loop
+  through the list until you find the first item that is not as
+  important, then you put the new item in that position.
+*/
+
+/**
+ * Class to represent a priority queue element. This is so that the priority
+ * property does not need to be stored on the given item itself.
+ */
+class QElement {
+  constructor(element, priority) {
+    // element is the given item to be added to the queue.
+    this.element = element;
+    this.priority = priority;
+  }
+}
+
+/**
+ * Class to represent a PriorityQueue with methods that enforce the correct
+ * order of queue items.
+ */
+class PriorityQueue {
+  // An array is used to implement priority
+  constructor() {
+    this.items = [];
+  }
+
+  /**
+   * Adds the new item in the correct location in the queue based on priority.
+   * - Time: O(n) linear, since we have to loop over potentially whole list.
+   * - Space: O(1) constant.
+   * @param {any} element The item to add.
+   * @param {number} priority The importance, low is more important.
+   * @return {number} The new length.
+   */
+  enqueue(element, priority) {
+    // creating object from queue element
+    const qElement = new QElement(element, priority);
+    let queued = false;
+
+    // iterating through the entire
+    // item array to add element at the
+    // correct location of the Queue
+    for (let i = 0; i < this.items.length; i++) {
+      if (this.items[i].priority > qElement.priority) {
+        // Insert new item before the first item whose priority number is larger
+        // smaller priority numbers are first
+        this.items.splice(i, 0, qElement);
+        queued = true;
+        break;
+      }
+    }
+
+    // if the element has the lowest priority (lower number is higher priority)
+    // it is added at the end of the queue
+    if (!queued) {
+      this.items.push(qElement);
+    }
+    this.items.length;
+  }
+
+  /**
+   * Removes and returns the most prioritized item.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @return {QElement|undefined}.
+   */
+  dequeue() {
+    return this.items.shift();
+  }
+
+  /**
+   * Retrieves the most prioritized item without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @return {QElement|undefined}
+   */
+  front() {
+    return this.items[0];
+  }
+
+  /**
+   * Retrieves the least prioritized item.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @return {QElement|undefined}
+   */
+  rear() {
+    return this.items[this.items.length - 1];
+  }
+
+  /**
+   * Checks if this PriorityQueue is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @return {boolean}
+   */
+  isEmpty() {
+    return this.items.length == 0;
+  }
+
+  /**
+   * Builds a string of all the queue items.
+   * - Time: O(n) linear.
+   * - Space: O(1) constant.
+   * @return {string}
+   */
+  print() {
+    return this.items.reduce((str, qEl) => (str += qEl.element + " "), "");
+  }
+}
+
+module.exports = PriorityQueue;
