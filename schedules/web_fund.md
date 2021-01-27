@@ -15,7 +15,7 @@
 3. Wed
    - [push](../recreated_methods/array/push.js) | [pushSpec](../spec/recreated_methods/array/pushSpec.js)
    - [nthLast](../arrays/nthLast.js) | [nthLastSpec](../spec/arrays/nthLastSpec.js)
-   - unfinished Basic Algos
+   - unfinished [basicAlgos](../basicAlgos.js)
 4. Thur
    - [pop](../recreated_methods/array/pop.js) | [popSpec](../spec/recreated_methods/array/popSpec.js)
    - [indexOf](../recreated_methods/array/indexOf.js) | [indexOfSpec](../spec/recreated_methods/array/indexOfSpec.js)
