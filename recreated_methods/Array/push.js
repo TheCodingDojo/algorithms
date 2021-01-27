@@ -39,7 +39,7 @@ module.exports = { push };
 /**
  * Adds the a given item to the given array.
  * - Time: O(1) constant. It takes the same amount of time to add to the back
- *    of the arr regardless of how long the arr is.
+ *    of the arr regardless of how long the arr is since there is no loop.
  * - Space: O(1) constant. This algo doesn't need to create an array or object
  *    that takes up extra space / memory as the size of input grows.
  * @param {Array<any>} arr

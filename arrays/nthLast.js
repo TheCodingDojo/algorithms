@@ -36,11 +36,9 @@ function nthLast(arr, nthToLast) {
 /*****************************************************************************/
 
 /**
- * Retrieves the nth to last index from the given array.
- * - Time: O(n) linear, n = arr.length because the worst case is when nthToLast
- *    requires looping through the full length. Linear means a straight line,
- *    the time it takes grows in direct proportion to the arr.length rather
- *    than a line curving upwards on a graph like an exponential increase.
+ * Retrieves the nth to last item from the given array.
+ * - Time: O(1) constant. This algo doesn't need to loop so the time it takes
+ *    is constant whether or not the array is large or small.
  * - Space: O(1) constant. This algo doesn't need to create a new array or
  *    object that grows in size as the input array length increases.
  * @param {Array<any>} arr
