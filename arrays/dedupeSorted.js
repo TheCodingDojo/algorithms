@@ -75,35 +75,6 @@ function dedupeSortedHash(nums) {
 }
 
 /**
- * - Time: O(n) linear.
- * - Space: O(1) constant.
- */
-function dedupeSortedInPlace(sortedNums) {
-  if (sortedNums.length == 0 || sortedNums.length == 1) {
-    return sortedNums;
-  }
-
-  let idxToOverwrite = 0;
-  let newLen = sortedNums.length;
-
-  for (let i = 0; i < sortedNums.length - 1; i++) {
-    if (sortedNums[i] !== sortedNums[i + 1]) {
-      /**
-       * May overwrite with same value, but will only overwrite when the last
-       * occurrence of this value is found so that only one of this value will
-       * exist in the end.
-       */
-      sortedNums[idxToOverwrite++] = sortedNums[i];
-      --newLen;
-    }
-  }
-  sortedNums[idxToOverwrite] = sortedNums[sortedNums.length - 1];
-  // Cut off any dupes at the end.
-  sortedNums.length = newLen;
-  return sortedNums;
-}
-
-/**
  * - Time: O(2n) linear. One loop for the new set to iterate over the given
  *    arr, then a second loop for the set to be spread back into an arr.
  * - Space: O(n) linear.
@@ -111,6 +82,28 @@ function dedupeSortedInPlace(sortedNums) {
 const dedupeSortedUsingSet = (sortedArr) => [...new Set(sortedArr)];
 
 /**
+ * - Time: O(2n) -> O(n) linear. The first loop is from the new Set having to
+ *    loop over the given array to create the Set.
+ * - Space: O(2n) -> O(n) linear. The has Set stores every num again at most in
+ *    the case of there being no dupes.
+ */
+function dedupeInPlace(nums) {
+  const numsSet = new Set(nums);
+
+  let i = 0;
+
+  for (const n of numsSet) {
+    // Overwrite the array in place.
+    nums[i++] = n;
+  }
+
+  // If there were dupes the size will be smaller, cut dupes off the end.
+  nums.length = numsSet.size;
+  return nums;
+}
+
+/**
+ * Without using a Set.
  * - Time: O(2n) -> O(n) linear. Two loops at same level.
  * - Space: O(2n) -> O(n) linear. The has table duplicates the nums stored.
  */
