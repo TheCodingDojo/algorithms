@@ -11,6 +11,17 @@ const expected1 = 3;
 // what arr1 should be after running pop function
 const expectedArr1 = [1, 2];
 
+const arr2 = ["hello"];
+const expected2 = "hello";
+const expectedArr2 = []; // the only item was removed
+
+const arr3 = ["hello", "world"];
+const expected2 = "world";
+const expectedArr3 = ["hello"]; // the last item was removed
+
+const arr3 = [];
+const expected3 = undefined;
+
 /**
  * Removes the last item from the given array.
  * - Time: O(?).
@@ -38,6 +49,10 @@ module.exports = { pop };
  *    was empty.
  */
 function pop(arr) {
+  if (arr.length === 0) {
+    return undefined;
+  }
+
   const popped = arr[arr.length - 1];
   arr.length = arr.length - 1;
   return popped;
