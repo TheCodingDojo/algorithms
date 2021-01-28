@@ -22,7 +22,7 @@ const searchItem4 = 5;
 const expected4 = -1;
 
 /**
- * Finds and the index from the given array where the given item is found.
+ * Finds the index from the given array where the given item is found.
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} arr
