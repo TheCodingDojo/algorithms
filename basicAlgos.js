@@ -32,11 +32,6 @@
  *    the two given numbers added together.
  */
 function addTwoNums(num1, num2) {
-  console.log("_".repeat(80));
-  console.log("The addTwoNums function has been executed:");
-  console.log("The value of parameter num1 is:", num1);
-  console.log("The value of parameter num2 is:", num2);
-
   /**
    * A function can "return" some value / data that can be saved and used
    * outside of the function. A function can only return one time because
@@ -85,10 +80,10 @@ console.log(
  * @return {string} The three given strings combined (concatenated).
  */
 function combineStrings() {}
-console.log("_".repeat(80));
-console.log(`Executing: combineStrings("a", "b", "c")`);
-console.log("Expected:", "cab");
-console.log("Actual:", combineStrings("a", "b", "c"));
+
+// Test the combineStrings function.
+let test = combineStrings("a", "b", "c");
+console.log(test, "should equal 'cab'");
 
 /**
  * Combine two given strings together with the smaller string being added
@@ -97,14 +92,12 @@ console.log("Actual:", combineStrings("a", "b", "c"));
  * @return {string} The combined strings.
  */
 function combineSmallerStringFirst() {}
-console.log("_".repeat(80));
-console.log(`Executing: combineSmallerStringFirst("gramming", "pro")`);
-console.log("Expected:", "programming");
-console.log("Actual:", combineSmallerStringFirst("gramming", "pro"));
-console.log("_".repeat(80));
-console.log(`Executing: combineSmallerStringFirst("pro", "gramming")`);
-console.log("Expected:", "programming");
-console.log("Actual:", combineSmallerStringFirst("pro", "gramming"));
+
+test = combineSmallerStringFirst("gramming", "pro");
+console.log(test, "should be 'programming'");
+
+test = combineSmallerStringFirst("pro", "gramming");
+console.log(test, "should be 'programming'");
 
 /* 
   Test the below functions by executing them and logging what they return
