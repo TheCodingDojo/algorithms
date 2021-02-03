@@ -63,10 +63,9 @@ module.exports = { slice };
  *    full arr.
  * - Space: O(n) linear, same worst case as above.
  * @param {Array<any>} arr
- * @param {number} startIdx
- * @param {number} endIdx
- * @return {Array<any>} The slice of the given arr from startIdx inclusive
- *    to endIdx.
+ * @param {number} startIdx Inclusive.
+ * @param {number} endIdx Exclusive.
+ * @return {Array<any>} The slice of the given arr from startIdx to the endIdx.
  */
 function slice(arr, startIdx, endIdx) {
   // we might need to adjust the params
