@@ -72,12 +72,14 @@ function minToFrontFunctional(nums) {
 }
 
 function findMinIdx(nums) {
-  let minIdx = -1;
+  if (nums.length === 0) {
+    return -1;
+  }
 
-  for (let i = 0; i < nums.length; i++) {
-    if (minIdx === -1) {
-      minIdx = i;
-    } else if (nums[i] < nums[minIdx]) {
+  let minIdx = 0;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] < nums[minIdx]) {
       minIdx = i;
     }
   }
