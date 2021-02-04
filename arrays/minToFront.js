@@ -112,4 +112,24 @@ function unshift(arr, val) {
   return arr.length;
 }
 
+// What it looks like using built in methods.
+function moveMinFrontBuiltIn(nums) {
+  if (nums.length === 0) {
+    return null;
+  }
+
+  // Since Math.min doesn't accept an array, we use the ...spread operator
+  // to spread all the nums to feed into the min method as separate arguments.
+  // Math.min has to loop to find the min.
+  const minVal = Math.min(...nums);
+
+  // Now we have to loop to find the idx since we didn't write the loop ourself
+  // we can't do both at the same time.
+  const idxOfMin = nums.indexOf(minVal);
+
+  // Remove it which has to loop to reassign the items to shift them.
+  nums.splice(idxOfMin, 1);
+  return minVal;
+}
+
 module.exports = { minToFront };
