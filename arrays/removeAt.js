@@ -6,11 +6,11 @@
   No built-in array methods except pop().
 */
 
-const arr1 = ["a", "b", "c"];
+const arr1 = ["a", "b", "c", "d", "e"];
 const removeIdx1 = 1;
 const expected1 = "b";
 // after function call, arr1 should be:
-const arr1Expected = ["a", "c"];
+const arr1Expected = ["a", "c", "d", "e"];
 
 const arr2 = ["a", "b", "c"];
 const removeIdx2 = 3;
