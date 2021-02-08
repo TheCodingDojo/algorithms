@@ -1,5 +1,5 @@
 /* 
-  Given an array, move the minimum value to the front
+  Given an array, move the minimum value to the front in-place
   return the array after done.
 
   No built in methods.
@@ -25,6 +25,19 @@ const expected3 = [0, 5, 1, 2, 3, 0];
 function minToFront(nums) {
   // code here
 }
+
+// Tests
+const result1 = minToFront(nums1);
+console.log(result1, "should equal", expected1);
+console.log(nums1, "should equal", expected1);
+
+const result2 = minToFront(nums2);
+console.log(result2, "should equal", expected2);
+console.log(nums2, "should equal", expected2);
+
+const result3 = minToFront(nums3);
+console.log(result3, "should equal", expected3);
+console.log(nums3, "should equal", expected3);
 
 /*****************************************************************************/
 

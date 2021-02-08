@@ -16,11 +16,11 @@ const expected2 = "hello";
 const expectedArr2 = []; // the only item was removed
 
 const arr3 = ["hello", "world"];
-const expected2 = "world";
+const expected3 = "world";
 const expectedArr3 = ["hello"]; // the last item was removed
 
-const arr3 = [];
-const expected3 = undefined;
+const arr4 = [];
+const expected4 = undefined;
 
 /**
  * Removes the last item from the given array.
@@ -33,6 +33,22 @@ const expected3 = undefined;
 function pop(arr) {
   // code here
 }
+
+// Tests
+const result1 = pop(arr1);
+console.log(result1, "should be", expected1);
+console.log(arr1, "should be", expectedArr1);
+
+const result2 = pop(arr2);
+console.log(result2, "should be", expected2);
+console.log(arr2, "should be", expectedArr2);
+
+const result3 = pop(arr3);
+console.log(result3, "should be", expected3);
+console.log(arr3, "should be", expectedArr3);
+
+const result4 = pop(arr4);
+console.log(result4, "should be", expected4);
 
 module.exports = { pop };
 

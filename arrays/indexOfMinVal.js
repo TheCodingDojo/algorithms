@@ -28,6 +28,16 @@ function indexOfMinVal(nums) {
   // code here
 }
 
+// Tests
+const result1 = indexOfMinVal(nums1);
+console.log(result1, "should be", expected1);
+
+const result2 = indexOfMinVal(nums2);
+console.log(result2, "should be", expected2);
+
+const result3 = indexOfMinVal(nums3);
+console.log(result3, "should be", expected3);
+
 module.exports = { indexOfMinVal };
 
 /*****************************************************************************/

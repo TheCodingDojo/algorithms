@@ -28,6 +28,16 @@ function flatten2dArray(twoDimArr) {
   // code here
 }
 
+// Tests
+const result1 = flatten2dArray(twoDimArr1);
+console.log(result1, "should equal", expected1);
+
+const result2 = flatten2dArray(twoDimArr2);
+console.log(result2, "should equal", expected2);
+
+const result3 = flatten2dArray(twoDimArr3);
+console.log(result3, "should equal", expected3);
+
 module.exports = { flatten2dArray };
 
 /*****************************************************************************/

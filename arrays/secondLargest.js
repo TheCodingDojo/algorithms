@@ -30,6 +30,19 @@ function secondLargest(nums) {
   // code here
 }
 
+// Tests
+const result1 = secondLargest(nums1);
+console.log(result1, "should equal", expected1);
+
+const result2 = secondLargest(nums2);
+console.log(result2, "should equal", expected2);
+
+const result3 = secondLargest(nums3);
+console.log(result3, "should equal", expected3);
+
+const result4 = secondLargest(nums4);
+console.log(result4, "should equal", expected4);
+
 module.exports = { secondLargest };
 
 /*****************************************************************************/

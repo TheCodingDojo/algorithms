@@ -29,6 +29,13 @@ function concat(arr1, arr2) {
   // code here
 }
 
+// Tests
+const result1 = concat(arrA1, arrB1);
+console.log(result1, "should be", expected1);
+
+const result2 = concat(arrA2, arrB2);
+console.log(result2, "should be", expected2);
+
 module.exports = { concat };
 
 /*****************************************************************************/

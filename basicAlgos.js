@@ -6,7 +6,7 @@
  *
  * Parameters are just like variables, they can be named anything and can store
  * any kind of data. The difference is that parameters are variables that
- * represent values / data that is passed into a function at the time of the
+ * hold value / data that is passed into a function at the time of the
  * function being called / executed / invoked.
  *
  * The parameters of a function are whatever outside information the function
@@ -16,7 +16,8 @@
  * of asking yourself what a function needs in order to do it's job to
  * determine what parameters are needed. Just as you would request needed
  * information to complete a task you were given, a function would need that
- * information to do the same task. Remember this!
+ * information to do the same task, because you are the one writing the
+ * function to make it work. Remember this!
  */
 
 /**
@@ -69,17 +70,25 @@ console.log(
   grossPrice
 );
 
-/****************************************************************************
+/***********************************README*************************************
  * Complete the below functions. Add the parameters the function needs to
- * do it's job.
- ****************************************************************************/
+ * do it's job. Refer to the above examples and comments when confused about
+ * how to write parameters, how to make the function return data (an answer),
+ * or how to execute / call a function.
+ *
+ * To run the file, at the to of VSCode, click Terminal, New Terminal, then
+ * type node with a space after it, then drag and drop the the file you want to
+ * run onto the terminal.
+ *****************************************************************************/
 
 /**
  * Concatenate three given strings together in this order:
  * 3rd string, 1st string, 2nd string.
  * @return {string} The three given strings combined (concatenated).
  */
-function combineStrings() {}
+function combineStrings(/* Replace this comment with the needed parameters. What info does this function need? */) {
+  // Replace this comment with the code needed to make this function work.
+}
 
 // Test the combineStrings function.
 let test = combineStrings("a", "b", "c");
@@ -91,7 +100,9 @@ console.log(test, "should equal 'cab'");
  * added to the front.
  * @return {string} The combined strings.
  */
-function combineSmallerStringFirst() {}
+function combineSmallerStringFirst(/* Replace this comment with the needed parameters. What info does this function need? */) {
+  // Replace this comment with the code needed to make this function work.
+}
 
 test = combineSmallerStringFirst("gramming", "pro");
 console.log(test, "should be 'programming'");

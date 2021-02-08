@@ -27,6 +27,15 @@ function shift(arr) {
   // code here
 }
 
+// Tests
+const result1 = shift(arr1);
+console.log(result1, "should be", expected1);
+console.log(arr1, "should be", arr1Expected);
+
+const result2 = shift(arr2);
+console.log(result2, "should be", expected2);
+console.log(arr2, "should be", arr2Expected);
+
 module.exports = { shift };
 
 /*****************************************************************************/

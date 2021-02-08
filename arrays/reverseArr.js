@@ -28,6 +28,19 @@ function reverseArr(arr) {
   // code here
 }
 
+// Tests
+const result1 = reverseArr(arr1);
+console.log(result1, "should be", expected1);
+
+const result2 = reverseArr(arr2);
+console.log(result2, "should be", expected2);
+
+const result3 = reverseArr(arr3);
+console.log(result3, "should be", expected3);
+
+const result4 = reverseArr(arr4);
+console.log(result4, "should be", expected4);
+
 module.exports = { reverseArr };
 
 /*****************************************************************************/
