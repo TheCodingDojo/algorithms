@@ -30,6 +30,7 @@
    - [diagonalDifference](../arrays/diagonalDifference.js) | [diagonalDifference](../spec/arrays/diagonalDifferenceSpec.js)
    - [orderedMultisetUnion](../arrays/orderedMultisetUnion.js) | [orderedMultisetUnion](../spec/arrays/orderedMultisetUnionSpec.js)
 3. Wed
+   - [riverReading](../arrays/riverReading.js) | [riverReading](../spec/arrays/riverReadingSpec.js)
    - [symmetricDifferences](../arrays/symmetricDifferences.js) | [symmetricDifferences](../spec/arrays/symmetricDifferencesSpec.js)
 4. Thur
    - [allNonConsecutive](../arrays/allNonConsecutive.js) | [allNonConsecutive](../spec/arrays/allNonConsecutiveSpec.js)
@@ -66,10 +67,8 @@
    - [dropIt](../callbacks/dropIt.js) | [dropItSpec](../spec/callbacks/dropItSpec.js)
    - [canStringBecomePalindrome](../strings/canStringBecomePalindrome.js) | [canStringBecomePalindromeSpec](../spec/strings/canStringBecomePalindromeSpec.js)
 2. Tue
-
-   - [groupBy](../objects/groupBy.js)
+   - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
    - [backSpaceStringCompare](../strings/backSpaceStringCompare.js) | [backSpaceStringCompareSpec](../spec/strings/backSpaceStringCompareSpec.js)
-
 3. Wed
    - [LRUCache](../design/LRUCache.js) | [LRUCacheSpec](../spec/design/LRUCacheSpec.js)
 4. Thur
