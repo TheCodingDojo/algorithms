@@ -77,7 +77,9 @@ const expected = {
  * @return {Object<string, Array<Object>>} The hash category hash table with
  *    string keys and array of objects as values.
  */
-function categoryTableBuilder(items) {}
+function groupObjects(items) {}
+
+module.exports = { groupObjects };
 
 /*****************************************************************************/
 
