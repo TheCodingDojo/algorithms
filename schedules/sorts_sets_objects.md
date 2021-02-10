@@ -30,7 +30,7 @@
    - [diagonalDifference](../arrays/diagonalDifference.js) | [diagonalDifference](../spec/arrays/diagonalDifferenceSpec.js)
    - [orderedMultisetUnion](../arrays/orderedMultisetUnion.js) | [orderedMultisetUnion](../spec/arrays/orderedMultisetUnionSpec.js)
 3. Wed
-   - [riverReading](../arrays/riverReading.js) | [riverReading](../spec/arrays/riverReadingSpec.js)
+   - [measureWaterLevels](../arrays/measureWaterLevels.js) | [measureWaterLevels](../spec/arrays/measureWaterLevelsSpec.js)
    - [symmetricDifferences](../arrays/symmetricDifferences.js) | [symmetricDifferences](../spec/arrays/symmetricDifferencesSpec.js)
 4. Thur
    - [allNonConsecutive](../arrays/allNonConsecutive.js) | [allNonConsecutive](../spec/arrays/allNonConsecutiveSpec.js)
