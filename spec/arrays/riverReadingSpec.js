@@ -26,6 +26,12 @@ describe("riverReading", () => {
   const riverLevels8 = [42];
   const expected8 = -1;
 
+  const riverLevels9 = [-10, -5, 5, 10, 3];
+  const expected9 = 20; // 10 - -10 = 20;
+
+  const riverLevels10 = [5, 10, -5, 10, 15, 1];
+  const expected10 = 20; //15 - -5 = 20;
+
   const testCases = [
     { arguments: [riverLevels1], expected: expected1 },
     { arguments: [riverLevels2], expected: expected2 },
@@ -35,6 +41,8 @@ describe("riverReading", () => {
     { arguments: [riverLevels6], expected: expected6 },
     { arguments: [riverLevels7], expected: expected7 },
     { arguments: [riverLevels8], expected: expected8 },
+    { arguments: [riverLevels9], expected: expected9 },
+    { arguments: [riverLevels10], expected: expected10 },
   ];
 
   it("should return the max range out of all the sequences of unbroken ascending ints.", () =>

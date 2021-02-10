@@ -1,10 +1,11 @@
 /* 
-  From an interview on 2/7/21. encodeStr algo was also given: 
+  From an interview on 2/8/21. encodeStr algo was also given: 
     https://github.com/TheCodingDojo/algorithms/blob/main/strings/encodeStr.js
   
 
-  Given an array of integers representing river water-level fluctuation, find
-  the largest increase in a rising water-level cycle.
+  Given an array of positive or negative integers representing river
+  water-level fluctuation, find the largest increase in a rising water-level
+  cycle.
 
   A rising water-level cycle is a series of ascending integers. The cycle is
   broken when a descend begins.
@@ -37,6 +38,12 @@ const expected7 = -1;
 
 const riverLevels8 = [42];
 const expected8 = -1;
+
+const riverLevels9 = [-10, -5, 5, 10, 3];
+const expected9 = 20; // 10 - -10 = 20;
+
+const riverLevels10 = [5, 10, -5, 10, 15, 1];
+const expected10 = 20; //15 - -5 = 20;
 
 /**
  * Find the max range out of all the sequences of unbroken ascending ints.
@@ -89,5 +96,5 @@ function riverReading(waterLevels) {
     }
   }
 
-  return maxRise || -1; // Will return -1 when maxRise is 0.
+  return maxRise > 0 ? maxRise : -1;
 }
