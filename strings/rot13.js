@@ -12,6 +12,8 @@
   like in the original Rot13 "implementation".
  */
 
+/*****************************************************************************/
+
 const alphabet = [
   "a",
   "b",
@@ -38,7 +40,7 @@ const alphabet = [
   "w",
   "x",
   "y",
-  "z"
+  "z",
 ];
 
 function rot13(s) {
