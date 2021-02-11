@@ -1,6 +1,8 @@
 # README
 
-- **DO NOT SHARE WITH CURRENT STUDENTS!**
+## STUDENT WARNING
+
+- **PLEASE SERIOUSLY CONSIDER** that looking up answers before you've thoroughly practiced trying to come up with a solution is setting yourself up for failure in interviews. Please spend the full algo group session trying to solve it amongst yourselves first--only looking up simple things like syntax.
 
 ## Internal
 
