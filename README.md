@@ -1,8 +1,12 @@
 # README
 
 - **DO NOT SHARE WITH CURRENT STUDENTS!**
-  - Add daily solutions to a separate lecture repo so students aren't looking up the answers here ahead of time. This repo is public for it to be available to alumni.
-- [Schedules](/schedules)
+
+## Internal
+
+- Add daily solutions to a separate lecture repo so students aren't looking up the answers here ahead of time. This repo is public for it to be available to alumni.
+- [Algo Schedules](/schedules)
+- [Lecture Outlines](https://github.com/TheCodingDojo/lecture-outlines)
 
 ## Clone Instructions & Source Control
 
