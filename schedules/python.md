@@ -56,6 +56,7 @@
    - [balancePoint](../arrays/balancePoint.js) | [balancePoint](../spec/arrays/balancePointSpec.js)
 2. Tue
    - [binarySearch](../arrays/binarySearch.js) | [binarySearch](../spec/arrays/binarySearchSpec.js)
+   - [interleaveArrays](../arrays/interleaveArrays.js) | [interleaveArrays](../spec/arrays/interleaveArraysSpec.js)
 3. Wed
    - [dedupeSorted](../arrays/dedupeSorted.js) | [dedupeSorted](../spec/arrays/dedupeSortedSpec.js)
    - [mode](../arrays/mode.js) | [mode](../spec/arrays/modeSpec.js)
