@@ -63,3 +63,37 @@ function interleaveArrays(arr1, arr2) {
 
   return interleavedItems;
 }
+
+function interleaveArrays2(arr1, arr2) {
+  const interleavedItems = [];
+  let largerArr = arr1;
+
+  if (arr2.length > arr1.length) {
+    largerArr = arr2;
+  }
+
+  // var is used instead of let here so i will still exist after the loop.
+  for (var i = 0; i < arr1.length && i < arr2.length; i++) {
+    interleavedItems.push(arr1[i], arr2[i]);
+  }
+
+  for (let j = i; j < largerArr.length; j++) {
+    interleavedItems.push(largerArr[j]);
+  }
+
+  return interleavedItems;
+}
+
+function interleaveArrays3(arr1, arr2) {
+  const interleavedItems = [];
+  // condition ? returned-if-true : returned-if-false
+  let largerArr = arr1.length > arr2.length ? arr1 : arr2;
+
+  // var is used instead of let here so i will still exist after the loop.
+  for (var i = 0; i < arr1.length && i < arr2.length; i++) {
+    interleavedItems.push(arr1[i], arr2[i]);
+  }
+
+  // concat the remaining items from the larger array.
+  return interleavedItems.concat(largerArr.slice(i));
+}
