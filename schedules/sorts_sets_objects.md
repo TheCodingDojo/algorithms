@@ -70,6 +70,7 @@
    - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
    - [backSpaceStringCompare](../strings/backSpaceStringCompare.js) | [backSpaceStringCompareSpec](../spec/strings/backSpaceStringCompareSpec.js)
 3. Wed
+   - [swapTwoInts](../misc/swapTwoInts.js)
    - [LRUCache](../design/LRUCache.js) | [LRUCacheSpec](../spec/design/LRUCacheSpec.js)
 4. Thur
    - [addHonorific](../strings/addHonorific.js) | [addHonorificSpec](../spec/strings/addHonorificSpec.js)
