@@ -110,6 +110,9 @@ console.log(test, "should be 'programming'");
 test = combineSmallerStringFirst("pro", "gramming");
 console.log(test, "should be 'programming'");
 
+test = combineSmallerStringFirst("abc", "def");
+console.log(test, "should be 'abcdef'");
+
 /* 
   Test the below functions by executing them and logging what they return
   as seen above. You can do a simpler console.log, but the console / terminal
