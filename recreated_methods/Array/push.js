@@ -4,7 +4,15 @@
   Given an array and a new item, add the new item to the back of the array
   return the new length of the array
 
+
   What index are you adding a new item at?
+  
+  Refresher:
+    This is retrieving the item at index 0:
+      var x = arr[0];
+      
+    This is reassigning the item at index 0 to a new item:
+      arr[0] = "hi";
 
   After finishing, finish the basic algos from yesterday that you did not finish.
 */
@@ -24,11 +32,11 @@ const expectedArr2 = ["a"];
  * Adds the a given item to the back of the given array.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @param {any} newItem
  * @return {number} The new length of the given array.
  */
-function push(arr, newItem) {
+function push(items, newItem) {
   // code here
 }
 
@@ -51,11 +59,11 @@ module.exports = { push };
  *    of the arr regardless of how long the arr is since there is no loop.
  * - Space: O(1) constant. This algo doesn't need to create an array or object
  *    that takes up extra space / memory as the size of input grows.
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @param {any} newItem
  * @return {number} The new length of the given array.
  */
-function push(arr, newItem) {
-  arr[arr.length] = newItem;
-  return arr.length;
+function push(items, newItem) {
+  items[items.length] = newItem;
+  return items.length;
 }
