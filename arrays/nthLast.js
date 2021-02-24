@@ -22,7 +22,7 @@ const idx4 = -1;
 const expected4 = null;
 
 /**
- * Retrieves the nth to last index from the given array.
+ * Retrieves the nth to last indexed item from the given array.
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} arr
