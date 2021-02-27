@@ -16,7 +16,7 @@
     - How much does it cost?
     - How much money do you have?
   - These are the exact pieces of information (**parameters**) that your function would also need to know in order to answer the question / solve the problem.
-  - The question is a yes or no question, so our function should `return` a `true` or a `false`.
+  - The question is a yes or no question, so the answer is a "yes" or "no". In programming terms, the function would `return` to us an answer / helpful information, in this case the `return` value would be a `true` or a `false`.
 
 ### Solution
 
