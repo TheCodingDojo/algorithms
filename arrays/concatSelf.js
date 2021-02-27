@@ -18,11 +18,11 @@ const expected3 = [];
  * Creates a new array that is a concatenation of the given array with itself.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @return {Array<any>} The resulting concatenation of the given arr with
  *    itself.
- */
-function concatArrWithSelf(arr) {
+ */ items;
+function concatArrWithSelf(items) {
   // code here
 }
 

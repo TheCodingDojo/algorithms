@@ -59,7 +59,7 @@ module.exports = { push };
  *    of the arr regardless of how long the arr is since there is no loop.
  * - Space: O(1) constant. This algo doesn't need to create an array or object
  *    that takes up extra space / memory as the size of input grows.
- * @param {Array<any>} items
+ * @param {Array<any>} items An array of any kind of items.
  * @param {any} newItem
  * @return {number} The new length of the given array.
  */

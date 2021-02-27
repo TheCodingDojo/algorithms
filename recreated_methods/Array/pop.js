@@ -26,11 +26,11 @@ const expected4 = undefined;
  * Removes the last item from the given array.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @return {any} The removed last item or undefined if the given array was
  *    was empty.
  */
-function pop(arr) {
+function pop(items) {
   // code here
 }
 
@@ -60,16 +60,16 @@ module.exports = { pop };
  *    the given arr.
  * - Space: O(1) constant. This algo doesn't have to create an array or object
  *    that grows in size as the size of the input array grows.
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @return {any} The removed last item or undefined if the given array was
  *    was empty.
  */
-function pop(arr) {
-  if (arr.length === 0) {
+function pop(items) {
+  if (items.length === 0) {
     return undefined;
   }
 
-  const popped = arr[arr.length - 1];
-  arr.length = arr.length - 1;
+  const popped = items[items.length - 1];
+  items.length = items.length - 1;
   return popped;
 }

@@ -22,11 +22,11 @@ const arr2Expected = ["a"];
  * to the front of the given array.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @param {any} newItem To add to front.
- * @return {number} New array length.
+ * @return {number} The new length of items.
  */
-function unshift(arr, newItem) {
+function unshift(items, newItem) {
   // code here
 }
 

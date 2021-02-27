@@ -21,10 +21,10 @@ const expected4 = [];
  * Reverses the given arr in place without built in methods.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @return {Array<any>} The given arr after being reversed.
  */
-function reverseArr(arr) {
+function reverseArr(items) {
   // code here
 }
 
@@ -50,29 +50,29 @@ module.exports = { reverseArr };
  * - Time: O(n/2) linear -> simplified to O(n) linear, n = arr.length, loops
  *    half the length.
  * - Space: O(1) constant.
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @return {Array<any>} The given arr after being reversed.
  */
-function reverseArr(arr) {
+function reverseArr(items) {
   // Without Math.floor the middle item would be swapped with itself. Wouldn't
   // cause a problem but is unnecessary.
-  for (let leftIdx = 0; leftIdx < Math.floor(arr.length / 2); leftIdx++) {
-    const rightIdx = arr.length - 1 - leftIdx;
-    const temp = arr[leftIdx];
-    arr[leftIdx] = arr[rightIdx];
-    arr[rightIdx] = temp;
+  for (let leftIdx = 0; leftIdx < Math.floor(items.length / 2); leftIdx++) {
+    const rightIdx = items.length - 1 - leftIdx;
+    const temp = items[leftIdx];
+    items[leftIdx] = items[rightIdx];
+    items[rightIdx] = temp;
   }
-  return arr;
+  return items;
 }
 
 // destructure array syntax, similar to py syntax for swapping
 // idx vars to make the swap using destructure syntax more obvious
-function revArr(arr) {
-  for (let leftIdx = 0; leftIdx < Math.floor(arr.length / 2); leftIdx++) {
-    const rightIdx = arr.length - 1 - leftIdx;
-    [arr[leftIdx], arr[rightIdx]] = [arr[rightIdx], arr[leftIdx]];
+function revArr(items) {
+  for (let leftIdx = 0; leftIdx < Math.floor(items.length / 2); leftIdx++) {
+    const rightIdx = items.length - 1 - leftIdx;
+    [items[leftIdx], items[rightIdx]] = [items[rightIdx], items[leftIdx]];
   }
-  return arr;
+  return items;
 }
 
 module.exports = {

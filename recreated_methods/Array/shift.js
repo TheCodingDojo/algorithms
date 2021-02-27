@@ -20,10 +20,10 @@ const arr2Expected = ["b", "c", "d"];
  * removed and returned.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @return {any} The removed value previously at idx 0.
  */
-function shift(arr) {
+function shift(items) {
   // code here
 }
 
@@ -47,16 +47,16 @@ module.exports = { shift };
  *    iterating at 1. Simplified to O(n).
  * - Space: O(1) constant, the algo doesn't create any new arrays or objects
  *    that grow in size as the input array grows.
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @return {any} The removed value previously at idx 0.
  */
-function shift(arr) {
-  const firstItem = arr[0];
+function shift(items) {
+  const firstItem = items[0];
 
-  for (let i = 1; i < arr.length; i++) {
-    arr[i - 1] = arr[i];
+  for (let i = 1; i < items.length; i++) {
+    items[i - 1] = items[i];
   }
 
-  arr.length = arr.length - 1; // cut off 'empty' value at the end
+  items.length = items.length - 1; // cut off 'empty' value at the end
   return firstItem;
 }

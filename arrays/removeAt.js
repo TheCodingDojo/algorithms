@@ -28,11 +28,11 @@ const arr3Expected = ["a", "b", "c"];
  * being removed.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items
  * @param {number} idx Index of the item to be removed.
  * @return {any} The removed item.
  */
-function removeAt(arr, idx) {
+function removeAt(items, idx) {
   // code here
 }
 

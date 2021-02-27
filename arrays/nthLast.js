@@ -25,11 +25,11 @@ const expected4 = null;
  * Retrieves the nth to last indexed item from the given array.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @param {number} nthToLast
  * @return {any} The item at the nthToLast index or null.
  */
-function nthLast(arr, nthToLast) {
+function nthLast(items, nthToLast) {
   // code here
 }
 
@@ -54,15 +54,15 @@ console.log(result4, "should be", expected4);
  *    is constant whether or not the array is large or small.
  * - Space: O(1) constant. This algo doesn't need to create a new array or
  *    object that grows in size as the input array length increases.
- * @param {Array<any>} arr
+ * @param {Array<any>} items An array of any kind of items.
  * @param {number} nthToLast
  * @return {any} The item at the nthToLast index or null.
  */
-function nthLast(arr, nthToLast) {
-  let idx = arr.length - nthToLast;
+function nthLast(items, nthToLast) {
+  let idx = items.length - nthToLast;
 
-  if (idx >= 0 && idx < arr.length) {
-    return arr[idx];
+  if (idx >= 0 && idx < items.length) {
+    return items[idx];
   } else {
     return null;
   }
