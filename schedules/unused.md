@@ -2,6 +2,7 @@
 
 ## Strings
 
+- [getQuoteFromCaret](../strings/getQuoteFromCaret.js)
 - [questionMarks](../strings/questionMarks.js) | [questionMarksSpec](../spec/strings/questionMarksSpec.js)
 - [kaprekarsConstant](../strings/kaprekarsConstant.js)
 - [rot13](../strings/rot13.js)
