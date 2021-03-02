@@ -1,5 +1,6 @@
 # Web Fund Algo Schedule
 
+- Solving push and pop with them before sending them into groups might best because those algos are kind of like trick questions almost.
 - [Printable Basic 13](https://docs.google.com/document/d/1Vw-8ZzZy_kfkcK-6MUkXJNfNQ7qX9_nkxnIBNoVNdbM/edit#heading=h.wr6t3eu5n64f)
 
 ---
@@ -27,12 +28,12 @@
 ## Week 2 - Arrays
 
 1. Mon
-   - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
-   - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
-2. Tue
    - [concat](../recreated_methods/Array/concat.js) | [concatSpec](../spec/recreated_methods/Array/concatSpec.js)
    - [indexOfMinVal](../arrays/indexOfMinVal.js) | [indexOfMinValSpec](../spec/arrays/indexOfMinValSpec.js)
    - [concatSelf](../arrays/concatSelf.js) | [concatSelfSpec](../spec/arrays/concatSelfSpec.js)
+2. Tue
+   - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
+   - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
 3. Wed
    - [reverseArr](../arrays/reverseArr.js) | [reverseArrSpec](../spec/arrays/reverseArrSpec.js)
    - [slice](../recreated_methods/Array/slice.js) | [sliceSpec](../spec/recreated_methods/Array/sliceSpec.js)
