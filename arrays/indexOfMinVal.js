@@ -11,8 +11,8 @@
 const nums1 = [5, 2, 3];
 const expected1 = 1;
 
-const nums2 = [5, 2, 2, 3];
-const expected2 = 1;
+const nums2 = [5, 4, 2, 2, 3];
+const expected2 = 2;
 
 const nums3 = [];
 const expected3 = -1;
