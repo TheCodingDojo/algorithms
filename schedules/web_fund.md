@@ -32,11 +32,11 @@
    - [indexOfMinVal](../arrays/indexOfMinVal.js) | [indexOfMinValSpec](../spec/arrays/indexOfMinValSpec.js)
    - [concatSelf](../arrays/concatSelf.js) | [concatSelfSpec](../spec/arrays/concatSelfSpec.js)
 2. Tue
-   - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
-   - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
-3. Wed
    - [reverseArr](../arrays/reverseArr.js) | [reverseArrSpec](../spec/arrays/reverseArrSpec.js)
    - [slice](../recreated_methods/Array/slice.js) | [sliceSpec](../spec/recreated_methods/Array/sliceSpec.js)
+3. Wed
+   - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
+   - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
 4. Thur
    - [removeAt](../arrays/removeAt.js) | [removeAtSpec](../spec/arrays/removeAtSpec.js)
    - [minToFront](../arrays/minToFront.js) | [minToFrontSpec](../spec/arrays/minToFrontSpec.js)
