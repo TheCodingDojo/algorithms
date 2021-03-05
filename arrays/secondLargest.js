@@ -6,17 +6,34 @@
   Bonus: do it with one loop and no nested loops
 */
 
+// 2nd largest is 2nd
 const nums1 = [2, 3, 1, 4];
 const expected1 = 3;
 
-const nums2 = [3, 3];
-const expected2 = null;
+// largest is first
+const nums2 = [4, 1, 3, 2];
+const expected2 = 3;
 
-const nums3 = [2];
-const expected3 = null;
+// largest duplicated first
+const nums3 = [4, 4, 4, 1, 3, 2];
+const expected3 = 3;
 
-const nums4 = [];
-const expected4 = null;
+// 2nd largest is first
+const nums4 = [3, 1, 4, 2];
+const expected4 = 3;
+
+// largest is 2nd
+const nums5 = [3, 4, 2, 1];
+const expected5 = 3;
+
+const nums6 = [3, 3];
+const expected6 = null;
+
+const nums7 = [2];
+const expected7 = null;
+
+const nums8 = [];
+const expected8 = null;
 
 /**
  * Finds the second largest int from the given array and returns it or null.
@@ -31,17 +48,29 @@ function secondLargest(nums) {
 }
 
 // Tests
-const result1 = secondLargest(nums1);
+const result1 = secondLargest2(nums1);
 console.log(result1, "should equal", expected1);
 
-const result2 = secondLargest(nums2);
+const result2 = secondLargest2(nums2);
 console.log(result2, "should equal", expected2);
 
-const result3 = secondLargest(nums3);
+const result3 = secondLargest2(nums3);
 console.log(result3, "should equal", expected3);
 
-const result4 = secondLargest(nums4);
+const result4 = secondLargest2(nums4);
 console.log(result4, "should equal", expected4);
+
+const result5 = secondLargest2(nums5);
+console.log(result5, "should equal", expected5);
+
+const result6 = secondLargest2(nums6);
+console.log(result6, "should equal", expected6);
+
+const result7 = secondLargest2(nums7);
+console.log(result7, "should equal", expected7);
+
+const result8 = secondLargest2(nums8);
+console.log(result8, "should equal", expected8);
 
 module.exports = { secondLargest };
 
@@ -63,15 +92,19 @@ function secondLargest(nums) {
   }
 
   let largest = nums[0];
-  let secondLargest = nums[0];
+  let secondLargest = nums[1];
 
-  for (let i = 1; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] > largest) {
       largest = nums[i];
     }
   }
 
   for (let i = 0; i < nums.length; i++) {
+    if (secondLargest === largest && nums[i] < largest) {
+      secondLargest = nums[i];
+    }
+
     if (nums[i] < largest && nums[i] > secondLargest) {
       secondLargest = nums[i];
     }
@@ -100,10 +133,12 @@ function secondLargest2(nums) {
   for (let i = 1; i < nums.length; i++) {
     const num = nums[i];
 
-    if (num > max) {
+    if (secondLargest === max && num < max) {
+      secondLargest = nums[i];
+    } else if (num > max) {
       secondLargest = max; // second largest equals old max
       max = num;
-    } else if (num > secondLargest) {
+    } else if (num > secondLargest && num < max) {
       secondLargest = num;
     }
   }
