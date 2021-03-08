@@ -32,8 +32,8 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Best: O(n^2) quadratic.
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic.
- * @param   {Array<number>} nums
- * @return  {Array<number>} The given array after being sorted.
+ * @param {Array<number>} nums
+ * @return {Array<number>} The given array after being sorted.
  */
 function selectionSort(nums) {}
 
