@@ -41,7 +41,8 @@ const sortedB4 = [3, 7, 8, 10];
 const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 /**
- * Merges two already sorted arrays into a new sorted array.
+ * Efficiently merges two already sorted arrays into a new sorted array.
+ * Do not mutate the given arrays.
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} left
