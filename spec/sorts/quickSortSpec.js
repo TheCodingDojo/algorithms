@@ -13,12 +13,16 @@ describe("quickSort", () => {
   const nums2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
   const expected2 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
 
+  const nums3 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
+  const expected3 = [2, 3, 3, 3, 6, 7, 8, 11, 14];
+
   const testCases = [
     { arguments: [numsOrdered], expected: expected },
     { arguments: [numsRandomOrder], expected: expected },
     { arguments: [numsReversed], expected: expected },
     { arguments: [nums1], expected: expected1 },
     { arguments: [nums2], expected: expected2 },
+    { arguments: [nums3], expected: expected3 },
   ];
 
   testCases.forEach(({ arguments, expected }) => {

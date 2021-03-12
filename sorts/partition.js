@@ -8,17 +8,16 @@
   Steps:
 
   1. Pick an number out of the arr to be your pivot value
-    - usually the middle idx
+    - usually the middle idx but can be any.
 
   2. Partition the array IN PLACE such that all values less than the pivot
       value are to the left of it and all values greater than the pivot value
       are to the right (not perfectly sorted).
 
-  3. return: new idx of the pivot value or the index where the left section of
-      smaller items ends.
+  3. return: the index where the left section of smaller items ends.
 
   "Choosing a random pivot minimizes the chance that you will encounter
-  worst-case O(n2) performance (always choosing first or last would cause
+  worst-case O(n^2) performance (always choosing first or last would cause
   worst-case performance for nearly-sorted or nearly-reverse-sorted data).
   Choosing the middle element would also be acceptable in the majority of
   cases."
@@ -26,7 +25,8 @@
 */
 
 const nums1 = [11, 8, 14, 3, 6, 2, 7];
-const nums2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
+const nums2 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
+const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
 
 /**
  * Partitions the given array in-place by selecting the number at the middle
@@ -39,7 +39,7 @@ const nums2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
  *    being processed.
  * @param {number} right The index indicating the end of the slice of array
  *    being processed.
- * @return {Array<number>} The given array after being partitioned.
+ * @return {Array<number>} The idx where left section of smaller items ends.
  */
 function partition(nums = [], left = 0, right = nums.length - 1) {}
 
@@ -62,26 +62,56 @@ function partition(nums = [], left = 0, right = nums.length - 1) {}
  *    being processed.
  * @param {number} right The index indicating the end of the slice of array
  *    being processed.
- * @return {Array<number>} The given array after being partitioned.
+ * @return {number} The index where the smaller section ends.
  */
-function partition(nums = [], left = 0, right = nums.length - 1) {
+function partition(nums, left = 0, right = nums.length - 1) {
   const midIdx = Math.floor((left + right) / 2);
   const pivotVal = nums[midIdx];
+  let i = left - 1;
+  let j = right + 1;
 
-  while (left < right) {
-    while (nums[left] < pivotVal) {
-      left++;
+  while (true) {
+    i += 1;
+    while (nums[i] < pivotVal) {
+      i += 1;
     }
 
-    while (nums[right] > pivotVal) {
-      right--;
+    j -= 1;
+    while (nums[j] > pivotVal) {
+      j -= 1;
     }
-    // array destructure swap syntax
-    [nums[left], nums[right]] = [nums[right], nums[left]];
+
+    if (i >= j) {
+      return j;
+    }
+
+    [nums[i], nums[j]] = [nums[j], nums[i]];
   }
-  return left;
 }
 
 module.exports = {
   partition,
 };
+
+/**
+ * The lomuto partition scheme does on average 3x more swaps than Hoare's
+ * scheme.
+ * @param {Array<number>} nums
+ * @param {number} low Start of section to partition.
+ * @param {number} hi End of section to partition.
+ */
+function partitionLomuto(nums = [], low = 0, hi = nums.length - 1) {
+  const pivot = nums[hi];
+  let i = low - 1;
+
+  for (let j = low; j < hi; j++) {
+    if (nums[j] <= pivot) {
+      i += 1;
+      [nums[i], nums[j]] = [nums[j], nums[i]];
+    }
+  }
+
+  // final swap of pivot into correct position
+  [nums[i + 1], nums[hi]] = [nums[hi], nums[i + 1]];
+  return i + 1;
+}
