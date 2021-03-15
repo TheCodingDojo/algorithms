@@ -67,25 +67,25 @@ function partition(nums = [], left = 0, right = nums.length - 1) {}
 function partition(nums, left = 0, right = nums.length - 1) {
   const midIdx = Math.floor((left + right) / 2);
   const pivotVal = nums[midIdx];
-  let i = left - 1;
-  let j = right + 1;
+  let leftIdx = left;
+  let rightIdx = right;
 
   while (true) {
-    i += 1;
-    while (nums[i] < pivotVal) {
-      i += 1;
+    while (nums[leftIdx] < pivotVal) {
+      leftIdx += 1;
     }
 
-    j -= 1;
-    while (nums[j] > pivotVal) {
-      j -= 1;
+    while (nums[rightIdx] > pivotVal) {
+      rightIdx -= 1;
     }
 
-    if (i >= j) {
-      return j;
+    if (leftIdx >= rightIdx) {
+      return rightIdx;
     }
 
-    [nums[i], nums[j]] = [nums[j], nums[i]];
+    [nums[leftIdx], nums[rightIdx]] = [nums[rightIdx], nums[leftIdx]];
+    leftIdx += 1;
+    rightIdx -= 1;
   }
 }
 
