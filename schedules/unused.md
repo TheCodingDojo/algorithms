@@ -11,3 +11,4 @@
 ## Design
 
 - [garageDoorOpener](../design/garageDoorOpener.js)
+- [garageDoorOpener](../design/BufferSequence.js)
