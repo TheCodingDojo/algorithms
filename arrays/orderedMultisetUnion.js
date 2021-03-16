@@ -42,7 +42,10 @@ module.exports = { orderedMultisetUnion };
  * Combines two already sorted multiset arrays into an ordered multiset union
  * Venn Diagram Visualization (top):
  * https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
- * - Time: O(n) linear, where n = longest length.
+ * - Time: O(n + m) linear, n = sortedA.length, m = sortedB.length because
+ *  we may be pushing from only 1 array at a time while the other array's idx
+ *  is staying in place. At worst, we push all items from 1 array when that
+ *  array has all smaller items and then iterate through the 2nd array after.
  * - Space: O(n + m) where n = sortedA.length, m = sortedB.length because if
  *    there are no dupes all will be kept from both.
  * @param {Array<number>} sortedA Both sets are sorted multisets
