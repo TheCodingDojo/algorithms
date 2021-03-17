@@ -1073,21 +1073,44 @@ class SinglyLinkedList {
   }
 
   moveMaxToBack() {
-    if (this.isEmpty()) {
+    if (this.isEmpty() || this.head.next === null) {
       return this;
     }
-    let max = this.head.data;
-    let runner = this.head.next;
-
-    while (runner) {
-      if (runner.data > max) {
-        max = runner.data;
-        if (runner.next === null) {
-          return this;
-        }
+    let runner = this.head,
+      tail = this.head,
+      maxNode = this.head,
+      prevToMaxNode = this.head;
+    /**
+     * Look forward to runner.next so every time we find a new max it's easy to
+     * have access to the node before it. This can be done without looking
+     * forward and instead keeping a var equal to the old runner (prev) but
+     * sometimes one way is easier than the other depending on the goal is.
+     */
+    while (runner.next) {
+      if (runner.next.data > maxNode.data) {
+        maxNode = runner.next;
+        prevToMaxNode = runner;
+      }
+      if (runner.next.next === null) {
+        tail = runner.next;
       }
       runner = runner.next;
     }
+    if (maxNode === tail) {
+      return this;
+    }
+    if (maxNode === this.head) {
+      this.head = this.head.next;
+    } else {
+      /**
+       * Cut max node out, this isn't needed when max node is the head b/c
+       * in that case we cut it out by reassigning the head.
+       */
+      prevToMaxNode.next = prevToMaxNode.next.next;
+    }
+    tail.next = maxNode;
+    maxNode.next = null;
+    return this;
   }
 
   // Remove nodes with duplicate values. Following this call, all remaining nodes should have unique values. Retain only first instance of each
