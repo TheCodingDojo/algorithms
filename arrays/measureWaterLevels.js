@@ -1,6 +1,5 @@
 /**
- * From an interview on 2/8/21. encodeStr algo was also given:
- *  https://github.com/TheCodingDojo/algorithms/blob/main/strings/encodeStr.js
+ * From an interview on 2/8/21. encodeStr algo was also given (aaabbcdd => a3b2cd2)
  *
  * The interviewee mentioned it was mostly a comprehension style question.
  *
