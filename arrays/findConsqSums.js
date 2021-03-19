@@ -22,6 +22,16 @@ const expected2 = [
   [3, 6, 7, 0, 0],
 ];
 
+// Bonus:
+const nums3 = [-2, -5, -3, -6, -7, -0, -0, -23, -12];
+const sum3 = -16;
+const expected3 = [
+  [-2, -5, -3, -6],
+  [-3, -6, -7],
+  [-3, -6, -7, -0],
+  [-3, -6, -7, -0, -0],
+];
+
 /**
  * Finds all the sets of consecutive numbers that sum to the given target sum.
  * - Time: O(?).
@@ -51,27 +61,17 @@ module.exports = { findConsqSums };
  *    only.
  */
 function findConsqSums(nums, targetSum) {
-  const sums = [];
+  const arr = [];
 
   for (let i = 0; i < nums.length; i++) {
-    const consecNums = [];
-    let sum = 0;
-    let j = i;
+    let sum = nums[i];
 
-    while (sum <= targetSum && j < nums.length - 1) {
-      if (sum + nums[j] <= targetSum) {
-        sum += nums[j];
-        consecNums.push(nums[j++]);
-
-        if (sum === targetSum) {
-          // without slice, future additions to consecNums
-          // will be added to the already pushed consecNums via reference
-          sums.push(consecNums.slice());
-        }
-      } else {
-        break;
+    for (let j = i + 1; j <= nums.length; j++) {
+      if (sum == targetSum) {
+        arr.push(nums.slice(i, j));
       }
+      sum += nums[j];
     }
   }
-  return sums;
+  return arr;
 }
