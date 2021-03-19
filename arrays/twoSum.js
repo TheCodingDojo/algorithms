@@ -31,8 +31,8 @@ module.exports = { twoSum };
 
 /**
  * Finds the indexes of the nums that add up to the given target sum.
- * - Time: O(?).
- * - Space: O(?).
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
  * @return {Array<number>} The two indexes of the numbers in the given nums
