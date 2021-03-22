@@ -25,14 +25,12 @@ const expected2 =
 
 /**
  * Generates a SQL insert statement from the inputs
- * @param   {string} tableName
- * @param   {Object} columnValuePairs
- * @return  {string}
- *          A string formatted as a SQL insert statement
- *          where the columns and values are extracted
- *          from @columnValuePairs
  * - Time: O(?).
  * - Space: O(?).
+ * @param {string} tableName
+ * @param {Object} columnValuePairs
+ * @return {string} A string formatted as a SQL insert statement where the
+ *    columns and values are extracted from columnValuePairs.
  */
 function insert(tableName, columnValuePairs) {}
 
@@ -49,9 +47,8 @@ module.exports = {
 /*****************************************************************************/
 
 /**
- * - Time:    O(n) linear
- *          n = num of keys in @columnValuePairs
- * - Space:   O(n)
+ * - Time: O(n) linear, n = num of keys in columnValuePairs.
+ * - Space: O(n) linear.
  */
 function insert(tableName, columnValuePairs) {
   let columns = "";
@@ -83,9 +80,9 @@ function insert(tableName, columnValuePairs) {
 }
 
 /**
- * - Time:    O(5n) -> O(n) linear
- *          .keys .join .values .map .join = 5 non-nested loops
- * - Space:   O(n)
+ * - Time: O(5n) -> O(n) linear,
+ *    .keys .join .values .map .join = 5 non-nested loops
+ * - Space: O(n) linear.
  */
 function insertFunctional(tableName, columnValuePairs) {
   const columns = Object.keys(columnValuePairs).join(", ");
