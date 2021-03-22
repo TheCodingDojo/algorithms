@@ -36,7 +36,7 @@ const expected5 = false;
  * - Space: O(?).
  * @param {string} s1
  * @param {string} s2
- * @return {boolean}
+ * @returns {boolean}
  */
 function canBuildS1FromS2(s1, s2) {}
 
@@ -51,7 +51,7 @@ module.exports = { canBuildS1FromS2 };
  * - Space: O(m) -> O(n) since it's still linear just call it n for simplicity.
  * @param {string} neededChars
  * @param {string} availableChars
- * @return {boolean}
+ * @returns {boolean}
  */
 function canBuildS1FromS2(neededChars, availableChars) {
   if (availableChars.length < neededChars.length) {

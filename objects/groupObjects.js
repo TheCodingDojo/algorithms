@@ -74,7 +74,7 @@ const expected = {
  * - Space: O(?).
  * @param {Array<Object>} items
  * @param {string} items.category
- * @return {Object<string, Array<Object>>} The hash category hash table with
+ * @returns {Object<string, Array<Object>>} The hash category hash table with
  *    string keys and array of objects as values.
  */
 function groupObjects(items) {}
@@ -91,7 +91,7 @@ module.exports = { groupObjects };
  * @param {Array<Object>} items
  * @param {string} groupByKey The key to group the objects by. The value of
  *    this key must be a valid data type that can be used for keys in objects.
- * @return {Object<string, Array<Object>>} The hash category hash table with
+ * @returns {Object<string, Array<Object>>} The hash category hash table with
  *    string keys and array of objects as values.
  */
 function groupObjects(items, groupByKey = "category") {

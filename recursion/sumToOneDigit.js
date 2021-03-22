@@ -23,7 +23,7 @@ const expected3 = 7;
 /**
  * Sums the given number's digits until the number becomes one digit.
  * @param {number} num The number to sum to one digit.
- * @return {number} One digit.
+ * @returns {number} One digit.
  */
 function sumToOneDigit(num) {}
 

@@ -12,7 +12,7 @@ const expected1 = "aaabbcddd";
  * - Space: O(?).
  * @param {string} str An encoded string with characters that may have an int
  *    after indicating how many times the character occurs.
- * @return {string} The given str decoded / expanded.
+ * @returns {string} The given str decoded / expanded.
  */
 function decodeStr(str) {}
 

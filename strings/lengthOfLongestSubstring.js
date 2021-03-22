@@ -24,7 +24,7 @@ const expected4 = 4;
 /**
  * Determines the length of the longest substring in the given str.
  * @param {string} str
- * @return {number} Length of the longest substring from the given str.
+ * @returns {number} Length of the longest substring from the given str.
  * - Time: O(?).
  * - Space: O(?).
  */
@@ -41,7 +41,7 @@ module.exports = { lengthOfLongestSubString };
  * - Time: O(n^3) cubed, the .includes is the 2nd nested loop.
  * - Space: O(n) linear.
  * @param {string} str
- * @return {number} Length of the longest substring from the given str.
+ * @returns {number} Length of the longest substring from the given str.
  */
 function lengthOfLongestSubString(str) {
   let maxLen = 0;

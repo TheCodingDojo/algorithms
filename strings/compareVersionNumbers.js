@@ -42,7 +42,7 @@ const expected6 = 1;
  * Determines which version number is greater or if they are equal.
  * @param {string} v1
  * @param {string} v2
- * @return {number} 1 if v1 greater, -1 if v1 smaller, 0 if equal.
+ * @returns {number} 1 if v1 greater, -1 if v1 smaller, 0 if equal.
  * - Time: O(?).
  * - Space: O(?).
  */

@@ -45,7 +45,7 @@ const expected6 = [];
  * @param {Array<any>} items
  * @param {number} startIdx
  * @param {number} endIdx
- * @return {Array<any>} The slice of the given arr from startIdx inclusive
+ * @returns {Array<any>} The slice of the given arr from startIdx inclusive
  *    to endIdx.
  */
 function slice(items, startIdx, endIdx) {
@@ -84,7 +84,7 @@ module.exports = { slice };
  * @param {Array<any>} arr
  * @param {number} startIdx Inclusive.
  * @param {number} endIdx Exclusive.
- * @return {Array<any>} The slice of the given arr from startIdx to the endIdx.
+ * @returns {Array<any>} The slice of the given arr from startIdx to the endIdx.
  */
 function slice(arr, startIdx, endIdx) {
   // we might need to adjust the params

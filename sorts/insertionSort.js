@@ -47,7 +47,7 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic when the array is reverse sorted.
  * @param {Array<number>} nums
- * @return {Array<number>} The given array after being sorted.
+ * @returns {Array<number>} The given array after being sorted.
  */
 function insertionSort(nums) {}
 
@@ -61,7 +61,7 @@ module.exports = { insertionSort };
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic when the array is reverse sorted.
  * @param {Array<number>} nums
- * @return {Array<number>} The given array after being sorted.
+ * @returns {Array<number>} The given array after being sorted.
  */
 function insertionSort(nums) {
   for (let i = 1; i < nums.length; i++) {

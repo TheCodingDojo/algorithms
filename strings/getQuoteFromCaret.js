@@ -16,7 +16,7 @@ const expected2 = "";
  * Finds the double quote enclosed substr that the caret is within.
  * @param {string} str
  * @param {number} caretIdx Represents the location of the caret.
- * @return {string} The double quote enclosed substr.
+ * @returns {string} The double quote enclosed substr.
  */
 function getQuoteFromCaret(str, caretIdx) {
   let quote = "";

@@ -19,7 +19,7 @@ const expected2 = false;
  * - Space: O(?).
  * @param {string} s1
  * @param {string} s2
- * @return {boolean} Whether the second string is a rotated version of the 1st.
+ * @returns {boolean} Whether the second string is a rotated version of the 1st.
  */
 function isRotation(s1, s2) {}
 

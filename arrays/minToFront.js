@@ -20,7 +20,7 @@ const expected3 = [0, 5, 1, 2, 3, 0];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {Array<number>} The given arr after the min has been moved to front.
+ * @returns {Array<number>} The given arr after the min has been moved to front.
  */
 function minToFront(nums) {
   // code here
@@ -49,7 +49,7 @@ console.log(nums3, "should equal", expected3);
  *    memory (space) as the length of the input arr grows. No new object or
  *    array is created that grows in size as the input grows.
  * @param {Array<number>} nums
- * @return {Array<number>} The given arr after the min has been moved to front.
+ * @returns {Array<number>} The given arr after the min has been moved to front.
  */
 function minToFront(nums) {
   if (nums.length === 0) {

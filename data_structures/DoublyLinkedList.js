@@ -42,7 +42,7 @@ class DoublyLinkedList {
    * Determines if this list is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean} Indicates if this list is empty.
+   * @returns {boolean} Indicates if this list is empty.
    */
   isEmpty() {
     return this.head === null;
@@ -52,7 +52,7 @@ class DoublyLinkedList {
    * Converts this list to an array of the node's data.
    * - Time: O(n) linear, n = list length.
    * - Space: O(n) linear, array grows as list length increases.
-   * @return {Array<any>} All the data of the nodes.
+   * @returns {Array<any>} All the data of the nodes.
    */
   toArray() {
     const vals = [];
@@ -68,7 +68,7 @@ class DoublyLinkedList {
   /**
    * Adds all the given items to the back of this list.
    * @param {Array<any>} items Items to be added to the back of this list.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   seedFromArr(items = []) {
     items.forEach((item) => this.insertAtBack(item));
@@ -80,7 +80,7 @@ class DoublyLinkedList {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {any} data The data for the new node.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   insertAtFront(data) {
     const newNode = new Node(data);
@@ -100,7 +100,7 @@ class DoublyLinkedList {
    *    the tail.
    * - Space: O(1) constant.
    * @param {any} data The data for the new node.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   insertAtBack(data) {
     const newTail = new Node(data);
@@ -123,7 +123,7 @@ class DoublyLinkedList {
    *    Since it's not constant we simplify it to O(n). Without the early
    *    exists, it would not be 0.5n.
    * - Space: O(1) constant.
-   * @return {any} The data of the removed node.
+   * @returns {any} The data of the removed node.
    */
   removeMiddleNode() {
     // when there is only 1 node, it is the middle, remove it.
@@ -164,7 +164,7 @@ class DoublyLinkedList {
    * - Space: O(1) constant.
    * @param {any} targetVal The node data to find.
    * @param {any} newVal Data for the new node.
-   * @return {boolean} Indicates if the new node was added.
+   * @returns {boolean} Indicates if the new node was added.
    */
   insertAfter(targetVal, newVal) {
     const newNode = new Node(newVal);
@@ -198,7 +198,7 @@ class DoublyLinkedList {
    * - Space: O(1) constant.
    * @param {any} targetVal The node data to find.
    * @param {any} newVal Data for the new node.
-   * @return {boolean} Indicates if the new node was added.
+   * @returns {boolean} Indicates if the new node was added.
    */
   insertBefore(targetVal, newVal) {
     const newNode = new Node(newVal);
@@ -230,7 +230,7 @@ class DoublyLinkedList {
    *    that it's at the beginning.
    * - Space: O(1).
    * @param {number} nthLast Indicates the position from the back of the list.
-   * @return {any}
+   * @returns {any}
    */
   nthToLast(nthLast) {
     if (nthLast < 1 || this.isEmpty()) {
@@ -255,7 +255,7 @@ class DoublyLinkedList {
    * - Time: O(n) linear, n = list length. Worst case is nxtRunner and
    *    prevRunner loop past each other to opposite ends.
    * - Space: O(1) constant.
-   * @return {boolean} Indicates if this list is a palindrome.
+   * @returns {boolean} Indicates if this list is a palindrome.
    */
   isPalindrome() {
     if (this.isEmpty()) {
@@ -280,7 +280,7 @@ class DoublyLinkedList {
    * Determines if the node's data of this list forms a palindrome.
    * - Time: O(n / 2) -> O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @return {boolean} Indicates if this list is a palindrome.
+   * @returns {boolean} Indicates if this list is a palindrome.
    */
   isPalindrome2() {
     if (this.isEmpty()) {
@@ -318,7 +318,7 @@ class DoublyLinkedList {
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
    * @param {Node} node
-   * @return {boolean}
+   * @returns {boolean}
    */
   isNodeInLeftHalf(node) {
     let amntToLeft = 0,
@@ -345,7 +345,7 @@ class DoublyLinkedList {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {Node} node A node in this list.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   removeNode(node) {
     if (this.isEmpty() || !node) {
@@ -381,7 +381,7 @@ class DoublyLinkedList {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {Node} node A node in this list.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   removeHead() {
     return this.removeNode(this.head);
@@ -392,7 +392,7 @@ class DoublyLinkedList {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {Node} node A node in this list.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   removeTail() {
     return this.removeNode(this.tail);

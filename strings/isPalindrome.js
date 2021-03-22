@@ -24,7 +24,7 @@ const expected4 = false;
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {boolean} Whether the given str is a palindrome or not.
+ * @returns {boolean} Whether the given str is a palindrome or not.
  */
 function isPalindrome(str) {}
 

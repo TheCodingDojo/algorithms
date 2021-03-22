@@ -37,7 +37,7 @@ class BinarySearchTree {
    * Determines if this tree is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean} Indicates if this tree is empty.
+   * @returns {boolean} Indicates if this tree is empty.
    */
   isEmpty() {
     return this.root === null;
@@ -49,7 +49,7 @@ class BinarySearchTree {
    * - Space: O(1) constant.
    * @param {Node} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
-   * @return {number} The smallest integer from this tree.
+   * @returns {number} The smallest integer from this tree.
    */
   min(current = this.root) {
     if (current === null) {
@@ -68,7 +68,7 @@ class BinarySearchTree {
    * - Space: O(1) constant.
    * @param {Node} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
-   * @return {number} The smallest integer from this tree.
+   * @returns {number} The smallest integer from this tree.
    */
   minRecursive(current = this.root) {
     if (current === null) {
@@ -87,7 +87,7 @@ class BinarySearchTree {
    * - Space: O(1) constant.
    * @param {Node} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
-   * @return {number} The largest integer from this tree.
+   * @returns {number} The largest integer from this tree.
    */
   max(current = this.root) {
     if (current === null) {
@@ -106,7 +106,7 @@ class BinarySearchTree {
    * - Space: O(1) constant.
    * @param {Node} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
-   * @return {number} The largest integer from this tree.
+   * @returns {number} The largest integer from this tree.
    */
   maxRecursive(current = this.root) {
     if (current === null) {
@@ -124,7 +124,7 @@ class BinarySearchTree {
    * - Time: O(h) linear, h = height of tree.
    * - Space: O(1) constant.
    * @param {number} searchVal The number to search for in the node's data.
-   * @return {boolean} Indicates if the searchVal was found.
+   * @returns {boolean} Indicates if the searchVal was found.
    */
   contains(searchVal) {
     let current = this.root;
@@ -148,7 +148,7 @@ class BinarySearchTree {
    * - Time: O(h) linear, h = height of tree.
    * - Space: O(1) constant.
    * @param {number} searchVal The number to search for in the node's data.
-   * @return {boolean} Indicates if the searchVal was found.
+   * @returns {boolean} Indicates if the searchVal was found.
    */
   containsRecursive(searchVal, current = this.root) {
     if (current === null) {
@@ -173,7 +173,7 @@ class BinarySearchTree {
    * - Time: O(rightHeight + leftHeight) -> still linear so simplify to O(h).
    * - Space: O(1) constant.
    * @param {Node} startNode The node to start from to calculate the range.
-   * @return {number|null} The range of this tree or a sub tree depending on if the
+   * @returns {number|null} The range of this tree or a sub tree depending on if the
    *    startNode is the root or not.
    */
   range(startNode = this.root) {
@@ -190,7 +190,7 @@ class BinarySearchTree {
    *    be added at the bottom.
    * - Space: O(1) constant.
    * @param {number} newVal The data to be added to a new node.
-   * @return {BinarySearchTree} This tree.
+   * @returns {BinarySearchTree} This tree.
    */
   insert(newVal) {
     const node = new Node(newVal);
@@ -231,7 +231,7 @@ class BinarySearchTree {
    * @param {number} newVal The data to be added to a new node.
    * @param {Node} curr The node that is currently accessed from the tree as
    *    the tree is being traversed.
-   * @return {BinarySearchTree} This tree.
+   * @returns {BinarySearchTree} This tree.
    */
   insertRecursive(newVal, curr = this.root) {
     if (this.isEmpty()) {
@@ -261,7 +261,7 @@ class BinarySearchTree {
    * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
    * @param {Node} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
-   * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+   * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
   toArrPreorder(node = this.root, vals = []) {
     if (node) {
@@ -280,7 +280,7 @@ class BinarySearchTree {
    * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
    * @param {Node} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
-   * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+   * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
   toArrInorder(node = this.root, vals = []) {
     if (node) {
@@ -298,7 +298,7 @@ class BinarySearchTree {
    * Example on the fullTree var:
    * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
    * @param {Node} node The current node during the traversal of this tree.
-   * @return {Array<number>} All node's data in DFS Preorder.
+   * @returns {Array<number>} All node's data in DFS Preorder.
    */
   toArrInorderNonRecursive(node = this.root) {
     let current = node;
@@ -327,7 +327,7 @@ class BinarySearchTree {
    * [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
    * @param {Node} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
-   * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+   * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
   toArrPostorder(node = this.root, vals = []) {
     if (node) {
@@ -344,7 +344,7 @@ class BinarySearchTree {
    * Example on the fullTree var:
    * [25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90]
    * @param {Node} current The current node during the traversal of this tree.
-   * @return {Array<number>} The data of all nodes in BFS order.
+   * @returns {Array<number>} The data of all nodes in BFS order.
    */
   toArrLevelorder(current = this.root) {
     const queue = [],
@@ -393,7 +393,7 @@ class BinarySearchTree {
    * - Time: O(n) linear, n = number of nodes.
    * - Space: O(1) constant.
    * @param {Node} node The current node during the traversal of this tree.
-   * @return {number} The total number of nodes.
+   * @returns {number} The total number of nodes.
    */
   size(node = this.root) {
     if (!node) {
@@ -410,7 +410,7 @@ class BinarySearchTree {
    * - Space: O(1) constant.
    * @param {Node} current The current node during the traversal of this tree.
    * @param {number} total The current total as this tree is being traversed.
-   * @return {number} The total number of nodes.
+   * @returns {number} The total number of nodes.
    */
   size2(current = this.root, total = 0) {
     /**
@@ -442,7 +442,7 @@ class BinarySearchTree {
    *    side is the tallest, must go down both sides.
    * - Space: O(1) constant.
    * @param {Node} node The current node during traversal of this tree.
-   * @return {number} The height of the tree.
+   * @returns {number} The height of the tree.
    */
   height(node = this.root) {
     if (!node) {
@@ -458,7 +458,7 @@ class BinarySearchTree {
    * - Time: O(n) linear, n = total number of nodes.
    * - Space: O(1) constant.
    * @param {Node} node The current node during traversal of this tree.
-   * @return {boolean} Indicates if this tree is full.
+   * @returns {boolean} Indicates if this tree is full.
    */
   isFull(node = this.root) {
     // If empty tree

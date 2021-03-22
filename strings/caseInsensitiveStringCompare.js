@@ -18,7 +18,7 @@ const expected3 = false;
  * - Space: O(?).
  * @param {string} strA
  * @param {string} strB
- * @return {boolean} If the strings are equal or not.
+ * @returns {boolean} If the strings are equal or not.
 
  */
 function caseInsensitiveStringCompare(strA, strB) {}

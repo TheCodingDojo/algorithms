@@ -23,7 +23,7 @@ const expected4 = { quarter: 3, dime: 2, penny: 4 };
  * - Space: O(?).
  * @param {number} cents
  * @param {string} sick
- * @return {Object<string, number>} - A denomination table where the keys are
+ * @returns {Object<string, number>} - A denomination table where the keys are
  *    denomination names and the value is the amount of that denomination
  *    needed.
  */

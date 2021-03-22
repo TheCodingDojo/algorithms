@@ -15,7 +15,7 @@ const expected1 = [30, 40, 50];
  * - Space: O(?).
  * @param {Array<number>} nums1
  * @param {Array<number>} nums2
- * @return {Array<number>} The column sums.
+ * @returns {Array<number>} The column sums.
  */
 function sumArrColumns(nums1, nums2) {
   // code here
@@ -37,7 +37,7 @@ module.exports = { sumArrColumns };
  * - Space: O(n) linear. The new array created will have the same length.
  * @param {Array<number>} nums1
  * @param {Array<number>} nums2
- * @return {Array<number>} The column sums.
+ * @returns {Array<number>} The column sums.
  */
 function sumArrColumns(nums1, nums2) {
   const summedCols = [];

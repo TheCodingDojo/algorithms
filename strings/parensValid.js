@@ -26,7 +26,7 @@ const expected4 = false;
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {boolean} Whether the parenthesis are valid.
+ * @returns {boolean} Whether the parenthesis are valid.
  */
 function parensValid(str) {}
 

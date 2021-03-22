@@ -32,7 +32,7 @@ const expected5 = [5, 1];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums Test
- * @return {Array<number>} Mode or modes in any order.
+ * @returns {Array<number>} Mode or modes in any order.
  */
 function mode(nums) {}
 

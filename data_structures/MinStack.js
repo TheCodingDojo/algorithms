@@ -27,7 +27,7 @@ class MinStack {
    * Space: O(n) linear due to the extra minStack storing, at worst, all of the
    *    same numbers as this.items.
    * @param {number} n
-   * @return {number} The new length.
+   * @returns {number} The new length.
    */
   push(n) {
     this.items.push(n);
@@ -42,7 +42,7 @@ class MinStack {
    * Removes the top / last item from the stack.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {number} The top item that was removed.
+   * @returns {number} The top item that was removed.
    */
   pop() {
     const popped = this.items.pop();
@@ -58,7 +58,7 @@ class MinStack {
    * Retrieves the top item without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {number} The top item.
+   * @returns {number} The top item.
    */
   top() {
     return this.items[this.items.length - 1];
@@ -70,7 +70,7 @@ class MinStack {
    * - Space: O(1) constant. Extra space is being taken up via this.minStack
    *    to achieve constant time, but this particular method doesn't take up
    *    extra space directly.
-   * @return {number|undefined} The smallest number in the stack.
+   * @returns {number|undefined} The smallest number in the stack.
    */
   getMin() {
     return this.minStack[this.minStack.length - 1];

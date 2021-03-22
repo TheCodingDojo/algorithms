@@ -38,7 +38,7 @@ const expected3 = [
  * - Space: O(?).
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
- * @return {Array<Array<number>>} 2d array where each nested array is a set of
+ * @returns {Array<Array<number>>} 2d array where each nested array is a set of
  *    consecutive numbers that add up to the given targetSum. Consecutive in
  *    this context means the numbers whose indexes are one after the other
  *    only.
@@ -55,7 +55,7 @@ module.exports = { findConsqSums };
  * - Space: O(n^2) quadratic.
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
- * @return {Array<Array<number>>} 2d array where each nested array is a set of
+ * @returns {Array<Array<number>>} 2d array where each nested array is a set of
  *    consecutive numbers that add up to the given targetSum. Consecutive in
  *    this context means the numbers whose indexes are one after the other
  *    only.

@@ -34,7 +34,7 @@ const expectedArr2 = ["a"];
  * - Space: O(?).
  * @param {Array<any>} items
  * @param {any} newItem
- * @return {number} The new length of the given array.
+ * @returns {number} The new length of the given array.
  */
 function push(items, newItem) {
   // code here
@@ -61,7 +61,7 @@ module.exports = { push };
  *    that takes up extra space / memory as the size of input grows.
  * @param {Array<any>} items An array of any kind of items.
  * @param {any} newItem
- * @return {number} The new length of the given array.
+ * @returns {number} The new length of the given array.
  */
 function push(items, newItem) {
   items[items.length] = newItem;

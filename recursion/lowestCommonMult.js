@@ -44,7 +44,7 @@ const expected5 = 75;
  * Finds the lowest common multiple of the two given ints.
  * @param {number} a
  * @param {number} b
- * @return {number} The lowest common multiple of the given ints.
+ * @returns {number} The lowest common multiple of the given ints.
  */
 function lowestCommonMult(a, b) {}
 

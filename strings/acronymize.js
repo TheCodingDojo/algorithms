@@ -18,7 +18,7 @@ const expected2 = "LFNYISN";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str A string to be turned into an acronym.
- * @return {string} The given str converted into an acronym.
+ * @returns {string} The given str converted into an acronym.
  */
 function acronymize(str) {}
 

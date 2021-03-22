@@ -27,7 +27,7 @@ const expected5 = null;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {number|null} The first int value from the given array that has no
+ * @returns {number|null} The first int value from the given array that has no
  *    dupes or null if there is none.
  */
 function firstNonRepeated(nums) {}

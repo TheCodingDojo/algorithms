@@ -36,7 +36,7 @@ const expected7 = -1;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} waterLevels Non-empty .
- * @return {number} The max water-level rise amount or -1 if none.
+ * @returns {number} The max water-level rise amount or -1 if none.
  */
 function measureWaterLevels(waterLevels) {}
 

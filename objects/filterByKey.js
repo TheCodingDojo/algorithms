@@ -90,7 +90,7 @@ const expected4 = [
  * @param {Array<Object>} items The items to be filtered.
  * @param {string} searchBy The key to search by.
  * @param {string} searchFor The value of the given key to search for.
- * @return {Array<Objects>} The matched items.
+ * @returns {Array<Objects>} The matched items.
  */
 function filterByKey(items, searchFor, searchBy) {}
 
@@ -107,7 +107,7 @@ module.exports = { filterByKey };
  * @param {Array<Object>} items The items to be filtered.
  * @param {string} searchBy The key to search by.
  * @param {string} searchFor The value of the given key to search for.
- * @return {Array<Objects>} The matched items.
+ * @returns {Array<Objects>} The matched items.
  */
 function filterByKey(
   items,

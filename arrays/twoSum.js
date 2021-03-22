@@ -20,7 +20,7 @@ const expected1 = [0, 2];
  * - Space: O(?).
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
- * @return {Array<number>} The two indexes of the numbers in the given nums
+ * @returns {Array<number>} The two indexes of the numbers in the given nums
  *    that add up to the targetSum.
  */
 function twoSum(nums, targetSum) {}
@@ -35,7 +35,7 @@ module.exports = { twoSum };
  * - Space: O(n) linear.
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
- * @return {Array<number>} The two indexes of the numbers in the given nums
+ * @returns {Array<number>} The two indexes of the numbers in the given nums
  *    that add up to the targetSum.
  */
 function twoSum(nums, targetSum) {

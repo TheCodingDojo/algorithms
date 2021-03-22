@@ -24,7 +24,7 @@ const expected3 = ["Mrs. Beth HorseDoctor"];
  * @param {string} honorific The honorific to be added to the fullNames.
  *    e.g., "Sir", "Mrs.", etc.
  * @param {Array<string>} fullNames Formatted as "LastName, FirstName".
- * @return {Array<string>} The full names formatted as:
+ * @returns {Array<string>} The full names formatted as:
  *    "honorific FirstName LastName".
  * - Time: O(?).
  * - Space: O(?).
@@ -45,7 +45,7 @@ module.exports = {
  * @param {string} honorific The honorific to be added to the fullNames.
  *    e.g., "Sir", "Mrs.", etc.
  * @param {Array<string>} fullNames Formatted as "LastName, FirstName".
- * @return {Array<string>} The full names formatted as:
+ * @returns {Array<string>} The full names formatted as:
  *    "honorific FirstName LastName".
  * - Time: O(n * m), n = fullNames.length, m = max length of a full name from
  *    the split loop.

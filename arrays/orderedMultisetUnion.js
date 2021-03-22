@@ -27,7 +27,7 @@ const expected = [1, 2, 2, 2, 6, 6, 7];
  * @param {Array<number>} sortedA Both sets are sorted multisets
  *    (contain dupes).
  * @param {Array<number>} sortedB
- * @return {Array<number>} An ordered multiset union of the given sets.
+ * @returns {Array<number>} An ordered multiset union of the given sets.
  *    The return should include dupes, but the amount of dupes for each int
  *    should be based on the max amount that dupe appears from one set,
  *    not the combined amount from both sets.
@@ -51,7 +51,7 @@ module.exports = { orderedMultisetUnion };
  * @param {Array<number>} sortedA Both sets are sorted multisets
  *    (contain dupes).
  * @param {Array<number>} sortedB
- * @return {Array<number>} An ordered multiset union of the given sets.
+ * @returns {Array<number>} An ordered multiset union of the given sets.
  *    The return should include dupes, but the amount of dupes for each int
  *    should be based on the max amount that dupe appears from one set,
  *    not the combined amount from both sets.

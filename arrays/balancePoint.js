@@ -19,7 +19,7 @@ const expected2 = false;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {boolean} Indicates if a balance point exists.
+ * @returns {boolean} Indicates if a balance point exists.
  */
 function balancePoint(nums) {}
 

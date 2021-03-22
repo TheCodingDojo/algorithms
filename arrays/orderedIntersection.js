@@ -23,7 +23,7 @@ const expected2 = [2];
  * @param {Array<number>} sortedA
  * @param {Array<number>} sortedB Both sets are multisets
  *    (multi in that it can contain multiple dupes).
- * @return {Array<number>} The sorted set intersection: a new array that is
+ * @returns {Array<number>} The sorted set intersection: a new array that is
  *    sorted and contains only the shared values between the two arrays
  *    deduped.
  */
@@ -42,7 +42,7 @@ module.exports = { orderedIntersection };
  * @param {Array<number>} sortedA
  * @param {Array<number>} sortedB Both sets are multisets
  *    (multi in that it can contain multiple dupes).
- * @return {Array<number>} The sorted set intersection: a new array that is
+ * @returns {Array<number>} The sorted set intersection: a new array that is
  *    sorted and contains only the shared values between the two arrays
  *    deduped.
  */

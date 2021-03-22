@@ -49,7 +49,7 @@ const expected3 = [2, 3, 3, 6, 7, 8, 11, 14];
  *    given array being processed.
  * @param {number} right The index indicating the end of the slice of the
  *    given array being processed.
- * @return {Array<number>} The given array after being sorted.
+ * @returns {Array<number>} The given array after being sorted.
  */
 function quickSort(nums = [], left = 0, right = nums.length - 1) {}
 
@@ -67,7 +67,7 @@ module.exports = { quickSort };
  *    given array being processed.
  * @param {number} right The index indicating the end of the slice of the
  *    given array being processed.
- * @return {Array<number>} The given array after being sorted.
+ * @returns {Array<number>} The given array after being sorted.
  */
 function quickSort(nums = [], left = 0, right = nums.length - 1) {
   if (left < right) {

@@ -27,7 +27,7 @@ const expected4 = null;
  * - Space: O(?).
  * @param {Array<any>} items An array of any kind of items.
  * @param {number} nthToLast
- * @return {any} The item at the nthToLast index or null.
+ * @returns {any} The item at the nthToLast index or null.
  */
 function nthLast(items, nthToLast) {
   // code here
@@ -56,7 +56,7 @@ console.log(result4, "should be", expected4);
  *    object that grows in size as the input array length increases.
  * @param {Array<any>} items An array of any kind of items.
  * @param {number} nthToLast
- * @return {any} The item at the nthToLast index or null.
+ * @returns {any} The item at the nthToLast index or null.
  */
 function nthLast(items, nthToLast) {
   let idx = items.length - nthToLast;

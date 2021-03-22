@@ -21,7 +21,7 @@ const expected1 = {
  * - Space: O(?).
  * @param {Array<string>} keys
  * @param {Array<any>} values
- * @return {Object} The object with the given keys and values.
+ * @returns {Object} The object with the given keys and values.
  */
 function zipArraysIntoMap(keys, values) {}
 

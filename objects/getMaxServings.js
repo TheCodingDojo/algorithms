@@ -57,7 +57,7 @@ const expected3 = 0;
  *    name and a quantity.
  * @param {Ingredients} recipe
  * @param {Ingredients} available
- * @return {number} Max servings of the recipe that can be made.
+ * @returns {number} Max servings of the recipe that can be made.
  */
 function getMaxServings(recipe, available) {}
 
@@ -75,7 +75,7 @@ module.exports = {
  *    name and a quantity.
  * @param {Ingredients} recipe
  * @param {Ingredients} available
- * @return {number} Max servings of the recipe that can be made.
+ * @returns {number} Max servings of the recipe that can be made.
  */
 function getMaxServings(recipe, available) {
   let limitingAmount = Infinity;

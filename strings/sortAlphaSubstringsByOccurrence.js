@@ -18,7 +18,7 @@
  * - Time: O(?)
  * - Space: O(?)
  * @param {string} s Delimiters are non alpha chars.
- * @return {string} In the format of occurrence,substring on new lines.
+ * @returns {string} In the format of occurrence,substring on new lines.
  */
 function sortAlphaSubstringsByOccurrence(s) {}
 
@@ -31,7 +31,7 @@ function sortAlphaSubstringsByOccurrence(s) {}
  *    namely the Object.keys and the last loop to format the return.
  * - Space: O(3n) -> O(n) linear.
  * @param {string} s Delimiters are non alpha chars.
- * @return {string} In the format of occurrence,substring on new lines.
+ * @returns {string} In the format of occurrence,substring on new lines.
  */
 function sortAlphaSubstringsByOccurrence(s) {
   const substrFreqTable = {};

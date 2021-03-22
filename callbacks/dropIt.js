@@ -33,7 +33,7 @@ const expected3 = [];
  * - Space: O(?).
  * @param {Array<any>} arr
  * @param {Function} callback
- * @return {Array<any>} The given array with only the remaining items.
+ * @returns {Array<any>} The given array with only the remaining items.
  */
 function dropIt(arr, callback) {}
 

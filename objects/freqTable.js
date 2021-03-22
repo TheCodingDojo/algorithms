@@ -31,7 +31,7 @@ const expected3 = {};
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<string>} arr
- * @return {Object<string, number>} A frequency table where the keys are items
+ * @returns {Object<string, number>} A frequency table where the keys are items
  *    from the given arr and the values are the amnt of times that item occurs.
  */
 function frequencyTableBuilder(arr) {}

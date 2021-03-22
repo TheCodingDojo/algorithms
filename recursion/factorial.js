@@ -30,7 +30,7 @@ const expected3 = 1;
  * - Space: O(?).
  * @param {number} n The int to factorial. Treat negatives as zero and
  *    floor decimals.
- * @return {number} The result of !n.
+ * @returns {number} The result of !n.
  */
 function factorial(n) {}
 

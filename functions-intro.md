@@ -27,7 +27,7 @@
    *    desired item to be purchased.
    * @param {number} budget This is the second parameter name. It is the
    *    available budget to spend.
-   * @return {bool} The data type of that this function returns is a
+   * @returns {bool} The data type of that this function returns is a
    *    boolean (true or false) representing if there is enough budget to make
    *    the purchase.
    */

@@ -19,7 +19,7 @@ class Node {
    * @param {any} data The data to be added into this new instance of a Node.
    *    The data can be anything, just like an array can contain strings,
    *    numbers, objects, etc.
-   * @return {Node} A new Node instance is returned automatically without
+   * @returns {Node} A new Node instance is returned automatically without
    *    having to be explicitly written (implicit return).
    */
   constructor(data) {
@@ -46,7 +46,7 @@ class SinglyLinkedList {
   /**
    * Constructs a new instance of an empty linked list that inherits all the
    * methods.
-   * @return {SinglyLinkedList} The new list that is instantiated is implicitly
+   * @returns {SinglyLinkedList} The new list that is instantiated is implicitly
    *    returned without having to explicitly write "return".
    */
   constructor() {
@@ -110,7 +110,7 @@ const emptyList = new SinglyLinkedList();
  * Determines if this list is empty.
  * - Time: (?).
  * - Space: (?).
- * @return {boolean}
+ * @returns {boolean}
  */
 isEmpty() {}
 
@@ -120,7 +120,7 @@ isEmpty() {}
  * - Time: (?).
  * - Space: (?).
  * @param {any} data The data to be added to the new node.
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 insertAtBack(data) {}
 
@@ -129,7 +129,7 @@ insertAtBack(data) {}
  * - Time: (?).
  * - Space: (?).
  * @param {Array<any>} vals The data for each new node.
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 seedFromArr(vals) {}
 ```
@@ -150,7 +150,7 @@ seedFromArr(vals) {}
  * - Time: (?).
  * - Space: (?).
  * @param {any} data The data for the new node.
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 insertAtFront(data) {}
 
@@ -158,7 +158,7 @@ insertAtFront(data) {}
  * Removes the first node of this list.
  * - Time: (?).
  * - Space: (?).
- * @return {any} The data from the removed node.
+ * @returns {any} The data from the removed node.
  */
 removeHead() {}
 
@@ -167,7 +167,7 @@ removeHead() {}
  * Calculates the average of this list.
  * - Time: (?).
  * - Space: (?).
- * @return {number|NaN} The average of the node's data.
+ * @returns {number|NaN} The average of the node's data.
  */
 average() {}
 ```
@@ -187,7 +187,7 @@ average() {}
  * - Time: (?).
  * - Space: (?).
  * @param {any} val The data to search for in the nodes of this list.
- * @return {boolean}
+ * @returns {boolean}
  */
 contains(val) {}
 
@@ -198,7 +198,7 @@ contains(val) {}
  * @param {any} val The data to search for in the nodes of this list.
  * @param {?node} current The current node during the traversal of this list
  *    or null when the end of the list has been reached.
- * @return {boolean}
+ * @returns {boolean}
  */
 containsRecursive(val, current = this.head) {}
 
@@ -206,7 +206,7 @@ containsRecursive(val, current = this.head) {}
  * Removes the last node of this list.
  * - Time: (?).
  * - Space: (?).
- * @return {any} The data from the node that was removed.
+ * @returns {any} The data from the node that was removed.
  */
 removeBack() {}
 
@@ -219,7 +219,7 @@ removeBack() {}
  *    when the end of the list is reached.
  * @param {Node} maxNode Keeps track of the node that contains the current
  *    max integer as it's data.
- * @return {?number} The max int or null if none.
+ * @returns {?number} The max int or null if none.
  */
 recursiveMax(runner = this.head, maxNode = this.head) {}
 ```
@@ -239,7 +239,7 @@ recursiveMax(runner = this.head, maxNode = this.head) {}
  * Retrieves the data of the second to last node in this list.
  * - Time: (?).
  * - Space: (?).
- * @return {any} The data of the second to last node or null if there is no
+ * @returns {any} The data of the second to last node or null if there is no
  *    second to last node.
  */
 secondToLast() {
@@ -251,7 +251,7 @@ secondToLast() {
  * - Space: (?).
  * @param {any} val The value to compare to the node's data to find the
  *    node to be removed.
- * @return {boolean} Indicates if a node was removed or not.
+ * @returns {boolean} Indicates if a node was removed or not.
  */
 removeVal(val) {}
 
@@ -283,7 +283,7 @@ prepend(newVal, targetVal) {}
  * - Space: (?).
  * @param {SinglyLinkedList} addList An instance of a different list whose
  *    whose nodes will be added to the back of this list.
- * @return {SinglyLinkedList} This list with the added nodes.
+ * @returns {SinglyLinkedList} This list with the added nodes.
  */
 concat(addList) {}
 
@@ -292,7 +292,7 @@ concat(addList) {}
  * of this list.
  * - Time: (?).
  * - Space: (?).
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 moveMinToFront() {}
 
@@ -305,7 +305,7 @@ moveMinToFront() {}
  * - Time: (?).
  * - Space: (?).
  * @param {any} val The value in the node that the list should be split on.
- * @return {SinglyLinkedList} The split list containing the nodes that are
+ * @returns {SinglyLinkedList} The split list containing the nodes that are
  *    no longer in this list.
  */
 splitOnVal(val) {}
@@ -345,7 +345,7 @@ class Stack {
   /**
    * The constructor is executed when instantiating a new Stack() to construct
    * a new instance.
-   * @return {Stack} This new Stack instance is returned without having to
+   * @returns {Stack} This new Stack instance is returned without having to
    *    explicitly write 'return' (implicit return).
    */
   constructor() {
@@ -428,7 +428,7 @@ class Stack {
        * - Time: O(?).
        * - Space: O(?).
        * @param {any} item To be added.
-       * @return {number} The new number of items in the queue.
+       * @returns {number} The new number of items in the queue.
        */
       enqueue(item) {}
 
@@ -436,7 +436,7 @@ class Stack {
        * Removes the next item in the line / queue.
        * - Time: O(?).
        * - Space: O(?).
-       * @return {any} The removed item.
+       * @returns {any} The removed item.
        */
       dequeue() {}
     }
@@ -572,7 +572,7 @@ twoLevelTree.root.right = new Node(15);
  * Determines if this tree is empty.
  * - Time: O(?).
  * - Space: O(?).
- * @return {boolean} Indicates if this tree is empty.
+ * @returns {boolean} Indicates if this tree is empty.
  */
 isEmpty() {}
 
@@ -582,7 +582,7 @@ isEmpty() {}
  * - Space: O(?).
  * @param {Node} current The node that is currently accessed from the tree as
  *    the tree is being traversed.
- * @return {number} The smallest integer from this tree.
+ * @returns {number} The smallest integer from this tree.
  */
 min(current = this.root) {}
 
@@ -592,7 +592,7 @@ min(current = this.root) {}
  * - Space: O(?).
  * @param {Node} current The node that is currently accessed from the tree as
  *    the tree is being traversed.
- * @return {number} The smallest integer from this tree.
+ * @returns {number} The smallest integer from this tree.
  */
 minRecursive(current = this.root) {}
 
@@ -602,7 +602,7 @@ minRecursive(current = this.root) {}
  * - Space: O(?).
  * @param {Node} current The node that is currently accessed from the tree as
  *    the tree is being traversed.
- * @return {number} The largest integer from this tree.
+ * @returns {number} The largest integer from this tree.
  */
 max(current = this.root) {}
 
@@ -612,7 +612,7 @@ max(current = this.root) {}
  * - Space: O(?).
  * @param {Node} current The node that is currently accessed from the tree as
  *    the tree is being traversed.
- * @return {number} The largest integer from this tree.
+ * @returns {number} The largest integer from this tree.
  */
 maxRecursive(current = this.root) {}
 ```
@@ -629,7 +629,7 @@ maxRecursive(current = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} searchVal The number to search for in the node's data.
- * @return {boolean} Indicates if the searchVal was found.
+ * @returns {boolean} Indicates if the searchVal was found.
  */
 contains(searchVal) {}
 
@@ -638,7 +638,7 @@ contains(searchVal) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} searchVal The number to search for in the node's data.
- * @return {boolean} Indicates if the searchVal was found.
+ * @returns {boolean} Indicates if the searchVal was found.
  */
 containsRecursive(searchVal, current = this.root) {}
 
@@ -647,7 +647,7 @@ containsRecursive(searchVal, current = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {Node} startNode The node to start from to calculate the range.
- * @return {number|null} The range of this tree or a sub tree depending on if the
+ * @returns {number|null} The range of this tree or a sub tree depending on if the
  *    startNode is the root or not.
  */
 range(startNode = this.root) {}
@@ -665,7 +665,7 @@ range(startNode = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} newVal The data to be added to a new node.
- * @return {BinarySearchTree} This tree.
+ * @returns {BinarySearchTree} This tree.
  */
 insert(newVal) {}
 
@@ -677,7 +677,7 @@ insert(newVal) {}
  * @param {number} newVal The data to be added to a new node.
  * @param {Node} curr The node that is currently accessed from the tree as
  *    the tree is being traversed.
- * @return {BinarySearchTree} This tree.
+ * @returns {BinarySearchTree} This tree.
  */
 insertRecursive(newVal, curr = this.root) {}
 ```
@@ -695,7 +695,7 @@ insertRecursive(newVal, curr = this.root) {}
  * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
  * @param {Node} node The current node during the traversal of this tree.
  * @param {Array<number>} vals The data that has been visited so far.
- * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+ * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
  */
 toArrPreorder(node = this.root, vals = []) {}
 
@@ -707,7 +707,7 @@ toArrPreorder(node = this.root, vals = []) {}
  * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
  * @param {Node} node The current node during the traversal of this tree.
  * @param {Array<number>} vals The data that has been visited so far.
- * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+ * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
  */
 toArrInorder(node = this.root, vals = []) {}
 
@@ -718,7 +718,7 @@ toArrInorder(node = this.root, vals = []) {}
  * [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
  * @param {Node} node The current node during the traversal of this tree.
  * @param {Array<number>} vals The data that has been visited so far.
- * @return {Array<number>} The vals in DFS Preorder once all nodes visited.
+ * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
  */
 toArrPostorder(node = this.root, vals = []) {}
 ```
@@ -739,7 +739,7 @@ toArrPostorder(node = this.root, vals = []) {}
  * Example on the fullTree var:
  * [25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90]
  * @param {Node} current The current node during the traversal of this tree.
- * @return {Array<number>} The data of all nodes in BFS order.
+ * @returns {Array<number>} The data of all nodes in BFS order.
  */
 toArrLevelorder(current = this.root) {}
 
@@ -748,7 +748,7 @@ toArrLevelorder(current = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {Node} node The current node during the traversal of this tree.
- * @return {number} The total number of nodes.
+ * @returns {number} The total number of nodes.
  */
 size(node = this.root) {}
 
@@ -758,7 +758,7 @@ size(node = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {Node} node The current node during traversal of this tree.
- * @return {number} The height of the tree.
+ * @returns {number} The height of the tree.
  */
 height(node = this.root) {}
 
@@ -768,7 +768,7 @@ height(node = this.root) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {Node} node The current node during traversal of this tree.
- * @return {boolean} Indicates if this tree is full.
+ * @returns {boolean} Indicates if this tree is full.
  */
 isFull(node = this.root) {}
 ```
@@ -790,7 +790,7 @@ isFull(node = this.root) {}
  * Reverses this list in-place without using any extra lists.
  * - Time: (?).
  * - Space: (?).
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 reverse() {}
 
@@ -800,7 +800,7 @@ reverse() {}
  * next points to a node that is behind it.
  * - Time: (?).
  * - Space: (?).
- * @return {boolean} Whether the list has a loop or not.
+ * @returns {boolean} Whether the list has a loop or not.
  */
 hasLoop() {}
 
@@ -808,7 +808,7 @@ hasLoop() {}
  * Removes all the nodes that have a negative integer as their data.
  * - Time: (?).
  * - Space: (?).
- * @return {SinglyLinkedList} This list after the negatives are removed.
+ * @returns {SinglyLinkedList} This list after the negatives are removed.
  */
 removeNegatives() {}
 ```
@@ -850,7 +850,7 @@ class DoublyLinkedList {
    * Determines if this list is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean} Indicates if this list is empty.
+   * @returns {boolean} Indicates if this list is empty.
    */
   isEmpty() {
     return this.head === null;
@@ -860,7 +860,7 @@ class DoublyLinkedList {
    * Converts this list to an array of the node's data.
    * - Time: O(n) linear, n = list length.
    * - Space: O(n) linear, array grows as list length increases.
-   * @return {Array<any>} All the data of the nodes.
+   * @returns {Array<any>} All the data of the nodes.
    */
   toArray() {
     const vals = [];
@@ -876,7 +876,7 @@ class DoublyLinkedList {
   /**
    * Adds all the given items to the back of this list.
    * @param {Array<any>} items Items to be added to the back of this list.
-   * @return {DoublyLinkedList} This list.
+   * @returns {DoublyLinkedList} This list.
    */
   seedFromArr(items = []) {
     items.forEach((item) => this.insertAtBack(item));
@@ -909,7 +909,7 @@ const emptyList = new DoublyLinkedList();
  * - Time: O(?).
  * - Space: O(?).
  * @param {any} data The data for the new node.
- * @return {DoublyLinkedList} This list.
+ * @returns {DoublyLinkedList} This list.
  */
 insertAtFront(data) {}
 
@@ -918,7 +918,7 @@ insertAtFront(data) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {any} data The data for the new node.
- * @return {DoublyLinkedList} This list.
+ * @returns {DoublyLinkedList} This list.
  */
 insertAtBack(data) {}
 
@@ -927,7 +927,7 @@ insertAtBack(data) {}
  * Removes the middle node in this list.
  * - Time: O(?).
  * - Space: O(?).
- * @return {any} The data of the removed node.
+ * @returns {any} The data of the removed node.
  */
 removeMiddleNode() {}
 ```
@@ -951,7 +951,7 @@ removeMiddleNode() {}
  * - Space: O(?).
  * @param {any} targetVal The node data to find.
  * @param {any} newVal Data for the new node.
- * @return {boolean} Indicates if the new node was added.
+ * @returns {boolean} Indicates if the new node was added.
  */
 insertAfter(targetVal, newVal) {}
 
@@ -962,7 +962,7 @@ insertAfter(targetVal, newVal) {}
  * - Space: O(?).
  * @param {any} targetVal The node data to find.
  * @param {any} newVal Data for the new node.
- * @return {boolean} Indicates if the new node was added.
+ * @returns {boolean} Indicates if the new node was added.
  */
 insertBefore(targetVal, newVal) {}
 ```
@@ -1000,7 +1000,7 @@ class MinHeap {
    * Retrieves the top (minimum number) in the heap without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {?number} Null if empty.
+   * @returns {?number} Null if empty.
    */
   top() {}
 
@@ -1054,7 +1054,7 @@ class MinHeap {
    *    smallest child IF the smallest child is smaller than it.
    * - Time: O(log n) logarithmic due to shiftDown.
    * - Space: O(1) constant.
-   * @return {?number} The min number or null if empty.
+   * @returns {?number} The min number or null if empty.
    */
   extract() {}
 ```
@@ -1082,7 +1082,7 @@ partition(val) {}
  * - Time: (?).
  * - Space: (?).
  * @param {number} data The data for the new node being inserted.
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 insertAsc(data) {}
 
@@ -1094,7 +1094,7 @@ insertAsc(data) {}
  * @property {string} Person.lastName
  * - Time: (?).
  * - Space: (?).
- * @return {string} A comma separated string of full names.
+ * @returns {string} A comma separated string of full names.
  */
 displayPeople() {}
 
@@ -1103,7 +1103,7 @@ displayPeople() {}
    * duplicate data so that only one node of each integer data remains.
    * Time: O(?).
    * Space: O(?).
-   * @return {SinglyLinkedList} This list after dupes are removed.
+   * @returns {SinglyLinkedList} This list after dupes are removed.
    */
   removeDupesSorted() {}
 
@@ -1117,7 +1117,7 @@ displayPeople() {}
  * @property {string} Person.firstName
  * @property {string} Person.lastName
  * @param {Person} data The data for the new node being inserted.
- * @return {SinglyLinkedList} This list.
+ * @returns {SinglyLinkedList} This list.
  */
 insertPersonAscAge(data) {}
 ```
@@ -1137,7 +1137,7 @@ insertPersonAscAge(data) {}
    * - Time: O(?).
    * - Space: O(?).
    * @param {number} nthLast Indicates the position from the back of the list.
-   * @return {any}
+   * @returns {any}
    */
   nthToLast(nthLast) {}
 
@@ -1145,7 +1145,7 @@ insertPersonAscAge(data) {}
    * Determines if the node's data of this list forms a palindrome.
    * - Time: O(?).
    * - Space: O(?).
-   * @return {boolean} Indicates if this list is a palindrome.
+   * @returns {boolean} Indicates if this list is a palindrome.
    */
   isPalindrome() {}
 
@@ -1154,7 +1154,7 @@ insertPersonAscAge(data) {}
    * - Time: O(?).
    * - Space: O(?).
    * @param {Node} node
-   * @return {boolean}
+   * @returns {boolean}
    */
   isNodeInLeftHalf(node) {}
 ```

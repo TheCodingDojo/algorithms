@@ -52,7 +52,7 @@ const expected3 = [];
  * @property {Array<string>} habits
  * @param {Array<Person>} persons
  * @param {string} badHabit
- * @return {Array<Person>} The people that have the given bad habit.
+ * @returns {Array<Person>} The people that have the given bad habit.
  */
 function santasNaughtyList(persons, badHabit) {}
 
@@ -66,7 +66,7 @@ function santasNaughtyList(persons, badHabit) {}
  * @property {Array<string>} habits
  * @param {Array<Person>} persons
  * @param {string} badHabit
- * @return {Array<Person>} The people that have the given bad habit.
+ * @returns {Array<Person>} The people that have the given bad habit.
  */
 function santasNaughtyListFunctional(persons, badHabit) {}
 

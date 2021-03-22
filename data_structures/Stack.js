@@ -19,7 +19,7 @@ class Stack {
   /**
    * The constructor is executed when instantiating a new Stack() to construct
    * a new instance.
-   * @return {Stack} This new Stack instance is returned without having to
+   * @returns {Stack} This new Stack instance is returned without having to
    *    explicitly write 'return' (implicit return).
    */
   constructor(items = []) {
@@ -31,7 +31,7 @@ class Stack {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {any} item The new item to be added to the top / back.
-   * @return {number} The new length of this stack.
+   * @returns {number} The new length of this stack.
    */
   push(item) {
     this.items.push(item);
@@ -42,7 +42,7 @@ class Stack {
    * Removes the top / last item from this stack.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {any} The removed item or undefined if this stack was empty.
+   * @returns {any} The removed item or undefined if this stack was empty.
    */
   pop() {
     return this.items.pop();
@@ -52,7 +52,7 @@ class Stack {
    * Retrieves the top / last item from this stack without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {any} The top / last item of this stack.
+   * @returns {any} The top / last item of this stack.
    */
   peek() {
     return this.items[this.items.length - 1];
@@ -62,7 +62,7 @@ class Stack {
    * Returns whether or not this stack is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean}
+   * @returns {boolean}
    */
   isEmpty() {
     return this.items.length === 0;
@@ -72,7 +72,7 @@ class Stack {
    * Returns the size of this stack.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {number} The length.
+   * @returns {number} The length.
    */
   size() {
     return this.items.length;
@@ -82,7 +82,7 @@ class Stack {
    * Logs the items as a space separated string.
    * - Time: O(n) linear.
    * - Space: O(n) linear.
-   * @return {string} The same string that is logged.
+   * @returns {string} The same string that is logged.
    */
   print() {
     const str = this.items.join(" ");

@@ -30,7 +30,7 @@ const arr3Expected = ["a", "b", "c"];
  * - Space: O(?).
  * @param {Array<any>} items
  * @param {number} idx Index of the item to be removed.
- * @return {any} The removed item.
+ * @returns {any} The removed item.
  */
 function removeAt(items, idx) {
   // code here
@@ -64,7 +64,7 @@ module.exports = { removeAt };
  *    or object that grows in size as the input arr size grows.
  * @param {Array<any>} arr
  * @param {number} idx Index of the item to be removed.
- * @return {any} The removed item.
+ * @returns {any} The removed item.
  */
 function removeAt(arr, idx) {
   if (idx < 0 || idx >= arr.length) {

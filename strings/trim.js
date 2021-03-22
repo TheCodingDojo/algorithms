@@ -12,7 +12,7 @@ const expected1 = "hello world";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {string} The given string with any leading or trailing white space
+ * @returns {string} The given string with any leading or trailing white space
  *    stripped.
  */
 function trim(str) {}

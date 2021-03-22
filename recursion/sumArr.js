@@ -11,7 +11,7 @@ const expected1 = 6;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {number} The sum of the given nums.
+ * @returns {number} The sum of the given nums.
  */
 function sumArr(nums) {}
 

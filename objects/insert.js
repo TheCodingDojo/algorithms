@@ -29,7 +29,7 @@ const expected2 =
  * - Space: O(?).
  * @param {string} tableName
  * @param {Object} columnValuePairs
- * @return {string} A string formatted as a SQL insert statement where the
+ * @returns {string} A string formatted as a SQL insert statement where the
  *    columns and values are extracted from columnValuePairs.
  */
 function insert(tableName, columnValuePairs) {}

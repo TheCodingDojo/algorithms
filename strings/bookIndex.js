@@ -14,7 +14,7 @@ const expected1 = "1, 13-15, 37-38, 70";
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums Page numbers.
- * @return {string} The given page numbers as comma separated hyphenated
+ * @returns {string} The given page numbers as comma separated hyphenated
  *    page ranges.
  */
 function bookIndex(nums) {}

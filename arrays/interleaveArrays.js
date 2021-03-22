@@ -28,7 +28,7 @@ const expected4 = [42, 0, 6];
  * - Space: O(?).
  * @param {Array<any>} arr1
  * @param {Array<any>} arr2
- * @return {Array<any>} A new array of interleaved items.
+ * @returns {Array<any>} A new array of interleaved items.
  */
 function interleaveArrays(arr1, arr2) {}
 
@@ -43,7 +43,7 @@ module.exports = { interleaveArrays };
  * - Space: O(n + m) linear. Each item from both arrays is included in new arr.
  * @param {Array<any>} arr1
  * @param {Array<any>} arr2
- * @return {Array<any>} A new array of interleaved items.
+ * @returns {Array<any>} A new array of interleaved items.
  */
 function interleaveArrays(arr1, arr2) {
   const interleavedItems = [];

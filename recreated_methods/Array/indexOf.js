@@ -27,7 +27,7 @@ const expected4 = -1;
  * - Space: O(?).
  * @param {Array<any>} items An array of any kind of items.
  * @param {any} searchItem The item to find.
- * @return {number} The index of found item, or -1 if not found.
+ * @returns {number} The index of found item, or -1 if not found.
  */
 function indexOf(items, searchItem) {
   // code here
@@ -58,7 +58,7 @@ module.exports = { indexOf };
  *    space / memory as the input array grows in size.
  * @param {Array<any>} items An array of any kind of items.
  * @param {any} searchItem The item to find.
- * @return {number} The index of found item, or -1 if not found.
+ * @returns {number} The index of found item, or -1 if not found.
  */
 function indexOf(items, searchItem) {
   for (let i = 0; i < items.length; i++) {

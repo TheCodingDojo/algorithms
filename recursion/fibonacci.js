@@ -30,7 +30,7 @@ const expected6 = 21;
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} num The position of the desired number in the fibonacci sequence.
- * @return {number} The fibonacci number at the given position.
+ * @returns {number} The fibonacci number at the given position.
  */
 function fibonacci(num) {}
 

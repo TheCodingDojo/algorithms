@@ -70,7 +70,7 @@ const expected3 = null;
  * @param {number} id
  * @param {Object} updatedVals Key value pairs used to update the found obj.
  * @param {Array<Object>} collection
- * @return {?Object} The object that was updated or null if no object found.
+ * @returns {?Object} The object that was updated or null if no object found.
  */
 // function findByIdAndUpdate(id, updatedVals, collection) {}
 
@@ -91,7 +91,7 @@ module.exports = {
  * @param {number} id
  * @param {Object} updatedVals Key value pairs used to update the found obj.
  * @param {Array<Object>} collection
- * @return {?Object} The object that was updated or null if no object found.
+ * @returns {?Object} The object that was updated or null if no object found.
  */
 function findByIdAndUpdate(id, updatedVals, collection) {
   for (const doc of collection) {

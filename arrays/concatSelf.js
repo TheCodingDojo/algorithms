@@ -19,7 +19,7 @@ const expected3 = [];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} items
- * @return {Array<any>} The resulting concatenation of the given arr with
+ * @returns {Array<any>} The resulting concatenation of the given arr with
  *    itself.
  */ items;
 function concatArrWithSelf(items) {
@@ -46,7 +46,7 @@ module.exports = { concatArrWithSelf };
  *    the items twice.
  * - Space: O(2n) -> O(n) linear. The new array created has arr.length * 2.
  * @param {Array<any>} arr
- * @return {Array<any>} The resulting concatenation of the given arr with
+ * @returns {Array<any>} The resulting concatenation of the given arr with
  *    itself.
  */
 function concatArrWithSelfManually(arr) {

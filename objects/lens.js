@@ -71,7 +71,7 @@ const expected5 = user;
  * - Space O(?).
  * @param {Object<string, any>} obj
  * @param {Array<string>} keys
- * @return {any} The value at end of path of given keys or null.
+ * @returns {any} The value at end of path of given keys or null.
  */
 function lens(obj, keys) {}
 
@@ -85,7 +85,7 @@ module.exports = { lens };
  * Space: O(n) linear.
  * @param {Object<string, any>} obj
  * @param {Array<string>} keys
- * @return {any} The value at end of path of given keys or null.
+ * @returns {any} The value at end of path of given keys or null.
  */
 function lens(obj, keys) {
   let val = obj;

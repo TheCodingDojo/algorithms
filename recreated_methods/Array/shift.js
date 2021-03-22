@@ -21,7 +21,7 @@ const arr2Expected = ["b", "c", "d"];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} items An array of any kind of items.
- * @return {any} The removed value previously at idx 0.
+ * @returns {any} The removed value previously at idx 0.
  */
 function shift(items) {
   // code here
@@ -48,7 +48,7 @@ module.exports = { shift };
  * - Space: O(1) constant, the algo doesn't create any new arrays or objects
  *    that grow in size as the input array grows.
  * @param {Array<any>} items
- * @return {any} The removed value previously at idx 0.
+ * @returns {any} The removed value previously at idx 0.
  */
 function shift(items) {
   const firstItem = items[0];

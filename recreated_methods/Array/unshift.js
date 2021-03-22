@@ -24,7 +24,7 @@ const arr2Expected = ["a"];
  * - Space: O(?).
  * @param {Array<any>} items An array of any kind of items.
  * @param {any} newItem To add to front.
- * @return {number} The new length of items.
+ * @returns {number} The new length of items.
  */
 function unshift(items, newItem) {
   // code here
@@ -50,7 +50,7 @@ module.exports = { unshift };
  * - Space: O(1) constant.
  * @param {Array<any>} arr
  * @param {any} newItem To add to front.
- * @return {number} New array length.
+ * @returns {number} New array length.
  */
 function unshift(arr, newItem) {
   // shift every item to the right by 1 starting from the back

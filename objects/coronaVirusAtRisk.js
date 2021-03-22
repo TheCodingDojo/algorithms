@@ -80,7 +80,7 @@ const expected = ["Person One", "Person Three"];
  * @property {boolean} isSocialDistancing
  * @property {Array<Friend>} friends
  * @param {Array<Person>} persons
- * @return {Array<string>} An array of Person full names for those people who
+ * @returns {Array<string>} An array of Person full names for those people who
  *    are at risk. A Person is at risk if:
  *    1. not practicing social distancing.
  *    2. have a friend who is not practicing social distancing whom hasCovid.
@@ -116,7 +116,7 @@ module.exports = {
  * @property {boolean} isSocialDistancing
  * @property {Array<Friend>} friends
  * @param {Array<Person>} persons
- * @return {Array<string>} An array of Person full names for those people who
+ * @returns {Array<string>} An array of Person full names for those people who
  *    are at risk. A Person is at risk if:
  *    1. not practicing social distancing.
  *    2. have a friend who is not practicing social distancing whom hasCovid.

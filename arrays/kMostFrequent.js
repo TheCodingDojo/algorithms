@@ -35,7 +35,7 @@ const expected3 = [1, 2, 3];
  * - Space: O(?).
  * @param {Array<number>} nums Unordered.
  * @param {number} k Represents the amount of numbers that should be returned.
- * @return {Array<number>} The k most frequently occurring numbers.
+ * @returns {Array<number>} The k most frequently occurring numbers.
  */
 function kMostFrequent(nums, k) {}
 
@@ -51,7 +51,7 @@ module.exports = { kMostFrequent };
  * - Space: O(3n) -> O(n) linear.
  * @param {Array<number>} nums Unordered.
  * @param {number} k Represents the amount of numbers that should be returned.
- * @return {Array<number>} The k most frequently occurring numbers.
+ * @returns {Array<number>} The k most frequently occurring numbers.
  */
 function kMostFrequent(nums, k) {
   const mostFreqNums = [];

@@ -22,7 +22,7 @@ const expected2 = -1;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {number} The balance index or -1 if there is none.
+ * @returns {number} The balance index or -1 if there is none.
  */
 function balanceIndex(nums) {}
 

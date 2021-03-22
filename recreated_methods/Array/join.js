@@ -31,7 +31,7 @@ const expected5 = "";
  * - Space: O(?).
  * @param {Array<string|number|boolean>} arr The items to be joined as a string.
  * @param {string} separator To separate each item of the given arr.
- * @return {string} The given array items as a string separated by the given separator.
+ * @returns {string} The given array items as a string separated by the given separator.
  */
 function join(arr, separator) {}
 

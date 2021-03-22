@@ -23,7 +23,7 @@ const expected2 = [1, 2, 3, "a", "b"];
  * - Space: O(?).
  * @param {Array<any>} items1
  * @param {Array<any>} items2
- * @return {Array<any>} The new arr that is a concatenation of the given arrays.
+ * @returns {Array<any>} The new arr that is a concatenation of the given arrays.
  */
 function concat(items1, items2) {
   // code here
@@ -55,7 +55,7 @@ module.exports = { concat };
  *    combined.
  * @param {Array<any>} arr1
  * @param {Array<any>} arr2
- * @return {Array<any>} The new arr that is a concatenation of the given arrays.
+ * @returns {Array<any>} The new arr that is a concatenation of the given arrays.
  */
 function concat(arr1, arr2) {
   const newArr = [];

@@ -31,7 +31,7 @@ const expected4 = true;
  * - Space: O(?).
  * @param {string} s1
  * @param {string} s2
- * @return {boolean} Whether s1 and s2 are anagrams.
+ * @returns {boolean} Whether s1 and s2 are anagrams.
  */
 function isAnagram(s1, s2) {}
 

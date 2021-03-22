@@ -22,7 +22,7 @@ const expected3 = -1;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {number} Index of smallest number or -1 if empty given array.
+ * @returns {number} Index of smallest number or -1 if empty given array.
  */
 function indexOfMinVal(nums) {
   // code here
@@ -49,7 +49,7 @@ module.exports = { indexOfMinVal };
  * - Space: O(1) constant. No new objects or arrays are created that grow in
  *    size as the input array grows in size.
  * @param {Array<number>} nums
- * @return {number} Index of smallest number or -1 if empty given array.
+ * @returns {number} Index of smallest number or -1 if empty given array.
  */
 function indexOfMinVal(nums) {
   if (nums.length === 0) {

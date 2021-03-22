@@ -24,7 +24,7 @@ const expected = 2;
  * - Space: O(?).
  * @param {Array<Array<number>>} sqrMatrix A 2d array of numbers representing
  *    a square matrix (rows and columns).
- * @return {number} Represents the absolute difference between the top left to
+ * @returns {number} Represents the absolute difference between the top left to
  *    bottom right diagonal and the top right to bottom left diagonal.
  */
 function diagonalDifference(sqrMatrix) {}
@@ -41,7 +41,7 @@ module.exports = { diagonalDifference };
  * - Space: O(1) constant.
  * @param {Array<Array<number>>} sqrMatrix A 2d array of numbers representing
  *    a square matrix (rows and columns).
- * @return {number} Represents the absolute difference between the top left to
+ * @returns {number} Represents the absolute difference between the top left to
  *    bottom right diagonal and the top right to bottom left diagonal.
  */
 function diagonalDifference(sqrMatrix) {

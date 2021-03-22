@@ -19,7 +19,7 @@ const expected3 = false;
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {boolean} Whether the given strings braces are valid.
+ * @returns {boolean} Whether the given strings braces are valid.
  */
 function bracesValid(str) {}
 

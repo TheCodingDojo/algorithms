@@ -29,7 +29,7 @@ const expected4 = "bbcc";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str The string to encode.
- * @return {string} The given string encoded.
+ * @returns {string} The given string encoded.
  */
 function encodeStr(str) {}
 

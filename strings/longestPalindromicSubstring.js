@@ -25,7 +25,7 @@ const expected3 = "e racecar e";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {string} The longest palindromic substring from the given string.
+ * @returns {string} The longest palindromic substring from the given string.
  */
 function longestPalindromicSubstring(str) {}
 

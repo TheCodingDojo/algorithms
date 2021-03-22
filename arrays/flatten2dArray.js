@@ -22,7 +22,7 @@ const expected3 = [10, 20];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<Array<any>>} twoDimArr An array of arrays of any data type.
- * @return {Array<any>} The flattened array that should be one dimensional.
+ * @returns {Array<any>} The flattened array that should be one dimensional.
  */
 function flatten2dArray(twoDimArr) {
   // code here
@@ -54,7 +54,7 @@ module.exports = { flatten2dArray };
  * - Space: O(n * m) Because of the new array that is created grows in size in
  *    proportion to the sizes of "n" and "m".
  * @param {Array<Array<any>>} twoDimArr An array of arrays of any data type.
- * @return {Array<any>} The flattened array that should be one dimensional.
+ * @returns {Array<any>} The flattened array that should be one dimensional.
  */
 function flatten2dArray(twoDimArr) {
   var flattened = [];

@@ -24,7 +24,7 @@ const expected3 = [1, 2, 3, 4];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {Array<number>} The given array deduped.
+ * @returns {Array<number>} The given array deduped.
  */
 function dedupeSorted(nums) {}
 

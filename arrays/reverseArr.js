@@ -22,7 +22,7 @@ const expected4 = [];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} items
- * @return {Array<any>} The given arr after being reversed.
+ * @returns {Array<any>} The given arr after being reversed.
  */
 function reverseArr(items) {
   // code here
@@ -51,7 +51,7 @@ module.exports = { reverseArr };
  *    half the length.
  * - Space: O(1) constant.
  * @param {Array<any>} items
- * @return {Array<any>} The given arr after being reversed.
+ * @returns {Array<any>} The given arr after being reversed.
  */
 function reverseArr(items) {
   // Without Math.floor the middle item would be swapped with itself. Wouldn't

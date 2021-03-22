@@ -18,7 +18,7 @@ const expected1 = ["ilm", "iml", "lim", "lmi", "mil", "mli"];
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str
- * @return {Array<string>} All anagrams of the given str.
+ * @returns {Array<string>} All anagrams of the given str.
  */
 function generateAnagrams(str) {}
 

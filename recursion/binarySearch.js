@@ -31,7 +31,7 @@ const expected3 = true;
  * - Space: O(?).
  * @param {Array<number>} sortedNums
  * @param {number} searchNum
- * @return {boolean} Whether the searchNum was found in the sortedNums array.
+ * @returns {boolean} Whether the searchNum was found in the sortedNums array.
  */
 function binarySearch(sortedNums, searchNum) {}
 
@@ -50,7 +50,7 @@ module.exports = { binarySearch };
  *    that is being searched.
  * @param {number} rightIdx The right index of the current slice of the array
  *    that is being searched.
- * @return {boolean} Whether the searchNum was found in the sortedNums array.
+ * @returns {boolean} Whether the searchNum was found in the sortedNums array.
  */
 function binarySearch(
   sortedNums,

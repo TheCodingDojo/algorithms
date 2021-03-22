@@ -40,7 +40,7 @@ class PriorityQueue {
    * - Space: O(1) constant.
    * @param {any} element The item to add.
    * @param {number} priority The importance, low is more important.
-   * @return {number} The new length.
+   * @returns {number} The new length.
    */
   enqueue(element, priority) {
     // creating object from queue element
@@ -72,7 +72,7 @@ class PriorityQueue {
    * Removes and returns the most prioritized item.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {QElement|undefined}.
+   * @returns {QElement|undefined}.
    */
   dequeue() {
     return this.items.shift();
@@ -82,7 +82,7 @@ class PriorityQueue {
    * Retrieves the most prioritized item without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {QElement|undefined}
+   * @returns {QElement|undefined}
    */
   front() {
     return this.items[0];
@@ -92,7 +92,7 @@ class PriorityQueue {
    * Retrieves the least prioritized item.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {QElement|undefined}
+   * @returns {QElement|undefined}
    */
   rear() {
     return this.items[this.items.length - 1];
@@ -102,7 +102,7 @@ class PriorityQueue {
    * Checks if this PriorityQueue is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean}
+   * @returns {boolean}
    */
   isEmpty() {
     return this.items.length == 0;
@@ -112,7 +112,7 @@ class PriorityQueue {
    * Builds a string of all the queue items.
    * - Time: O(n) linear.
    * - Space: O(1) constant.
-   * @return {string}
+   * @returns {string}
    */
   print() {
     return this.items.reduce((str, qEl) => (str += qEl.element + " "), "");

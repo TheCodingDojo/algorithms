@@ -16,7 +16,7 @@ const expected2 = "helo";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str A string that may contain duplicates.
- * @return {string} The given string with any duplicate characters removed.
+ * @returns {string} The given string with any duplicate characters removed.
  */
 function stringDedupe(str) {}
 

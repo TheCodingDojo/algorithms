@@ -38,7 +38,7 @@ const expected3 = [4, 5];
  * @param  {Array<number>} setA
  * @param  {Array<number>} setB
  *    Both given sets are multisets in any order (contain dupes).
- * @return {Array<number>} The union of the given sets but excluding the shared
+ * @returns {Array<number>} The union of the given sets but excluding the shared
  *    values (union without intersection).
  *    i.e., if the element is in one array and NOT the other, it should be
  *    included in the return.
@@ -60,7 +60,7 @@ module.exports = { symmetricDifferences };
  * @param  {Array<number>} setA
  * @param  {Array<number>} setB
  *    Both given sets are multisets in any order (contain dupes).
- * @return {Array<number>} The union of the given sets but excluding the shared
+ * @returns {Array<number>} The union of the given sets but excluding the shared
  *    values (union without intersection).
  *    i.e., if the element is in one array and NOT the other, it should be
  *    included in the return.

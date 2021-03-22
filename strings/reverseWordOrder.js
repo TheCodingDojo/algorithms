@@ -14,7 +14,7 @@ const expected1 = "test a is This";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} wordsStr A string containing space separated words.
- * @return {string} The given string with the word order reversed but the words
+ * @returns {string} The given string with the word order reversed but the words
  *    themselves are not reversed.
  */
 function reverseWordOrder(wordsStr) {}

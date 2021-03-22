@@ -32,7 +32,7 @@ const expected4 = 6;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} unorderedNums
- * @return {number|null} The missing integer needed to be able to form an unbroken
+ * @returns {number|null} The missing integer needed to be able to form an unbroken
  *    consecutive set of integers from the given array or null if none is missing.
  */
 function missingValue(unorderedNums) {}

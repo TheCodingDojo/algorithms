@@ -20,7 +20,7 @@ const expected3 = "cba fed ihg";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str Contains space separated words.
- * @return {string} The given string with each word's letters reversed.
+ * @returns {string} The given string with each word's letters reversed.
  */
 function reverseWords(str) {}
 

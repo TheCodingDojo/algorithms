@@ -21,7 +21,7 @@ class MinHeap {
    * Retrieves the size of the heap, ignoring the null placeholder.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {?number} Null if empty.
+   * @returns {?number} Null if empty.
    */
   size() {
     // - 1 since 0 index is unused
@@ -32,7 +32,7 @@ class MinHeap {
    * Retrieves the top (minimum number) in the heap without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {?number} Null if empty.
+   * @returns {?number} Null if empty.
    */
   top() {
     return this.heap.length > 1 ? this.heap[1] : null;
@@ -100,7 +100,7 @@ class MinHeap {
    *    smallest child IF the smallest child is smaller than it.
    * - Time: O(log n) logarithmic due to shiftDown.
    * - Space: O(1) constant.
-   * @return {?number} The min number or null if empty.
+   * @returns {?number} The min number or null if empty.
    */
   extract() {
     // nothing to remove

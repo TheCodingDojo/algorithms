@@ -21,7 +21,7 @@ const expected1 = ["1000", "1001", "1100", "1101"];
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str The string containing to expand.
- * @return {Array<string>} The expanded versions of the given string.
+ * @returns {Array<string>} The expanded versions of the given string.
  */
 function binaryStringExpansion(str) {}
 
@@ -36,7 +36,7 @@ module.exports = { binaryStringExpansion };
  * @param {string} str The string containing to expand.
  * @param {Array<string>} solutions Recursive param for storing curr solutions.
  * @param {string} partial A slice of the string being processed.
- * @return {Array<string>} The expanded versions of the given string.
+ * @returns {Array<string>} The expanded versions of the given string.
  */
 function binaryStringExpansion(str, solutions = [], partial = "") {
   const index = str.indexOf("?");

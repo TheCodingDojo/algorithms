@@ -47,7 +47,7 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * - Space: O(?).
  * @param {Array<number>} left
  * @param {Array<number>} right
- * @return {Array<number>} A new sorted array containing all the elements of
+ * @returns {Array<number>} A new sorted array containing all the elements of
  *    both given halves.
  */
 function merge(left, right) {}
@@ -65,7 +65,7 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Avg: O(n log(n)) linearithmic.
  * Worst: O(n log(n)) linearithmic.
  * @param {Array<number>} nums
- * @return {Array<number>} A New sorted array.
+ * @returns {Array<number>} A New sorted array.
  */
 function mergeSort(nums) {}
 
@@ -80,7 +80,7 @@ module.exports = { merge, mergeSort };
  * - Space: O(n + m) -> O(n) linear.
  * @param {Array<number>} left
  * @param {Array<number>} right
- * @return {Array<number>} A new sorted array containing all the elements of
+ * @returns {Array<number>} A new sorted array containing all the elements of
  *    both given halves.
  */
 function merge(left, right) {
@@ -122,7 +122,7 @@ function merge(left, right) {
  * Avg: O(n log(n)) linearithmic.
  * Worst: O(n log(n)) linearithmic.
  * @param {Array<number>} nums
- * @return {Array<number>} A New sorted array.
+ * @returns {Array<number>} A New sorted array.
  */
 function mergeSort(nums) {
   if (nums.length === 1) {

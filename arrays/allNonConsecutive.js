@@ -22,7 +22,7 @@ const expected1 = [
  * @typedef {Array<{i: number, n: number}>} NonConsecNums Array of objects.
  * @property {number} i The index of the non consecutive number.
  * @property {number} n The non consecutive number itself.
- * @return {NonConsecNums}
+ * @returns {NonConsecNums}
  */
 function allNonConsecutive(sortedNums) {}
 
@@ -38,7 +38,7 @@ module.exports = { allNonConsecutive };
  * @typedef {Array<{i: number, n: number}>} NonConsecNums Array of objects.
  * @property {number} i The index of the non consecutive number.
  * @property {number} n The non consecutive number itself.
- * @return {NonConsecNums}
+ * @returns {NonConsecNums}
  */
 function allNonConsecutive(sortedNums) {
   const output = [];

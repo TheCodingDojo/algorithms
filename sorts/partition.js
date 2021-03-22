@@ -39,7 +39,7 @@ const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
  *    being processed.
  * @param {number} right The index indicating the end of the slice of array
  *    being processed.
- * @return {Array<number>} The idx where left section of smaller items ends.
+ * @returns {Array<number>} The idx where left section of smaller items ends.
  */
 function partition(nums = [], left = 0, right = nums.length - 1) {}
 
@@ -62,7 +62,7 @@ function partition(nums = [], left = 0, right = nums.length - 1) {}
  *    being processed.
  * @param {number} right The index indicating the end of the slice of array
  *    being processed.
- * @return {number} The index where the smaller section ends.
+ * @returns {number} The index where the smaller section ends.
  */
 function partition(nums, left = 0, right = nums.length - 1) {
   const midIdx = Math.floor((left + right) / 2);

@@ -35,7 +35,7 @@ const expected4 = 4;
  * - Space: O(?).
  * @param {Array<number>} sortedNums
  * @param {number} searchNum
- * @return {boolean} Whether the given num exists in the given array.
+ * @returns {boolean} Whether the given num exists in the given array.
  */
 function binarySearch(sortedNums, searchNum) {}
 

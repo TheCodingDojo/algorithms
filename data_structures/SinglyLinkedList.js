@@ -8,7 +8,7 @@ class Node {
    * @param {any} data The data to be added into this new instance of a Node.
    *    The data can be anything, just like an array can contain strings,
    *    numbers, objects, etc.
-   * @return {Node} This new Node instance is returned automatically without
+   * @returns {Node} This new Node instance is returned automatically without
    *    having to be explicitly written (implicit return).
    */
   constructor(data) {
@@ -35,7 +35,7 @@ class SinglyLinkedList {
   /**
    * Constructs a new instance of an empty linked list that inherits all the
    * methods.
-   * @return {SinglyLinkedList} The new list that is instantiated is implicitly
+   * @returns {SinglyLinkedList} The new list that is instantiated is implicitly
    *    returned without having to explicitly write "return".
    */
   constructor() {
@@ -46,7 +46,7 @@ class SinglyLinkedList {
    * Determines if this list is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean}
+   * @returns {boolean}
    */
   isEmpty() {
     return this.head === null;
@@ -58,7 +58,7 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = length of list.
    * - Space: O(1) constant.
    * @param {any} data The data to be added to the new node.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   insertAtBack(data) {
     const newBack = new Node(data);
@@ -83,7 +83,7 @@ class SinglyLinkedList {
    * @param {any} data The data to be added to the new node.
    * @param {?Node} runner The current node during the traversal of this list
    *    or null when the end of the list has been reached.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   insertAtBackRecursive(data, runner = this.head) {
     if (this.isEmpty()) {
@@ -103,7 +103,7 @@ class SinglyLinkedList {
    * - Time: O(n * m) n = list length, m = arr.length.
    * - Space: O(1) constant.
    * @param {Array<any>} vals The data for each new node.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   seedFromArr(vals) {
     for (const item of vals) {
@@ -116,7 +116,7 @@ class SinglyLinkedList {
    * Converts this list into an array containing the data of each node.
    * - Time: O(n) linear.
    * - Space: O(n).
-   * @return {Array<any>} An array of each node's data.
+   * @returns {Array<any>} An array of each node's data.
    */
   toArr() {
     const arr = [];
@@ -133,7 +133,7 @@ class SinglyLinkedList {
    * Determines the length of this list.
    * - Time: O(n) linear, n = length of list
    * - Space: O(1) constant
-   * @return {number} The length.
+   * @returns {number} The length.
    */
   length() {
     let len = 0;
@@ -152,7 +152,7 @@ class SinglyLinkedList {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {any} data The data for the new node.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   insertAtFront(data) {
     const newHead = new Node(data);
@@ -165,7 +165,7 @@ class SinglyLinkedList {
    * Removes the first node of this list.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {any} The data from the removed node.
+   * @returns {any} The data from the removed node.
    */
   removeHead() {
     if (this.isEmpty()) {
@@ -181,7 +181,7 @@ class SinglyLinkedList {
    * Calculates the average of this list.
    * - Time: O(n) linear, n = length of list.
    * - Space: O(1) constant.
-   * @return {number|NaN} The average of the node's data.
+   * @returns {number|NaN} The average of the node's data.
    */
   average() {
     let runner = this.head;
@@ -209,7 +209,7 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = length of list.
    * - Space: O(1) constant.
    * @param {any} val The data to search for in the nodes of this list.
-   * @return {boolean}
+   * @returns {boolean}
    */
   contains(val) {
     let runner = this.head;
@@ -230,7 +230,7 @@ class SinglyLinkedList {
    * @param {any} val The data to search for in the nodes of this list.
    * @param {?node} current The current node during the traversal of this list
    *    or null when the end of the list has been reached.
-   * @return {boolean}
+   * @returns {boolean}
    */
   containsRecursive(val, current = this.head) {
     if (current === null) {
@@ -246,7 +246,7 @@ class SinglyLinkedList {
    * Removes the last node of this list.
    * - Time: O(n) linear, n = length of list.
    * - Space: O(1) constant.
-   * @return {any} The data from the node that was removed.
+   * @returns {any} The data from the node that was removed.
    */
   removeBack() {
     let removedData = null;
@@ -279,7 +279,7 @@ class SinglyLinkedList {
    *    when the end of the list is reached.
    * @param {Node} maxNode Keeps track of the node that contains the current
    *    max integer as it's data.
-   * @return {?number} The max int or null if none.
+   * @returns {?number} The max int or null if none.
    */
   recursiveMax(runner = this.head, maxNode = this.head) {
     if (this.head === null) {
@@ -301,7 +301,7 @@ class SinglyLinkedList {
    * Retrieves the data of the second to last node in this list.
    * - Time: O(n - 1) n = list length -> O(n) linear.
    * - Space: O(1) constant.
-   * @return {any} The data of the second to last node or null if there is no
+   * @returns {any} The data of the second to last node or null if there is no
    *    second to last node.
    */
   secondToLast() {
@@ -325,7 +325,7 @@ class SinglyLinkedList {
    * - Space: O(1) constant.
    * @param {any} val The value to compare to the node's data to find the
    *    node to be removed.
-   * @return {boolean} Indicates if a node was removed or not.
+   * @returns {boolean} Indicates if a node was removed or not.
    */
   removeVal(val) {
     if (this.isEmpty()) {
@@ -397,7 +397,7 @@ class SinglyLinkedList {
    *    our algo doesn't create extra objects or arrays to take up more space.
    * @param {SinglyLinkedList} addList An instance of a different list whose
    *    whose nodes will be added to the back of this list.
-   * @return {SinglyLinkedList} This list with the added nodes.
+   * @returns {SinglyLinkedList} This list with the added nodes.
    */
   concat(addList) {
     let runner = this.head;
@@ -419,7 +419,7 @@ class SinglyLinkedList {
    * - Time: O(2n) n = list length -> O(n) linear,
    *    2nd loop could go to end if min is at end.
    * - Space: O(1) constant.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   moveMinToFront() {
     /* 
@@ -467,7 +467,7 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = list length. This avoids the extra loop in
    *    the above sln.
    * - Space: O(n) linear.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   moveMinFront() {
     if (this.isEmpty()) {
@@ -509,7 +509,7 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = list length, could split on last node.
    * - Space: O(1) constant.
    * @param {any} val The value in the node that the list should be split on.
-   * @return {SinglyLinkedList} The split list containing the nodes that are
+   * @returns {SinglyLinkedList} The split list containing the nodes that are
    *    no longer in this list.
    */
   splitOnVal(val) {
@@ -542,7 +542,7 @@ class SinglyLinkedList {
    * Retrieves the data of the middle node of this list.
    * - Time: O(1.5n) -> O(n) linear, n = length of list.
    * - Space: O(1) constant.
-   * @return {any} The data of the middle node or null if there is no middle.
+   * @returns {any} The data of the middle node or null if there is no middle.
    */
   getMiddleData() {
     let runner = this.head;
@@ -622,7 +622,7 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = list length. Position to insert could be at end.
    * - Space: O(1).
    * @param {number} data The data for the new node being inserted.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   insertAsc(data) {
     const newNode = new Node(data);
@@ -659,7 +659,7 @@ class SinglyLinkedList {
    * @property {string} Person.lastName
    * - Time: O(n) linear, n = list length.
    * - Space: O(n), the names var grows as list length increases.
-   * @return {string} A comma separated string of full names.
+   * @returns {string} A comma separated string of full names.
    */
   displayPeople() {
     let runner = this.head;
@@ -679,7 +679,7 @@ class SinglyLinkedList {
    * Removes all the nodes that have a negative integer as their data.
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @return {SinglyLinkedList} This list after the negatives are removed.
+   * @returns {SinglyLinkedList} This list after the negatives are removed.
    */
   removeNegatives() {
     if (this.isEmpty()) {
@@ -716,7 +716,7 @@ class SinglyLinkedList {
    * @property {string} Person.firstName
    * @property {string} Person.lastName
    * @param {Person} data The data for the new node being inserted.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   insertPersonAscAge(data) {
     const newNode = new Node(data);
@@ -749,7 +749,7 @@ class SinglyLinkedList {
    * Reverses this list in-place without using any extra lists.
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @return {SinglyLinkedList} This list.
+   * @returns {SinglyLinkedList} This list.
    */
   reverse() {
     /*
@@ -798,7 +798,7 @@ class SinglyLinkedList {
    * next points to a node that is behind it.
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @return {boolean} Whether the list has a loop or not.
+   * @returns {boolean} Whether the list has a loop or not.
    */
   hasLoop() {
     /**
@@ -835,7 +835,7 @@ class SinglyLinkedList {
    * nodes with duplicate data but no loop.
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @return {boolean} Whether the list has a loop or not.
+   * @returns {boolean} Whether the list has a loop or not.
    */
   hasLoopMap() {
     if (this.isEmpty()) {
@@ -862,7 +862,7 @@ class SinglyLinkedList {
    * - Time: O(2n) -> O(n) linear. The 2nd loop is to remove the extra seen key
    *    that was added.
    * - Space: O(n) because "seen" key is being stored n times.
-   * @return {boolean} Whether the list has a loop or not.
+   * @returns {boolean} Whether the list has a loop or not.
    */
   hasLoopSeen() {
     if (this.isEmpty()) {
@@ -897,7 +897,7 @@ class SinglyLinkedList {
    * - Space: O(1) constant.
    * @param {Node} runner The start or current node during traversal, or null
    *    when the end of the list is reached.
-   * @return {any} The data of the last node.
+   * @returns {any} The data of the last node.
    */
   recursiveLast(runner = this.head) {
     if (runner === null) {
@@ -914,7 +914,7 @@ class SinglyLinkedList {
    * duplicate data so that only one node of each integer data remains.
    * Time: O(n) linear, n = list length.
    * Space: O(1) constant.
-   * @return {SinglyLinkedList} This list after dupes are removed.
+   * @returns {SinglyLinkedList} This list after dupes are removed.
    */
   removeDupesSorted() {
     /* Approach: while runner isn't null
@@ -947,7 +947,7 @@ class SinglyLinkedList {
    * - Time: O(2n) -> O(n) linear, n = list length. The nested loop only
    *    runs 1 time through full list at most.
    * - Space: O(1) constant.
-   * @return {SinglyLinkedList} This list after any loop is broken.
+   * @returns {SinglyLinkedList} This list after any loop is broken.
    */
   breakLoopVisited() {
     if (!this.head) {
@@ -983,7 +983,7 @@ class SinglyLinkedList {
    * - Time: O(2n) -> O(n) linear, n = list length. The nested loop only
    *    runs 1 time through full list at most.
    * - Space: O(1) constant.
-   * @return {SinglyLinkedList} This list after any loop is broken.
+   * @returns {SinglyLinkedList} This list after any loop is broken.
    */
   breakLoopTortoiseHare() {
     if (this.isEmpty()) {
@@ -1032,7 +1032,7 @@ class SinglyLinkedList {
    * Creates a comma separated string of the node's data.
    * - Time: O(n) linear, n = list length.
    * - Space: O(n) linear, vals str grows as list grows.
-   * @return {string} The comma separate data of all the nodes.
+   * @returns {string} The comma separate data of all the nodes.
    */
   print() {
     let runner = this.head;

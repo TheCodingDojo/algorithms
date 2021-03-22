@@ -22,7 +22,7 @@ const expected3 = 0;
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} num
- * @return {number}
+ * @returns {number}
  */
 function recursiveSigma(num) {}
 

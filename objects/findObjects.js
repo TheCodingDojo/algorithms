@@ -39,7 +39,7 @@ const expected2 = [
  * - Space: O(?).
  * @param {Object} criteria
  * @param {Array<Object>} collection
- * @return {Array<Object>} The found objects.
+ * @returns {Array<Object>} The found objects.
  */
 function findObjects(criteria, collection) {}
 
@@ -61,7 +61,7 @@ module.exports = {
  * - Space: O(n) linear. All objects in collection could be a match.
  * @param {Object} criteria
  * @param {Array<Object>} collection
- * @return {Array<Object>} The found objects.
+ * @returns {Array<Object>} The found objects.
  */
 function findObjects(criteria, collection) {
   const foundDocuments = [];

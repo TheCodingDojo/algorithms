@@ -26,7 +26,7 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic when the array is reverse sorted.
  * @param {Array<number>} nums
- * @return {Array<number>} The given nums after being sorted.
+ * @returns {Array<number>} The given nums after being sorted.
  */
 function bubbleSort(nums) {}
 
@@ -40,7 +40,7 @@ module.exports = { bubbleSort };
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic when the array is reverse sorted.
  * @param {Array<number>} nums
- * @return {Array<number>} The given nums after being sorted.
+ * @returns {Array<number>} The given nums after being sorted.
  */
 function bubbleSort(nums) {
   let isSorted = false;

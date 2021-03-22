@@ -37,7 +37,7 @@ class Queue {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {any} item The new item to add to the back.
-   * @return {number} The new size of this queue.
+   * @returns {number} The new size of this queue.
    */
   enqueue(item) {
     this.items.push(item);
@@ -49,7 +49,7 @@ class Queue {
    * - Time: O(n) linear, due to having to shift all the remaining items to
    *    the left after removing first elem.
    * - Space: O(1) constant.
-   * @return {any} The first item or undefined if empty.
+   * @returns {any} The first item or undefined if empty.
    */
   dequeue() {
     return this.items.shift();
@@ -59,7 +59,7 @@ class Queue {
    * Retrieves the first item without removing it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {any} The first item or undefined if empty.
+   * @returns {any} The first item or undefined if empty.
    */
   front() {
     return this.items[0];
@@ -69,7 +69,7 @@ class Queue {
    * Returns whether or not this queue is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {boolean}
+   * @returns {boolean}
    */
   isEmpty() {
     return this.items.length === 0;
@@ -79,7 +79,7 @@ class Queue {
    * Retrieves the size of this queue.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @return {number} The length.
+   * @returns {number} The length.
    */
   size() {
     return this.items.length;
@@ -89,7 +89,7 @@ class Queue {
    * Logs the items of this queue.
    * - Time: O(n) linear.
    * - Space: O(n) linear.
-   * @return {string} The same string that is logged.
+   * @returns {string} The same string that is logged.
    */
   print() {
     const str = this.items.join(" ");
@@ -107,7 +107,7 @@ class Queue {
    *     array queue being O(n).
    * - Space: O(1) constant.
    * @param {Queue} q2 The queue to be compared against this queue.
-   * @return {boolean} Whether all the items of the two queues are equal and
+   * @returns {boolean} Whether all the items of the two queues are equal and
    *    in the same order.
    */
   compareQueues(q2) {
@@ -142,7 +142,7 @@ class Queue {
    * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
    *     array queue being O(n).
    * - Space: O(1) constant.
-   * @return {boolean} Whether the sum of the left and right halves is equal.
+   * @returns {boolean} Whether the sum of the left and right halves is equal.
    */
   isSumOfHalvesEqual() {
     const len = this.size();
@@ -180,7 +180,7 @@ class Queue {
    * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
    *     array queue being O(n).
    * - Space: O(n) from the stack being used to store the items again.
-   * @return {boolean}
+   * @returns {boolean}
    */
   isPalindrome() {
     let isPalin = true;

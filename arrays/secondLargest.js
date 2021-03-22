@@ -40,7 +40,7 @@ const expected8 = null;
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @return {?number} The second largest int from the given array or null.
+ * @returns {?number} The second largest int from the given array or null.
  *    The ? in front means it's nullable.
  */
 function secondLargest(nums) {
@@ -83,7 +83,7 @@ module.exports = { secondLargest };
  * - Space: O(1) constant because this algo doesn't create a new array or
  *    object that grows in size as the input array grows in size.
  * @param {Array<number>} nums
- * @return {?number} The second largest int from the given array or null.
+ * @returns {?number} The second largest int from the given array or null.
  *    The ? in front means it's nullable.
  */
 function secondLargest(nums) {

@@ -50,7 +50,7 @@ const expected11 = "twelve o' clock";
  * - Space: O(?).
  * @param {number} hour
  * @param {number} min
- * @return {string} The time in words.
+ * @returns {string} The time in words.
  */
 function timeInWords(hour, min) {}
 
@@ -64,7 +64,7 @@ module.exports = { timeInWords };
  * - Space: O(1) constant.
  * @param {number} hour
  * @param {number} min
- * @return {string} The time in words.
+ * @returns {string} The time in words.
  */
 function timeInWords(h, m) {
   const timeWords = [

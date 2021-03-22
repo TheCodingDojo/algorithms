@@ -28,7 +28,7 @@ const expected4 = "orldHello W";
  * @param {string} str
  * @param {number} n The amount of characters in the given str to rotate to the
  *    right.
- * @return {string} The string rotated by the given amount.
+ * @returns {string} The string rotated by the given amount.
  */
 function rotateStr(str, n) {}
 

@@ -44,7 +44,7 @@ const expected = ["Jane4", "Jon4", "Jon1", "Jane1", "Jane2", "Jon2"];
  * @param {Object} point The location of patient zero.
  * @param {number} point.x The row index (idx of nested array)
  * @param {number} point.y The column index (idx of item in row).
- * @return {Array<string|null>} Those that the infection has spread to
+ * @returns {Array<string|null>} Those that the infection has spread to
  *    due to proximity.
  */
 function coronaVirusFloodFill(grid, point) {}
@@ -68,7 +68,7 @@ module.exports = { coronaVirusFloodFill };
  * @typedef {Array<string|null>} newCases
  * @param {Object<string, boolean>} visitedIndexesTable To avoid recursively
  *    visiting already visited indexes.
- * @return {newCases} Those that the infection has spread to
+ * @returns {newCases} Those that the infection has spread to
  *    due to proximity.
  */
 function coronaVirusFloodFill(
