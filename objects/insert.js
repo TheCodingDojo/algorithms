@@ -47,8 +47,13 @@ module.exports = {
 /*****************************************************************************/
 
 /**
+ * Generates a SQL insert statement from the inputs
  * - Time: O(n) linear, n = num of keys in columnValuePairs.
  * - Space: O(n) linear.
+ * @param {string} tableName
+ * @param {Object} columnValuePairs
+ * @returns {string} A string formatted as a SQL insert statement where the
+ *    columns and values are extracted from columnValuePairs.
  */
 function insert(tableName, columnValuePairs) {
   let columns = "";

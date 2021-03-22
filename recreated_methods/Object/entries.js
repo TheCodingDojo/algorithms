@@ -25,10 +25,10 @@ const expected1 = [
  * Returns a 2d array of key value pairs from the given obj.
  * - Time: O(?).
  * - Space: O(?).
- * @param   {Object} obj
+ * @param {Object} obj
  * @typedef {Array<Array<string, any>>} output The nested array should look
  *    like [key, val]
- * @return  {output}
+ * @returns {output}
  */
 function entries(obj) {}
 
@@ -40,10 +40,10 @@ module.exports = { entries };
  * Returns a 2d array of key value pairs from the given obj.
  * - Time: O(n) linear n = num of keys in obj.
  * - Space: O(n) linear
- * @param   {Object} obj
+ * @param {Object} obj
  * @typedef {Array<Array<string, any>>} output The nested array should look
  *    like [key, val]
- * @return  {output}
+ * @returns {output}
  */
 function entries(obj) {
   const keyValPairs = [];
