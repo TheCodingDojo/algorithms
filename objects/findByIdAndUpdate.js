@@ -72,7 +72,7 @@ const expected3 = null;
  * @param {Array<Object>} collection
  * @returns {?Object} The object that was updated or null if no object found.
  */
-// function findByIdAndUpdate(id, updatedVals, collection) {}
+function findByIdAndUpdate(id, updatedVals, collection) {}
 
 module.exports = {
   findByIdAndUpdate,

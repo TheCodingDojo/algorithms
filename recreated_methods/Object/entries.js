@@ -7,7 +7,7 @@
   Do not include key value pairs from the given objects prototype (these are included by default when looping over an object's keys)
 */
 
-const proto = { keyOnProto: "val from proto" };
+const proto = { inheritance: "inherited key", keyOnProto: "val from proto" };
 
 const obj1 = Object.assign(Object.create(proto), {
   firstName: "Foo",
