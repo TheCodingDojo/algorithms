@@ -84,7 +84,8 @@ const expected4 = [
 ];
 
 /**
- * Filters the given items based on the search criteria.
+ * Filters the given items based on the search criteria using a startsWith
+ * search method.
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<Object>} items The items to be filtered.

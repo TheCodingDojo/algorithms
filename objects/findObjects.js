@@ -87,20 +87,7 @@ function findObjects(criteria, collection) {
   return foundDocuments;
 }
 
-/**
- * - Time: O(n * m) n = collection.length, m = num of keys in criteria.
- * - Space: O(n) linear. All objects in collection could be a match.
- */
-function findObjectsFunctional(criteria, collection) {
-  return collection.filter((doc) => {
-    for (const searchKey in criteria) {
-      if (
-        !doc.hasOwnProperty(searchKey) ||
-        doc[searchKey] !== criteria[searchKey]
-      ) {
-        return false;
-      }
-    }
-    return true;
-  });
-}
+const findObjectsFunctional = (criteria, collection) =>
+  collection.filter((item) =>
+    Object.keys(criteria).every((key) => item[key] === criteria[key])
+  );
