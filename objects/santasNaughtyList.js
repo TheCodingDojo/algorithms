@@ -77,8 +77,16 @@ module.exports = {
 /*****************************************************************************/
 
 /**
+ * Finds a list of people whose habits contain the given bad habit.
  * - Time: O(n * m). n = persons.length, m = habits.length.
  * - Space: O(n) linear. Every person could be matched.
+ * @typedef {Object} Person
+ * @property {string} firstName
+ * @property {string} lastName
+ * @property {Array<string>} habits
+ * @param {Array<Person>} persons
+ * @param {string} badHabit
+ * @returns {Array<Person>} The people that have the given bad habit.
  */
 function santasNaughtyList(persons, badHabit) {
   const coalRecipients = [];
