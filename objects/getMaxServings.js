@@ -14,7 +14,7 @@
 
   Side note (not needed for solution): Realistically, the values
   would be an object as well with the keys: unit (unit of measure), and amount.
-  If the avaialable ingredient was stored in a different unit,
+  If the available ingredient was stored in a different unit,
   a conversion table would be needed to convert units of measure.
 */
 
@@ -42,19 +42,22 @@ const available1 = {
 const expected1 = 1;
 // because only 1 live squid is available and that is the limiting ingredient
 
-// same as available1, except live squid has 10
+// same as available1, except live squid has 10.
 const available2 = { ...available1, ["live squid"]: 10 };
 const expected2 = 10;
 
-const available3 = { ...available1, ["live squid"]: 0 };
-const expected3 = 0;
+// same as available1 except live squid key is deleted.
+const available3 = { ...available1 };
+delete available3["live squid"];
+const expected3 = 0; // live squid key doesn't exist in available ingredients
 
 /**
  * Determines how many servings can be made of the given recipe.
  * - Time: O(?).
  * - Space: O(?).
- * @typedef {Object<string, number>} Ingredients Key value pairs are ingredient
- *    name and a quantity.
+ * @typedef {string} IngredientName
+ * @typedef {number} Quantity
+ * @typedef {Object<IngredientName, Quantity>} Ingredients
  * @param {Ingredients} recipe
  * @param {Ingredients} available
  * @returns {number} Max servings of the recipe that can be made.
@@ -105,7 +108,7 @@ function getMaxServings(recipe, available) {
  *    are all loops.
  * Space: O(2n) from .entries and .map array -> O(n) linear.
  */
-function getMaxServing(recipe, available) {
+function getMaxServingsFunctional(recipe, available) {
   return (
     Math.min(
       ...Object.entries(recipe).map(
