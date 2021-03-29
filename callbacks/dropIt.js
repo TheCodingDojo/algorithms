@@ -43,9 +43,14 @@ module.exports = { dropIt: dropIt };
 /*****************************************************************************/
 
 /**
+ * Removes every element in the array, starting from idx 0 until the callback
+ * function returns true when passed the iterated element.
  * - Time: O(n) linear. n = arr.length.
  * - Space: O(n) linear, due to .splice creating a new array of n length at
  *    most.
+ * @param {Array<any>} arr
+ * @callback cb A callback function that expects to receive an array element.
+ * @returns {Array<any>} The given array with only the remaining items.
  */
 function dropIt(arr, callback) {
   let delCount = 0;
