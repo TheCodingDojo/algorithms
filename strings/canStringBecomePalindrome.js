@@ -32,7 +32,8 @@ const expected6 = false;
  * Determines whether or not it is possible for the string's characters to be
  * rearranged into a palindrome.
  * - Space: O(?).
- * - Time: O(?). * @param {string} str
+ * - Time: O(?).
+ * @param {string} str
  * @returns {boolean} Whether the given str can be rearranged into a palindrome.
  */
 function canStringBecomePalindrome(str) {}

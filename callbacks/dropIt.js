@@ -11,18 +11,19 @@
   Return an empty array if the callback never returns true
 */
 
-const nums = [1, 4, 3, 6, 9, 15];
-
+const nums1 = [1, 4, 3, 6, 9, 15];
 const callback1 = (elem) => {
   return elem > 5;
 };
 const expected1 = [6, 9, 15];
 
+const nums2 = [...nums1];
 const callback2 = (elem) => {
   return elem > 2;
 };
 const expected2 = [4, 3, 6, 9, 15];
 
+const nums3 = [...nums1];
 const callback3 = (elem) => false;
 const expected3 = [];
 
@@ -32,10 +33,10 @@ const expected3 = [];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<any>} arr
- * @param {Function} callback
+ * @callback cb A callback function that expects to receive an array element.
  * @returns {Array<any>} The given array with only the remaining items.
  */
-function dropIt(arr, callback) {}
+function dropIt(arr, cb) {}
 
 module.exports = { dropIt: dropIt };
 
