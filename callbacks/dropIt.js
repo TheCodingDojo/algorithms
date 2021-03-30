@@ -53,19 +53,13 @@ module.exports = { dropIt: dropIt };
  * @returns {Array<any>} The given array with only the remaining items.
  */
 function dropIt(arr, callback) {
-  let delCount = 0;
-
-  for (const elem of arr) {
-    const callbackResult = callback(elem);
-
-    if (callbackResult !== true) {
-      delCount++;
-    } else {
-      break;
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      arr.splice(0, i);
+      return arr;
     }
   }
-
-  arr.splice(0, delCount);
+  arr.splice(0, arr.length);
   return arr;
 }
 
