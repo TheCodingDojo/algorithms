@@ -51,7 +51,9 @@ module.exports = { checkTicTacToeWinner };
 /*****************************************************************************/
 
 /**
- * Hard coded version.
+ * Hard coded version. If you present a hard-coded solution for most algos, you
+ * will likely be asked a follow up question about if the input size gets
+ * too large to hard-code.
  * Determines if there is a tic tac toe winner based on three in a row for "x"
  * or "o".
  * @param {Array<Array<string>>} g A 2 dim array tic tac toe grid.
@@ -73,8 +75,7 @@ const checkTicTacToeWinner = (g) =>
  * Determines if there is a tic tac toe winner based on three in a row for "x"
  * or "o".
  * Using loops is only an advantage over the hard-coded version if the game can
- * be expanded to a large grid. If you present a hard-coded solution, you are
- * likely to get a follow up question that breaks the hard-coded solution.
+ * be expanded to a larger grid.
  * Time: O(n^2). n = grid.length.
  * Space: O(n^2). colSums stores every letter of every column.
  * @param {Array<Array<string>>} grid
@@ -105,13 +106,14 @@ function checkTicTacToeWinner2(grid) {
 
       /**
        * Check during the loop for early exits. Early exits only really matter
-       * if the grid could be large (potential follow up question?)
+       * if the grid could become large (could be a bonus add on requirement)
+       *
        * In order to check only when we know a row, col, or diag summation is
        * done, we would need if checks to determine if the sum is done, which
-       * won't reduce the # of conditions.
+       * won't reduce the # of conditions being checked here.
        *
-       * .some here is used just to avoid a large condition with duplicate
-       * Math.abs checks.
+       * .some here is used just to avoid a large OR condition with the same
+       * comparison repeated for diff vars.
        */
       if (
         [rowConcat, colConcats[j], diag1Concat, diag2Concat].some(
