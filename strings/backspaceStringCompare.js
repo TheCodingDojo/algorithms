@@ -29,15 +29,14 @@ const expected4 = false;
 // Explanation: S becomes "c" while T becomes "b".
 
 /**
- * Determines if @S and @T are equal after the backspace
- * characters "#" are processed.
- * @param   {string} S
- * @param   {string} T
- *          @S and @T contain "#" chars which represent
- *          a backspace that needs to be processed.
- * @return  {boolean}
+ * Determines if the given strings are equal after the backspace characters
+ * "#" are processed.
  * - Time: O(?).
  * - Space: O(?).
+ * @param {string} S
+ * @param {string} T
+ * @returns {boolean} Whether the given strings are equal after backspaces
+ *    have been processed.
  */
 function backspaceStringCompare(S, T) {}
 
@@ -46,14 +45,18 @@ module.exports = { backspaceStringCompare };
 /*****************************************************************************/
 
 /**
- * - Time:    O(n + m + p) -> O(n) linear
- *          n = @S length from the get stack fn
- *          m = @T length from the get stack fn
- *          p = the length of @S and @T after the
- *          backspaces were removed.
- * Best:    O(n + m) because the earliest exit is
- *          after the two getBackspacedStack calls.
- * - Space:   O(n + m)
+ * Determines if the given strings are equal after the backspace characters
+ * "#" are processed.
+ * - Time: O(n + m + p) -> O(n) linear. n = S.length, m = T.length from the
+ *    getBackspacedStack call. p = the length of S and T after the backspaces
+ *    were removed.
+ * Best: O(n + m) because the earliest exit is after the two getBackspacedStack
+ *    calls.
+ * - Space: O(n + m) -> O(n).
+ * @param {string} S
+ * @param {string} T
+ * @returns {boolean} Whether the given strings are equal after backspaces
+ *    have been processed.
  */
 function backspaceStringCompare(S, T) {
   const sBackspaced = getBackspacedStack(S);
