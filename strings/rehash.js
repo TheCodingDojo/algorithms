@@ -31,11 +31,18 @@ function rehash(s) {
   const letterHashCounts = {};
 
   for (let i = 0; i < s.length; ) {
-    let char = s[i++]; // increment to the num after letter.
+    // Retrieve letter at current index then increment to the num after.
+    let char = s[i++];
     let numStr = "";
 
-    // find all digits
-    while (!isNaN(parseInt(s[i]))) {
+    /**
+     * Look ahead to find potentially multiple digits after letter.
+     * parseInt returns NaN if it fails to parse to a number.
+     * We can't simply check for a truthy parsed int because 0 is falsy.
+     * We can't use typeof because typeof NaN is "number". This is why we use
+     * not Not a Number to check if we parsed a number.
+     */
+    while (i < s.length && !isNaN(parseInt(s[i]))) {
       numStr += s[i++];
     }
 
