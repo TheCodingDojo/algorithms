@@ -1,6 +1,6 @@
 const {
   backspaceStringCompare,
-} = require("../../strings/backspaceStringCompare");
+} = require("../../strings/backspaceStringCompareTEST");
 const argFormatter = require("../helpers/argFormatter");
 
 describe("backspaceStringCompare", () => {

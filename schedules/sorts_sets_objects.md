@@ -68,7 +68,7 @@
    - [canStringBecomePalindrome](../strings/canStringBecomePalindrome.js) | [canStringBecomePalindromeSpec](../spec/strings/canStringBecomePalindromeSpec.js)
 2. Tue
    - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
-   - [backSpaceStringCompare](../strings/backSpaceStringCompare.js) | [backSpaceStringCompareSpec](../spec/strings/backSpaceStringCompareSpec.js)
+   - [backspaceStringCompare](../strings/backspaceStringCompare.js) | [backspaceStringCompareSpec](../spec/strings/backspaceStringCompareSpec.js)
 3. Wed
    - [swapTwoInts](../misc/swapTwoInts.js)
    - [LRUCache](../design/LRUCache.js) | [LRUCacheSpec](../spec/design/LRUCacheSpec.js)
