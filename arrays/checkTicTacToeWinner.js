@@ -44,7 +44,7 @@ const expected4 = true;
  * @param {Array<Array<string>>} grid
  * @returns {boolean} Whether there is a winner or not.
  */
-function checkTicTacToeWinner2(grid) {}
+function checkTicTacToeWinner(grid) {}
 
 module.exports = { checkTicTacToeWinner };
 
@@ -59,7 +59,7 @@ module.exports = { checkTicTacToeWinner };
  * @param {Array<Array<string>>} g A 2 dim array tic tac toe grid.
  * @returns {boolean} Whether there is a winner or not.
  */
-const checkTicTacToeWinner = (g) =>
+const checkTicTacToeWinnerHardCoded = (g) =>
   [
     g[0][0] + g[0][1] + g[0][2], // row1
     g[1][0] + g[1][1] + g[1][2], // row2
@@ -81,7 +81,7 @@ const checkTicTacToeWinner = (g) =>
  * @param {Array<Array<string>>} grid
  * @returns {boolean} Whether there is a winner or not.
  */
-function checkTicTacToeWinner2(grid) {
+function checkTicTacToeWinner(grid) {
   let diag1Concat = "";
   let diag2Concat = "";
   const colConcats = [];
@@ -128,7 +128,7 @@ function checkTicTacToeWinner2(grid) {
 }
 
 // Code golf
-const checkTicTacToeWinner3 = (g) =>
+const checkTicTacToeWinner2 = (g) =>
   [
     g.map((row) => row.reduce((s, curr) => s + curr)), // array of concatenated row vals
     g.map((_, i) => g.reduce((s, _, j) => s + g[j][i], "")), // array of concatenated col vals
