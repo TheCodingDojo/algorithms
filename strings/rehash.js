@@ -5,8 +5,6 @@ Given to alumni by Riot games in 2021.
 const str1 = "b70a164c32a20c10";
 const expected1 = "a184b70c42";
 
-module.exports = { rehash };
-
 /**
  * Rehashes an incorrectly hashed string by combining letter count occurrences
  * and alphabetizing them.
@@ -17,19 +15,77 @@ module.exports = { rehash };
  */
 function rehash(s) {}
 
+module.exports = { rehash };
+
 /*****************************************************************************/
 
 /**
  * Rehashes an incorrectly hashed string by combining letter count occurrences
  * and alphabetizing them.
- * Time: O(n) linear. The nested while loop is incrementing i as well.
- * Space: O(n) linear.
+ * Time: O(n) linear.
+ * Space: O(2n) -> O(n) linear. Duplicate storage of str in obj and new str.
  * @param {string} s An incorrectly hashed string.
  * @returns {string} The correctly rehashed string alphabetized.
  */
-function rehash(s) {
+function rehash(str) {
+  const letterHashCounts = {};
+  let numStr = "";
+  let letter = str[0];
+
+  for (let i = 1; i < str.length; i++) {
+    const num = parseInt(str[i]);
+
+    /**
+     * Not Not a Number means it is a number. The below if is not an else b/c
+     * both of these need to run on the last iteration since it ends on a num
+     * we have to concat the num first so we finish processing the last letter
+     * and it's corresponding numbers.
+     */
+    if (!isNaN(num)) {
+      numStr += str[i];
+    }
+
+    // letter found, means we have passed digits or at end.
+    if (isNaN(num) || i === str.length - 1) {
+      const letterCount = parseInt(numStr);
+
+      if (letter in letterHashCounts) {
+        letterHashCounts[letter] += letterCount;
+      } else {
+        letterHashCounts[letter] = letterCount;
+      }
+
+      // reset for next letter and it's following digits
+      letter = str[i];
+      numStr = "";
+    }
+  }
+
+  const alphabetized = Object.keys(letterHashCounts).sort();
+
+  let newHash = "";
+
+  // This could have been chained after the sort as a .forEach and then concat
+  // the string, or .reduce instead to create the string to return.
+  for (let i = 0; i < alphabetized.length; i++) {
+    const letter = alphabetized[i];
+    newHash += letter + letterHashCounts[letter];
+  }
+
+  return newHash;
+}
+
+/**
+ * Time: O(n) linear. The nested while loop increments "i" as well so every
+ *    iteration of it reduces the iterations of the outer for loop so there
+ *    is no back-tracking.
+ * Space: O(2n) -> O(n) linear. Duplicate storage of str in obj and new str.
+ */
+function rehash2(s) {
   const letterHashCounts = {};
 
+  // This for loop could be a while loop. It doesn't increment up here because
+  // we are incrementing inside it.
   for (let i = 0; i < s.length; ) {
     // Retrieve letter at current index then increment to the num after.
     let char = s[i++];
