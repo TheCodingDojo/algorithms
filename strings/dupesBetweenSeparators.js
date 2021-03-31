@@ -9,7 +9,7 @@ Separators:
   -
   ;
   :
-  and a spaces
+  space character
 */
 
 const str1 = "to be,; --or\tnot  : ;;; to-:: be";
@@ -33,7 +33,8 @@ module.exports = { dupesBetweenSeparators };
  * Finds all duplicated words in a string with the following separators:
  * spaces, tabs, hyphens, commas, colons, and semicolons.
  * Time: O(n + m) -> O(n) linear. n = s.length, m = separators.length.
- * Space: O(n + m) -> O(n) linear.
+ * Space: O(2n + m) -> O(n) linear. The 2n is from seen and dupes storing
+ *    same words that are in the string.
  * @param {string} s
  * @param {string} separators A string of characters to server as separators.
  *    This param wasn't part of the spec, but makes the function more flexible.
