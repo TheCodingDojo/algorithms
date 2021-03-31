@@ -18,3 +18,7 @@
 ## Arrays
 
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
+
+## Misc
+
+- [swapTwoInts](../misc/swapTwoInts.js)
