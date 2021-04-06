@@ -87,9 +87,8 @@ class SinglyLinkedList {
 
 const emptyList = new SinglyLinkedList();
 
-const singleNodeList = new SinglyLinkedList().insertAtBack(1);
-const biNodeList = new SinglyLinkedList().insertAtBack(1).insertAtBack(2);
-
+const singleNodeList = new SinglyLinkedList().seedFromArr([1]);
+const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
 const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
 const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
 const unorderedList = new SinglyLinkedList().seedFromArr([
