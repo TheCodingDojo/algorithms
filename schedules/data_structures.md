@@ -206,6 +206,14 @@ average() {}
 
 ```js
 /**
+ * Removes the last node of this list.
+ * - Time: (?).
+ * - Space: (?).
+ * @returns {any} The data from the node that was removed.
+ */
+removeBack() {}
+
+/**
  * Determines whether or not the given search value exists in this list.
  * - Time: (?).
  * - Space: (?).
@@ -224,14 +232,6 @@ contains(val) {}
  * @returns {boolean}
  */
 containsRecursive(val, current = this.head) {}
-
-/**
- * Removes the last node of this list.
- * - Time: (?).
- * - Space: (?).
- * @returns {any} The data from the node that was removed.
- */
-removeBack() {}
 
 // EXTRA
 /**
@@ -265,8 +265,7 @@ recursiveMax(runner = this.head, maxNode = this.head) {}
  * @returns {any} The data of the second to last node or null if there is no
  *    second to last node.
  */
-secondToLast() {
-   if (!this.head || !this.head.next) {}
+secondToLast() {}
 
 /**
  * Removes the node that has the matching given val as it's data.

@@ -249,6 +249,37 @@ class SinglyLinkedList {
    * @returns {any} The data from the node that was removed.
    */
   removeBack() {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    // Only 1 node.
+    if (this.head.next === null) {
+      return this.removeHead();
+    }
+
+    // More than 1 node.
+    let runner = this.head;
+
+    while (runner.next.next) {
+      runner = runner.next;
+    }
+
+    // after while loop finishes, runner is now at 2nd to last node
+    const removedData = runner.next.data;
+    runner.next = null; // remove it from list
+    return removedData;
+  }
+
+  /**
+   * This version uses more conditions instead of more returns. It is a good
+   * example of how more returns can make the code easier to read and cleaner.
+   * Removes the last node of this list.
+   * - Time: O(n) linear, n = length of list.
+   * - Space: O(1) constant.
+   * @returns {any} The data from the node that was removed.
+   */
+  removeBack2() {
     let removedData = null;
 
     if (!this.isEmpty()) {
