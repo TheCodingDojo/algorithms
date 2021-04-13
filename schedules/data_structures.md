@@ -355,7 +355,7 @@ splitOnVal(val) {}
 - [NextQueue](../data_structures/NextQueue.js)
 - [AlgoORM](../csharp/AlgoORM/Program.cs) can be optionally given just before the first entity framework lecture to give students a better understanding of ORMs
 
-### Documented Stack Class Setup
+### W2 Mon
 
 ```js
 /**
@@ -381,8 +381,6 @@ class Stack {
 }
 ```
 
-### W2 Mon
-
 - A Stack is a LIFO (Last in First Out) data structure
 - Design a class to represent a stack using an array to store the items
 - Recreate the stack class using a singly linked list to store the items instead of an array
@@ -394,6 +392,30 @@ class Stack {
   - peek (return top item without removing)
 
 ### W2 Tue
+
+```js
+/**
+ * Class to represent a queue using an array to store the queued items.
+ * Follows a FIFO (First In First Out) order where new items are added to the
+ * back and items are removed from the front.
+ */
+class Queue {
+  /**
+   * The constructor is executed when instantiating a new Queue() to construct
+   * a new instance.
+   * @returns {Queue} This new Queue instance is returned without having to
+   *    explicitly write 'return' (implicit return).
+   */
+  constructor() {
+    this.items = [];
+  }
+
+  // methods go here
+  hello() {
+    console.log("world");
+  }
+}
+```
 
 - A Queue is a FIFO (First in First Out) data structure
 - Design a class to represent a queue using an array to store the items.
