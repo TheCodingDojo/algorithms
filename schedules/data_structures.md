@@ -379,6 +379,19 @@ class Stack {
     console.log("world");
   }
 }
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedListStack {
+  constructor() {
+    this.head = null;
+  }
+}
 ```
 
 - A Stack is a LIFO (Last in First Out) data structure
