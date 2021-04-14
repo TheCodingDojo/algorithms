@@ -374,10 +374,46 @@ class Stack {
     this.items = [];
   }
 
-  // methods go here
-  hello() {
-    console.log("world");
-  }
+  /**
+   * Adds a new given item to the top / back of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @param {any} item The new item to be added to the top / back.
+   * @returns {number} The new length of this stack.
+   */
+  push(item) {}
+
+  /**
+   * Removes the top / last item from this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The removed item or undefined if this stack was empty.
+   */
+  pop() {}
+
+  /**
+   * Retrieves the top / last item from this stack without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The top / last item of this stack.
+   */
+  peek() {}
+
+  /**
+   * Returns whether or not this stack is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean}
+   */
+  isEmpty() {}
+
+  /**
+   * Returns the size of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {number} The length.
+   */
+  size() {}
 }
 
 class Node {
@@ -456,6 +492,36 @@ class Queue {
 - Extra: MinStack
   - Design a stack that supports push, pop, top, and min methods where the min method retrieves the minimum int in the stack
   - Bonus: retrieve min element in constant time (no looping).
+
+```js
+  /**
+   * Compares this queue to another given queue to see if they are equal.
+   * Avoid indexing the queue items directly via bracket notation, use the
+   * queue methods instead for practice.
+   * Use no extra array or objects.
+   * The queues should be returned to their original order when done.
+   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
+   *     array queue being O(n).
+   * - Space: O(1) constant.
+   * @param {Queue} q2 The queue to be compared against this queue.
+   * @returns {boolean} Whether all the items of the two queues are equal and
+   *    in the same order.
+   */
+
+  compareQueues(q2) {}
+  /**
+   * Determines if the queue is a palindrome (same items forward and backwards).
+   * Avoid indexing queue items directly via bracket notation, instead use the
+   * queue methods for practice.
+   * Use only 1 stack as additional storage, no other arrays or objects.
+   * The queue should be returned to its original order when done.
+   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
+   *     array queue being O(n).
+   * - Space: O(n) from the stack being used to store the items again.
+   * @returns {boolean}
+   */
+  isPalindrome() {}
+```
 
 ### W2 Thur
 

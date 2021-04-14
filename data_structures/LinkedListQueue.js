@@ -20,14 +20,22 @@ class LinkedListQueue {
     this.size = 0;
   }
 
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean} Indicates if the list is empty.
+   */
   isEmpty() {
     return this.head === null;
   }
 
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * Adds a given val to the back of the queue.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @param {any} val
+   * @returns {number} The new size of the queue.
+   */
   enqueue(val) {
     const newTail = new Node(val);
 
@@ -42,8 +50,11 @@ class LinkedListQueue {
     return ++this.size;
   }
 
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The removed item.
+   */
   dequeue() {
     // remove head
     if (!this.head) {
@@ -61,40 +72,39 @@ class LinkedListQueue {
     return dequeued.data;
   }
 
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * Retrieves the first item without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The first item.
+   */
   front() {
     return this.head ? this.head.data : null;
   }
 
-  // Time: O(n) linear
-  // Space: O(1)
-  contains(val) {
+  /**
+   * Determines if the given item is in the queue.
+   * - Time: O(n) linear.
+   * - Space: O(1) constant.
+   * @param {any} searchVal
+   * @returns {boolean}
+   */
+  contains(searchVal) {
     let runner = this.head;
 
     while (runner) {
-      if (runner.val === val) return true;
+      if (runner.searchVal === searchVal) return true;
       runner = runner.next;
     }
     return false;
   }
 
-  // Time: O(n) linear
-  // Space: O(n)
-  print() {
-    let runner = this.head;
-    let vals = "";
-
-    while (runner) {
-      vals += `${runner.data}${runner.next ? ", " : ""}`;
-      runner = runner.next;
-    }
-    console.log(vals);
-    return vals;
-  }
-
-  // Time: O(n) linear since enqueue is O(1), n = vals.length
-  // Space: O(1)
+  /**
+   * Enqueues each of the given items.
+   * - Time: O(n) linear since enqueue is O(1), n = vals.length.
+   * - Space: O(1) constant.
+   * @param {Array<any>} vals
+   */
   seed(vals) {
     vals.forEach((val) => this.enqueue(val));
   }

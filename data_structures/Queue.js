@@ -134,6 +134,43 @@ class Queue {
   }
 
   /**
+   * Determines if the queue is a palindrome (same items forward and backwards).
+   * Avoid indexing queue items directly via bracket notation, instead use the
+   * queue methods for practice.
+   * Use only 1 stack as additional storage, no other arrays or objects.
+   * The queue should be returned to its original order when done.
+   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
+   *     array queue being O(n).
+   * - Space: O(n) from the stack being used to store the items again.
+   * @returns {boolean}
+   */
+  isPalindrome() {
+    let isPalin = true;
+    const stack = new Stack(),
+      len = this.size();
+
+    for (let i = 0; i < len; i++) {
+      let dequeued = this.dequeue();
+      stack.push(dequeued);
+      // add it back so the queue items and order is restored at the end
+      this.enqueue(dequeued);
+    }
+
+    for (let i = 0; i < len; i++) {
+      let dequeued = this.dequeue();
+      let popped = stack.pop();
+
+      if (popped !== dequeued) {
+        isPalin = false;
+      }
+
+      // add it back so the queue items and order is restored at the end
+      this.enqueue(dequeued);
+    }
+    return isPalin;
+  }
+
+  /**
    * Determines whether the sum of the left half of the queue items is equal to
    * the sum of the right half. Avoid indexing the queue items directly via
    * bracket notation, use the queue methods instead for practice.
@@ -169,43 +206,6 @@ class Queue {
       this.enqueue(dequeued);
     }
     return leftSum === rightSum;
-  }
-
-  /**
-   * Determines if the queue is a palindrome (same items forward and backwards).
-   * Avoid indexing queue items directly via bracket notation, instead use the
-   * queue methods for practice.
-   * Use only 1 stack as additional storage, no other arrays or objects.
-   * The queue should be returned to its original order when done.
-   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
-   *     array queue being O(n).
-   * - Space: O(n) from the stack being used to store the items again.
-   * @returns {boolean}
-   */
-  isPalindrome() {
-    let isPalin = true;
-    const stack = new Stack(),
-      len = this.size();
-
-    for (let i = 0; i < len; i++) {
-      let dequeued = this.dequeue();
-      stack.push(dequeued);
-      // add it back so the queue items and order is restored at the end
-      this.enqueue(dequeued);
-    }
-
-    for (let i = 0; i < len; i++) {
-      let dequeued = this.dequeue();
-      let popped = stack.pop();
-
-      if (popped !== dequeued) {
-        isPalin = false;
-      }
-
-      // add it back so the queue items and order is restored at the end
-      this.enqueue(dequeued);
-    }
-    return isPalin;
   }
 
   /* 
