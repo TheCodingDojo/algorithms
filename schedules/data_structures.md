@@ -500,9 +500,8 @@ class Queue {
    * queue methods instead for practice.
    * Use no extra array or objects.
    * The queues should be returned to their original order when done.
-   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
-   *     array queue being O(n).
-   * - Space: O(1) constant.
+   * - Time: O(?).
+   * - Space: O(?).
    * @param {Queue} q2 The queue to be compared against this queue.
    * @returns {boolean} Whether all the items of the two queues are equal and
    *    in the same order.
@@ -515,9 +514,8 @@ class Queue {
    * queue methods for practice.
    * Use only 1 stack as additional storage, no other arrays or objects.
    * The queue should be returned to its original order when done.
-   * - Time: O(n^2) quadratic, n = queue length. Quadratic due to dequeue on an
-   *     array queue being O(n).
-   * - Space: O(n) from the stack being used to store the items again.
+   * - Time: O(?).
+   * - Space: O(?).
    * @returns {boolean}
    */
   isPalindrome() {}
@@ -531,39 +529,53 @@ class Queue {
   - Restore the queue to it's original state before returning.
 - [TwoStackQueue](../data_structures/QueueUsingTwoStacks.js)
 
-  - ```js
-    // Import our stack data structure to use in this file.
-    const Stack = require("./Stack");
+```js
+  /**
+   * Determines whether the sum of the left half of the queue items is equal to
+   * the sum of the right half. Avoid indexing the queue items directly via
+   * bracket notation, use the queue methods instead for practice.
+   * Use no extra array or objects.
+   * The queue should be returned to it's original order when done.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {boolean} Whether the sum of the left and right halves is equal.
+   */
+  isSumOfHalvesEqual() {}
+```
 
-    /**
-     * Class to represent a Queue but is implemented using two stacks to store the
-     * queued items without using any other objects or arrays to store the items.
-     * Retains the FIFO (First in First Out) ordering when adding / removing items.
-     */
-    class TwoStackQueue {
-      constructor() {
-        this.stack1 = new Stack();
-        this.stack2 = new Stack();
-      }
+```js
+// Import our stack data structure to use in this file.
+const Stack = require("./Stack");
 
-      /**
-       * Adds a new item to the back of the queue.
-       * - Time: O(?).
-       * - Space: O(?).
-       * @param {any} item To be added.
-       * @returns {number} The new number of items in the queue.
-       */
-      enqueue(item) {}
+/**
+ * Class to represent a Queue but is implemented using two stacks to store the
+ * queued items without using any other objects or arrays to store the items.
+ * Retains the FIFO (First in First Out) ordering when adding / removing items.
+ */
+class TwoStackQueue {
+  constructor() {
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
+  }
 
-      /**
-       * Removes the next item in the line / queue.
-       * - Time: O(?).
-       * - Space: O(?).
-       * @returns {any} The removed item.
-       */
-      dequeue() {}
-    }
-    ```
+  /**
+   * Adds a new item to the back of the queue.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} item To be added.
+   * @returns {number} The new number of items in the queue.
+   */
+  enqueue(item) {}
+
+  /**
+   * Removes the next item in the line / queue.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The removed item.
+   */
+  dequeue() {}
+}
+```
 
 - Extra: NextQueue
   - Design a Queue class that automatically sends every 3rd dequeued person object to a next queue that can be specified.
@@ -644,7 +656,7 @@ const emptyTree = new BinarySearchTree();
 const oneNodeTree = new BinarySearchTree();
 oneNodeTree.root = new Node(10);
 
-/* twoLevelTree 
+/* twoLevelTree
         root
         10
       /   \

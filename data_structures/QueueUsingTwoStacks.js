@@ -1,15 +1,3 @@
-// Starter code
-
-// Create Queue Using Two Stacks
-/* 
-  class TwoStackQueue {
-    constructor() {
-      this.stack1 = new Stack();
-      this.stack2 = new Stack();
-    }
-  }
-*/
-
 // Import our stack data structure to use in this file.
 const Stack = require("./Stack");
 
