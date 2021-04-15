@@ -529,7 +529,7 @@ class Queue {
   - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
   - DO NOT manually index the queue items via bracket notation, only use the provided queue methods, use no additional arrays or objects for storage.
   - Restore the queue to it's original state before returning.
-- TwoStackQueue
+- [TwoStackQueue](../data_structures/QueueUsingTwoStacks.js)
 
   - ```js
     // Import our stack data structure to use in this file.
