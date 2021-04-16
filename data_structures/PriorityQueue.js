@@ -107,16 +107,6 @@ class PriorityQueue {
   isEmpty() {
     return this.items.length == 0;
   }
-
-  /**
-   * Builds a string of all the queue items.
-   * - Time: O(n) linear.
-   * - Space: O(1) constant.
-   * @returns {string}
-   */
-  print() {
-    return this.items.reduce((str, qEl) => (str += qEl.element + " "), "");
-  }
 }
 
 module.exports = PriorityQueue;
