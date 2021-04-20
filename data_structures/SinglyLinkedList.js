@@ -285,8 +285,7 @@ class SinglyLinkedList {
     if (!this.isEmpty()) {
       if (this.head.next === null) {
         // head only node
-        removedData = this.head.data;
-        this.head = null; // remove it from list
+        removedData = this.removeHead();
       } else {
         let runner = this.head;
         // right of && will only be checked if left is true
