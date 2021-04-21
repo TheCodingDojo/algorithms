@@ -245,13 +245,13 @@ class BinarySearchTree {
         return this;
       }
       return this.insertRecursive(newVal, curr.right);
-    } else {
-      if (curr.left === null) {
-        curr.left = new Node(newVal);
-        return this;
-      }
-      return this.insertRecursive(newVal, curr.left);
     }
+
+    if (curr.left === null) {
+      curr.left = new Node(newVal);
+      return this;
+    }
+    return this.insertRecursive(newVal, curr.left);
   }
 
   /**
