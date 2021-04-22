@@ -566,4 +566,6 @@ fullTree
 
 module.exports = { Node, BinarySearchTree };
 
-console.log(fullTree.isFull());
+// console.log(fullTree.toArrPreorder());
+// console.log(fullTree.toArrInorder());
+console.log(fullTree.toArrPostorder());
