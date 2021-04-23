@@ -1,0 +1,37 @@
+ID                                : 0
+Status                            : Ok
+Name                              : OS
+State                             : Ready
+Hot Spare Policy violated         : Not Assigned
+Encrypted                         : Not Applicable
+Layout                            : RAID-5
+Size                              : 200.00 GB (214748364800 bytes)
+T10 Protection Information Status : No
+Associated Fluid Cache State      : Not Applicable
+Device Name                       : Windows Disk 0
+Bus Protocol                      : SATA
+Media                             : HDD
+Read Policy                       : No Read Ahead
+Write Policy                      : Write Back
+Cache Policy                      : Not Applicable
+Stripe Element Size               : 64 KB
+Disk Cache Policy                 : Enabled
+
+ID                                : 1
+Status                            : Ok
+Name                              : DATA
+State                             : Ready
+Hot Spare Policy violated         : Not Assigned
+Encrypted                         : Not Applicable
+Layout                            : RAID-5
+Size                              : 7,250.00 GB (7784628224000 bytes)
+T10 Protection Information Status : No
+Associated Fluid Cache State      : Not Applicable
+Device Name                       : Windows Disk 1
+Bus Protocol                      : SATA
+Media                             : HDD
+Read Policy                       : No Read Ahead
+Write Policy                      : Write Back
+Cache Policy                      : Not Applicable
+Stripe Element Size               : 64 KB
+Disk Cache Policy                 : Enable
