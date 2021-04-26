@@ -27,8 +27,14 @@ function outputToJson(filePath = "./output.txt") {
         // Comma before new KVP unless it's the first KVP.
         str[str.length - 1] !== "{" && (str += ",");
 
-        const [key, val] = row.split(":");
-        return str + `"${key.trim()}": "${val.trim()}"`;
+        let [key, val] = row.split(":");
+        const trimmedVal = val.trim();
+        val =
+          trimmedVal !== "true" && trimmedVal !== "false" && isNaN(+trimmedVal)
+            ? `"${trimmedVal}"`
+            : trimmedVal;
+
+        return str + `"${key.trim()}": ${val}`;
       }, "[{");
     return JSON.parse(jsonStr);
   } catch (error) {
