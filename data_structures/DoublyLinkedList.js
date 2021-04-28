@@ -167,27 +167,34 @@ class DoublyLinkedList {
    * @returns {boolean} Indicates if the new node was added.
    */
   insertAfter(targetVal, newVal) {
-    const newNode = new Node(newVal);
+    if (this.isEmpty()) {
+      return false;
+    }
+
     let runner = this.head;
 
-    while (runner) {
-      if (runner.data === targetVal) {
-        newNode.prev = runner;
-        newNode.next = runner.next;
-        // below && will only run the right side if runner.next isn't null
-        // runner.next is null if the targetVal is the tail
-        runner.next && (runner.next.prev = newNode);
-        runner.next = newNode;
-
-        if (runner === this.tail) {
-          this.tail = newNode;
-        }
-        return true;
-      } else {
-        runner = runner.next;
-      }
+    // runner && is in case runner becomes null so we don't check null.data
+    while (runner && runner.data !== targetVal) {
+      runner = runner.next;
     }
-    return false;
+
+    if (runner === null) {
+      return false;
+    }
+
+    const newNode = new Node(newVal);
+    newNode.prev = runner;
+    newNode.next = runner.next;
+
+    if (runner === this.tail) {
+      this.tail = newNode;
+    } else {
+      // if runner was tail then next would be null.
+      runner.next.prev = newNode;
+    }
+
+    runner.next = newNode;
+    return true;
   }
 
   /**
@@ -201,27 +208,35 @@ class DoublyLinkedList {
    * @returns {boolean} Indicates if the new node was added.
    */
   insertBefore(targetVal, newVal) {
-    const newNode = new Node(newVal);
+    if (this.isEmpty()) {
+      return false;
+    }
+
     let runner = this.head;
 
-    while (runner) {
-      if (runner.data === targetVal) {
-        newNode.next = runner;
-        newNode.prev = runner.prev;
-        // runner.prev is null if runner is the head
-        // so only do the right side of && if runner.prev isn't null
-        runner.prev && (runner.prev.next = newNode);
-        runner.prev = newNode;
-
-        if (runner === this.head) {
-          this.head = newNode;
-        }
-        return true;
-      } else {
-        runner = runner.next;
-      }
+    // runner && is in case runner becomes null so we don't check null.data
+    while (runner && runner.data !== targetVal) {
+      runner = runner.next;
     }
-    return false;
+
+    if (runner === null) {
+      return false;
+    }
+
+    const newNode = new Node(newVal);
+    newNode.next = runner;
+    newNode.prev = runner.prev;
+
+    if (runner === this.head) {
+      this.head = newNode;
+    } else {
+      // if runner was head then prev would be null.
+      runner.prev.next = newNode;
+    }
+
+    runner.prev = newNode;
+
+    return true;
   }
 
   /**
