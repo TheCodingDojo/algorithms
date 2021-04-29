@@ -61,7 +61,7 @@
 
 1. The Operating System uses heaps for scheduling jobs on a priority basis.
 2. The producer-consumer model can be implemented using heaps to let consumer access the higher priority elements first. It is used in the implementation of Blocking Priority Queue.
-3. Other applications include Order Statistics to find the kth-smallest/kth-largest element in an Array, in HeapSort Algorithm and Graph Algorithms such as Djiktra’s to find the **_shortest path_** and Prim’s minimal spanning tree algorithm.
+3. Other applications include Order Statistics to find the kth-smallest/kth-largest element in an Array, in HeapSort Algorithm and Graph Algorithms such as Djiktra’s to find the **_shortest path_** between nodes and Prim’s minimal spanning tree algorithm. The problem of finding the shortest path between two intersections on a road map may be modeled as a special case of the shortest path problem in graphs, where the vertices (point / node) correspond to intersections and the edges (connections between nodes) correspond to road segments, each weighted by the length of the segment.
 
 ---
 

@@ -153,7 +153,7 @@ class MinHeap {
         break;
       }
 
-      // swap the largest child with the parent since the parent is not smaller
+      // swap the smallest child with the parent since the parent is not smaller
       [heap[idxOfNodeToShiftDown], heap[idxOfSmallestChild]] = [
         heap[idxOfSmallestChild],
         heap[idxOfNodeToShiftDown],
