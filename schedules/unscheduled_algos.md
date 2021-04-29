@@ -18,6 +18,7 @@
 
 ## Arrays
 
+- [rotate](../arrays/rotate.js)
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
 
 ## Recursion
