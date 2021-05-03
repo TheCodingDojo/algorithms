@@ -62,9 +62,11 @@ function selectionSort(nums) {
     }
 
     if (nums[selectedIdx] !== nums[idxOfCurrMin]) {
-      const temp = nums[selectedIdx];
-      nums[selectedIdx] = nums[idxOfCurrMin];
-      nums[idxOfCurrMin] = temp;
+      // Swap.
+      [nums[selectedIdx], nums[idxOfCurrentMin]] = [
+        nums[idxOfCurrentMin],
+        nums[selectedIdx],
+      ];
     }
     selectedIdx += 1;
     // reset idxOfCurrMin to the next selected index we are going to work with to find the next min
