@@ -43,7 +43,7 @@ const expected3 = [-1, -1]; // not found.
  */
 function amazonMusicRuntime(busDuration, songDurations) {}
 
-module.exports = { amazonMusicRuntime: amazonMusicRuntime2 };
+module.exports = { amazonMusicRuntime };
 
 /*****************************************************************************/
 
@@ -107,7 +107,8 @@ function amazonMusicRuntime2(busDuration, songDurations) {
   const songTable = {};
 
   for (let i = 0; i < songDurations.length; i++) {
-    // In the case of dupe durations this would overwrite.
+    // In the case of dupe durations this would overwrite. If that was a
+    // problem, we could store an array of indexes at this key.
     songTable[songDurations[i]] = i;
   }
 
