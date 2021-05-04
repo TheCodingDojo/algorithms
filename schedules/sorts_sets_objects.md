@@ -70,12 +70,13 @@
    - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
    - [backspaceStringCompare](../strings/backspaceStringCompare.js) | [backspaceStringCompareSpec](../spec/strings/backspaceStringCompareSpec.js)
 3. Wed
+
    - [rehash](../strings/rehash.js) | [rehashSpec](../spec/strings/rehashSpec.js)
-   - [LRUCache](../design/LRUCache.js) | [LRUCacheSpec](../spec/design/LRUCacheSpec.js)
+   - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
+
 4. Thur
    - [addHonorific](../strings/addHonorific.js) | [addHonorificSpec](../spec/strings/addHonorificSpec.js)
    - [compareVersionNumbers](../strings/compareVersionNumbers.js) | [compareVersionNumbersSpec](../spec/strings/compareVersionNumbersSpec.js)
 5. Fri
-   - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
+   - [amazonMusicRuntime](../arrays/amazonMusicRuntime.js) | [amazonMusicRuntime](../spec/arrays/amazonMusicRuntimeSpec.js)
    - [canBuildS1FromS2](../strings/canBuildS1FromS2.js) | [canBuildS1FromS2Spec](../spec/strings/canBuildS1FromS2Spec.js)
-   - [timeInWords](../strings/timeInWords.js) | [timeInWordsSpec](../spec/strings/timeInWordsSpec.js)

@@ -10,9 +10,11 @@
 - [questionMarks](../strings/questionMarks.js) | [questionMarksSpec](../spec/strings/questionMarksSpec.js)
 - [kaprekarsConstant](../strings/kaprekarsConstant.js)
 - [rot13](../strings/rot13.js)
+- [timeInWords](../strings/timeInWords.js) | [timeInWordsSpec](../spec/strings/timeInWordsSpec.js)
 
 ## Design
 
+- [LRUCache](../design/LRUCache.js) | [LRUCacheSpec](../spec/design/LRUCacheSpec.js)
 - [garageDoorOpener](../design/garageDoorOpener.js)
 - [BufferSequence](../design/BufferSequence.js)
 
