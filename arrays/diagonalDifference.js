@@ -60,9 +60,12 @@ function diagonalDifference(sqrMatrix) {
  * - Time: O(n) linear.
  * - Space: O(1) constant.
  */
-function diagonalDifference2(sqrMatrix) {
-  let diff = 0;
+const diagonalDifference2 = (sqrMatrix) =>
+  Math.abs(
+    sqrMatrix.reduce(
+      (diff, row, i) => diff + row[i] - row[row.length - i - 1],
+      0
+    )
+  );
 
-  sqrMatrix.forEach((row, i) => (diff += row[i] - row[row.length - i - 1]));
-  return Math.abs(diff);
-}
+console.log(diagonalDifference2(squareMatrix));

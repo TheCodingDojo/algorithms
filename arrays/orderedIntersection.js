@@ -15,6 +15,10 @@ const numsA2 = [0, 1, 2, 2, 2, 7];
 const numsB2 = [2, 2];
 const expected2 = [2];
 
+const numsA3 = [0, 1, 2, 2, 2, 7];
+const numsB3 = [10];
+const expected3 = [];
+
 /**
  * Venn Diagram Visualization (bottom):
  * https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
