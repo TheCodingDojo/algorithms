@@ -11,7 +11,7 @@ describe("dedupeSorted", () => {
   const nums3 = [1, 1, 2, 3, 3, 4];
   const expected3 = [1, 2, 3, 4];
 
-  const nums4 = [1,1];
+  const nums4 = [1, 1];
   const expected4 = [1];
 
   const testCases = [

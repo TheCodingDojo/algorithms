@@ -18,7 +18,7 @@ describe("orderedIntersection", () => {
     { arguments: [numsA1, numsB1], expected: expected1 },
     { arguments: [numsA2, numsB2], expected: expected2 },
     { arguments: [numsA3, numsB3], expected: expected3 }
-];
+  ];
 
   it("should return the ordered deduped intersection of two given sorted arrays.", () =>
     testCases.forEach(({ arguments, expected }) =>

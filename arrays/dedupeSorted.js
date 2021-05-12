@@ -81,7 +81,7 @@ function dedupeSortedInPlace(sortedNums) {
  * - Time: O(n) linear.
  * - Space: O(2n) -> O(n) linear.
  */
-function dedupeSortedHash(nums) {
+function dedupeUnordered(nums) {
   if (nums.length == 0 || nums.length == 1) {
     return nums;
   }
