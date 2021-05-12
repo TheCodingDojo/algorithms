@@ -19,6 +19,9 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
+const nums4 = [1, 1];
+const expected4 = [1];
+
 /**
  * De-dupes the given sorted array.
  * - Time: O(?).
@@ -44,11 +47,34 @@ function dedupeSorted(sortedNums) {
   const dedupedArr = [];
 
   for (let i = 0; i < sortedNums.length; i++) {
+    // This only works because it's sorted.
     if (sortedNums[i] !== dedupedArr[dedupedArr.length - 1]) {
       dedupedArr.push(sortedNums[i]);
     }
   }
   return dedupedArr;
+}
+
+/**
+ * Time: O(2n) -> O(n) linear.
+ * Space: O(n) linear.
+ */
+function dedupeSortedInPlace(sortedNums) {
+  const deduped = [];
+
+  for (const n of sortedNums) {
+    if (deduped[deduped.length - 1] !== n) {
+      deduped.push(n);
+    }
+  }
+
+  // Overwrite so the given array instead of returning a new array.
+  for (let i = 0; i < deduped.length; i++) {
+    sortedNums[i] = deduped[i];
+  }
+
+  sortedNums.length = deduped.length;
+  return sortedNums;
 }
 
 /**
