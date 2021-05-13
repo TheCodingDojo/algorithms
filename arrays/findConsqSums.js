@@ -1,4 +1,4 @@
-// Interview Algo given to alumni
+// Interview Algo given to alumni Oct 2019
 
 /* 
   You are given a list of integers. Find all the consecutive sets of 
