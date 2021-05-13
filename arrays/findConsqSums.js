@@ -67,7 +67,7 @@ function findConsqSums(nums, targetSum) {
     let sum = nums[i];
 
     for (let j = i + 1; j <= nums.length; j++) {
-      if (sum == targetSum) {
+      if (sum === targetSum) {
         arr.push(nums.slice(i, j));
       }
       sum += nums[j];
