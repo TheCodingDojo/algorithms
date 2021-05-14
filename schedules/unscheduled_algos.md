@@ -26,6 +26,7 @@
 ## Recursion
 
 - [displayFolderStructure](../recursion/displayFolderStructure/displayFolderStructure.js)
+- [removeConsecDupeWords](../recursion/removeConsecDupeWords.js)
 
 ## Misc
 
