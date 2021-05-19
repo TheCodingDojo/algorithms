@@ -65,9 +65,6 @@ const people = [
 const expected = ["Person One", "Person Three"];
 
 /**
- * Finds the people who are at risk of contracting Covid.
- * - Time O(?).
- * - Space O(?).
  * @typedef {Object} Friend
  * @property {string} firstName
  * @property {string} lastName
@@ -75,10 +72,16 @@ const expected = ["Person One", "Person Three"];
  * @property {boolean} hasCovid
  *
  * @typedef {Object} Person
+ * @property {Array<Friend>} friends
  * @property {string} firstName
  * @property {string} lastName
  * @property {boolean} isSocialDistancing
- * @property {Array<Friend>} friends
+ */
+
+/**
+ * Finds the people who are at risk of contracting Covid.
+ * - Time O(?).
+ * - Space O(?).
  * @param {Array<Person>} persons
  * @returns {Array<string>} An array of Person full names for those people who
  *    are at risk. A Person is at risk if:
@@ -104,17 +107,6 @@ module.exports = {
  * - Time: O(n * m) n = persons.length, m = longest length of .friends
  *    to capture the worst case.
  * - Space: O(n) linear.
- * @typedef {Object} Friend
- * @property {string} firstName
- * @property {string} lastName
- * @property {boolean} isSocialDistancing
- * @property {boolean} hasCovid
- *
- * @typedef {Object} Person
- * @property {string} firstName
- * @property {string} lastName
- * @property {boolean} isSocialDistancing
- * @property {Array<Friend>} friends
  * @param {Array<Person>} persons
  * @returns {Array<string>} An array of Person full names for those people who
  *    are at risk. A Person is at risk if:
