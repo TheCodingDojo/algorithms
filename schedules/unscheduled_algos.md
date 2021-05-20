@@ -1,5 +1,8 @@
 # Unscheduled Algos
 
+- [coding-questions-company-wise](https://www.geeksforgeeks.org/must-coding-questions-company-wise/#google)
+- [covid queue](https://www.codechef.com/problems/COVIDLQ)
+
 ## Strings
 
 - [outputToJson]("../strings/outputToJson/outputToJson.js)
@@ -20,6 +23,7 @@
 
 ## Arrays
 
+- [findTriplets](../arrays/findTriplets.js) | [findTripletsSpec](../spec/arrays/findTripletsSpec.js)
 - [rotate](../arrays/rotate.js)
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
 
