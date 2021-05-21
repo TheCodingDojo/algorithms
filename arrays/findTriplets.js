@@ -69,7 +69,7 @@ function findTriplets(nums) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j < nums.length; j++) {
       const twoSum = nums[i] + nums[j];
-      const additiveInverse = -1 * twoSum;
+      const additiveInverse = twoSum * -1;
 
       if (set.has(additiveInverse)) {
         return true;
@@ -81,28 +81,32 @@ function findTriplets(nums) {
 
 /**
  * Determines whether or not there are 3 integers that add up to 0.
- * - Time: O(n^2) quadratic.
+ * - Time: O(2n^2) -> O(n^2) quadratic. Sorting is usually n^2 at worst.
  * - Space: O(1) constant.
  * @param {Array<number>} nums Unordered.
  * @returns {Boolean}
  */
-function findTripletsOptimal(nums) {
-  const orderedNums = nums.slice().sort();
+function findTriplets2(nums) {
+  /* 
+  This mutates the original given array which is often undesirable. Copying the
+  array first then sorting the copy but copying will add another O(n) operation.
+  */
+  nums.sort();
 
-  for (let i = 0; i < orderedNums.length - 2; i++) {
-    if (orderedNums[i] > 0) {
+  for (let i = 0; i < nums.length - 2; i++) {
+    if (nums[i] > 0) {
       break;
     }
 
-    if (i > 0 && orderedNums[i] === orderedNums[i - 1]) {
+    if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
 
     let left = i + 1;
-    let right = orderedNums.length - 1;
+    let right = nums.length - 1;
 
     while (left < right) {
-      let total = orderedNums[i] + orderedNums[left] + orderedNums[right];
+      let total = nums[i] + nums[left] + nums[right];
 
       if (total === 0) {
         return true;
