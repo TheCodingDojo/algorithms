@@ -1,4 +1,6 @@
 /* 
+Companies that have given this algo: Companies: Facebook, Amazon, Microsoft
+
 Given an array of unordered ints, determine whether or not there are 3 ints
 that add up to 0.
 
@@ -9,8 +11,11 @@ Bonus: Time: O(n^2) Space: O(1).
 const nums1 = [0, -1, 2, -3, 1];
 const expected1 = true;
 
-const nums2 = [1, 2, 3];
+const nums2 = [3, 1, 2, 6, 4];
 const expected2 = false;
+
+const nums3 = [5, -1, 3, 2, -4, 1, 6];
+const expected3 = true;
 
 /**
  * Determines whether or not there are 3 integers that add up to 0.
@@ -74,11 +79,41 @@ function findTriplets(nums) {
   return false;
 }
 
-/** https://afteracademy.com/blog/triplet-with-zero-sum
+/**
  * Determines whether or not there are 3 integers that add up to 0.
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
  * @param {Array<number>} nums Unordered.
  * @returns {Boolean}
  */
-function findTripletsOptimal(nums) {}
+function findTripletsOptimal(nums) {
+  const orderedNums = nums.slice().sort();
+
+  for (let i = 0; i < orderedNums.length - 2; i++) {
+    if (orderedNums[i] > 0) {
+      break;
+    }
+
+    if (i > 0 && orderedNums[i] === orderedNums[i - 1]) {
+      continue;
+    }
+
+    let left = i + 1;
+    let right = orderedNums.length - 1;
+
+    while (left < right) {
+      let total = orderedNums[i] + orderedNums[left] + orderedNums[right];
+
+      if (total === 0) {
+        return true;
+      }
+
+      if (total < 0) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return false;
+}
