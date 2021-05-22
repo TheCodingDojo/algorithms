@@ -52,8 +52,8 @@
 ## Week 3 - [Arrays](../arrays)
 
 1. Mon
+   - [socialDistancingEnforcer](../arrays/socialDistancingEnforcer.js) | [socialDistancingEnforcerSpec](../spec/arrays/socialDistancingEnforcerSpec.js)
    - [balanceIndex](../arrays/balanceIndex.js) | [balanceIndex](../spec/arrays/balanceIndexSpec.js)
-   - [balancePoint](../arrays/balancePoint.js) | [balancePoint](../spec/arrays/balancePointSpec.js)
 2. Tue
    - [binarySearch](../arrays/binarySearch.js) | [binarySearch](../spec/arrays/binarySearchSpec.js)
    - [interleaveArrays](../arrays/interleaveArrays.js) | [interleaveArrays](../spec/arrays/interleaveArraysSpec.js)
