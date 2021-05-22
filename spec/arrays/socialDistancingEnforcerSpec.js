@@ -10,7 +10,7 @@ describe("socialDistancingEnforcer", () => {
 
   const testCases = [{ arguments: [queue1], expected: expected1 }, { arguments: [queue2], expected: expected2 }];
 
-  it("should a boolean representing if every person is separated by at least 6 empty spaces.", () =>
+  it("should return a boolean representing if every person is separated by at least 6 empty spaces.", () =>
     testCases.forEach(({ arguments, expected }) =>
       expect(socialDistancingEnforcer(...arguments))
         .withContext(argFormatter(socialDistancingEnforcer, arguments))
