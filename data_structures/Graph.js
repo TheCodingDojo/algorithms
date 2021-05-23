@@ -265,8 +265,7 @@ class Graph {
       console.log("currNeighbor:", neighborData);
 
       if (neighborData === destination) {
-        found.res = true;
-        break;
+        return (found.res = true);
       }
 
       if (!visited.has(neighborData)) {
@@ -317,7 +316,7 @@ class Graph {
       }
 
       if (!visited.has(neighborData)) {
-        return this.hasPathDFSBroken(start, destination, neighborNode, visited);
+        this.hasPathDFSBroken(start, destination, neighborNode, visited);
       }
     }
     return false;
@@ -356,6 +355,6 @@ any more recursion, but the for loop over MEX neighbors is unfinished.
 Why as the call stack is unwinding and it gets back to currNode === MEX does it
 not resume the unfinished for loop over MEX neighbors?
 */
-console.log(flightPaths.hasPathDFSBroken("HEL", "EZE"));
-// console.log(flightPaths.hasPathDFS("HEL", "EZE")); // works
+// console.log(flightPaths.hasPathDFSBroken("HEL", "EZE"));
+console.log(flightPaths.hasPathDFS("HEL", "EZE")); // works
 console.log("no infinite loop");
