@@ -300,7 +300,7 @@ flightPaths.print();
 console.log(flightPaths.hasPathBFS("HEL", "EZE"));
 
 /* 
-TODO: Doesn't work, after see logs, once LIM is curr node, both of it's 2
+TODO: Doesn't work, see logs. Once LIM is curr node, both of it's 2
 neighbors are already visited so the loop over it's neighbors doesn't cause
 any more recursion, but the loop over MEX neighbors is unfinished, why doesn't
 it return to that loop where it left off, going to LIM again but that is seen
