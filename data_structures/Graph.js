@@ -262,12 +262,12 @@ class Graph {
       .getNeighbors()
       .entries()) {
       console.log("currNeighbor:", neighborData);
+
       if (neighborData === destination) {
         return true;
       }
 
       if (!visited.has(neighborData)) {
-        // visited.set(neighborData, 1);
         return this.hasPathDFS(start, destination, neighborNode, visited);
       }
     }
@@ -300,10 +300,11 @@ flightPaths.print();
 console.log(flightPaths.hasPathBFS("HEL", "EZE"));
 
 /* 
-TODO: Doesn't work, see logs. Once LIM is curr node, both of it's 2
-neighbors are already visited so the loop over it's neighbors doesn't cause
-any more recursion, but the loop over MEX neighbors is unfinished, why doesn't
-it return to that loop where it left off, going to LIM again but that is seen
-so then iterating to the last neighbor: EZE.
+TODO: Doesn't work, see logs. Once LIM is currNode, both of it's 2
+neighbors are already visited so the for loop over it's neighbors doesn't cause
+any more recursion, but the for loop over MEX neighbors is unfinished.
+
+Why as the call stack is unwinding and it gets back to currNode === MEX does it
+not resume the unfinished for loop over MEX neighbors?
 */
 console.log(flightPaths.hasPathDFS("HEL", "EZE"));
