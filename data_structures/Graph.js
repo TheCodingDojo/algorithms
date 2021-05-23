@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=cWNEl4HE2OE
 Graph to represent flights between airport nodes.
 
 For simplicity, this graph will be:
-  Undirected: can travel back and forth between connected nodes)
+  Undirected: can travel back and forth between connected nodes
   Unweighted: no additional data about the connection is saved, like the distance.
   No cycles: A node cannot point back to itself.
 
@@ -231,7 +231,7 @@ class Graph {
    * Determines if there is a path from the start to the destination using
    * Depth First Search.
    * - Time: O(n) linear. n = this.nodes.size.
-   * - Space: O(?) linear.
+   * - Space: O(n) linear.
    * @param {NodeData} start
    * @param {NodeData} destination
    * @returns {Boolean} Whether or not a path exists between the two given
