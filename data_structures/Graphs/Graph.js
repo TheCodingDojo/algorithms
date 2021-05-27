@@ -1,7 +1,5 @@
 /* 
-https://adrianmejia.com/data-structures-for-beginners-graphs-time-complexity-tutorial/
-https://www.youtube.com/watch?v=cWNEl4HE2OE
-Graph to represent flights between airport nodes.
+This graph represents flights between airport nodes.
 
 For simplicity, this graph will be:
   Undirected: can travel back and forth between connected nodes
@@ -13,8 +11,15 @@ Given the below data, represent it as a graph.
 
 /* 
 Terms:
-Vertex (point), neighbor = Node.
-Edge = connection between two nodes.
+Node: Vertex / Point, Neighbor / Edge.
+Edge: connection between two nodes.
+
+O(V + E) means Vertices + Edges and can also be written as O(n) since it's
+linear. However, since a node can be both a vertex and multiple edges since it
+can be connected to many nodes, the same node can be visited multiple times.
+Even though we have logic to avoid re-processing an already visited node, the
+soonest we can stop re-processing it is as soon as we see it again and realize
+we are re-visiting it.
 */
 
 /**
@@ -49,7 +54,7 @@ class Node {
    */
   constructor(data) {
     this.data = data;
-    this.neighbors = new Map();
+    this.edges = new Map();
   }
 
   /**
@@ -59,9 +64,9 @@ class Node {
    * @param {Node} node
    * @returns {number} The new amount of adjacent nodes.
    */
-  addNeighbor(node) {
-    this.neighbors.set(node.data, node);
-    return this.neighbors.size;
+  addEdge(node) {
+    this.edges.set(node.data, node);
+    return this.edges.size;
   }
 
   /**
@@ -71,8 +76,8 @@ class Node {
    * @param {Node} node
    * @returns {Node} The removed node.
    */
-  removeNeighbor(node) {
-    this.neighbors.delete(node);
+  removeEdge(node) {
+    this.edges.delete(node);
     return node;
   }
 
@@ -82,8 +87,8 @@ class Node {
    * - Space: O(1) constant.
    * @returns {Map} The adjacency list.
    */
-  getNeighbors() {
-    return this.neighbors;
+  getEdges() {
+    return this.edges;
   }
 
   /**
@@ -92,7 +97,7 @@ class Node {
    * @returns {number}
    */
   totalEdges() {
-    return this.neighbors.size;
+    return this.edges.size;
   }
 
   /**
@@ -103,7 +108,7 @@ class Node {
    * @returns {boolean}
    */
   isNeighbor(node) {
-    return this.neighbors.has(node);
+    return this.edges.has(node);
   }
 }
 
@@ -134,7 +139,7 @@ class Graph {
 
   /**
    * Removes the node with the matching data.
-   * - Time: O(n) linear, where n = number of nodes.
+   * - Time: O(V + E) linear.
    * - Space: O(1) constant.
    * @param {NodeData} data
    * @returns {boolean} Whether the node was removed or not.
@@ -147,7 +152,7 @@ class Graph {
     }
 
     for (const node of this.nodes.values()) {
-      node.removeNeighbor(current);
+      node.removeEdge(current);
     }
 
     return this.nodes.delete(data);
@@ -166,18 +171,18 @@ class Graph {
     const sourceNode = this.addVertex(source);
     const destinationNode = this.addVertex(destination);
 
-    sourceNode.addNeighbor(destinationNode);
+    sourceNode.addEdge(destinationNode);
 
     if (this.edgeDirection === Graph.UNDIRECTED) {
-      destinationNode.addNeighbor(sourceNode);
+      destinationNode.addEdge(sourceNode);
     }
     return [sourceNode, destinationNode];
   }
 
   /**
    * Adds many edges.
-   * - Time: O(n) linear. n = edges.length.
-   * - Space: O(n) linear.
+   * - Time: O(V + E) linear.
+   * - Space: O(V + E) linear.
    * @param {Array<Array<string, string>>} edges A 2d array where the
    *    where the nested array contains the two NodeData to be connected.
    */
@@ -189,8 +194,8 @@ class Graph {
   /**
    * Determines if there is a path from the start to the destination using
    * Breadth First Search.
-   * - Time: O(n) linear. n = this.nodes.size.
-   * - Space: O(2n) -> O(n) linear.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
    * @param {NodeData} start
    * @param {NodeData} destination
    * @returns {Boolean} Whether or not a path exists between the two given
@@ -211,14 +216,14 @@ class Graph {
       const currNode = queue.values().next().value;
       queue.delete(currNode); // dequeue O(1).
 
-      for (const neighborNode of currNode.getNeighbors().values()) {
-        if (neighborNode.data === destination) {
+      for (const edge of currNode.getEdges().values()) {
+        if (edge.data === destination) {
           return true;
         }
 
-        if (!visited.has(neighborNode)) {
-          queue.add(neighborNode); // enqueue O(1).
-          visited.add(neighborNode);
+        if (!visited.has(edge)) {
+          queue.add(edge); // enqueue O(1).
+          visited.add(edge);
         }
       }
     }
@@ -239,56 +244,36 @@ class Graph {
     start,
     destination,
     currNode = this.nodes.get(start),
-    visited = new Set(),
-    count = { n: 0 }
+    visited = new Set()
   ) {
     if (!currNode) {
       return false;
     }
+
+    console.log(currNode.data);
 
     if (currNode.data === destination) {
       return true;
     }
 
     visited.add(currNode);
-    count.n++;
 
-    console.log(
-      "currNode:",
-      currNode.data,
-      "| neighbors:",
-      [...currNode.getNeighbors().keys()],
-      "| visited:",
-      [...visited.keys()].map((node) => node.data)
-    );
-
-    for (const neighborNode of currNode.getNeighbors().values()) {
-      console.log("currNeighbor:", neighborNode.data);
-
-      count.n++;
-
-      if (!visited.has(neighborNode)) {
-        const found = this.hasPathDFS(
-          start,
-          destination,
-          neighborNode,
-          visited
-        );
-
-        if (found) {
+    for (const edge of currNode.getEdges().values()) {
+      if (!visited.has(edge)) {
+        if (this.hasPathDFS(start, destination, edge, visited)) {
           return true;
         }
       }
     }
-    console.log(count.n);
     return false;
   }
+
+  hasPathStackDFS() {}
 
   print() {
     let str = [...this.nodes.values()]
       .map(
-        (node) =>
-          `${node.data} => ${[...node.getNeighbors().keys()].join(", ")}`
+        (node) => `${node.data} => ${[...node.getEdges().keys()].join(", ")}`
       )
       .join("\n");
 
@@ -302,8 +287,8 @@ class Graph {
 A Symbol is not specific to a graph. These props could have just been strings,
 but there are some advantages to using symbols.
 */
-Graph.UNDIRECTED = Symbol("directed graph"); // two-way edges
-Graph.DIRECTED = Symbol("undirected graph"); // one-way edges
+Graph.UNDIRECTED = Symbol("directed graph"); // one-way edges
+Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.print();
