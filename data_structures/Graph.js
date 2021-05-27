@@ -203,24 +203,22 @@ class Graph {
       return false;
     }
 
-    const visited = new Map();
-    const mapQueue = new Map();
-    mapQueue.set(startNode.data, startNode);
+    const visited = new Set();
+    const queue = new Set();
+    queue.add(startNode);
 
-    while (mapQueue.size) {
-      const currNode = mapQueue.values().next().value;
-      mapQueue.delete(currNode.data); // dequeue O(1).
+    while (queue.size) {
+      const currNode = queue.values().next().value;
+      queue.delete(currNode); // dequeue O(1).
 
-      for (const [neighborKey, neighborNode] of currNode
-        .getNeighbors()
-        .entries()) {
-        if (neighborKey === destination) {
+      for (const neighborNode of currNode.getNeighbors().values()) {
+        if (neighborNode.data === destination) {
           return true;
         }
 
-        if (!visited.has(neighborKey)) {
-          mapQueue.set(neighborKey, neighborNode); // enqueue O(1).
-          visited.set(neighborKey, 1);
+        if (!visited.has(neighborNode)) {
+          queue.add(neighborNode); // enqueue O(1).
+          visited.add(neighborNode);
         }
       }
     }
@@ -241,14 +239,19 @@ class Graph {
     start,
     destination,
     currNode = this.nodes.get(start),
-    visited = new Map(),
-    found = { res: false }
+    visited = new Set(),
+    count = { n: 0 }
   ) {
     if (!currNode) {
       return false;
     }
 
-    visited.set(currNode.data, 1);
+    if (currNode.data === destination) {
+      return true;
+    }
+
+    visited.add(currNode);
+    count.n++;
 
     console.log(
       "currNode:",
@@ -256,69 +259,28 @@ class Graph {
       "| neighbors:",
       [...currNode.getNeighbors().keys()],
       "| visited:",
-      [...visited.keys()]
+      [...visited.keys()].map((node) => node.data)
     );
 
-    for (const [neighborData, neighborNode] of currNode
-      .getNeighbors()
-      .entries()) {
-      console.log("currNeighbor:", neighborData);
+    for (const neighborNode of currNode.getNeighbors().values()) {
+      console.log("currNeighbor:", neighborNode.data);
 
-      if (neighborData === destination) {
-        return (found.res = true);
-      }
+      count.n++;
 
-      if (!visited.has(neighborData)) {
-        this.hasPathDFS(start, destination, neighborNode, visited, found);
-      }
-    }
-    return found.res;
-  }
+      if (!visited.has(neighborNode)) {
+        const found = this.hasPathDFS(
+          start,
+          destination,
+          neighborNode,
+          visited
+        );
 
-  /**
-   * Determines if there is a path from the start to the destination using
-   * Depth First Search.
-   * - Time: O(n) linear. n = this.nodes.size.
-   * - Space: O(n) linear.
-   * @param {NodeData} start
-   * @param {NodeData} destination
-   * @returns {Boolean} Whether or not a path exists between the two given
-   *    NodeData.
-   */
-  hasPathDFSBroken(
-    start,
-    destination,
-    currNode = this.nodes.get(start),
-    visited = new Map()
-  ) {
-    if (!currNode) {
-      return false;
-    }
-
-    visited.set(currNode.data, 1);
-
-    console.log(
-      "currNode:",
-      currNode.data,
-      "| neighbors:",
-      [...currNode.getNeighbors().keys()],
-      "| visited:",
-      [...visited.keys()]
-    );
-
-    for (const [neighborData, neighborNode] of currNode
-      .getNeighbors()
-      .entries()) {
-      console.log("currNeighbor:", neighborData);
-
-      if (neighborData === destination) {
-        return true;
-      }
-
-      if (!visited.has(neighborData)) {
-        return this.hasPathDFSBroken(start, destination, neighborNode, visited);
+        if (found) {
+          return true;
+        }
       }
     }
+    console.log(count.n);
     return false;
   }
 
@@ -345,16 +307,3 @@ Graph.DIRECTED = Symbol("undirected graph"); // one-way edges
 
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.print();
-// console.log(flightPaths.hasPathBFS("HEL", "EZE"));
-
-/* 
-TODO: Doesn't work, see logs. Once LIM is currNode, both of it's 2
-neighbors are already visited so the for loop over it's neighbors doesn't cause
-any more recursion, but the for loop over MEX neighbors is unfinished.
-
-Why as the call stack is unwinding and it gets back to currNode === MEX does it
-not resume the unfinished for loop over MEX neighbors?
-*/
-console.log(flightPaths.hasPathDFSBroken("HEL", "EZE"));
-// console.log(flightPaths.hasPathDFS("HEL", "EZE")); // works
-console.log("no infinite loop");
