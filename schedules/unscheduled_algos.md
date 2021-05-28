@@ -2,6 +2,10 @@
 
 - [coding-questions-company-wise](https://www.geeksforgeeks.org/must-coding-questions-company-wise/#google)
 
+## Objects
+
+- [discordAlertTimeout](../objects/discordAlertTimeout.js)
+
 ## Strings
 
 - [outputToJson]("../strings/outputToJson/outputToJson.js)
