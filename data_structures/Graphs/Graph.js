@@ -230,7 +230,7 @@ class Graph {
 
   /**
    * Converts this graph to an array of node data that are reachable from the
-   * given start using Depth First Search.
+   * given start using Depth First Search without recursion.
    * - Time: O(V + E) linear.
    * - Space: O(2V) -> O(V) linear.
    * @param {NodeData} start
@@ -251,10 +251,10 @@ class Graph {
     return [...visited];
   }
 
-  /** TODO: Wrong order.
+  /**
    * Converts this graph to an array of node data that are reachable from the
    * given start using Depth First Search without recursion.
-   * - Time: O(V + E) linear.
+   * - Time: O(2(V + E)) linear.
    * - Space: O(2V) -> O(V) linear.
    * @param {NodeData} start
    * @returns {Array<NodeData>}
@@ -266,54 +266,29 @@ class Graph {
       return [];
     }
 
-    const queue = new Set([startNode]);
-    const visited = new Set();
-
-    while (queue.size) {
-      const currNode = queue.values().next().value;
-
-      if (!currNode) {
-        continue;
-      }
-
-      queue.delete(currNode); // O(1) dequeue.
-      visited.add(currNode.data);
-
-      for (const edge of currNode.getEdges().values()) {
-        if (!visited.has(edge.data)) {
-          queue.add(edge);
-        }
-      }
-    }
-    return [...visited];
-  }
-
-  // TODO: Iterative stack - not same order recursive DFS
-  toArrIterativeDFS2(start) {
-    const startNode = this.nodes.get(start);
-
-    if (!startNode) {
-      return [];
-    }
-
     const stack = [startNode];
     const visited = new Set();
 
     while (stack.length) {
       const currNode = stack.pop();
-      visited.add(currNode.data);
 
-      for (const edge of currNode.getEdges().values()) {
-        if (!visited.has(edge.data)) {
-          stack.push(edge);
-        }
+      if (!visited.has(currNode.data)) {
+        stack.push(...[...currNode.getEdges().values()].reverse());
       }
+      visited.add(currNode.data);
     }
     return [...visited];
   }
 
-  // TODO: correct order but prob not be best practice
-  toArrIterativeDFS3(start) {
+  /**
+   * Converts this graph to an array of node data that are reachable from the
+   * given start using Depth First Search.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {NodeData} start
+   * @returns {Array<NodeData>}
+   */
+  toArrIterativeDFS2(start) {
     const startNode = this.nodes.get(start);
 
     if (!startNode) {
@@ -449,5 +424,5 @@ Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.print();
 console.log(flightPaths.toArrDFS("HEL"));
-console.log(flightPaths.toArrIterativeDFS("HEL")); // TODO not same order as DFS
+console.log(flightPaths.toArrIterativeDFS2("HEL")); // TODO not same order as DFS
 console.log("done");
