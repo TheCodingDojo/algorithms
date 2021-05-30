@@ -32,6 +32,7 @@ const airports = "PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM".split(" ");
 const routes = [
   ["PHX", "LAX"],
   ["PHX", "JFK"],
+  ["JFK", "LYC"],
   ["JFK", "OKC"],
   ["JFK", "HEL"],
   ["JFK", "LOS"],
@@ -85,7 +86,7 @@ class Node {
    * Gets this node's list of connected nodes.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @returns {Map} The adjacency list.
+   * @returns {Map<NodeData, Node>} The adjacency list.
    */
   getEdges() {
     return this.edges;
@@ -107,7 +108,7 @@ class Node {
    * @param {Node} node
    * @returns {boolean}
    */
-  isNeighbor(node) {
+  isEdge(node) {
     return this.edges.has(node);
   }
 }
@@ -193,48 +194,9 @@ class Graph {
 
   /**
    * Determines if there is a path from the start to the destination using
-   * Breadth First Search.
+   * Depth First Search.
    * - Time: O(V + E) linear.
    * - Space: O(2V) -> O(V) linear.
-   * @param {NodeData} start
-   * @param {NodeData} destination
-   * @returns {Boolean} Whether or not a path exists between the two given
-   *    NodeData.
-   */
-  hasPathBFS(start, destination) {
-    const startNode = this.nodes.get(start);
-
-    if (!startNode) {
-      return false;
-    }
-
-    const visited = new Set();
-    const queue = new Set();
-    queue.add(startNode);
-
-    while (queue.size) {
-      const currNode = queue.values().next().value;
-      queue.delete(currNode); // dequeue O(1).
-
-      for (const edge of currNode.getEdges().values()) {
-        if (edge.data === destination) {
-          return true;
-        }
-
-        if (!visited.has(edge)) {
-          queue.add(edge); // enqueue O(1).
-          visited.add(edge);
-        }
-      }
-    }
-    return false;
-  }
-
-  /**
-   * Determines if there is a path from the start to the destination using
-   * Depth First Search.
-   * - Time: O(n) linear. n = this.nodes.size.
-   * - Space: O(n) linear.
    * @param {NodeData} start
    * @param {NodeData} destination
    * @returns {Boolean} Whether or not a path exists between the two given
@@ -249,8 +211,6 @@ class Graph {
     if (!currNode) {
       return false;
     }
-
-    console.log(currNode.data);
 
     if (currNode.data === destination) {
       return true;
@@ -268,7 +228,203 @@ class Graph {
     return false;
   }
 
-  hasPathStackDFS() {}
+  /**
+   * Converts this graph to an array of node data that are reachable from the
+   * given start using Depth First Search.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {NodeData} start
+   * @returns {Array<NodeData>}
+   */
+  toArrDFS(start, currNode = this.nodes.get(start), visited = new Set()) {
+    if (!currNode) {
+      return [...visited];
+    }
+
+    visited.add(currNode.data);
+
+    for (const edge of currNode.getEdges().values()) {
+      if (!visited.has(edge.data)) {
+        this.toArrDFS(start, edge, visited);
+      }
+    }
+    return [...visited];
+  }
+
+  /** TODO: Wrong order.
+   * Converts this graph to an array of node data that are reachable from the
+   * given start using Depth First Search without recursion.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {NodeData} start
+   * @returns {Array<NodeData>}
+   */
+  toArrIterativeDFS(start) {
+    const startNode = this.nodes.get(start);
+
+    if (!startNode) {
+      return [];
+    }
+
+    const queue = new Set([startNode]);
+    const visited = new Set();
+
+    while (queue.size) {
+      const currNode = queue.values().next().value;
+
+      if (!currNode) {
+        continue;
+      }
+
+      queue.delete(currNode); // O(1) dequeue.
+      visited.add(currNode.data);
+
+      for (const edge of currNode.getEdges().values()) {
+        if (!visited.has(edge.data)) {
+          queue.add(edge);
+        }
+      }
+    }
+    return [...visited];
+  }
+
+  // TODO: Iterative stack - not same order recursive DFS
+  toArrIterativeDFS2(start) {
+    const startNode = this.nodes.get(start);
+
+    if (!startNode) {
+      return [];
+    }
+
+    const stack = [startNode];
+    const visited = new Set();
+
+    while (stack.length) {
+      const currNode = stack.pop();
+      visited.add(currNode.data);
+
+      for (const edge of currNode.getEdges().values()) {
+        if (!visited.has(edge.data)) {
+          stack.push(edge);
+        }
+      }
+    }
+    return [...visited];
+  }
+
+  // TODO: correct order but prob not be best practice
+  toArrIterativeDFS3(start) {
+    const startNode = this.nodes.get(start);
+
+    if (!startNode) {
+      return [];
+    }
+
+    const iteratorsStack = [startNode.getEdges().values()];
+    const visited = new Set([startNode.data]);
+
+    while (iteratorsStack.length) {
+      const currIter = iteratorsStack.pop();
+      const nxt = currIter.next();
+
+      if (!nxt.done) {
+        const node = nxt.value;
+        iteratorsStack.push(currIter);
+        !visited.has(node.data) &&
+          iteratorsStack.push(node.getEdges().values());
+
+        visited.add(node.data);
+      }
+    }
+    return [...visited];
+  }
+
+  /**
+   * Converts this graph to an array of node data that are reachable from the
+   * given start using Breadth First Search.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {NodeData} start
+   * @param {Set<NodeData>} visited This is a param so this method can also be
+   *    used as a helper method to reach every node.
+   * @returns {Array<NodeData>}
+   */
+  toArrBFS(start, visited = new Set()) {
+    const startNode = this.nodes.get(start);
+
+    if (!startNode) {
+      return [];
+    }
+
+    const queue = new Set();
+    queue.add(startNode);
+
+    while (queue.size) {
+      const currNode = queue.values().next().value;
+      queue.delete(currNode); // dequeue O(1).
+      visited.add(currNode.data);
+
+      for (const edge of currNode.getEdges().values()) {
+        if (!visited.has(edge.data)) {
+          queue.add(edge); // enqueue O(1).
+        }
+      }
+    }
+    return [...visited];
+  }
+
+  /**
+   * Converts this graph to an array of node data using given traversal order
+   * to reach every node rather than only the nodes that are reachable from a
+   * start node.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {string} order The traversal order.
+   * @returns {Array<NodeData>}
+   */
+  toArrAll(order = "DFS") {
+    const visited = new Set();
+
+    for (const node of this.nodes.values()) {
+      if (!visited.has(node)) {
+        switch (order) {
+          case "DFS":
+            this.toArrDFS(node.data, node, visited);
+            break;
+          case "BFS":
+            this.toArrBFS(node.data, visited);
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    return [...visited];
+  }
+
+  /**
+   * Converts this graph to an array of node data using given traversal order
+   * to reach every node rather than only the nodes that are reachable from a
+   * start node.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @returns {Array<NodeData>}
+   */
+  toArrAllDFS() {
+    return this.toArrAll("DFS");
+  }
+
+  /**
+   * Converts this graph to an array of node data using given traversal order
+   * to reach every node rather than only the nodes that are reachable from a
+   * start node.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @returns {Array<NodeData>}
+   */
+  toArrAllBFS() {
+    return this.toArrAll("BFS");
+  }
 
   print() {
     let str = [...this.nodes.values()]
@@ -292,3 +448,6 @@ Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.print();
+console.log(flightPaths.toArrDFS("HEL"));
+console.log(flightPaths.toArrIterativeDFS("HEL")); // TODO not same order as DFS
+console.log("done");

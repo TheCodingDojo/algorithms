@@ -88,6 +88,10 @@
 
 ## Traversing a Graph
 
+"BFS can be used to find the shortest path, with unit weight edges, from a node (original source) to another. Whereas, DFS can be used to exhaust all the choices because of its nature of going in depth, like discovering the longest path between two nodes in an acyclic graph."
+
+- Depth and Breadth First Search can be used to find a path between two nodes and return early when the destination node is found.
+
 ### Depth First Search (DFS - Recursive)
 
 1. Start with any node.
