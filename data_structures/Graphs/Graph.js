@@ -254,7 +254,7 @@ class Graph {
   /**
    * Converts this graph to an array of node data that are reachable from the
    * given start using Depth First Search without recursion.
-   * - Time: O(2(V + E)) linear.
+   * - Time: O(V + 2E) linear.
    * - Space: O(2V) -> O(V) linear.
    * @param {NodeData} start
    * @returns {Array<NodeData>}
