@@ -9,19 +9,19 @@
 
 1. Mon
    - Orientation
-   - basics: variables, loops, functions
+   - basics review: variables, loops, functions
      - [Functions Intro](../functions-intro.md)
 2. Tue
    - [basicAlgos](../basicAlgos.js)
 3. Wed
-   - [push](../recreated_methods/Array/push.js) | [pushSpec](../spec/recreated_methods/Array/pushSpec.js)
-   - [nthLast](../arrays/nthLast.js) | [nthLastSpec](../spec/arrays/nthLastSpec.js)
+   - [indexOf](../recreated_methods/Array/indexOf.js) | [indexOfSpec](../spec/recreated_methods/Array/indexOfSpec.js)
    - unfinished [basicAlgos](../basicAlgos.js)
 4. Thur
-   - [pop](../recreated_methods/Array/pop.js) | [popSpec](../spec/recreated_methods/Array/popSpec.js)
-   - [indexOf](../recreated_methods/Array/indexOf.js) | [indexOfSpec](../spec/recreated_methods/Array/indexOfSpec.js)
-5. Fri: Exam
-   - [Printable Basic 13](https://docs.google.com/document/d/1Vw-8ZzZy_kfkcK-6MUkXJNfNQ7qX9_nkxnIBNoVNdbM/edit#heading=h.wr6t3eu5n64f)
+   - [nthLast](../arrays/nthLast.js) | [nthLastSpec](../spec/arrays/nthLastSpec.js)
+   - [countEvenNegatives](../arrays/countEvenNegatives.js)
+5. Fri
+   - [slice](../recreated_methods/Array/slice.js) | [sliceSpec](../spec/recreated_methods/Array/sliceSpec.js)
+   - [capitalization](../strings/capitalization.js)
 
 ---
 
@@ -29,11 +29,10 @@
 
 1. Mon
    - [concat](../recreated_methods/Array/concat.js) | [concatSpec](../spec/recreated_methods/Array/concatSpec.js)
-   - [indexOfMinVal](../arrays/indexOfMinVal.js) | [indexOfMinValSpec](../spec/arrays/indexOfMinValSpec.js)
    - [concatSelf](../arrays/concatSelf.js) | [concatSelfSpec](../spec/arrays/concatSelfSpec.js)
 2. Tue
+   - [indexOfMinVal](../arrays/indexOfMinVal.js) | [indexOfMinValSpec](../spec/arrays/indexOfMinValSpec.js)
    - [reverseArr](../arrays/reverseArr.js) | [reverseArrSpec](../spec/arrays/reverseArrSpec.js)
-   - [slice](../recreated_methods/Array/slice.js) | [sliceSpec](../spec/recreated_methods/Array/sliceSpec.js)
 3. Wed
    - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
    - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
