@@ -92,6 +92,8 @@
 
 - Depth and Breadth First Search can be used to find a path between two nodes and return early when the destination node is found.
 
+![Depth Vs Breadth First Search GIF](./depth-vs-breadth-search-first.gif)
+
 ### Depth First Search (DFS - Recursive)
 
 1. Start with any node.
