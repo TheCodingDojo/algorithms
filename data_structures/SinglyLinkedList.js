@@ -62,16 +62,19 @@ class SinglyLinkedList {
    */
   insertAtBack(data) {
     const newBack = new Node(data);
+
+    if (this.isEmpty()) {
+      this.head = newBack;
+      return this;
+    }
+
     let runner = this.head;
 
-    if (runner === null) {
-      this.head = newBack;
-    } else {
-      while (runner.next) {
-        runner = runner.next;
-      }
-      runner.next = newBack;
+    while (runner.next !== null) {
+      runner = runner.next;
     }
+
+    runner.next = newBack;
     return this;
   }
 
@@ -1232,14 +1235,7 @@ const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
 const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
 const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
 const unorderedList = new SinglyLinkedList().seedFromArr([
-  -5,
-  -10,
-  4,
-  -3,
-  6,
-  1,
-  -7,
-  -2,
+  -5, -10, 4, -3, 6, 1, -7, -2,
 ]);
 
 // node 4 connects to node 1, back to head
@@ -1251,15 +1247,7 @@ const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
 loopList.head.next.next.next = loopList.head.next;
 
 const sortedDupeList = new SinglyLinkedList().seedFromArr([
-  1,
-  1,
-  1,
-  2,
-  3,
-  3,
-  4,
-  5,
-  5,
+  1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
 
 module.exports = { Node, SinglyLinkedList };
