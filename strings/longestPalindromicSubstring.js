@@ -20,6 +20,12 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
+const str4 = "a1001x20002y5677765z";
+const expected4 = "5677765";
+
+const str5 = "a1001x20002y567765z";
+const expected5 = "567765";
+
 /**
  * Finds the longest palindromic substring in the given string.
  * - Time: O(?).
@@ -61,38 +67,38 @@ function longestPalindromicSubstring(str) {
  * - Space: O(n) linear.
  */
 function longestPal(str) {
-  let longestPal = str[0] || "";
-  const isEven = str.length % 2 === 0;
+  let longestPal = "";
 
   for (let i = 0; i < str.length; i++) {
-    let leftIdx = i - 1,
-      rightIdx = i + 1;
-    let palSub = "";
+    const oddPalindrome = concatPalindromeFromCenter(str, i, i);
+    const evenPalindrome = concatPalindromeFromCenter(str, i, i + 1);
+    oddPalindrome.length > longestPal.length && (longestPal = oddPalindrome);
+    evenPalindrome.length > longestPal.length && (longestPal = evenPalindrome);
 
-    if (isEven) {
-      rightIdx = i;
-    } else {
-      // middle char for odd length strs
-      palSub = str[i];
-    }
-
-    // for every character, go outwards left & right one char at a time until left & right chars are not equal
-    while (
-      leftIdx >= 0 &&
-      rightIdx < str.length &&
-      str[leftIdx] === str[rightIdx]
-    ) {
-      // add to our palSub before incrementing / decrementing
-      // because after incr / decr letters might not match
-      palSub = str[leftIdx] + palSub; // prepend left letter
-      palSub += str[rightIdx]; // append right letter
-      leftIdx--;
-      rightIdx++;
-    }
-
-    if (palSub.length > longestPal.length) {
-      longestPal = palSub;
+    if (longestPal.length === str.length) {
+      break;
     }
   }
   return longestPal;
+}
+
+function concatPalindromeFromCenter(str, left, right) {
+  let leftPalSub = "",
+    rightPalSub = "";
+
+  // Used for checking odd palindrome.
+  if (left === right) {
+    rightPalSub = str[right];
+    left--;
+    right++;
+  }
+
+  while (left >= 0 && right < str.length && str[left] === str[right]) {
+    leftPalSub = str[left] + leftPalSub; // prepend.
+    rightPalSub += str[right];
+    left--;
+    right++;
+  }
+
+  return leftPalSub + rightPalSub;
 }
