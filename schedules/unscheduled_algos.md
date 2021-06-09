@@ -26,7 +26,6 @@
 
 ## Arrays
 
-- [getFutureMonth](../arrays/getFutureMonth.js)
 - [findTriplets](../arrays/findTriplets.js) | [findTripletsSpec](../spec/arrays/findTripletsSpec.js)
 - [rotate](../arrays/rotate.js)
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
