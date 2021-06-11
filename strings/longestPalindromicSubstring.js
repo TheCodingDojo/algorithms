@@ -10,7 +10,6 @@
 */
 
 const { isPalindrome } = require("./isPalindrome");
-
 const str1 = "what up, daddy-o?";
 const expected1 = "dad";
 
@@ -35,13 +34,13 @@ const expected5 = "567765";
  */
 function longestPalindromicSubstring(str) {}
 
-module.exports = { longestPalindromicSubstring };
+module.exports = { longestPalindromicSubstring: longestPal };
 
 /*****************************************************************************/
 
 /**
- * - Time: O(n^2 * k). The n^2 part comes from the j loop.
- *    k is the iterations of slice.
+ * - Time: O(n^2 * 2k). The n^2 part comes from the j loop.
+ *    2k is from the iterations of getPalindrome & slice.
  * - Space: O(n) linear.
  */
 function longestPalindromicSubstring(str) {
@@ -68,20 +67,35 @@ function longestPalindromicSubstring(str) {
  */
 function longestPal(str) {
   let longestPal = "";
+  const midIdx = Math.floor(str.length / 2);
 
   for (let i = 0; i < str.length; i++) {
+    /* 
+    Once we pass the center, the longest possible pal from there gets shorter
+    because we will hit the right end of the string sooner so we can early exit
+    if there aren't enough chars left.
+    */
+    if (i > midIdx && str.length - 1 < longestPal.length) {
+      break;
+    }
+
     const oddPalindrome = concatPalindromeFromCenter(str, i, i);
     const evenPalindrome = concatPalindromeFromCenter(str, i, i + 1);
     oddPalindrome.length > longestPal.length && (longestPal = oddPalindrome);
     evenPalindrome.length > longestPal.length && (longestPal = evenPalindrome);
-
-    if (longestPal.length === str.length) {
-      break;
-    }
   }
   return longestPal;
 }
 
+/**
+ * Finds the longest palindrome by expanding out from the given indexes.
+ * - Time: O(n) linear. n = right - left which could be the full string.
+ * - Space: O(n) linear.
+ * @param {string} str
+ * @param {number} left Left index to expand out from.
+ * @param {number} right Right index to expand out from.
+ * @returns {string} The longest palindrome from the starting given indexes.
+ */
 function concatPalindromeFromCenter(str, left, right) {
   let leftPalSub = "",
     rightPalSub = "";
@@ -99,6 +113,5 @@ function concatPalindromeFromCenter(str, left, right) {
     left--;
     right++;
   }
-
   return leftPalSub + rightPalSub;
 }
