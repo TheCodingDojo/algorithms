@@ -92,14 +92,7 @@ const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
 const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
 const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
 const unorderedList = new SinglyLinkedList().seedFromArr([
-  -5,
-  -10,
-  4,
-  -3,
-  6,
-  1,
-  -7,
-  -2,
+  -5, -10, 4, -3, 6, 1, -7, -2,
 ]);
 
 // node 4 connects to node 1, back to head
@@ -111,15 +104,7 @@ const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
 loopList.head.next.next.next = loopList.head.next;
 
 const sortedDupeList = new SinglyLinkedList().seedFromArr([
-  1,
-  1,
-  1,
-  2,
-  3,
-  3,
-  4,
-  5,
-  5,
+  1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
 ```
 
@@ -432,13 +417,13 @@ class LinkedListStack {
 
 - A Stack is a LIFO (Last in First Out) data structure
 - Design a class to represent a stack using an array to store the items
-- Recreate the stack class using a singly linked list to store the items instead of an array
 - Create these methods for each of the Stack classes with O(1) time complexity:
   - push (adds new item and returns new size)
   - pop (returns removed item)
   - isEmpty
   - size
   - peek (return top item without removing)
+- Recreate the stack class using a singly linked list to store the items instead of an array
 
 ### W2 Tue
 
