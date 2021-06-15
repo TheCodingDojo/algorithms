@@ -23,70 +23,74 @@ we are re-visiting it.
 */
 
 /**
- * @typedef {any} NodeData The value stored in a Node and used as the key in a
- *    Map of nodes.
+ * @typedef {any} NodeData The value stored in the nodes and used for the key
+ *    in Map objects.
+ * @typedef {Map<NodeData, Vertex>} AdjacencyList
+ * @typedef {Map<NodeData, Edge>} Edges
  */
 
-const airports = "PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM".split(" ");
-
 const routes = [
-  ["PHX", "LAX"],
-  ["PHX", "JFK"],
-  ["JFK", "LYC"],
-  ["JFK", "OKC"],
-  ["JFK", "HEL"],
-  ["JFK", "LOS"],
-  ["MEX", "LAX"],
-  ["MEX", "BKK"],
-  ["MEX", "LIM"],
-  ["MEX", "EZE"],
-  ["LIM", "BKK"],
+  ["PHX", "LAX", 369.32],
+  ["PHX", "JFK", 2148.78],
+  ["JFK", "LYC", 3862],
+  ["JFK", "OKC", 1345],
+  ["JFK", "HEL", 4117],
+  ["JFK", "LOS", 6593],
+  ["MEX", "LAX", 1553],
+  ["MEX", "BKK", 11505],
+  ["MEX", "LIM", 1638],
+  ["MEX", "EZE", 5876],
+  ["LIM", "BKK", 12241],
 ];
 
 /**
  * Represents a Node (vertex / point) in a Graph and stores it's connections to
- * other Nodes (edges).
+ * other Vertices (edges).
  */
-class Node {
+class Vertex {
   /**
-   * Constructs a new node with the given data.
+   * Constructs a new vertex with the given data.
    * @param {NodeData} data
-   * @returns {Node} This new node.
+   * @returns {Vertex} This new vertex.
    */
   constructor(data) {
     this.data = data;
+    /**
+     * @type {Edges}
+     */
     this.edges = new Map();
   }
 
   /**
-   * Adds an edge connecting this node to the given node.
+   * Adds an edge connecting this vertex to the given vertex.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node
-   * @returns {number} The new amount of adjacent nodes.
+   * @param {Vertex} vertex
+   * @param {number} weight The cost to travel between.
+   * @returns {number} The new amount of adjacent vertices.
    */
-  addEdge(node) {
-    this.edges.set(node.data, node);
+  addEdge(vertex, weight) {
+    this.edges.set(vertex.data, new Edge(vertex, weight));
     return this.edges.size;
   }
 
   /**
-   * Removes the edge connecting this node to the given node.
+   * Removes the edge connecting this vertex to the given vertex.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node
-   * @returns {Node} The removed node.
+   * @param {Vertex} vertex
+   * @returns {Vertex} The removed vertex.
    */
-  removeEdge(node) {
-    this.edges.delete(node);
-    return node;
+  removeEdge(vertex) {
+    this.edges.delete(vertex.data);
+    return vertex;
   }
 
   /**
-   * Gets this node's list of connected nodes.
+   * Gets this vertex's list of connected vertices.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @returns {Map<NodeData, Node>} The adjacency list.
+   * @returns {Edges}
    */
   getEdges() {
     return this.edges;
@@ -102,97 +106,115 @@ class Node {
   }
 
   /**
-   * Determines if this node is connected to the given node.
+   * Determines if this vertex is connected to the given vertex.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node
+   * @param {Vertex} vertex
    * @returns {boolean}
    */
-  isEdge(node) {
-    return this.edges.has(node);
+  isEdge(vertex) {
+    return this.edges.has(vertex.data);
+  }
+}
+
+/**
+ * Represents a connection and cost of travel between vertices.
+ */
+class Edge {
+  /**
+   * @param {Vertex} point
+   * @param {number} weight The cost to travel to this point.
+   */
+  constructor(point, weight) {
+    this.point = point;
+    this.weight = weight;
   }
 }
 
 class Graph {
   constructor(edgeDirection = Graph.UNDIRECTED) {
     /**
-     * @typedef {Map <NodeData, Node>} Nodes
+     * @type {AdjacencyList}
      */
-    this.nodes = new Map();
+    this.vertices = new Map();
     this.edgeDirection = edgeDirection;
   }
 
   /**
-   * Adds a new node to this graph.
+   * Adds a new vertex to this graph.
    * - Time: O(1).
    * - Space: O(1).
    * @param {NodeData} data
-   * @returns {Node} The added node or already existing node.
+   * @returns {Vertex} The added vertex or already existing vertex.
    */
   addVertex(data) {
-    if (this.nodes.has(data)) {
-      return this.nodes.get(data);
+    if (this.vertices.has(data)) {
+      return this.vertices.get(data);
     }
-    const vertex = new Node(data);
-    this.nodes.set(data, vertex);
+
+    const vertex = new Vertex(data);
+    this.vertices.set(data, vertex);
     return vertex;
   }
 
   /**
-   * Removes the node with the matching data.
+   * Removes the vertex with the matching data.
    * - Time: O(V + E) linear.
    * - Space: O(1) constant.
    * @param {NodeData} data
-   * @returns {boolean} Whether the node was removed or not.
+   * @returns {boolean} Whether the vertex was removed or not.
    */
   removeVertex(data) {
-    const current = this.nodes.get(data);
+    const current = this.vertices.get(data);
 
     if (!current) {
       return false;
     }
 
-    for (const node of this.nodes.values()) {
-      node.removeEdge(current);
+    for (const vertex of this.vertices.values()) {
+      vertex.removeEdge(current);
     }
 
-    return this.nodes.delete(data);
+    return this.vertices.delete(data);
   }
 
   /**
-   * Adds an edge to connect the two nodes with the given data.
-   * Nodes will be created if the data does not exist.
+   * Adds an edge to connect the two vertices with the given data.
+   * Vertices will be created if the data does not exist.
    * - Time: O(2) -> O(1) constant.
    * - Space: O(2) -> O(1) constant.
-   * @param {any} source
-   * @param {any} destination
-   * @returns {Array<Node, Node>} The source and destination respectively.
+   * @param {NodeData} source
+   * @param {NodeData} destination
+   * @param {number} weight The cost to travel between the vertices.
+   * @returns {Array<Vertex, Vertex>} The source and destination respectively.
    */
-  addEdge(source, destination) {
-    const sourceNode = this.addVertex(source);
-    const destinationNode = this.addVertex(destination);
+  addEdge(source, destination, weight) {
+    const src = this.addVertex(source);
+    const dest = this.addVertex(destination);
 
-    sourceNode.addEdge(destinationNode);
+    src.addEdge(dest, weight);
 
     if (this.edgeDirection === Graph.UNDIRECTED) {
-      destinationNode.addEdge(sourceNode);
+      dest.addEdge(src, weight);
     }
-    return [sourceNode, destinationNode];
+    return [src, dest];
   }
 
   /**
    * Adds many edges.
    * - Time: O(V + E) linear.
    * - Space: O(V + E) linear.
-   * @param {Array<Array<string, string>>} edges A 2d array where the
+   * @param {Array<Array<string, string, number>>} connections A 2d array where the
    *    where the nested array contains the two NodeData to be connected.
    */
-  addEdges(edges) {
-    edges.forEach(([source, destination]) => this.addEdge(source, destination));
+  addEdges(connections) {
+    connections.forEach(([source, destination, weight]) =>
+      this.addEdge(source, destination, weight)
+    );
     return this;
   }
 
-  /**
+  /** TODO return path and total weight. Add same for BFS
    * Determines if there is a path from the start to the destination using
    * Depth First Search.
    * - Time: O(V + E) linear.
@@ -205,22 +227,22 @@ class Graph {
   hasPathDFS(
     start,
     destination,
-    currNode = this.nodes.get(start),
+    currVert = this.vertices.get(start),
     visited = new Set()
   ) {
-    if (!currNode) {
+    if (!currVert) {
       return false;
     }
 
-    if (currNode.data === destination) {
+    if (currVert.data === destination) {
       return true;
     }
 
-    visited.add(currNode);
+    visited.add(currVert);
 
-    for (const edge of currNode.getEdges().values()) {
-      if (!visited.has(edge)) {
-        if (this.hasPathDFS(start, destination, edge, visited)) {
+    for (const edge of currVert.getEdges().values()) {
+      if (!visited.has(edge.point)) {
+        if (this.hasPathDFS(start, destination, edge.point, visited)) {
           return true;
         }
       }
@@ -236,16 +258,53 @@ class Graph {
    * @param {NodeData} start
    * @returns {Array<NodeData>}
    */
-  toArrDFS(start, currNode = this.nodes.get(start), visited = new Set()) {
-    if (!currNode) {
+  toArrDFS(start, currVert = this.vertices.get(start), visited = new Set()) {
+    if (!currVert) {
       return [...visited];
     }
 
-    visited.add(currNode.data);
+    visited.add(currVert.data);
 
-    for (const edge of currNode.getEdges().values()) {
-      if (!visited.has(edge.data)) {
-        this.toArrDFS(start, edge, visited);
+    for (const edge of currVert.getEdges().values()) {
+      if (!visited.has(edge.point.data)) {
+        this.toArrDFS(start, edge.point, visited);
+      }
+    }
+    return [...visited];
+  }
+
+  /**
+   * Converts this graph to an array of node data that are reachable from the
+   * given start using Depth First Search.
+   * - Time: O(V + E) linear.
+   * - Space: O(2V) -> O(V) linear.
+   * @param {NodeData} start
+   * @returns {Array<NodeData>}
+   */
+  toArrIterativeDFS(start) {
+    const startVert = this.vertices.get(start);
+
+    if (!startVert) {
+      return [];
+    }
+
+    const iteratorsStack = [startVert.getEdges().values()];
+    const visited = new Set([startVert.data]);
+
+    while (iteratorsStack.length) {
+      const currIter = iteratorsStack.pop();
+      const nxt = currIter.next();
+
+      if (!nxt.done) {
+        /**
+         * @type {Edge}
+         */
+        const edge = nxt.value;
+        iteratorsStack.push(currIter);
+        !visited.has(edge.point.data) &&
+          iteratorsStack.push(edge.point.getEdges().values());
+
+        visited.add(edge.point.data);
       }
     }
     return [...visited];
@@ -259,57 +318,23 @@ class Graph {
    * @param {NodeData} start
    * @returns {Array<NodeData>}
    */
-  toArrIterativeDFS(start) {
-    const startNode = this.nodes.get(start);
+  toArrIterativeDFS2(start) {
+    const startVert = this.vertices.get(start);
 
-    if (!startNode) {
+    if (!startVert) {
       return [];
     }
 
-    const stack = [startNode];
+    const stack = [startVert.data];
     const visited = new Set();
 
     while (stack.length) {
-      const currNode = stack.pop();
+      const currVert = this.vertices.get(stack.pop());
 
-      if (!visited.has(currNode.data)) {
-        stack.push(...[...currNode.getEdges().values()].reverse());
+      if (!visited.has(currVert.data)) {
+        stack.push(...[...currVert.getEdges().keys()].reverse());
       }
-      visited.add(currNode.data);
-    }
-    return [...visited];
-  }
-
-  /**
-   * Converts this graph to an array of node data that are reachable from the
-   * given start using Depth First Search.
-   * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
-   * @param {NodeData} start
-   * @returns {Array<NodeData>}
-   */
-  toArrIterativeDFS2(start) {
-    const startNode = this.nodes.get(start);
-
-    if (!startNode) {
-      return [];
-    }
-
-    const iteratorsStack = [startNode.getEdges().values()];
-    const visited = new Set([startNode.data]);
-
-    while (iteratorsStack.length) {
-      const currIter = iteratorsStack.pop();
-      const nxt = currIter.next();
-
-      if (!nxt.done) {
-        const node = nxt.value;
-        iteratorsStack.push(currIter);
-        !visited.has(node.data) &&
-          iteratorsStack.push(node.getEdges().values());
-
-        visited.add(node.data);
-      }
+      visited.add(currVert.data);
     }
     return [...visited];
   }
@@ -325,23 +350,26 @@ class Graph {
    * @returns {Array<NodeData>}
    */
   toArrBFS(start, visited = new Set()) {
-    const startNode = this.nodes.get(start);
+    const startVert = this.vertices.get(start);
 
-    if (!startNode) {
+    if (!startVert) {
       return [];
     }
 
     const queue = new Set();
-    queue.add(startNode);
+    queue.add(startVert);
 
     while (queue.size) {
-      const currNode = queue.values().next().value;
-      queue.delete(currNode); // dequeue O(1).
-      visited.add(currNode.data);
+      /**
+       * @type {Vertex}
+       */
+      const currVert = queue.values().next().value;
+      queue.delete(currVert); // dequeue O(1).
+      visited.add(currVert.data);
 
-      for (const edge of currNode.getEdges().values()) {
-        if (!visited.has(edge.data)) {
-          queue.add(edge); // enqueue O(1).
+      for (const edge of currVert.getEdges().values()) {
+        if (!visited.has(edge.point.data)) {
+          queue.add(edge.point); // enqueue O(1).
         }
       }
     }
@@ -360,14 +388,14 @@ class Graph {
   toArrAll(order = "DFS") {
     const visited = new Set();
 
-    for (const node of this.nodes.values()) {
-      if (!visited.has(node)) {
+    for (const vertex of this.vertices.values()) {
+      if (!visited.has(vertex)) {
         switch (order) {
           case "DFS":
-            this.toArrDFS(node.data, node, visited);
+            this.toArrDFS(vertex.data, vertex, visited);
             break;
           case "BFS":
-            this.toArrBFS(node.data, visited);
+            this.toArrBFS(vertex.data, visited);
             break;
           default:
             break;
@@ -402,9 +430,12 @@ class Graph {
   }
 
   print() {
-    let str = [...this.nodes.values()]
+    let str = [...this.vertices.values()]
       .map(
-        (node) => `${node.data} => ${[...node.getEdges().keys()].join(", ")}`
+        (vertex) =>
+          `${vertex.data} => ${[...vertex.getEdges().values()]
+            .map(({ point, weight }) => `${point.data} (${weight})`)
+            .join(", ")}`
       )
       .join("\n");
 
@@ -422,7 +453,6 @@ Graph.UNDIRECTED = Symbol("directed graph"); // one-way edges
 Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
+flightPaths.addVertex("DERP");
 flightPaths.print();
-console.log(flightPaths.toArrDFS("HEL"));
-console.log(flightPaths.toArrIterativeDFS2("HEL")); // TODO not same order as DFS
-console.log("done");
+// console.log(flightPaths.toArrAll());
