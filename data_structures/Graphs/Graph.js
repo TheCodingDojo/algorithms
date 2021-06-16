@@ -1,12 +1,8 @@
 /* 
 This graph represents flights between airport nodes.
 
-For simplicity, this graph will be:
-  Undirected: can travel back and forth between connected nodes
-  Unweighted: no additional data about the connection is saved, like the distance.
-  No cycles: A node cannot point back to itself.
-
-Given the below data, represent it as a graph.
+For simplicity, this graph will have no cycles: A node cannot point back to
+itself.
 */
 
 /* 
@@ -25,8 +21,9 @@ we are re-visiting it.
 /**
  * @typedef {any} NodeData The value stored in the nodes and used for the key
  *    in Map objects.
- * @typedef {Map<NodeData, Vertex>} AdjacencyList
- * @typedef {Map<NodeData, Edge>} Edges
+ * @typedef {number} Weight The cost to travel to a vertex.
+ * @typedef {Map<NodeData, Vertex>} Vertices
+ * @typedef {Map<Vertex, Weight>} Edges The neighbors of a vertex.
  */
 
 const routes = [
@@ -66,11 +63,11 @@ class Vertex {
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @param {Vertex} vertex
-   * @param {number} weight The cost to travel between.
+   * @param {Weight} weight The cost to travel between.
    * @returns {number} The new amount of adjacent vertices.
    */
   addEdge(vertex, weight) {
-    this.edges.set(vertex.data, new Edge(vertex, weight));
+    this.edges.set(vertex, weight);
     return this.edges.size;
   }
 
@@ -82,7 +79,7 @@ class Vertex {
    * @returns {Vertex} The removed vertex.
    */
   removeEdge(vertex) {
-    this.edges.delete(vertex.data);
+    this.edges.delete(vertex);
     return vertex;
   }
 
@@ -113,28 +110,14 @@ class Vertex {
    * @returns {boolean}
    */
   isEdge(vertex) {
-    return this.edges.has(vertex.data);
-  }
-}
-
-/**
- * Represents a connection and cost of travel between vertices.
- */
-class Edge {
-  /**
-   * @param {Vertex} point
-   * @param {number} weight The cost to travel to this point.
-   */
-  constructor(point, weight) {
-    this.point = point;
-    this.weight = weight;
+    return this.edges.has(vertex);
   }
 }
 
 class Graph {
   constructor(edgeDirection = Graph.UNDIRECTED) {
     /**
-     * @type {AdjacencyList}
+     * @type {Vertices}
      */
     this.vertices = new Map();
     this.edgeDirection = edgeDirection;
@@ -221,33 +204,47 @@ class Graph {
    * - Space: O(2V) -> O(V) linear.
    * @param {NodeData} start
    * @param {NodeData} destination
-   * @returns {Boolean} Whether or not a path exists between the two given
-   *    NodeData.
+   * @param {Vertex} currVert
+   * @param {Weight} currWeight
+   * @returns {{totalWeight: number, path: Array<Array<Vertex, Weight>>}}
    */
-  hasPathDFS(
+  pathDFS(
     start,
     destination,
     currVert = this.vertices.get(start),
-    visited = new Set()
+    currWeight = 0,
+    visited = new Map(),
+    stats = { totalWeight: 0, path: [] }
   ) {
     if (!currVert) {
-      return false;
+      return stats;
     }
+
+    visited.set(currVert, currWeight);
+    stats.totalWeight += currWeight;
 
     if (currVert.data === destination) {
-      return true;
+      stats.path = [...visited.entries()];
+      return stats;
     }
 
-    visited.add(currVert);
+    for (const [edge, weight] of currVert.getEdges().entries()) {
+      if (!visited.has(edge)) {
+        const ret = this.pathDFS(
+          start,
+          destination,
+          edge,
+          weight,
+          visited,
+          stats
+        );
 
-    for (const edge of currVert.getEdges().values()) {
-      if (!visited.has(edge.point)) {
-        if (this.hasPathDFS(start, destination, edge.point, visited)) {
-          return true;
+        if (ret.path.length) {
+          return ret;
         }
       }
     }
-    return false;
+    return stats;
   }
 
   /**
