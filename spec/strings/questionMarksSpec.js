@@ -16,16 +16,16 @@ describe("questionMarks", () => {
   // Explanation: too many question marks
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
   ];
 
   it("should return whether or not the given string contains exactly 3 questions marks between every two ints that sum to 10.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(questionMarks(...arguments))
-        .withContext(argFormatter(questionMarks, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(questionMarks(...args))
+        .withContext(argFormatter(questionMarks, args))
         .toEqual(expected);
     });
   });

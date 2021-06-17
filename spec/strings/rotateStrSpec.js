@@ -20,17 +20,17 @@ describe("rotateStr", () => {
   const expected5 = "ldHello Wor";
 
   const testCases = [
-    { arguments: [str, rotateAmnt1], expected: expected1 },
-    { arguments: [str, rotateAmnt2], expected: expected2 },
-    { arguments: [str, rotateAmnt3], expected: expected3 },
-    { arguments: [str, rotateAmnt4], expected: expected4 },
-    { arguments: [str, rotateAmnt5], expected: expected5 },
+    { args: [str, rotateAmnt1], expected: expected1 },
+    { args: [str, rotateAmnt2], expected: expected2 },
+    { args: [str, rotateAmnt3], expected: expected3 },
+    { args: [str, rotateAmnt4], expected: expected4 },
+    { args: [str, rotateAmnt5], expected: expected5 },
   ];
 
   it("should return a string that is the given string with chars rotated to the right by the given int amount.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(rotateStr(...arguments))
-        .withContext(argFormatter(rotateStr, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(rotateStr(...args))
+        .withContext(argFormatter(rotateStr, args))
         .toEqual(expected)
     ));
 });

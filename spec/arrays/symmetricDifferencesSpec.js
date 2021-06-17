@@ -21,15 +21,15 @@ describe("symmetricDifferences", () => {
   */
 
   const testCases = [
-    { arguments: [test1SetA, test1SetB], expected: expected1 },
-    { arguments: [test2SetA, test2SetB], expected: expected2 },
-    { arguments: [test3SetA, test3SetB], expected: expected3 },
+    { args: [test1SetA, test1SetB], expected: expected1 },
+    { args: [test2SetA, test2SetB], expected: expected2 },
+    { args: [test3SetA, test3SetB], expected: expected3 },
   ];
 
   it("should return the symmetric differences (disjunctive union) of the two given unordered multisets.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(symmetricDifferences(...arguments))
-        .withContext(argFormatter(symmetricDifferences, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(symmetricDifferences(...args))
+        .withContext(argFormatter(symmetricDifferences, args))
         .toEqual(expected)
     ));
 });

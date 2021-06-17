@@ -9,14 +9,14 @@ describe("reverseStr", () => {
   const expected2 = "";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
   ];
 
   it("should return a string that is the reverse of the given string.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(reverseStr(...arguments))
-        .withContext(argFormatter(reverseStr, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(reverseStr(...args))
+        .withContext(argFormatter(reverseStr, args))
         .toEqual(expected)
     ));
 });

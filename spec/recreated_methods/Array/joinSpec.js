@@ -23,17 +23,17 @@ describe("join", () => {
   const expected5 = "";
 
   const testCases = [
-    { arguments: [arr1, separator1], expected: expected1 },
-    { arguments: [arr2, separator2], expected: expected2 },
-    { arguments: [arr3, separator3], expected: expected3 },
-    { arguments: [arr4, separator4], expected: expected4 },
-    { arguments: [arr5, separator5], expected: expected5 },
+    { args: [arr1, separator1], expected: expected1 },
+    { args: [arr2, separator2], expected: expected2 },
+    { args: [arr3, separator3], expected: expected3 },
+    { args: [arr4, separator4], expected: expected4 },
+    { args: [arr5, separator5], expected: expected5 },
   ];
 
   it("should return a string that contains the items of the given array joined and separated by the given separator.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(join(...arguments))
-        .withContext(argFormatter(join, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(join(...args))
+        .withContext(argFormatter(join, args))
         .toEqual(expected)
     ));
 });

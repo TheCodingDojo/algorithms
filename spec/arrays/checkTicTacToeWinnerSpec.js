@@ -31,16 +31,16 @@ describe("checkTicTacToeWinner", () => {
   const expected4 = true;
 
   const testCases = [
-    { arguments: [grid1], expected: expected1 },
-    { arguments: [grid2], expected: expected2 },
-    { arguments: [grid3], expected: expected3 },
-    { arguments: [grid4], expected: expected4 },
+    { args: [grid1], expected: expected1 },
+    { args: [grid2], expected: expected2 },
+    { args: [grid3], expected: expected3 },
+    { args: [grid4], expected: expected4 },
   ];
 
   it("should determine if there is a tic tac toe winner.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(checkTicTacToeWinner(...arguments))
-        .withContext(argFormatter(checkTicTacToeWinner, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(checkTicTacToeWinner(...args))
+        .withContext(argFormatter(checkTicTacToeWinner, args))
         .toEqual(expected)
     ));
 });

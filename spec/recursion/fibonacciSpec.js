@@ -21,18 +21,18 @@ describe("fibonacci", () => {
   const expected6 = 21;
 
   const testCases = [
-    { arguments: [num1], expected: expected1 },
-    { arguments: [num2], expected: expected2 },
-    { arguments: [num3], expected: expected3 },
-    { arguments: [num4], expected: expected4 },
-    { arguments: [num5], expected: expected5 },
-    { arguments: [num6], expected: expected6 },
+    { args: [num1], expected: expected1 },
+    { args: [num2], expected: expected2 },
+    { args: [num3], expected: expected3 },
+    { args: [num4], expected: expected4 },
+    { args: [num5], expected: expected5 },
+    { args: [num6], expected: expected6 },
   ];
 
   it("should return the number from the fibonacci sequence at the given ints position (nth fibonacci num).", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(fibonacci(...arguments))
-        .withContext(argFormatter(fibonacci, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(fibonacci(...args))
+        .withContext(argFormatter(fibonacci, args))
         .toEqual(expected)
     ));
 });

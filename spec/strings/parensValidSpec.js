@@ -18,16 +18,16 @@ describe("parensValid", () => {
   // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
   ];
 
   it("should return whether or not the parenthesis in the given string are valid.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(parensValid(...arguments))
-        .withContext(argFormatter(parensValid, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(parensValid(...args))
+        .withContext(argFormatter(parensValid, args))
         .toEqual(expected)
     ));
 });

@@ -15,15 +15,15 @@ describe("binarySearch", () => {
   const expected3 = true;
 
   const testCases = [
-    { arguments: [nums1, searchNum1], expected: expected1 },
-    { arguments: [nums2, searchNum2], expected: expected2 },
-    { arguments: [nums3, searchNum3], expected: expected3 },
+    { args: [nums1, searchNum1], expected: expected1 },
+    { args: [nums2, searchNum2], expected: expected2 },
+    { args: [nums3, searchNum3], expected: expected3 },
   ];
 
   it("should return whether or not the given array contains the given int.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(binarySearch(...arguments))
-        .withContext(argFormatter(binarySearch, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(binarySearch(...args))
+        .withContext(argFormatter(binarySearch, args))
         .toEqual(expected)
     ));
 });

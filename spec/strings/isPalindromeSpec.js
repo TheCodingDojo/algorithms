@@ -15,16 +15,16 @@ describe("isPalindrome", () => {
   const expected4 = false;
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
   ];
 
   it("should return whether or not the given string is a palindrome.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(isPalindrome(...arguments))
-        .withContext(argFormatter(isPalindrome, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(isPalindrome(...args))
+        .withContext(argFormatter(isPalindrome, args))
         .toEqual(expected)
     ));
 });

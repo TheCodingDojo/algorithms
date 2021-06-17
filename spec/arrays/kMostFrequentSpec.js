@@ -22,15 +22,15 @@ describe("kMostFrequent", () => {
   */
 
   const testCases = [
-    { arguments: [nums1, k1], expected: expected1 },
-    { arguments: [nums2, k2], expected: expected2 },
-    { arguments: [nums3, k3], expected: expected3 },
+    { args: [nums1, k1], expected: expected1 },
+    { args: [nums2, k2], expected: expected2 },
+    { args: [nums3, k3], expected: expected3 },
   ];
 
   it("should return the k most frequently occuring integers from the array in any order.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(kMostFrequent(...arguments))
-        .withContext(argFormatter(kMostFrequent, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(kMostFrequent(...args))
+        .withContext(argFormatter(kMostFrequent, args))
         .toEqual(jasmine.arrayWithExactContents(expected))
     ));
 });

@@ -8,22 +8,22 @@ describe("insertionSort", () => {
   const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const testCases = [
-    { arguments: [numsOrdered], expected: expected },
-    { arguments: [numsRandomOrder], expected: expected },
-    { arguments: [numsReversed], expected: expected },
+    { args: [numsOrdered], expected: expected },
+    { args: [numsRandomOrder], expected: expected },
+    { args: [numsReversed], expected: expected },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const ret = insertionSort(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const ret = insertionSort(...args);
 
     it("should return and sort the given array in ascending order.", () => {
       expect(ret)
-        .withContext(argFormatter(insertionSort, arguments))
+        .withContext(argFormatter(insertionSort, args))
         .toEqual(expected);
     });
 
     it("should have returned the given array, not a new array.", () => {
-      expect(ret).toBe(arguments[0]);
+      expect(ret).toBe(args[0]);
     });
   });
 });

@@ -12,14 +12,14 @@ describe("concatSelf", () => {
   const expected3 = [];
 
   const testCases = [
-    { arguments: [arr1], expected: expected1 },
-    { arguments: [arr2], expected: expected2 },
-    { arguments: [arr3], expected: expected3 },
+    { args: [arr1], expected: expected1 },
+    { args: [arr2], expected: expected2 },
+    { args: [arr3], expected: expected3 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const formattedArgs = argFormatter(concatArrWithSelf, arguments);
-    const inputArr = arguments[0];
+  testCases.forEach(({ args, expected }) => {
+    const formattedArgs = argFormatter(concatArrWithSelf, args);
+    const inputArr = args[0];
     const inputArrCopy = [...inputArr];
     const outputArr = concatArrWithSelf(inputArr);
 

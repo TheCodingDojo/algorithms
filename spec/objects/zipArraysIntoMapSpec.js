@@ -10,12 +10,12 @@ describe("zipArraysIntoMap", () => {
     yo: true,
   };
 
-  const testCases = [{ arguments: [keys1, vals1], expected: expected1 }];
+  const testCases = [{ args: [keys1, vals1], expected: expected1 }];
 
   it("should return an object that has the keys and values from the two given arrays", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(zipArraysIntoMap(...arguments))
-        .withContext(argFormatter(zipArraysIntoMap, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(zipArraysIntoMap(...args))
+        .withContext(argFormatter(zipArraysIntoMap, args))
         .toEqual(expected)
     ));
 });

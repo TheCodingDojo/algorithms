@@ -8,12 +8,12 @@ describe("binaryStringExpansion", () => {
   const expected1 = ["1000", "1001", "1100", "1101"];
   // output list order does not matter
 
-  const testCases = [{ arguments: [str1], expected: expected1 }];
+  const testCases = [{ args: [str1], expected: expected1 }];
 
   it("should return an array of string representing all variations of the given string's question marks replaced with either 0 or 1.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(binaryStringExpansion(...arguments))
-        .withContext(argFormatter(binaryStringExpansion, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(binaryStringExpansion(...args))
+        .withContext(argFormatter(binaryStringExpansion, args))
         .toEqual(jasmine.arrayWithExactContents(expected))
     ));
 });

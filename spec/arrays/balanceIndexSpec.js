@@ -9,14 +9,14 @@ describe("balanceIndex", () => {
   const expected2 = -1;
 
   const testCases = [
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
   ];
 
   it("should return the index at the sum to the left and the right of the index in the given array are equal, or -1 if there is none.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(balanceIndex(...arguments))
-        .withContext(argFormatter(balanceIndex, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(balanceIndex(...args))
+        .withContext(argFormatter(balanceIndex, args))
         .toEqual(expected)
     ));
 });

@@ -62,12 +62,12 @@ describe("groupObjects", () => {
     ],
   };
 
-  const testCases = [{ arguments: [objects], expected: expected }];
+  const testCases = [{ args: [objects], expected: expected }];
 
   it("should return a new array of only the objects from the given array that match the provided search criteria.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(groupObjects(...arguments))
-        .withContext(argFormatter(groupObjects, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(groupObjects(...args))
+        .withContext(argFormatter(groupObjects, args))
         .toEqual(expected);
     }));
 });

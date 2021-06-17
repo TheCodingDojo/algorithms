@@ -30,18 +30,18 @@ describe("compareVersionNumbers", () => {
   const expected6 = 1;
 
   const testCases = [
-    { arguments: [test1V1, test1V2], expected: expected1 },
-    { arguments: [test2V1, test2V2], expected: expected2 },
-    { arguments: [test3V1, test3V2], expected: expected3 },
-    { arguments: [test4V1, test4V2], expected: expected4 },
-    { arguments: [test5V1, test5V2], expected: expected5 },
-    { arguments: [test6V1, test6V2], expected: expected6 },
+    { args: [test1V1, test1V2], expected: expected1 },
+    { args: [test2V1, test2V2], expected: expected2 },
+    { args: [test3V1, test3V2], expected: expected3 },
+    { args: [test4V1, test4V2], expected: expected4 },
+    { args: [test5V1, test5V2], expected: expected5 },
+    { args: [test6V1, test6V2], expected: expected6 },
   ];
 
   it("should return the acronym version of the given string.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(compareVersionNumbers(...arguments))
-        .withContext(argFormatter(compareVersionNumbers, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(compareVersionNumbers(...args))
+        .withContext(argFormatter(compareVersionNumbers, args))
         .toEqual(expected);
     });
   });

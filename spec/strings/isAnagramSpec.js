@@ -19,16 +19,16 @@ describe("isAnagram", () => {
   const expected4 = true;
 
   const testCases = [
-    { arguments: [strA1, strB1], expected: expected1 },
-    { arguments: [strA2, strB2], expected: expected2 },
-    { arguments: [strA3, strB3], expected: expected3 },
-    { arguments: [strA4, strB4], expected: expected4 },
+    { args: [strA1, strB1], expected: expected1 },
+    { args: [strA2, strB2], expected: expected2 },
+    { args: [strA3, strB3], expected: expected3 },
+    { args: [strA4, strB4], expected: expected4 },
   ];
 
   it("should return whether or not the 1st given string is an anagram of the 2nd.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(isAnagram(...arguments))
-        .withContext(argFormatter(isAnagram, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(isAnagram(...args))
+        .withContext(argFormatter(isAnagram, args))
         .toEqual(expected)
     ));
 });

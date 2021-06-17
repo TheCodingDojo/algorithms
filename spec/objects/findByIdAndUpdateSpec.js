@@ -59,20 +59,20 @@ describe("findByIdAndUpdate", () => {
   const expected3 = null;
 
   const testCases = [
-    { arguments: [id1, updateData1, students], expected: expected1 },
-    { arguments: [id2, updateData2, students], expected: expected2 },
-    { arguments: [id3, updateData3, students], expected: expected3 },
+    { args: [id1, updateData1, students], expected: expected1 },
+    { args: [id2, updateData2, students], expected: expected2 },
+    { args: [id3, updateData3, students], expected: expected3 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const formattedArgs = argFormatter(findByIdAndUpdate, arguments);
-    const ret = findByIdAndUpdate(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const formattedArgs = argFormatter(findByIdAndUpdate, args);
+    const ret = findByIdAndUpdate(...args);
     it("should find and update the object in the given array using the given id and update the found object based on the given objects key value pairs, then return the updated object or null if no matching object was found.", () =>
       expect(ret).withContext(formattedArgs).toEqual(expected));
 
     ret !== null &&
       it("should have returned the same object that was in the array", () => {
-        const givenArr = arguments[2];
+        const givenArr = args[2];
         expect(givenArr.includes(ret)).toBe(true);
       });
   });

@@ -12,15 +12,15 @@ describe("reverseWords", () => {
   const expected3 = "cba fed ihg";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
   ];
 
   it("should reverse each word's characters in the given string of space separated words.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(reverseWords(...arguments))
-        .withContext(argFormatter(reverseWords, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(reverseWords(...args))
+        .withContext(argFormatter(reverseWords, args))
         .toEqual(expected)
     ));
 });

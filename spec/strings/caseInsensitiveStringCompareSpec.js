@@ -17,15 +17,15 @@ describe("caseInsensitiveStringCompare", () => {
   const expected3 = false;
 
   const testCases = [
-    { arguments: [strA1, strB1], expected: expected1 },
-    { arguments: [strA2, strB2], expected: expected2 },
-    { arguments: [strA3, strB3], expected: expected3 },
+    { args: [strA1, strB1], expected: expected1 },
+    { args: [strA2, strB2], expected: expected2 },
+    { args: [strA3, strB3], expected: expected3 },
   ];
 
   it("should return whether the strings are equal while ignoring case.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(caseInsensitiveStringCompare(...arguments))
-        .withContext(argFormatter(caseInsensitiveStringCompare, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(caseInsensitiveStringCompare(...args))
+        .withContext(argFormatter(caseInsensitiveStringCompare, args))
         .toEqual(expected)
     ));
 });

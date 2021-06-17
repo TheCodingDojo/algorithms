@@ -28,7 +28,7 @@ const logStyles = {
  * Send a feelingless automaton test driver to drive your functions to see if it crashes to avoid personal injury.
  * Algos should be ran with node or nodemon because the console logs are clipped in debugger
  * @param {Array<Function>} testFuncs - Array of functions to test, can works with a single function instead of array
- * @param {Array<{ arguments: Array, expected: any }>} testCases - Array of objects with the specified keys: array of "arguments" to pass to each function and an "expected" output for those arguments, also works with a single test case instead of array
+ * @param {Array<{ args: Array, expected: any }>} testCases - Array of objects with the specified keys: array of "args" to pass to each function and an "expected" output for those args, also works with a single test case instead of array
  */
 function testDriver(testFuncs = [], testCases = []) {
   const {
@@ -73,8 +73,8 @@ function testDriver(testFuncs = [], testCases = []) {
 
     // execute each test case against each function
     for (let j = 0; j < cases.length; j++) {
-      // object destructure syntax for object at j index to put the values for the "arguments" and "expected" keys into vars of the same name
-      let { arguments, expected } = cases[j];
+      // object destructure syntax for object at j index to put the values for the "args" and "expected" keys into vars of the same name
+      let { args, expected } = cases[j];
 
       const caseNumStr = `🧪 Case ${j + 1}.`;
 
@@ -85,14 +85,14 @@ function testDriver(testFuncs = [], testCases = []) {
 
       console.log(`${fgWhite + bright}%s${logStyles.reset}`, "Given:   ");
 
-      const argStrPrefixes = arguments.map(
+      const argStrPrefixes = args.map(
         (arg, idx) => `Arg ${idx + 1} (${paramNames[idx]}):`
       );
       const longestArgStrPrefix = Math.max(
         ...argStrPrefixes.map((str) => str.length)
       );
 
-      arguments.forEach((arg, idx) => {
+      args.forEach((arg, idx) => {
         const formattedArg = typeof arg === "string" ? `"${arg}"` : arg;
 
         console.log(
@@ -105,7 +105,7 @@ function testDriver(testFuncs = [], testCases = []) {
       });
 
       try {
-        let actual = func(...arguments);
+        let actual = func(...args);
 
         const formattedActual =
           typeof actual === "string" ? `"${actual}"` : actual;
@@ -143,7 +143,8 @@ function testDriver(testFuncs = [], testCases = []) {
 }
 
 // https://stackoverflow.com/a/9924463/7869597
-var STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/gm;
+var STRIP_COMMENTS =
+  /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/gm;
 var ARGUMENT_NAMES = /([^\s,]+)/g;
 function getParamNames(func) {
   var fnStr = func.toString().replace(STRIP_COMMENTS, "");

@@ -20,15 +20,15 @@ describe("frequencyTableBuilder", () => {
   const expected3 = {};
 
   const testCases = [
-    { arguments: [arr1], expected: expected1 },
-    { arguments: [arr2], expected: expected2 },
-    { arguments: [arr3], expected: expected3 },
+    { args: [arr1], expected: expected1 },
+    { args: [arr2], expected: expected2 },
+    { args: [arr3], expected: expected3 },
   ];
 
   it("should return an object that has keys corresponding to the given array's items and values that are a count of the item's frequency.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(frequencyTableBuilder(...arguments))
-        .withContext(argFormatter(frequencyTableBuilder, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(frequencyTableBuilder(...args))
+        .withContext(argFormatter(frequencyTableBuilder, args))
         .toEqual(expected)
     ));
 });

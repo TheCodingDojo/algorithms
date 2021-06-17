@@ -13,14 +13,14 @@ describe("isRotation", () => {
   // Explanation: all same letters in 2nd string, but out of order
 
   const testCases = [
-    { arguments: [strA1, strB1], expected: expected1 },
-    { arguments: [strA2, strB2], expected: expected2 },
+    { args: [strA1, strB1], expected: expected1 },
+    { args: [strA2, strB2], expected: expected2 },
   ];
 
   it("should return whether or not the 1st given string is a rotation of the 2nd given string.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(isRotation(...arguments))
-        .withContext(argFormatter(isRotation, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(isRotation(...args))
+        .withContext(argFormatter(isRotation, args))
         .toEqual(expected)
     ));
 });

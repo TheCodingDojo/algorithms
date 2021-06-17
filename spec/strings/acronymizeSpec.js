@@ -9,14 +9,14 @@ describe("acronymize", () => {
   const expected2 = "LFNYISN";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
   ];
 
   it("should return the acronym version of the given string.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(acronymize(...arguments))
-        .withContext(argFormatter(acronymize, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(acronymize(...args))
+        .withContext(argFormatter(acronymize, args))
         .toEqual(expected)
     ));
 });

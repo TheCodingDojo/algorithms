@@ -6,12 +6,12 @@ describe("orderedMultisetUnion", () => {
   const numsB = [2, 2, 6, 6, 7];
   const expected = [1, 2, 2, 2, 6, 6, 7];
 
-  const testCases = [{ arguments: [numsA, numsB], expected: expected }];
+  const testCases = [{ args: [numsA, numsB], expected: expected }];
 
   it("should return the ordered multiset union of the two given sorted arrays of integers.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(orderedMultisetUnion(...arguments))
-        .withContext(argFormatter(orderedMultisetUnion, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(orderedMultisetUnion(...args))
+        .withContext(argFormatter(orderedMultisetUnion, args))
         .toEqual(expected)
     ));
 });

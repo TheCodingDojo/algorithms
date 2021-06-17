@@ -12,15 +12,15 @@ describe("indexOfMinVal", () => {
   const expected3 = -1;
 
   const testCases = [
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
-    { arguments: [nums3], expected: expected3 },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
+    { args: [nums3], expected: expected3 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
+  testCases.forEach(({ args, expected }) => {
     it(`should return the index of the minimum value from the given array.`, () => {
-      expect(indexOfMinVal(...arguments))
-        .withContext(argFormatter(indexOfMinVal, arguments))
+      expect(indexOfMinVal(...args))
+        .withContext(argFormatter(indexOfMinVal, args))
         .toBe(expected);
     });
   });

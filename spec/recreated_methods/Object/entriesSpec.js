@@ -16,12 +16,12 @@ describe("entries", () => {
     ["age", 13],
   ];
 
-  const testCases = [{ arguments: [obj1], expected: expected1 }];
+  const testCases = [{ args: [obj1], expected: expected1 }];
 
   it("should return a 2d array of the given objects key value pairs.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(entries(...arguments))
-        .withContext(argFormatter(entries, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(entries(...args))
+        .withContext(argFormatter(entries, args))
         .toEqual(expected)
     ));
 });

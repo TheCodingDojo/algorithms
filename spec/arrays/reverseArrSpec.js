@@ -15,16 +15,16 @@ describe("reverseArr", () => {
   const expected4 = [];
 
   const testCases = [
-    { arguments: [arr1], expected: expected1 },
-    { arguments: [arr2], expected: expected2 },
-    { arguments: [arr3], expected: expected3 },
-    { arguments: [arr4], expected: expected4 },
+    { args: [arr1], expected: expected1 },
+    { args: [arr2], expected: expected2 },
+    { args: [arr3], expected: expected3 },
+    { args: [arr4], expected: expected4 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const inputArr = arguments[0];
+  testCases.forEach(({ args, expected }) => {
+    const inputArr = args[0];
     const outputArr = reverseArr(inputArr);
-    const formattedArgs = argFormatter(reverseArr, arguments);
+    const formattedArgs = argFormatter(reverseArr, args);
 
     it("should reverse the given array in place and return the given array.", () => {
       expect(outputArr).withContext(formattedArgs).toEqual(expected);

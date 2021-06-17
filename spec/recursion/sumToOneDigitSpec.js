@@ -12,15 +12,15 @@ describe("sumToOneDigit", () => {
   const expected3 = 7;
 
   const testCases = [
-    { arguments: [num1], expected: expected1 },
-    { arguments: [num2], expected: expected2 },
-    { arguments: [num3], expected: expected3 },
+    { args: [num1], expected: expected1 },
+    { args: [num2], expected: expected2 },
+    { args: [num3], expected: expected3 },
   ];
 
   it("should sum the given int's digits until it becomes one digit and return that result.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(sumToOneDigit(...arguments))
-        .withContext(argFormatter(sumToOneDigit, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(sumToOneDigit(...args))
+        .withContext(argFormatter(sumToOneDigit, args))
         .toEqual(expected)
     ));
 });

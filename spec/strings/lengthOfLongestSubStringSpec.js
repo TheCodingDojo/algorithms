@@ -22,16 +22,16 @@ describe("lengthOfLongestSubString", () => {
   // Explanation: "vadf"
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
   ];
 
   it("should return the length of the longest substring (without dupes) from the given string.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(lengthOfLongestSubString(...arguments))
-        .withContext(argFormatter(lengthOfLongestSubString, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(lengthOfLongestSubString(...args))
+        .withContext(argFormatter(lengthOfLongestSubString, args))
         .toEqual(expected);
     });
   });

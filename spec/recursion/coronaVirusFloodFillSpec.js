@@ -15,13 +15,13 @@ describe("coronaVirusFloodFill", () => {
   // order of output list does not matter
 
   const testCases = [
-    { arguments: [socialSpaceGrid, patientZeroPoint], expected: expected },
+    { args: [socialSpaceGrid, patientZeroPoint], expected: expected },
   ];
 
   it("should return an array of the names new corona virus cases based on flood fill from a starting point.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(coronaVirusFloodFill(...arguments))
-        .withContext(argFormatter(coronaVirusFloodFill, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(coronaVirusFloodFill(...args))
+        .withContext(argFormatter(coronaVirusFloodFill, args))
         .toEqual(jasmine.arrayWithExactContents(expected))
     ));
 });

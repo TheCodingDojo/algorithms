@@ -20,30 +20,30 @@ describe("removeAt", () => {
 
   const testCases = [
     {
-      arguments: [arr1, removeIdx1],
+      args: [arr1, removeIdx1],
       expectedRet: expected1,
       expectedArr: arr1Expected,
     },
     {
-      arguments: [arr2, removeIdx2],
+      args: [arr2, removeIdx2],
       expectedRet: expected2,
       expectedArr: arr2Expected,
     },
     {
-      arguments: [arr3, removeIdx3],
+      args: [arr3, removeIdx3],
       expectedRet: expected3,
       expectedArr: arr3Expected,
     },
   ];
 
-  testCases.forEach(({ arguments, expectedRet, expectedArr }) => {
-    const formattedArgs = argFormatter(removeAt, arguments);
+  testCases.forEach(({ args, expectedRet, expectedArr }) => {
+    const formattedArgs = argFormatter(removeAt, args);
     it("should remove and return the item at the specified index", () => {
-      expect(removeAt(...arguments)).toEqual(expectedRet);
+      expect(removeAt(...args)).toEqual(expectedRet);
     });
 
     it("should have removed the item at the given index from the given array.", () => {
-      expect(arguments[0]).toEqual(expectedArr);
+      expect(args[0]).toEqual(expectedArr);
     });
   });
 });

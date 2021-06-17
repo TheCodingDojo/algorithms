@@ -39,15 +39,15 @@ describe("santasNaughtyList", () => {
   const expected3 = [];
 
   const testCases = [
-    { arguments: [students, badHabit1], expected: expected1 },
-    { arguments: [students, badHabit2], expected: expected2 },
-    { arguments: [students, badHabit3], expected: expected3 },
+    { args: [students, badHabit1], expected: expected1 },
+    { args: [students, badHabit2], expected: expected2 },
+    { args: [students, badHabit3], expected: expected3 },
   ];
 
   it("should an array of all the student objects that have a matching given bad habit.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(santasNaughtyList(...arguments))
-        .withContext(argFormatter(santasNaughtyList, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(santasNaughtyList(...args))
+        .withContext(argFormatter(santasNaughtyList, args))
         .toEqual(expected);
     }));
 });

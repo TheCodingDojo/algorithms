@@ -34,15 +34,15 @@ describe("getMaxServings", () => {
   const expected3 = 0;
 
   const testCases = [
-    { arguments: [recipe1, available1], expected: expected1 },
-    { arguments: [recipe1, available2], expected: expected2 },
-    { arguments: [recipe1, available3], expected: expected3 },
+    { args: [recipe1, available1], expected: expected1 },
+    { args: [recipe1, available2], expected: expected2 },
+    { args: [recipe1, available3], expected: expected3 },
   ];
 
   it("should return maximum amount of servings that can be made from the given recipe and available ingredients.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(getMaxServings(...arguments))
-        .withContext(argFormatter(getMaxServings, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(getMaxServings(...args))
+        .withContext(argFormatter(getMaxServings, args))
         .toEqual(expected);
     }));
 });

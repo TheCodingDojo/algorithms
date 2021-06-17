@@ -15,16 +15,16 @@ describe("dedupeSorted", () => {
   const expected4 = [1];
 
   const testCases = [
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
-    { arguments: [nums3], expected: expected3 },
-    { arguments: [nums4], expected: expected4 },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
+    { args: [nums3], expected: expected3 },
+    { args: [nums4], expected: expected4 },
   ];
 
   it("should return a new array with duplicate values removed.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(dedupeSorted(...arguments))
-        .withContext(argFormatter(dedupeSorted, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(dedupeSorted(...args))
+        .withContext(argFormatter(dedupeSorted, args))
         .toEqual(expected)
     ));
 });

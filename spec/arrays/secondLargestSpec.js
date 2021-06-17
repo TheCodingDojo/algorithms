@@ -31,20 +31,20 @@ const nums8 = [];
 const expected8 = null;
 
 const testCases = [
-  { arguments: [nums1], expected: expected1 },
-  { arguments: [nums2], expected: expected2 },
-  { arguments: [nums3], expected: expected3 },
-  { arguments: [nums4], expected: expected4 },
-  { arguments: [nums5], expected: expected5 },
-  { arguments: [nums6], expected: expected6 },
-  { arguments: [nums7], expected: expected7 },
-  { arguments: [nums8], expected: expected8 },
+  { args: [nums1], expected: expected1 },
+  { args: [nums2], expected: expected2 },
+  { args: [nums3], expected: expected3 },
+  { args: [nums4], expected: expected4 },
+  { args: [nums5], expected: expected5 },
+  { args: [nums6], expected: expected6 },
+  { args: [nums7], expected: expected7 },
+  { args: [nums8], expected: expected8 },
 ];
 
 describe("secondLargest", () => {
-  testCases.forEach(({ arguments, expected }) => {
-    const formattedArgs = argFormatter(secondLargest, arguments);
-    const ret = secondLargest(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const formattedArgs = argFormatter(secondLargest, args);
+    const ret = secondLargest(...args);
 
     it("should return the second largest value from the given array, or null if it doesn't exist.", () => {
       expect(ret).withContext(formattedArgs).toEqual(expected);

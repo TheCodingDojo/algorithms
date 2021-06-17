@@ -19,19 +19,15 @@ describe("insert", () => {
   // Explanation: no quotes areount the int or the bool, technically in SQL the bool would become a 0 or 1, but don't worry about that here.
 
   const testCases = [
-    { arguments: [table, insertData1], expected: expected1 },
-    { arguments: [table, insertData2], expected: expected2, type: "bonus" },
+    { args: [table, insertData1], expected: expected1 },
+    { args: [table, insertData2], expected: expected2, type: "bonus" },
   ];
 
   it("should return a SQL insert command as a string where the given objects key value pairs are the columns and values.", () =>
-    testCases.forEach(({ arguments, expected, type }) =>
-      expect(insert(...arguments))
+    testCases.forEach(({ args, expected, type }) =>
+      expect(insert(...args))
         .withContext(
-          argFormatter(
-            insert,
-            arguments,
-            type === "bonus" ? "\n 🧪 Bonus \n" : ""
-          )
+          argFormatter(insert, args, type === "bonus" ? "\n 🧪 Bonus \n" : "")
         )
         .toEqual(expected)
     ));

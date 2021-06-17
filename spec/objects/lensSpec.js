@@ -35,17 +35,17 @@ describe("lens", () => {
   const expected5 = user;
 
   const testCases = [
-    { arguments: [user, keys1], expected: expected1 },
-    { arguments: [user, keys2], expected: expected2 },
-    { arguments: [user, keys3], expected: expected3 },
-    { arguments: [user, keys4], expected: expected4 },
-    { arguments: [user, keys5], expected: expected5 },
+    { args: [user, keys1], expected: expected1 },
+    { args: [user, keys2], expected: expected2 },
+    { args: [user, keys3], expected: expected3 },
+    { args: [user, keys4], expected: expected4 },
+    { args: [user, keys5], expected: expected5 },
   ];
 
   it("should return the value at the end of the given path of keys, or null if it doesn't exist.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(lens(...arguments))
-        .withContext(argFormatter(lens, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(lens(...args))
+        .withContext(argFormatter(lens, args))
         .toEqual(expected);
     }));
 });

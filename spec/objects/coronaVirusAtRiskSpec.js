@@ -46,12 +46,12 @@ describe("coronaVirusAtRisk", () => {
 
   const expected = ["Person One", "Person Three"];
 
-  const testCases = [{ arguments: [people], expected: expected }];
+  const testCases = [{ args: [people], expected: expected }];
 
   it("should return an array of the names of people who are at risk of contracting corona virus.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(coronaVirusAtRisk(...arguments))
-        .withContext(argFormatter(coronaVirusAtRisk, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(coronaVirusAtRisk(...args))
+        .withContext(argFormatter(coronaVirusAtRisk, args))
         .toEqual(expected);
     }));
 });

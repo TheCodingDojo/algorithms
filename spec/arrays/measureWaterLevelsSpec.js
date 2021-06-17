@@ -24,19 +24,19 @@ describe("measureWaterLevels", () => {
   const expected7 = -1;
 
   const testCases = [
-    { arguments: [riverLevels1], expected: expected1 },
-    { arguments: [riverLevels2], expected: expected2 },
-    { arguments: [riverLevels3], expected: expected3 },
-    { arguments: [riverLevels4], expected: expected4 },
-    { arguments: [riverLevels5], expected: expected5 },
-    { arguments: [riverLevels6], expected: expected6 },
-    { arguments: [riverLevels7], expected: expected7 },
+    { args: [riverLevels1], expected: expected1 },
+    { args: [riverLevels2], expected: expected2 },
+    { args: [riverLevels3], expected: expected3 },
+    { args: [riverLevels4], expected: expected4 },
+    { args: [riverLevels5], expected: expected5 },
+    { args: [riverLevels6], expected: expected6 },
+    { args: [riverLevels7], expected: expected7 },
   ];
 
   it("should return the maximum rise in water-levels after and including the lowest point.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(measureWaterLevels(...arguments))
-        .withContext(argFormatter(measureWaterLevels, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(measureWaterLevels(...args))
+        .withContext(argFormatter(measureWaterLevels, args))
         .toEqual(expected)
     ));
 });

@@ -20,17 +20,17 @@ describe("merge", () => {
   const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const testCases = [
-    { arguments: [sortedA1, sortedB1], expected: expectedMerge1 },
-    { arguments: [sortedA2, sortedB2], expected: expectedMerge2 },
-    { arguments: [sortedA3, sortedB3], expected: expectedMerge3 },
-    { arguments: [sortedA4, sortedB4], expected: expectedMerge4 },
+    { args: [sortedA1, sortedB1], expected: expectedMerge1 },
+    { args: [sortedA2, sortedB2], expected: expectedMerge2 },
+    { args: [sortedA3, sortedB3], expected: expectedMerge3 },
+    { args: [sortedA4, sortedB4], expected: expectedMerge4 },
   ];
 
   it("should return merge the two given sorted arrays into a new sorted array.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      const ret = merge(...arguments);
+    testCases.forEach(({ args, expected }) => {
+      const ret = merge(...args);
 
-      expect(ret).withContext(argFormatter(merge, arguments)).toEqual(expected);
+      expect(ret).withContext(argFormatter(merge, args)).toEqual(expected);
     });
   });
 });
@@ -42,15 +42,15 @@ describe("mergeSort", () => {
   const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const testCases = [
-    { arguments: [numsOrdered], expected: expectedSort },
-    { arguments: [numsRandomOrder], expected: expectedSort },
-    { arguments: [numsReversed], expected: expectedSort },
+    { args: [numsOrdered], expected: expectedSort },
+    { args: [numsRandomOrder], expected: expectedSort },
+    { args: [numsReversed], expected: expectedSort },
   ];
   it("should return a new array that is the given array sorted in ascending order", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      const ret = mergeSort(...arguments);
+    testCases.forEach(({ args, expected }) => {
+      const ret = mergeSort(...args);
 
-      expect(ret).withContext(argFormatter(merge, arguments)).toEqual(expected);
+      expect(ret).withContext(argFormatter(merge, args)).toEqual(expected);
     });
   });
 });

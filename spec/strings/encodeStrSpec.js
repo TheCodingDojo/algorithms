@@ -15,16 +15,16 @@ describe("encodeStr", () => {
   const expected4 = "bbcc";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
   ];
 
   it("should return the given string encoded so that consecutively repeated chars are replaced with an int of its frequency.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(encodeStr(...arguments))
-        .withContext(argFormatter(encodeStr, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(encodeStr(...args))
+        .withContext(argFormatter(encodeStr, args))
         .toEqual(expected)
     ));
 });

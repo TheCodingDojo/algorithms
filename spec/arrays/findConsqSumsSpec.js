@@ -30,18 +30,18 @@ describe("findConsqSums", () => {
   ];
 
   const testCases = [
-    { arguments: [nums1, sum1], expected: expected1 },
-    { arguments: [nums2, sum2], expected: expected2, type: "bonus" },
-    { arguments: [nums3, sum3], expected: expected3, type: "bonus" },
+    { args: [nums1, sum1], expected: expected1 },
+    { args: [nums2, sum2], expected: expected2, type: "bonus" },
+    { args: [nums3, sum3], expected: expected3, type: "bonus" },
   ];
 
   it("should return all the sets of consecutive ints in the given array that add up to the given sum.", () =>
-    testCases.forEach(({ arguments, expected, type }) =>
-      expect(findConsqSums(...arguments))
+    testCases.forEach(({ args, expected, type }) =>
+      expect(findConsqSums(...args))
         .withContext(
           argFormatter(
             findConsqSums,
-            arguments,
+            args,
             type === "bonus" ? "🧪 Bonus Challenge" : ""
           )
         )

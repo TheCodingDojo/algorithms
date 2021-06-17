@@ -15,21 +15,21 @@ describe("unshift", () => {
   const arr2Expected = ["a"];
 
   const testCases = [
-    { arguments: [arr1, newItem1], expected: expected1 },
-    { arguments: [arr2, newItem2], expected: expected2 },
+    { args: [arr1, newItem1], expected: expected1 },
+    { args: [arr2, newItem2], expected: expected2 },
   ];
 
   const expectedArrays = [arr1Expected, arr2Expected];
 
-  testCases.forEach(({ arguments, expected }, idx) => {
-    const formattedArgs = argFormatter(unshift, arguments);
+  testCases.forEach(({ args, expected }, idx) => {
+    const formattedArgs = argFormatter(unshift, args);
 
     it("should return the new length after the new item has been added.", () => {
-      expect(unshift(...arguments)).toBe(expected);
+      expect(unshift(...args)).toBe(expected);
     });
 
     it("should have added the given new item to the front of the array", () => {
-      const givenArray = arguments[0];
+      const givenArray = args[0];
       const expectedArr = expectedArrays[idx];
       expect(givenArray).withContext(formattedArgs).toEqual(expectedArr);
     });

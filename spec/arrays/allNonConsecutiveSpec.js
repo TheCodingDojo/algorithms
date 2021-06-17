@@ -8,12 +8,12 @@ describe("allNonConsecutive", () => {
     { i: 7, n: 10 },
   ];
 
-  const testCases = [{ arguments: [nums1], expected: expected1 }];
+  const testCases = [{ args: [nums1], expected: expected1 }];
 
   it("should return all the non consecutive ints in the given sorted array of ints.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(allNonConsecutive(...arguments))
-        .withContext(argFormatter(allNonConsecutive, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(allNonConsecutive(...args))
+        .withContext(argFormatter(allNonConsecutive, args))
         .toEqual(expected)
     ));
 });

@@ -26,18 +26,18 @@ describe("canStringBecomePalindrome", () => {
   const expected6 = false;
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
-    { arguments: [str3], expected: expected3 },
-    { arguments: [str4], expected: expected4 },
-    { arguments: [str5], expected: expected5 },
-    { arguments: [str6], expected: expected6 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
+    { args: [str3], expected: expected3 },
+    { args: [str4], expected: expected4 },
+    { args: [str5], expected: expected5 },
+    { args: [str6], expected: expected6 },
   ];
 
   it("should return whether or not the given string could be rearranged into a palindrome.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(canStringBecomePalindrome(...arguments))
-        .withContext(argFormatter(canStringBecomePalindrome, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(canStringBecomePalindrome(...args))
+        .withContext(argFormatter(canStringBecomePalindrome, args))
         .toEqual(expected);
     });
   });

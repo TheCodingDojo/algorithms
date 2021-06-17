@@ -9,14 +9,14 @@ describe("stringDedupe", () => {
   const expected2 = "helo";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
   ];
 
   it("should return a string that is the given string with duplicate characters removed.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(stringDedupe(...arguments))
-        .withContext(argFormatter(stringDedupe, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(stringDedupe(...args))
+        .withContext(argFormatter(stringDedupe, args))
         .toEqual(expected)
     ));
 });

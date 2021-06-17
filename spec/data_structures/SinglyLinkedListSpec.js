@@ -179,7 +179,7 @@ describe("removeBack", () => {
 
 describe("recursiveMax", () => {
   if (SinglyLinkedList.prototype.recursiveMax) {
-    it("should return the max data in the list and not require any arguments to be passed in.", () => {
+    it("should return the max data in the list and not require any args to be passed in.", () => {
       let ret = emptyList.recursiveMax();
       expect(ret).withContext(emptyCtx).toEqual(null);
 

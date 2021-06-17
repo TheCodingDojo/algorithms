@@ -21,16 +21,16 @@ describe("canBuildS1FromS2", () => {
   const expected4 = true;
 
   const testCases = [
-    { arguments: [strA1, strB1], expected: expected1 },
-    { arguments: [strA2, strB2], expected: expected2 },
-    { arguments: [strA3, strB3], expected: expected3 },
-    { arguments: [strA4, strB4], expected: expected4 },
+    { args: [strA1, strB1], expected: expected1 },
+    { args: [strA2, strB2], expected: expected2 },
+    { args: [strA3, strB3], expected: expected3 },
+    { args: [strA4, strB4], expected: expected4 },
   ];
 
   it("should return whether or not the first given string can be built using the characters from the second given string.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(canBuildS1FromS2(...arguments))
-        .withContext(argFormatter(canBuildS1FromS2, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(canBuildS1FromS2(...args))
+        .withContext(argFormatter(canBuildS1FromS2, args))
         .toEqual(expected);
     });
   });

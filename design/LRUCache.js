@@ -208,60 +208,60 @@ const lruCache = new LRUCache(2);
 const testCases = [
   {
     method: "put",
-    arguments: ["a", "one"],
+    args: ["a", "one"],
     explanation: "'one' should be added.",
   },
   {
     method: "put",
-    arguments: ["b", "two"],
+    args: ["b", "two"],
     explanation: "'two' should be added.",
   },
   {
     method: "get",
-    arguments: ["a"],
+    args: ["a"],
     expected: "'one'",
     explanation: "'one' was previously added.",
   },
   {
     method: "put",
-    arguments: ["c", "three"],
+    args: ["c", "three"],
     explanation:
       "Should evict key 'b', because key 'a' was retrieved more recently.",
   },
-  { method: "put", arguments: ["d", "four"], explanation: "evicts key 'a'." },
+  { method: "put", args: ["d", "four"], explanation: "evicts key 'a'." },
   {
     method: "get",
-    arguments: ["a"],
+    args: ["a"],
     expected: -1,
     explanation: "'one' should have been evicted earlier.",
   },
   {
     method: "get",
-    arguments: ["b"],
+    args: ["b"],
     expected: -1,
     explanation: "'two' should have been evicted earlier.",
   },
   {
     method: "get",
-    arguments: ["c"],
+    args: ["c"],
     expected: "'three'",
     explanation: "'three' was added and has not been evicted.",
   },
   {
     method: "get",
-    arguments: ["d"],
+    args: ["d"],
     expected: "'four'",
     explanation: "'four' was added and has not been evicted.",
   },
 ];
 
-testCases.forEach(({ method, arguments, expected, explanation }, idx) => {
+testCases.forEach(({ method, args, expected, explanation }, idx) => {
   idx === 0 && console.log("-".repeat(85));
   const caseNumStr = `Case ${idx + 1}`;
-  const methodCallStr = `lruCache.${method}(${arguments
+  const methodCallStr = `lruCache.${method}(${args
     .map((a) => `'${a}'`)
     .join(", ")})`;
-  const actual = lruCache[method](...arguments);
+  const actual = lruCache[method](...args);
 
   console.log(`${caseNumStr}     : ${methodCallStr}`);
 

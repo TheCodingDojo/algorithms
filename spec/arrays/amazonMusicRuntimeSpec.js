@@ -22,15 +22,15 @@ describe("amazonMusicRuntime", () => {
   const expected3 = [-1, -1]; // not found.
 
   const testCases = [
-    { arguments: [busDuration1, songDurations1], expected: expected1 },
-    { arguments: [busDuration2, songDurations2], expected: expected2 },
-    { arguments: [busDuration3, songDurations3], expected: expected3 },
+    { args: [busDuration1, songDurations1], expected: expected1 },
+    { args: [busDuration2, songDurations2], expected: expected2 },
+    { args: [busDuration3, songDurations3], expected: expected3 },
   ];
 
   it("should return the pair of songs that is 30 seconds less than the given bus duration or [-1, -1].", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(amazonMusicRuntime(...arguments))
-        .withContext(argFormatter(amazonMusicRuntime, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(amazonMusicRuntime(...args))
+        .withContext(argFormatter(amazonMusicRuntime, args))
         .toEqual(jasmine.arrayWithExactContents(expected))
     ));
 });

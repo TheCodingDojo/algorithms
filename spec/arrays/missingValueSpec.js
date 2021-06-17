@@ -21,19 +21,19 @@ describe("missingValue", () => {
   const expected4 = 6;
 
   const testCases = [
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
-    { arguments: [nums3], expected: expected3, type: "bonus" },
-    { arguments: [nums4], expected: expected4, type: "bonus" },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
+    { args: [nums3], expected: expected3, type: "bonus" },
+    { args: [nums4], expected: expected4, type: "bonus" },
   ];
 
   it("should return the missing value from an unordered array that contains a sequence of ints with one missing.", () =>
-    testCases.forEach(({ arguments, expected, type }) =>
-      expect(missingValue(...arguments))
+    testCases.forEach(({ args, expected, type }) =>
+      expect(missingValue(...args))
         .withContext(
           argFormatter(
             missingValue,
-            arguments,
+            args,
             type === "bonus" ? "🧪 Bonus Challenge" : ""
           )
         )

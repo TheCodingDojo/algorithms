@@ -9,14 +9,14 @@ describe("decodeStr", () => {
   const expected2 = "aaabbccccccccccccdddddddddd";
 
   const testCases = [
-    { arguments: [str1], expected: expected1 },
-    { arguments: [str2], expected: expected2 },
+    { args: [str1], expected: expected1 },
+    { args: [str2], expected: expected2 },
   ];
 
   it("should return a decoded version of the given string such that each char is repeated based on integer that follows.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(decodeStr(...arguments))
-        .withContext(argFormatter(decodeStr, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(decodeStr(...args))
+        .withContext(argFormatter(decodeStr, args))
         .toEqual(expected)
     ));
 });

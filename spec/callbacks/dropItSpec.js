@@ -18,21 +18,21 @@ describe("dropIt", () => {
   const expected3 = [];
 
   const testCases = [
-    { arguments: [nums.slice(), callback1], expected: expected1 },
-    { arguments: [nums.slice(), callback2], expected: expected2 },
-    { arguments: [nums.slice(), callback3], expected: expected3 },
+    { args: [nums.slice(), callback1], expected: expected1 },
+    { args: [nums.slice(), callback2], expected: expected2 },
+    { args: [nums.slice(), callback3], expected: expected3 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const formattedArgs = argFormatter(dropIt, arguments);
-    const ret = dropIt(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const formattedArgs = argFormatter(dropIt, args);
+    const ret = dropIt(...args);
 
     it("should remove every item in the given array starting from index 0 until the callback returns true, then return the given array.", () => {
       expect(ret).withContext(formattedArgs).toEqual(expected);
     });
 
     it("should have not have returned a new array.", () => {
-      expect(ret).toBe(arguments[0]);
+      expect(ret).toBe(args[0]);
     });
   });
 });

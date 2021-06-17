@@ -17,25 +17,23 @@ describe("quickSort", () => {
   const expected3 = [2, 3, 3, 3, 6, 7, 8, 11, 14];
 
   const testCases = [
-    { arguments: [numsOrdered], expected: expected },
-    { arguments: [numsRandomOrder], expected: expected },
-    { arguments: [numsReversed], expected: expected },
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
-    { arguments: [nums3], expected: expected3 },
+    { args: [numsOrdered], expected: expected },
+    { args: [numsRandomOrder], expected: expected },
+    { args: [numsReversed], expected: expected },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
+    { args: [nums3], expected: expected3 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const ret = quickSort(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const ret = quickSort(...args);
 
     it("should return and sort the given array in ascending order.", () => {
-      expect(ret)
-        .withContext(argFormatter(quickSort, arguments))
-        .toEqual(expected);
+      expect(ret).withContext(argFormatter(quickSort, args)).toEqual(expected);
     });
 
     it("should have returned the given array, not a new array.", () => {
-      expect(ret).toBe(arguments[0]);
+      expect(ret).toBe(args[0]);
     });
   });
 });

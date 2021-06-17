@@ -33,18 +33,18 @@ describe("slice", () => {
   const expected6 = [];
 
   const testCases = [
-    { arguments: [arr1, startIdx1, endIdx1], expected: expected1 },
-    { arguments: [arr2, startIdx2, endIdx2], expected: expected2 },
-    { arguments: [arr3, startIdx3, endIdx3], expected: expected3 },
-    { arguments: [arr4, startIdx4, endIdx4], expected: expected4 },
-    { arguments: [arr5, startIdx5, endIdx5], expected: expected5 },
-    { arguments: [arr6, startIdx6, endIdx6], expected: expected6 },
+    { args: [arr1, startIdx1, endIdx1], expected: expected1 },
+    { args: [arr2, startIdx2, endIdx2], expected: expected2 },
+    { args: [arr3, startIdx3, endIdx3], expected: expected3 },
+    { args: [arr4, startIdx4, endIdx4], expected: expected4 },
+    { args: [arr5, startIdx5, endIdx5], expected: expected5 },
+    { args: [arr6, startIdx6, endIdx6], expected: expected6 },
   ];
 
-  testCases.forEach(({ arguments, expected }) => {
-    const formattedArgs = argFormatter(slice, arguments);
-    const givenArr = arguments[0];
-    const ret = slice(...arguments);
+  testCases.forEach(({ args, expected }) => {
+    const formattedArgs = argFormatter(slice, args);
+    const givenArr = args[0];
+    const ret = slice(...args);
 
     it("should return a slice of the given array from the given start index (inclusive) to the given end index (exclusive).", () => {
       expect(ret).withContext(formattedArgs).toEqual(expected);

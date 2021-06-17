@@ -76,19 +76,19 @@ describe("filterByKey", () => {
   ];
 
   const testCases = [
-    { arguments: [people, searchFor1, searchBy1], expected: expected1 },
-    { arguments: [people, searchFor2, searchBy2], expected: expected2 },
-    { arguments: [people, searchFor3, searchBy3], expected: expected3 },
+    { args: [people, searchFor1, searchBy1], expected: expected1 },
+    { args: [people, searchFor2, searchBy2], expected: expected2 },
+    { args: [people, searchFor3, searchBy3], expected: expected3 },
     {
-      arguments: [people, searchFor4, searchBy4, searchMethod4],
+      args: [people, searchFor4, searchBy4, searchMethod4],
       expected: expected4,
     },
   ];
 
   it("should return a new array of only the objects from the given array that match the provided search criteria.", () =>
-    testCases.forEach(({ arguments, expected }) => {
-      expect(filterByKey(...arguments))
-        .withContext(argFormatter(filterByKey, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(filterByKey(...args))
+        .withContext(argFormatter(filterByKey, args))
         .toEqual(expected);
     }));
 });

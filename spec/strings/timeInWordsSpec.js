@@ -47,23 +47,23 @@ describe("timeInWords", () => {
   const expected11 = "twelve o' clock";
 
   const testCases = [
-    { arguments: [hour1, min1], expected: expected1 },
-    { arguments: [hour2, min2], expected: expected2 },
-    { arguments: [hour3, min3], expected: expected3 },
-    { arguments: [hour4, min4], expected: expected4 },
-    { arguments: [hour5, min5], expected: expected5 },
-    { arguments: [hour6, min6], expected: expected6 },
-    { arguments: [hour7, min7], expected: expected7 },
-    { arguments: [hour8, min8], expected: expected8 },
-    { arguments: [hour9, min9], expected: expected9 },
-    { arguments: [hour10, min10], expected: expected10 },
-    { arguments: [hour11, min11], expected: expected11 },
+    { args: [hour1, min1], expected: expected1 },
+    { args: [hour2, min2], expected: expected2 },
+    { args: [hour3, min3], expected: expected3 },
+    { args: [hour4, min4], expected: expected4 },
+    { args: [hour5, min5], expected: expected5 },
+    { args: [hour6, min6], expected: expected6 },
+    { args: [hour7, min7], expected: expected7 },
+    { args: [hour8, min8], expected: expected8 },
+    { args: [hour9, min9], expected: expected9 },
+    { args: [hour10, min10], expected: expected10 },
+    { args: [hour11, min11], expected: expected11 },
   ];
 
   it("should return time in words based on the given hours and minutes.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(timeInWords(...arguments))
-        .withContext(argFormatter(timeInWords, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(timeInWords(...args))
+        .withContext(argFormatter(timeInWords, args))
         .toEqual(expected);
     });
   });

@@ -27,14 +27,14 @@ describe("findObjects", () => {
   ];
 
   const testCases = [
-    { arguments: [searchCriteria1, items], expected: expected1 },
-    { arguments: [searchCriteria2, items], expected: expected2 },
+    { args: [searchCriteria1, items], expected: expected1 },
+    { args: [searchCriteria2, items], expected: expected2 },
   ];
 
   it("should return an array of the objects from the given array that match the key value pairs of the given object.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(findObjects(...arguments))
-        .withContext(argFormatter(findObjects, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(findObjects(...args))
+        .withContext(argFormatter(findObjects, args))
         .toEqual(expected)
     ));
 });

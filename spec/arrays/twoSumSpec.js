@@ -7,12 +7,12 @@ describe("twoSum", () => {
   const expected1 = [0, 2];
   // Explanation: nums[0] + nums[1] = 2 + 7 = 9
 
-  const testCases = [{ arguments: [nums1, targetSum1], expected: expected1 }];
+  const testCases = [{ args: [nums1, targetSum1], expected: expected1 }];
 
   it("should find the two ints in the given array that add up to the given sum and return their indicies.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(twoSum(...arguments))
-        .withContext(argFormatter(twoSum, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(twoSum(...args))
+        .withContext(argFormatter(twoSum, args))
         .toEqual(jasmine.arrayWithExactContents(expected))
     ));
 });

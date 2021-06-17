@@ -14,15 +14,15 @@ describe("recursiveSigma", () => {
   const expected3 = 0;
 
   const testCases = [
-    { arguments: [num1], expected: expected1 },
-    { arguments: [num2], expected: expected2 },
-    { arguments: [num3], expected: expected3 },
+    { args: [num1], expected: expected1 },
+    { args: [num2], expected: expected2 },
+    { args: [num3], expected: expected3 },
   ];
 
   it("should return the sum of 1 through the given int inclusive.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(recursiveSigma(...arguments))
-        .withContext(argFormatter(recursiveSigma, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(recursiveSigma(...args))
+        .withContext(argFormatter(recursiveSigma, args))
         .toEqual(expected)
     ));
 });

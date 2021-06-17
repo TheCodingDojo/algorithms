@@ -18,17 +18,17 @@ describe("firstNonRepeated", () => {
   const expected5 = null;
 
   const testCases = [
-    { arguments: [nums1], expected: expected1 },
-    { arguments: [nums2], expected: expected2 },
-    { arguments: [nums3], expected: expected3 },
-    { arguments: [nums4], expected: expected4 },
-    { arguments: [nums5], expected: expected5 },
+    { args: [nums1], expected: expected1 },
+    { args: [nums2], expected: expected2 },
+    { args: [nums3], expected: expected3 },
+    { args: [nums4], expected: expected4 },
+    { args: [nums5], expected: expected5 },
   ];
 
   it("should return the integer that appears earliest that has no duplicate anywhere else in the array.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(firstNonRepeated(...arguments))
-        .withContext(argFormatter(firstNonRepeated, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(firstNonRepeated(...args))
+        .withContext(argFormatter(firstNonRepeated, args))
         .toEqual(expected)
     ));
 });

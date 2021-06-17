@@ -15,16 +15,16 @@ describe("fewestCoinChange", () => {
   const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
   const testCases = [
-    { arguments: [cents1], expected: expected1 },
-    { arguments: [cents2], expected: expected2 },
-    { arguments: [cents3], expected: expected3 },
-    { arguments: [cents4], expected: expected4 },
+    { args: [cents1], expected: expected1 },
+    { args: [cents2], expected: expected2 },
+    { args: [cents3], expected: expected3 },
+    { args: [cents4], expected: expected4 },
   ];
 
   it("should return an object detailing the fewest coins needed to get to the given cents.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(fewestCoinChange(...arguments))
-        .withContext(argFormatter(fewestCoinChange, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(fewestCoinChange(...args))
+        .withContext(argFormatter(fewestCoinChange, args))
         .toEqual(expected)
     ));
 });

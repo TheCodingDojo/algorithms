@@ -14,15 +14,15 @@ describe("factorial", () => {
   const expected3 = 1;
 
   const testCases = [
-    { arguments: [num1], expected: expected1 },
-    { arguments: [num2], expected: expected2 },
-    { arguments: [num3], expected: expected3 },
+    { args: [num1], expected: expected1 },
+    { args: [num2], expected: expected2 },
+    { args: [num3], expected: expected3 },
   ];
 
   it("should return the product of 1 through the given int inclusive.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(factorial(...arguments))
-        .withContext(argFormatter(factorial, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(factorial(...args))
+        .withContext(argFormatter(factorial, args))
         .toEqual(expected)
     ));
 });

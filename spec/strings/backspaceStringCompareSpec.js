@@ -25,16 +25,16 @@ describe("backspaceStringCompare", () => {
   // Explanation: S becomes "c" while T becomes "b".
 
   const testCases = [
-    { arguments: [S1, T1], expected: expected1 },
-    { arguments: [S2, T2], expected: expected2 },
-    { arguments: [S3, T3], expected: expected3 },
-    { arguments: [S4, T4], expected: expected4 },
+    { args: [S1, T1], expected: expected1 },
+    { args: [S2, T2], expected: expected2 },
+    { args: [S3, T3], expected: expected3 },
+    { args: [S4, T4], expected: expected4 },
   ];
 
   it("should return whether or not the strings are equal after processing the backspaces.", () => {
-    testCases.forEach(({ arguments, expected }) => {
-      expect(backspaceStringCompare(...arguments))
-        .withContext(argFormatter(backspaceStringCompare, arguments))
+    testCases.forEach(({ args, expected }) => {
+      expect(backspaceStringCompare(...args))
+        .withContext(argFormatter(backspaceStringCompare, args))
         .toEqual(expected);
     });
   });

@@ -26,15 +26,15 @@ describe("updateInventory", () => {
   const expected3 = [{ name: "Peanut Butter", quantity: 20 }];
 
   const testCases = [
-    { arguments: [newInv1, currInv1], expected: expected1 },
-    { arguments: [newInv2, currInv2], expected: expected2 },
-    { arguments: [newInv3, currInv3], expected: expected3 },
+    { args: [newInv1, currInv1], expected: expected1 },
+    { args: [newInv2, currInv2], expected: expected2 },
+    { args: [newInv3, currInv3], expected: expected3 },
   ];
 
   it("should return whether or not the 1st given string is a rotation of the 2nd given string.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(updateInventory(...arguments))
-        .withContext(argFormatter(updateInventory, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(updateInventory(...args))
+        .withContext(argFormatter(updateInventory, args))
         .toEqual(expected)
     ));
 });

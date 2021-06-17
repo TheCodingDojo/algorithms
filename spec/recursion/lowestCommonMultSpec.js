@@ -23,17 +23,17 @@ describe("lowestCommonMult", () => {
   const expected5 = 75;
 
   const testCases = [
-    { arguments: [num1A, num1B], expected: expected1 },
-    { arguments: [num2A, num2B], expected: expected2 },
-    { arguments: [num3A, num3B], expected: expected3 },
-    { arguments: [num4A, num4B], expected: expected4 },
-    { arguments: [num5A, num5B], expected: expected5 },
+    { args: [num1A, num1B], expected: expected1 },
+    { args: [num2A, num2B], expected: expected2 },
+    { args: [num3A, num3B], expected: expected3 },
+    { args: [num4A, num4B], expected: expected4 },
+    { args: [num5A, num5B], expected: expected5 },
   ];
 
   it("should return the lowest common multiple of the two given ints.", () =>
-    testCases.forEach(({ arguments, expected }) =>
-      expect(lowestCommonMult(...arguments))
-        .withContext(argFormatter(lowestCommonMult, arguments))
+    testCases.forEach(({ args, expected }) =>
+      expect(lowestCommonMult(...args))
+        .withContext(argFormatter(lowestCommonMult, args))
         .toEqual(expected)
     ));
 });
