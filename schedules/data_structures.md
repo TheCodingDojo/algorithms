@@ -427,6 +427,8 @@ class LinkedListStack {
 
 ### W2 Tue
 
+- [Queue.js](../data_structures/Queue.js)
+
 ```js
 /**
  * Class to represent a queue using an array to store the queued items.
@@ -465,6 +467,8 @@ class Queue {
   - Linked List Queue: enqueue: O(1), dequeue: O(1), size: O(1), front: O(1)
 
 ### W2 Wed
+
+- [Queue.js](../data_structures/Queue.js)
 
 - compareQueues
   - Write a method on the Queue class that, given another queue, will return whether they are equal (same items in same order).
@@ -508,7 +512,7 @@ class Queue {
 
 ### W2 Thur
 
-- sumOfHalvesEqual
+- [sumOfHalvesEqual](../data_structures/Queue.js)
   - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
   - DO NOT manually index the queue items via bracket notation, only use the provided queue methods, use no additional arrays or objects for storage.
   - Restore the queue to it's original state before returning.
