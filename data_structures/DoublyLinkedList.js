@@ -420,14 +420,7 @@ const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
 const firstThreeList = new DoublyLinkedList().seedFromArr([1, 2, 3]);
 const secondThreeList = new DoublyLinkedList().seedFromArr([4, 5, 6]);
 const unorderedList = new DoublyLinkedList().seedFromArr([
-  -5,
-  -10,
-  4,
-  -3,
-  6,
-  1,
-  -7,
-  -2,
+  -5, -10, 4, -3, 6, 1, -7, -2,
 ]);
 
 module.exports = { DoublyLinkedList, Node };

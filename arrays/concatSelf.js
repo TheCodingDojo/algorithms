@@ -21,7 +21,7 @@ const expected3 = [];
  * @param {Array<any>} items
  * @returns {Array<any>} The resulting concatenation of the given arr with
  *    itself.
- */ items;
+ */
 function concatArrWithSelf(items) {
   // code here
 }
@@ -84,3 +84,5 @@ module.exports = {
   concatArrWithSelfManually,
   concatArrWithSelfManually2,
 };
+
+// test

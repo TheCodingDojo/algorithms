@@ -63,8 +63,8 @@ function selectionSort(nums) {
 
     if (nums[selectedIdx] !== nums[idxOfCurrMin]) {
       // Swap.
-      [nums[selectedIdx], nums[idxOfCurrentMin]] = [
-        nums[idxOfCurrentMin],
+      [nums[selectedIdx], nums[idxOfCurrMin]] = [
+        nums[idxOfCurrMin],
         nums[selectedIdx],
       ];
     }

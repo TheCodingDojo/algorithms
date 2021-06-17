@@ -121,9 +121,9 @@ function symmetricDifferencesSets(numsA, numsB) {
   const disjunctiveUnion = new Set(numsA);
   // To dedupe set B as well so that when a num is deleted if won't accidentally
   // be re-added below if there were a dupe
-  const numsB = new Set(numsB);
+  const setB = new Set(numsB);
 
-  for (const item of numsB) {
+  for (const item of setB) {
     if (disjunctiveUnion.has(item)) {
       disjunctiveUnion.delete(item);
     } else {
@@ -138,8 +138,8 @@ function symmetricDifferencesMath(numsA, numsB) {
   const union = new Set([...numsA, ...numsB]);
 
   // Find Intersect
-  const numsA = new Set(numsA);
-  const intersect = new Set(numsB.filter((item) => numsA.has(item)));
+  const setA = new Set(numsA);
+  const intersect = new Set(numsB.filter((item) => setA.has(item)));
 
   // Remove Intersect from Union
   return [...union].filter((item) => !intersect.has(item));

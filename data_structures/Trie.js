@@ -67,5 +67,5 @@ class TrieSet {
 
 module.exports = {
   TrieSet,
-  TrieNode
+  TrieNode,
 };

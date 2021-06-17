@@ -66,21 +66,7 @@ beforeEach(() => {
   oneNodeBST = arrToBST([1]);
   twoNodeBST = arrToBST([1, 2]);
   fullBST = arrToBST([
-    25,
-    15,
-    10,
-    22,
-    4,
-    12,
-    18,
-    24,
-    50,
-    35,
-    70,
-    31,
-    44,
-    66,
-    90,
+    25, 15, 10, 22, 4, 12, 18, 24, 50, 35, 70, 31, 44, 66, 90,
   ]);
 });
 
@@ -202,21 +188,7 @@ describe("toArrPreorder", () => {
       expect(emptyBST.toArrPreorder()).withContext(emptyCtx).toEqual([]);
       expect(oneNodeBST.toArrPreorder()).withContext(oneNodeCtx).toEqual([1]);
       expect(fullBST.toArrPreorder()).toEqual([
-        25,
-        15,
-        10,
-        4,
-        12,
-        22,
-        18,
-        24,
-        50,
-        35,
-        31,
-        44,
-        70,
-        66,
-        90,
+        25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90,
       ]);
     });
   }
@@ -228,21 +200,7 @@ describe("toArrInorder", () => {
       expect(emptyBST.toArrInorder()).withContext(emptyCtx).toEqual([]);
       expect(oneNodeBST.toArrInorder()).withContext(oneNodeCtx).toEqual([1]);
       expect(fullBST.toArrInorder()).toEqual([
-        4,
-        10,
-        12,
-        15,
-        18,
-        22,
-        24,
-        25,
-        31,
-        35,
-        44,
-        50,
-        66,
-        70,
-        90,
+        4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90,
       ]);
     });
   }
@@ -254,21 +212,7 @@ describe("toArrPostorder", () => {
       expect(emptyBST.toArrPostorder()).withContext(emptyCtx).toEqual([]);
       expect(oneNodeBST.toArrPostorder()).withContext(oneNodeCtx).toEqual([1]);
       expect(fullBST.toArrPostorder()).toEqual([
-        4,
-        12,
-        10,
-        18,
-        24,
-        22,
-        15,
-        31,
-        44,
-        35,
-        66,
-        90,
-        70,
-        50,
-        25,
+        4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25,
       ]);
     });
   }
@@ -280,21 +224,7 @@ describe("toArrLevelorder", () => {
       expect(emptyBST.toArrLevelorder()).withContext(emptyCtx).toEqual([]);
       expect(oneNodeBST.toArrLevelorder()).withContext(oneNodeCtx).toEqual([1]);
       expect(fullBST.toArrLevelorder()).toEqual([
-        25,
-        15,
-        50,
-        10,
-        22,
-        35,
-        70,
-        4,
-        12,
-        18,
-        24,
-        31,
-        44,
-        66,
-        90,
+        25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90,
       ]);
     });
   }

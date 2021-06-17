@@ -1,5 +1,6 @@
 // https://stackoverflow.com/a/9924463/7869597
-var STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/gm;
+var STRIP_COMMENTS =
+  /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,\)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,\)]*))/gm;
 var ARGUMENT_NAMES = /([^\s,]+)/g;
 
 function getParamNames(func) {

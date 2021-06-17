@@ -1,4 +1,4 @@
-String.prototype.hashCode = function() {
+String.prototype.hashCode = function () {
   let hash = 0;
 
   if (this.length == 0) return hash;
@@ -78,5 +78,5 @@ h.add("pizza", "is good");
 console.log(h.table);
 
 module.exports = {
-  HashMap
+  HashMap,
 };

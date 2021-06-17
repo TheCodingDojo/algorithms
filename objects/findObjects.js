@@ -87,7 +87,7 @@ function findObjects(criteria, collection) {
   return foundDocuments;
 }
 
-const findObjectsFunctional = (criteria, collection) =>
+const findObjectsFunctional2 = (criteria, collection) =>
   collection.filter((item) =>
     Object.keys(criteria).every((key) => item[key] === criteria[key])
   );

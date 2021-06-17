@@ -1,6 +1,5 @@
 /* 
 This graph represents flights between airport nodes.
-
 For simplicity, this graph will have no cycles: A node cannot point back to
 itself.
 */
@@ -9,7 +8,6 @@ itself.
 Terms:
 Node: Vertex / Point, Neighbor / Edge.
 Edge: connection between two nodes.
-
 O(V + E) means Vertices + Edges and can also be written as O(n) since it's
 linear. However, since a node can be both a vertex and multiple edges since it
 can be connected to many nodes, the same node can be visited multiple times.
@@ -164,8 +162,8 @@ class Graph {
   /**
    * Adds an edge to connect the two vertices with the given data.
    * Vertices will be created if the data does not exist.
-   * - Time: O(2) -> O(1) constant.
-   * - Space: O(2) -> O(1) constant.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
    * @param {NodeData} source
    * @param {NodeData} destination
    * @param {number} weight The cost to travel between the vertices.
@@ -197,16 +195,16 @@ class Graph {
     return this;
   }
 
-  /** TODO return path and total weight. Add same for BFS
-   * Determines if there is a path from the start to the destination using
-   * Depth First Search.
+  /**
+   * Finds the path from the start to the destination or every vertex reachable
+   * from the start if no destination is provided.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {NodeData} start
    * @param {NodeData} destination
    * @param {Vertex} currVert
    * @param {Weight} currWeight
-   * @returns {{totalWeight: number, path: Array<Array<Vertex, Weight>>}}
+   * @returns {{totalWeight: number, path: Array<Array<NodeData, Weight>>}}
    */
   pathDFS(
     start,
@@ -220,7 +218,7 @@ class Graph {
       return stats;
     }
 
-    visited.set(currVert, currWeight);
+    visited.set(currVert.data, currWeight);
     stats.totalWeight += currWeight;
 
     if (currVert.data === destination) {
@@ -229,7 +227,7 @@ class Graph {
     }
 
     for (const [edge, weight] of currVert.getEdges().entries()) {
-      if (!visited.has(edge)) {
+      if (!visited.has(edge.data)) {
         const ret = this.pathDFS(
           start,
           destination,
@@ -244,14 +242,15 @@ class Graph {
         }
       }
     }
-    return stats;
+
+    return { totalWeight: 0, path: [] };
   }
 
   /**
    * Converts this graph to an array of node data that are reachable from the
    * given start using Depth First Search without recursion.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {NodeData} start
    * @returns {Array<NodeData>}
    */
@@ -274,7 +273,7 @@ class Graph {
    * Converts this graph to an array of node data that are reachable from the
    * given start using Depth First Search.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {NodeData} start
    * @returns {Array<NodeData>}
    */
@@ -311,7 +310,7 @@ class Graph {
    * Converts this graph to an array of node data that are reachable from the
    * given start using Depth First Search without recursion.
    * - Time: O(V + 2E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {NodeData} start
    * @returns {Array<NodeData>}
    */
@@ -340,13 +339,14 @@ class Graph {
    * Converts this graph to an array of node data that are reachable from the
    * given start using Breadth First Search.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {NodeData} start
+   * @param {NOdeData} destination
    * @param {Set<NodeData>} visited This is a param so this method can also be
    *    used as a helper method to reach every node.
    * @returns {Array<NodeData>}
    */
-  toArrBFS(start, visited = new Set()) {
+  pathBFS(start, visited = new Set()) {
     const startVert = this.vertices.get(start);
 
     if (!startVert) {
@@ -378,7 +378,7 @@ class Graph {
    * to reach every node rather than only the nodes that are reachable from a
    * start node.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @param {string} order The traversal order.
    * @returns {Array<NodeData>}
    */
@@ -407,7 +407,7 @@ class Graph {
    * to reach every node rather than only the nodes that are reachable from a
    * start node.
    * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
+   * - Space: O(V + E) linear.
    * @returns {Array<NodeData>}
    */
   toArrAllDFS() {
@@ -430,8 +430,8 @@ class Graph {
     let str = [...this.vertices.values()]
       .map(
         (vertex) =>
-          `${vertex.data} => ${[...vertex.getEdges().values()]
-            .map(({ point, weight }) => `${point.data} (${weight})`)
+          `${vertex.data} => ${[...vertex.getEdges().entries()]
+            .map(([point, weight]) => `${point.data} (${weight})`)
             .join(", ")}`
       )
       .join("\n");
@@ -443,13 +443,13 @@ class Graph {
 }
 
 /* 
-A Symbol is not specific to a graph. These props could have just been strings,
-but there are some advantages to using symbols.
-*/
+  A Symbol is not specific to a graph. These props could have just been strings,
+  but there are some advantages to using symbols.
+  */
 Graph.UNDIRECTED = Symbol("directed graph"); // one-way edges
 Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.addVertex("DERP");
 flightPaths.print();
-// console.log(flightPaths.toArrAll());
+console.log("HEL -> EZE", flightPaths.pathDFS("HEL", "EZE"));

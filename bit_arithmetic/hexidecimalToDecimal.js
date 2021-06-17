@@ -11,7 +11,7 @@ function hexadecimalToDecimal(hexadecimal) {
     C: 12,
     D: 13,
     E: 14,
-    F: 15
+    F: 15,
   };
 
   let count = 0,

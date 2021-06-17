@@ -35,12 +35,8 @@ function generateTestLists() {
   };
 }
 
-const {
-  emptyList,
-  oneNodeList,
-  twoNodeList,
-  threeNodeList,
-} = generateTestLists();
+const { emptyList, oneNodeList, twoNodeList, threeNodeList } =
+  generateTestLists();
 
 let testList, emptyTest, oneNodeTest, twoNodeTest, threeNodeTest;
 

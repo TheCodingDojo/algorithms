@@ -14,7 +14,7 @@ function generateCoinChange(
 ) {
   solutions.push({
     ...partial,
-    pennies: cents
+    pennies: cents,
   });
 
   if (!partial.quarters) {
@@ -23,7 +23,7 @@ function generateCoinChange(
     for (let i = 1; i <= maxQuarters; i++) {
       generateCoinChange(cents - i * 25, solutions, {
         ...partial,
-        quarters: i
+        quarters: i,
       });
     }
   }
@@ -34,7 +34,7 @@ function generateCoinChange(
     for (let i = 1; i <= maxDimes; i++) {
       generateCoinChange(cents - i * 10, solutions, {
         ...partial,
-        dimes: i
+        dimes: i,
       });
     }
   }
@@ -45,7 +45,7 @@ function generateCoinChange(
     for (let i = 1; i <= maxNickels; i++) {
       generateCoinChange(cents - i * 5, solutions, {
         ...partial,
-        nickels: i
+        nickels: i,
       });
     }
   }

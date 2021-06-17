@@ -192,7 +192,7 @@ const timeOutChair = new Chair(
     new ChairWheel(),
     new ChairWheel(),
     new ChairWheel(),
-    new ChairWheel()
+    new ChairWheel(),
   ],
   "Rebellion Red"
 );

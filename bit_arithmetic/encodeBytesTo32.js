@@ -9,7 +9,7 @@
 const hexadecimalToDecimal = require("../2_Tue/hexidecimalToDecimal");
 
 function encodeBytesTo32(arr) {
-  const combined = arr.map(digits => digits.slice(2)).join("");
+  const combined = arr.map((digits) => digits.slice(2)).join("");
 
   return hexadecimalToDecimal("0x" + combined);
 }

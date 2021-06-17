@@ -60,7 +60,7 @@
    * return a unique integer for that string. Same unique
    * integer for same string each time.
    */
-  String.prototype.hashCode = function() {
+  String.prototype.hashCode = function () {
     let hash = 0;
 
     if (this.length == 0) return hash;
@@ -87,7 +87,7 @@
   }
 
   // Alternate way to add method to class after it has been declared
-  HashMap.prototype.newMethodName = function(params) {
+  HashMap.prototype.newMethodName = function (params) {
     // 'this' keyword will refer to the
     // HashMap instance that method1 was called on
   };
@@ -117,7 +117,7 @@
   }
 
   // Alternate way to add method to class after it has been declared
-  TrieSet.prototype.newMethodName = function(params) {
+  TrieSet.prototype.newMethodName = function (params) {
     // 'this' keyword will refer to the
     // TrieSet instance that method1 was called on
   };
