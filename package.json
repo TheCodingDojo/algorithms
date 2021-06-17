@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/.bin/jasmine",
     "format": "prettier --write .",
-    "status": "git status"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/TheCodingDojo/algorithms#readme",
   "devDependencies": {
+    "husky": "^6.0.0",
     "jasmine": "^3.5.0",
     "prettier": "^2.3.1",
     "pretty-quick": "^3.1.1"
