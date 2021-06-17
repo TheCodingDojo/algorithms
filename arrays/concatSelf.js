@@ -84,5 +84,3 @@ module.exports = {
   concatArrWithSelfManually,
   concatArrWithSelfManually2,
 };
-
-// test
