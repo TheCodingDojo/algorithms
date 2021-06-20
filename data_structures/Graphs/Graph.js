@@ -36,6 +36,7 @@ const routes = [
   ["MEX", "LIM", 1638],
   ["MEX", "EZE", 5876],
   ["LIM", "BKK", 12241],
+  ["HERP", "DERP", 60],
 ];
 
 /**
@@ -196,181 +197,162 @@ class Graph {
   }
 
   /**
-   * Finds the path from the start to the destination or every vertex reachable
-   * from the start if no destination is provided.
+   * Gets the BFS path from the start to the destination or end of reachable
+   * path if destination is not provided.
    * - Time: O(V + E) linear.
    * - Space: O(V + E) linear.
    * @param {NodeData} start
-   * @param {NodeData} destination
-   * @param {Vertex} currVert
-   * @param {Weight} currWeight
-   * @returns {{totalWeight: number, path: Array<Array<NodeData, Weight>>}}
+   * @param {NodeData} [destination]
+   * @param {Map<NodeData, Weight>} visited This is a param so this method can also be
+   *    used as a helper method to reach every node.
+   * @returns {[[NodeData, Weight]]} The path to the destination. Empty if
+   *    destination not found or full path if destination is null.
    */
-  pathDFS(
-    start,
-    destination,
-    currVert = this.vertices.get(start),
-    currWeight = 0,
-    visited = new Map(),
-    stats = { totalWeight: 0, path: [] }
-  ) {
-    if (!currVert) {
-      return stats;
-    }
-
-    visited.set(currVert.data, currWeight);
-    stats.totalWeight += currWeight;
-
-    if (currVert.data === destination) {
-      stats.path = [...visited.entries()];
-      return stats;
-    }
-
-    for (const [edge, weight] of currVert.getEdges().entries()) {
-      if (!visited.has(edge.data)) {
-        const ret = this.pathDFS(
-          start,
-          destination,
-          edge,
-          weight,
-          visited,
-          stats
-        );
-
-        if (ret.path.length) {
-          return ret;
-        }
-      }
-    }
-
-    return { totalWeight: 0, path: [] };
-  }
-
-  /**
-   * Converts this graph to an array of node data that are reachable from the
-   * given start using Depth First Search without recursion.
-   * - Time: O(V + E) linear.
-   * - Space: O(V + E) linear.
-   * @param {NodeData} start
-   * @returns {Array<NodeData>}
-   */
-  toArrDFS(start, currVert = this.vertices.get(start), visited = new Set()) {
-    if (!currVert) {
-      return [...visited];
-    }
-
-    visited.add(currVert.data);
-
-    for (const edge of currVert.getEdges().values()) {
-      if (!visited.has(edge.point.data)) {
-        this.toArrDFS(start, edge.point, visited);
-      }
-    }
-    return [...visited];
-  }
-
-  /**
-   * Converts this graph to an array of node data that are reachable from the
-   * given start using Depth First Search.
-   * - Time: O(V + E) linear.
-   * - Space: O(V + E) linear.
-   * @param {NodeData} start
-   * @returns {Array<NodeData>}
-   */
-  toArrIterativeDFS(start) {
+  pathBFS(start, destination = null, visited = new Map()) {
     const startVert = this.vertices.get(start);
 
     if (!startVert) {
       return [];
     }
 
-    const iteratorsStack = [startVert.getEdges().values()];
-    const visited = new Set([startVert.data]);
+    /**
+     * @type {Map<NodeData, Weight>}
+     */
+    const queue = new Map();
+    queue.set(startVert.data, 0);
+
+    while (queue.size) {
+      /**
+       * @type {[NodeData, Weight]}
+       */
+      const [currData, currWeight] = queue.entries().next().value;
+
+      visited.set(currData, currWeight);
+
+      if (currData === destination) {
+        break;
+      }
+
+      queue.delete(currData); // dequeue O(1).
+      const currVert = this.vertices.get(currData);
+
+      for (const [edge, edgeWeight] of currVert.getEdges().entries()) {
+        if (!visited.has(edge.data)) {
+          queue.set(edge.data, edgeWeight); // enqueue O(1).
+        }
+      }
+    }
+
+    if (destination === null || visited.has(destination)) {
+      return [...visited.entries()];
+    }
+
+    return [];
+  }
+
+  /**
+   * Gets the DFS path from the start to the destination or end of reachable
+   * path if destination is not provided.
+   * - Time: O(V + E) linear.
+   * - Space: O(V + E) linear.
+   * @param {NodeData} start
+   * @param {NodeData} [destination]
+   * @param {Map<NodeData, Weight>} visited This is a param so this method can also be
+   *    used as a helper method to reach every node.
+   * @returns {[[NodeData, Weight]]} The path to the destination. Empty if
+   *    destination not found or full path if destination is null.
+   */
+  pathDFSIterative(start, destination = null, visited = new Map()) {
+    const startVert = this.vertices.get(start);
+
+    if (!startVert) {
+      return [];
+    }
+
+    visited.set(startVert.data, 0);
+
+    if (start === destination) {
+      [...visited.entries()];
+    }
+
+    const iteratorsStack = [startVert.getEdges().entries()];
 
     while (iteratorsStack.length) {
       const currIter = iteratorsStack.pop();
       const nxt = currIter.next();
 
       if (!nxt.done) {
-        /**
-         * @type {Edge}
-         */
-        const edge = nxt.value;
+        const [edge, weight] = nxt.value;
+
+        // Without using iterators, we would have to do something like:
+        // stack.push(...[...currVert.getEdges().keys()].reverse());
         iteratorsStack.push(currIter);
-        !visited.has(edge.point.data) &&
-          iteratorsStack.push(edge.point.getEdges().values());
 
-        visited.add(edge.point.data);
-      }
-    }
-    return [...visited];
-  }
+        if (!visited.has(edge.data)) {
+          iteratorsStack.push(edge.getEdges().entries());
 
-  /**
-   * Converts this graph to an array of node data that are reachable from the
-   * given start using Depth First Search without recursion.
-   * - Time: O(V + 2E) linear.
-   * - Space: O(V + E) linear.
-   * @param {NodeData} start
-   * @returns {Array<NodeData>}
-   */
-  toArrIterativeDFS2(start) {
-    const startVert = this.vertices.get(start);
+          visited.set(edge.data, weight);
+        }
 
-    if (!startVert) {
-      return [];
-    }
-
-    const stack = [startVert.data];
-    const visited = new Set();
-
-    while (stack.length) {
-      const currVert = this.vertices.get(stack.pop());
-
-      if (!visited.has(currVert.data)) {
-        stack.push(...[...currVert.getEdges().keys()].reverse());
-      }
-      visited.add(currVert.data);
-    }
-    return [...visited];
-  }
-
-  /**
-   * Converts this graph to an array of node data that are reachable from the
-   * given start using Breadth First Search.
-   * - Time: O(V + E) linear.
-   * - Space: O(V + E) linear.
-   * @param {NodeData} start
-   * @param {NOdeData} destination
-   * @param {Set<NodeData>} visited This is a param so this method can also be
-   *    used as a helper method to reach every node.
-   * @returns {Array<NodeData>}
-   */
-  pathBFS(start, visited = new Set()) {
-    const startVert = this.vertices.get(start);
-
-    if (!startVert) {
-      return [];
-    }
-
-    const queue = new Set();
-    queue.add(startVert);
-
-    while (queue.size) {
-      /**
-       * @type {Vertex}
-       */
-      const currVert = queue.values().next().value;
-      queue.delete(currVert); // dequeue O(1).
-      visited.add(currVert.data);
-
-      for (const edge of currVert.getEdges().values()) {
-        if (!visited.has(edge.point.data)) {
-          queue.add(edge.point); // enqueue O(1).
+        if (edge.data === destination) {
+          break;
         }
       }
     }
-    return [...visited];
+
+    if (destination === null || visited.has(destination)) {
+      return [...visited.entries()];
+    }
+
+    return [];
+  }
+
+  /**
+   * Gets the BFS path from the start to the destination or end of reachable
+   * path from if destination is not provided.
+   * - Time: O(V + E) linear.
+   * - Space: O(V + E) linear.
+   * @param {NodeData} start
+   * @param {NodeData} [destination]
+   * @param {Vertex} currVert
+   * @param {Weight} currWeight
+   * @returns {[[NodeData, Weight]]} The path to the destination. Empty if
+   *    destination not found or full path if destination is null.
+   */
+  pathDFS(
+    start,
+    destination = null,
+    visited = new Map(),
+    currVert = this.vertices.get(start),
+    currWeight = 0
+  ) {
+    if (!currVert) {
+      return new Map();
+    }
+
+    visited.set(currVert.data, currWeight);
+
+    if (start === destination) {
+      return [...visited.entries()];
+    }
+
+    for (const [edge, weight] of currVert.getEdges().entries()) {
+      if (!visited.has(edge.data)) {
+        this.pathDFS(start, destination, visited, edge, weight);
+
+        if (visited.has(destination)) {
+          return [...visited.entries()];
+        }
+      }
+    }
+
+    if (destination === null) {
+      // Inefficient: conversion happens each recursive call that reaches here.
+      // Iterative ver. avoids this.
+      return [...visited.entries()];
+    }
+
+    return [];
   }
 
   /**
@@ -382,48 +364,30 @@ class Graph {
    * @param {string} order The traversal order.
    * @returns {Array<NodeData>}
    */
-  toArrAll(order = "DFS") {
-    const visited = new Set();
+  pathFull(order = "DFS") {
+    console.time(order);
+    const visited = new Map();
+    let ret;
 
     for (const vertex of this.vertices.values()) {
-      if (!visited.has(vertex)) {
+      if (!visited.has(vertex.data)) {
         switch (order) {
           case "DFS":
-            this.toArrDFS(vertex.data, vertex, visited);
+            ret = this.pathDFS(vertex.data, null, visited);
+            break;
+          case "iterativeDFS":
+            ret = this.pathDFSIterative(vertex.data, null, visited);
             break;
           case "BFS":
-            this.toArrBFS(vertex.data, visited);
+            ret = this.pathBFS(vertex.data, null, visited);
             break;
           default:
             break;
         }
       }
     }
-    return [...visited];
-  }
-
-  /**
-   * Converts this graph to an array of node data using given traversal order
-   * to reach every node rather than only the nodes that are reachable from a
-   * start node.
-   * - Time: O(V + E) linear.
-   * - Space: O(V + E) linear.
-   * @returns {Array<NodeData>}
-   */
-  toArrAllDFS() {
-    return this.toArrAll("DFS");
-  }
-
-  /**
-   * Converts this graph to an array of node data using given traversal order
-   * to reach every node rather than only the nodes that are reachable from a
-   * start node.
-   * - Time: O(V + E) linear.
-   * - Space: O(2V) -> O(V) linear.
-   * @returns {Array<NodeData>}
-   */
-  toArrAllBFS() {
-    return this.toArrAll("BFS");
+    console.timeEnd(order);
+    return ret;
   }
 
   print() {
@@ -450,6 +414,4 @@ Graph.UNDIRECTED = Symbol("directed graph"); // one-way edges
 Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
-flightPaths.addVertex("DERP");
 flightPaths.print();
-console.log("HEL -> EZE", flightPaths.pathDFS("HEL", "EZE"));
