@@ -2,6 +2,51 @@
 https://leetcode.com/problems/container-with-most-water/
 */
 
+const heights1 = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+const expected1 = 49;
+
+const heights2 = [1, 1];
+const expected1 = 1;
+
+const heights3 = [4, 3, 2, 1, 4];
+const expected3 = 16;
+
+const heights4 = [1, 2, 1];
+const expected4 = 2;
+
+/**
+ * Finds the max area of a container from the given heights where the length
+ * is the distance between indexes.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {number[]} heights
+ * @returns {number} Representing the max area of a container.
+ */
+function containerWithMostWater(heights) {}
+
+/*****************************************************************************/
+
+/**
+ * Finds the max area of a container from the given heights where the length
+ * is the distance between indexes.
+ * - Time: O(n) linear.
+ * - Space: O(1) constant.
+ * @param {number[]} heights
+ * @returns {number} Representing the max area of a container.
+ */
+function containerWithMostWater(heights) {
+  let left = 0;
+  let right = heights.length - 1;
+  let maxArea = 0;
+
+  while (left < right) {
+    const area = (right - left) * Math.min(heights[left], heights[right]);
+    area > maxArea && (maxArea = area);
+    heights[left] < heights[right] ? left++ : right--;
+  }
+  return maxArea;
+}
+
 /**
  * Finds the max area of a container from the given heights where the length
  * is the distance between indexes.
@@ -10,7 +55,7 @@ https://leetcode.com/problems/container-with-most-water/
  * @param {number[]} heights
  * @returns {number} Representing the max area of a container.
  */
-function containerWithMostWater(heights) {
+function containerWithMostWater2(heights) {
   let max = 0;
 
   for (let i = 0; i < heights.length; i++) {
@@ -23,15 +68,3 @@ function containerWithMostWater(heights) {
   }
   return max;
 }
-
-/**
- * Finds the max area of a container from the given heights where the length
- * is the distance between indexes.
- * - Time: TODO: better than quadratic.
- * - Space:
- * @param {number[]} heights
- * @returns {number} Representing the max area of a container.
- */
-function containerWithMostWater(heights) {}
-
-// [1, 20, 40, 2, 50, 4, 30, 3, 7];

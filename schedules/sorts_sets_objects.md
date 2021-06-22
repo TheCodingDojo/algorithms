@@ -75,7 +75,7 @@
    - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
 
 4. Thur
-   - [addHonorific](../strings/addHonorific.js) | [addHonorificSpec](../spec/strings/addHonorificSpec.js)
+   - [containerWithMostWater](../arrays/containerWithMostWater.js)
    - [compareVersionNumbers](../strings/compareVersionNumbers.js) | [compareVersionNumbersSpec](../spec/strings/compareVersionNumbersSpec.js)
 5. Fri
    - [amazonMusicRuntime](../arrays/amazonMusicRuntime.js) | [amazonMusicRuntime](../spec/arrays/amazonMusicRuntimeSpec.js)

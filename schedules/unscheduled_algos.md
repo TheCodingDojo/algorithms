@@ -17,6 +17,7 @@
 - [kaprekarsConstant](../strings/kaprekarsConstant.js)
 - [rot13](../strings/rot13.js)
 - [timeInWords](../strings/timeInWords.js) | [timeInWordsSpec](../spec/strings/timeInWordsSpec.js)
+- [addHonorific](../strings/addHonorific.js) | [addHonorificSpec](../spec/strings/addHonorificSpec.js)
 
 ## Design
 
