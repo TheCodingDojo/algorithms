@@ -197,29 +197,29 @@ class BinarySearchTree {
 
     if (this.isEmpty()) {
       this.root = node;
-    } else {
-      let current = this.root;
+      return this;
+    }
 
-      while (true) {
-        if (newVal <= current.data) {
-          if (!current.left) {
-            current.left = node;
-            break;
-          } else {
-            current = current.left;
-          }
-        } else {
-          // newVal is greater than current.data
-          if (!current.right) {
-            current.right = node;
-            break;
-          } else {
-            current = current.right;
-          }
+    let current = this.root;
+
+    while (true) {
+      if (newVal <= current.data) {
+        if (!current.left) {
+          current.left = node;
+          return this;
         }
+
+        current = current.left;
+      } else {
+        // newVal is greater than current.data
+        if (!current.right) {
+          current.right = node;
+          return this;
+        }
+
+        current = current.right;
       }
     }
-    return this;
   }
 
   /**
