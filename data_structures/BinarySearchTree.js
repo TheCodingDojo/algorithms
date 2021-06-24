@@ -255,7 +255,7 @@ class BinarySearchTree {
   }
 
   /**
-   * DFS Preorder: (Parent, Left, Right)
+   * DFS Preorder: (CurrNode, Left, Right)
    * Converts this BST into an array following Depth First Search preorder.
    * Example on the fullTree var:
    * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
@@ -273,7 +273,7 @@ class BinarySearchTree {
   }
 
   /**
-   * DFS Inorder: (Left, Parent, Right)
+   * DFS Inorder: (Left, CurrNode, Right)
    * Converts this BST into an array following Depth First Search inorder.
    * See debugger call stack to help understand the recursion.
    * Example on the fullTree var:
@@ -292,7 +292,7 @@ class BinarySearchTree {
   }
 
   /**
-   * DFS Inorder: (Left, Parent, Right) using a stack instead of the recursive
+   * DFS Inorder: (Left, CurrNode, Right) using a stack instead of the recursive
    * call stack.
    * Converts this BST into an array following Depth First Search inorder.
    * Example on the fullTree var:
