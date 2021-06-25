@@ -17,10 +17,6 @@
   make comparisons simple, rather than using milliseconds
   since 1970/01/01 (epoch) to represent a datetime because 
   that is difficult to read.
-
-  function joinMeetup(newMeet, joinedMeetups) {
-
-  }
 */
 
 const joinedMeetups = [
