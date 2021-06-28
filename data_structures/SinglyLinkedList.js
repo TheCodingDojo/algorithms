@@ -838,7 +838,7 @@ class SinglyLinkedList {
    * that would could cause hasLoop to return a false positive when there are
    * nodes with duplicate data but no loop.
    * - Time: O(n) linear, n = list length.
-   * - Space: O(1) constant.
+   * - Space: O(n) linear due to the Map.
    * @returns {boolean} Whether the list has a loop or not.
    */
   hasLoopMap() {
