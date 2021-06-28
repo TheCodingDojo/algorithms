@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/jasmine",
+    "test": "npx jasmine",
     "prepare": "husky install",
     "pretty-quick": "pretty-quick --staged",
     "format": "prettier --write ."

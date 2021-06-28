@@ -8,7 +8,7 @@ function argFormatter(func, args, context = "") {
 
   const maxArgLabelLen = Math.max(...argLabels.map((arg) => arg.length));
 
-  let msg = `\n ${context} \n Given:`;
+  let msg = `${context}\n Given:`;
 
   args.forEach(
     (arg, i) =>
@@ -17,7 +17,7 @@ function argFormatter(func, args, context = "") {
       } ${JSON.stringify(arg) || arg?.toString?.()}`)
   );
 
-  return msg + "\n";
+  return `${msg}\n`;
 }
 
 module.exports = argFormatter;
