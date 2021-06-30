@@ -214,29 +214,28 @@ class DoublyLinkedList {
 
     let runner = this.head;
 
-    // runner && is in case runner becomes null so we don't check null.data
-    while (runner && runner.data !== targetVal) {
+    // This was written with a different structure than insertAfter to
+    // for comparison purposes but the logic is almost the same.
+    while (runner) {
+      if (runner.data === targetVal) {
+        const newNode = new Node(newVal);
+        newNode.next = runner;
+        newNode.prev = runner.prev;
+
+        if (runner === this.head) {
+          this.head = newNode;
+        } else {
+          // if runner was head then prev would be null.
+          runner.prev.next = newNode;
+        }
+
+        runner.prev = newNode;
+        return true;
+      }
+
       runner = runner.next;
     }
-
-    if (runner === null) {
-      return false;
-    }
-
-    const newNode = new Node(newVal);
-    newNode.next = runner;
-    newNode.prev = runner.prev;
-
-    if (runner === this.head) {
-      this.head = newNode;
-    } else {
-      // if runner was head then prev would be null.
-      runner.prev.next = newNode;
-    }
-
-    runner.prev = newNode;
-
-    return true;
+    return false;
   }
 
   /**
