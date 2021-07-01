@@ -1,7 +1,7 @@
 # [Heaps / Binary Heap](./Heap.js)
 
-- [visualgo max heap](https://visualgo.net/en/heap?slide=1)
 - [visualize min heap](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
+- [visualgo max heap](https://visualgo.net/en/heap?slide=1)
 - Is a type of priority queue that is **visualized as a binary tree but implemented using an array**.
   - Since it is visualized as a tree, the items of the array may be referred to as nodes even though they may simply be ints rather than an instance of some node class.
   - A node class could be used though, which stores the data and a priority int value for that data
