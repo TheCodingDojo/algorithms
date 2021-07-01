@@ -75,18 +75,18 @@
 
 ### insert
 
-- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###shiftup).
+- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###`shiftUp`).
 - Returns the new size of the heap.
 
 ---
 
 ### extract
 
-- return and remove the max or min, [see shiftDown](###-shiftdown)
+- return and remove the max or min, [see shiftDown](#shiftDown)
 
 ---
 
-### shiftUp
+### `shiftUp`
 
 - AKA: `siftUp`, `heapifyUp`, `bubbleUp` (used after insertion)
 - Used to restore the proper order after insertion (pushing to back of array).
