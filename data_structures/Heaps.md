@@ -75,14 +75,14 @@
 
 ### insert
 
-- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###shiftUp).
+- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###shiftup).
 - Returns the new size of the heap.
 
 ---
 
 ### extract
 
-- return and remove the max or min, [see shiftDown](###-shiftDown)
+- return and remove the max or min, [see shiftDown](###-shiftdown)
 
 ---
 
