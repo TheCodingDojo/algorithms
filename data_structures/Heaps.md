@@ -75,7 +75,7 @@
 
 ### `insert`
 
-- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###shiftUp).
+- Push new item to back then shift it up the tree until order is restored, [see shiftUp](#shiftUp).
 - Returns the new size of the heap.
 
 ---
