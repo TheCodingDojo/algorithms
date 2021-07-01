@@ -67,26 +67,26 @@
 
 ## Terms
 
-### `heapify`
+### heapify
 
 - Creates a heap out of a given array of elements.
 
 ---
 
-### `insert`
+### insert
 
-- Push new item to back then shift it up the tree until order is restored, [see `shiftUp`](###-`shiftUp`).
+- Push new item to back then shift it up the tree until order is restored, [see shiftUp](###shiftUp).
 - Returns the new size of the heap.
 
 ---
 
-### `extract`
+### extract
 
-- return and remove the max or min, [see `shiftDown`](###-`shiftDown`)
+- return and remove the max or min, [see shiftDown](###-shiftDown)
 
 ---
 
-### `shiftUp`
+### shiftUp
 
 - AKA: `siftUp`, `heapifyUp`, `bubbleUp` (used after insertion)
 - Used to restore the proper order after insertion (pushing to back of array).
@@ -97,7 +97,7 @@
 
 ---
 
-### `shiftDown`
+### shiftDown
 
 - AKA: `siftDown`, `heapifyDown`, `bubbleDown`, `sinkDown` (used after extract)
 - Used to restore the proper order after deletion / `extract`.
