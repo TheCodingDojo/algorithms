@@ -9,6 +9,7 @@
 - [Algo Schedules](/schedules)
 - [Lecture Outlines](https://github.com/TheCodingDojo/lecture-outlines)
 - [Big O Notation Cheat Sheet](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/big-O-notation.html)
+- [Tech Interview Handbook](https://techinterviewhandbook.org/introduction/)
 - [Extra Student Resources - Shared Drive Folder](https://drive.google.com/drive/folders/11zE6KbvIdgr6_KtYGtMRNMja6Q41IAuo?usp=sharing)
 
 ## Clone Instructions & Source Control
