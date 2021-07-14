@@ -44,6 +44,15 @@ module.exports = { measureWaterLevels };
 
 /*****************************************************************************/
 
+/**
+ * It ain't much, but it's honest work. A worker who measures water level
+ * fluctuations in a river is asked to find the largest fluctuation in water
+ * levels during a day, but only for rises in water levels.
+ * - Time: O(n) linear.
+ * - Space: O(1) constant.
+ * @param {Array<number>} waterLevels Non-empty .
+ * @returns {number} The max water-level rise amount or -1 if none.
+ */
 function measureWaterLevels(levels) {
   let largestRise = -1;
   let lowestLevel = levels[0];

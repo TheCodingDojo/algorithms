@@ -57,9 +57,9 @@ module.exports = { insertionSort };
 
 /**
  * Sorts the given array in-place.
- * Best: O(n) linear when array is already sorted.
- * Average: O(n^2) quadratic.
- * Worst: O(n^2) quadratic when the array is reverse sorted.
+ * - Best: O(n) linear when array is already sorted.
+ * - Average: O(n^2) quadratic.
+ * - Worst: O(n^2) quadratic when the array is reverse sorted.
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
