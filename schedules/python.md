@@ -32,10 +32,11 @@
 
 1. Mon
    - [freqTable](../objects/freqTable.js) | [freqTableSpec](../spec/objects/freqTableSpec.js)
-   - [reverseWordOrder](../strings/reverseWordOrder.js) | [reverseWordOrderSpec](../spec/strings/reverseWordOrderSpec.js)
+   - [oddOccurrencesInArray](../arrays/oddOccurrencesInArray.js)
 2. Tue
    - [stringDedupe](../strings/stringDedupe.js) | [stringDedupeSpec](../spec/strings/stringDedupeSpec.js)
    - [reverseWords](../strings/reverseWords.js) | [reverseWordsSpec](../spec/strings/reverseWordsSpec.js)
+   - [reverseWordOrder](../strings/reverseWordOrder.js) | [reverseWordOrderSpec](../spec/strings/reverseWordOrderSpec.js)
 3. Wed
    - [parensValid](../strings/parensValid.js) | [parensValidSpec](../spec/strings/parensValidSpec.js)
    - [bracesValid](../strings/bracesValid.js) | [bracesValidSpec](../spec/strings/bracesValidSpec.js)
@@ -44,8 +45,8 @@
    - [isRotation](../strings/isRotation.js) | [isRotationSpec](../spec/strings/isRotationSpec.js)
 5. Fri
    - [updateInventory](../objects/updateInventory.js) | [updateInventorySpec](../spec/objects/updateInventorySpec.js)
-   - [isAnagram](../strings/isAnagram.js) | [isAnagramSpec](../spec/strings/isAnagramSpec.js)
    - [trim](../strings/trim.js) | [trimSpec](../spec/strings/trimSpec.js)
+   - [isAnagram](../strings/isAnagram.js) | [isAnagramSpec](../spec/strings/isAnagramSpec.js)
 
 ---
 
@@ -59,12 +60,12 @@
    - [interleaveArrays](../arrays/interleaveArrays.js) | [interleaveArrays](../spec/arrays/interleaveArraysSpec.js)
 3. Wed
    - [dedupeSorted](../arrays/dedupeSorted.js) | [dedupeSorted](../spec/arrays/dedupeSortedSpec.js)
-   - [mode](../arrays/mode.js) | [mode](../spec/arrays/modeSpec.js)
+   - [firstNonRepeated](../arrays/firstNonRepeated.js) | [firstNonRepeated](../spec/arrays/firstNonRepeatedSpec.js)
 4. Thur
    - [fewestCoinChange](../objects/fewestCoinChange.js) | [fewestCoinChange](../spec/objects/fewestCoinChangeSpec.js)
    - [missingValue](../arrays/missingValue.js) | [missingValue](../spec/arrays/missingValueSpec.js)
 5. Fri
-   - [firstNonRepeated](../arrays/firstNonRepeated.js) | [firstNonRepeated](../spec/arrays/firstNonRepeatedSpec.js)
+   - [mode](../arrays/mode.js) | [mode](../spec/arrays/modeSpec.js)
 
 ---
 
