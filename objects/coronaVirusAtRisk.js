@@ -133,12 +133,12 @@ function coronaVirusAtRisk(persons) {
 }
 
 /**
- * - Time: O(n^2) quadratic from nested loop of .findIndex.
+ * - Time: O(2n * m) -> O(n * m)  from nested loop of .findIndex.
  *    .map is another loop but not nested.
  * - Space: O(n) linear.
  */
-function coronaVirusAtRiskFunctional(persons) {
-  return persons
+const coronaVirusAtRiskFunctional = (persons) =>
+  persons
     .filter(
       (person) =>
         person.isSocialDistancing === false &&
@@ -147,4 +147,3 @@ function coronaVirusAtRiskFunctional(persons) {
         ) > -1
     )
     .map((person) => `${person.firstName} ${person.lastName}`);
-}
