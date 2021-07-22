@@ -154,7 +154,5 @@ function splitKeyPath(path) {
     // present in the array .split returns
     return path.split(/[\\\[\\\].]/).filter(Boolean);
   }
-  // if the type isn't either string or array so loop ran on the return
-  // of this function won't break
   return [];
 }
