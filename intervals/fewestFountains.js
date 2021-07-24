@@ -23,10 +23,29 @@ const garden2 = [2, 1, 1, 2, 1];
 const expected2 = 2; // garden[0] and garden[3] || garden[1] and garden[4]
 
 const garden3 = [2, 4, 1, 3, 2, 1, 1, 1, 2, 1];
-const expected3 = 2; // garden[3] and garden[8]
+const expected3 = 2; // garden[3] and garden[8] || garden[1] and garden[8]
 
 const garden4 = [2, 1, 1, 2, 2, 1, 1, 1, 1, 5];
 const expected4 = 3; // garden[0] and garden[3 || 4] and garden[9]
+
+const garden5 = [1, 1, 1, 1];
+const expected5 = 2;
+
+const garden6 = [1,1,1,1,1,1,1,5,1];
+const expected6 = 2; // garden[1] and garden[7]
+
+const garden7 = [1];
+const expected7 = 1;
+
+/**
+ * Finds the fewest fountains that can cover the whole 1d garden.
+ * @param {number[]} garden Non-empty and 1d. Numbers are > 0 and represent a
+ *    fountain's range: max(i – garden[i], 0) to min(i + garden[i], N - 1).
+ * @returns {number} The fewest fountains for full garden coverage.
+ */
+ function fewestFountains(garden) {}
+
+/*****************************************************************************/
 
 /**
  * Finds the fewest fountains that can cover the whole 1d garden.
@@ -35,14 +54,6 @@ const expected4 = 3; // garden[0] and garden[3 || 4] and garden[9]
  * @returns {number} The fewest fountains for full garden coverage.
  */
 function fewestFountains(garden) {
-  if (!garden.length) {
-    return 0;
-  }
-
-  if (garden.length === 1) {
-    return 1;
-  }
-
   const missingCoverage = {
     start: 0,
     end: garden.length - 1,
@@ -50,15 +61,19 @@ function fewestFountains(garden) {
 
   let count = 0;
 
-  while (missingCoverage.start < missingCoverage.end) {
+  while (missingCoverage.start <= missingCoverage.end) {
     let chosenFountain = missingCoverage.start;
+    const [_candidateStart, candidateEnd] = getFountainRange(
+      garden,
+      chosenFountain
+    );
 
     for (let i = missingCoverage.start; i < garden.length; i++) {
-      const [_candidateStart, candidateEnd] = getFountainRange(
-        garden,
-        chosenFountain
-      );
       const [start, end] = getFountainRange(garden, i);
+
+      if (start === 0 && end === garden.length - 1) {
+        return 1;
+      }
 
       /* 
       Find the fountain that is furthest from the start of the missing coverage
@@ -70,12 +85,12 @@ function fewestFountains(garden) {
       }
     }
     count++;
-    const [_candidateStart, candidateEnd] = getFountainRange(
+    const [_newStart, newEnd] = getFountainRange(
       garden,
       chosenFountain
     );
 
-    missingCoverage.start = candidateEnd + 1;
+    missingCoverage.start = newEnd + 1;
   }
   return count;
 }
@@ -87,7 +102,4 @@ function getFountainRange(garden, i) {
   ];
 }
 
-console.log(fewestFountains(garden1), expected1);
-console.log(fewestFountains(garden2), expected2);
-console.log(fewestFountains(garden3), expected3);
-console.log(fewestFountains(garden4), expected4);
+module.exports = { fewestFountains };

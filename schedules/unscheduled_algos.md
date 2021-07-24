@@ -33,6 +33,10 @@
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
 - [balancePoint](../arrays/balancePoint.js) | [balancePoint](../spec/arrays/balancePointSpec.js)
 
+## Intervals
+
+- [fewestFountains](../intervals/fewestFountains.js) | [fewestFountains](../spec/intervals/fewestFountainsSpec.js)
+
 ## Recursion
 
 - [displayFolderStructure](../recursion/displayFolderStructure/displayFolderStructure.js)

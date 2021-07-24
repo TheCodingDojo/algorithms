@@ -70,7 +70,6 @@
    - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
    - [backspaceStringCompare](../strings/backspaceStringCompare.js) | [backspaceStringCompareSpec](../spec/strings/backspaceStringCompareSpec.js)
 3. Wed
-
    - [rehash](../strings/rehash.js) | [rehashSpec](../spec/strings/rehashSpec.js)
    - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
 
