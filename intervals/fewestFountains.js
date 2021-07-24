@@ -31,11 +31,14 @@ const expected4 = 3; // garden[0] and garden[3 || 4] and garden[9]
 const garden5 = [1, 1, 1, 1];
 const expected5 = 2;
 
-const garden6 = [1,1,1,1,1,1,1,5,1];
+const garden6 = [1, 1, 1, 1, 1, 1, 1, 5, 1];
 const expected6 = 2; // garden[1] and garden[7]
 
 const garden7 = [1];
 const expected7 = 1;
+
+const garden8 = [1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 11, 8];
+const expected8 = 1;
 
 /**
  * Finds the fewest fountains that can cover the whole 1d garden.
@@ -43,7 +46,7 @@ const expected7 = 1;
  *    fountain's range: max(i – garden[i], 0) to min(i + garden[i], N - 1).
  * @returns {number} The fewest fountains for full garden coverage.
  */
- function fewestFountains(garden) {}
+function fewestFountains(garden) {}
 
 /*****************************************************************************/
 
@@ -54,8 +57,8 @@ const expected7 = 1;
  * @returns {number} The fewest fountains for full garden coverage.
  */
 function fewestFountains(garden) {
-   let  missingCoverageStart = 0;
-    let missingCoverageEnd = garden.length - 1;
+  let missingCoverageStart = 0;
+  let missingCoverageEnd = garden.length - 1;
   let count = 0;
 
   while (missingCoverageStart <= missingCoverageEnd) {
@@ -82,10 +85,7 @@ function fewestFountains(garden) {
       }
     }
     count++;
-    const [_newStart, newEnd] = getFountainRange(
-      garden,
-      chosenFountain
-    );
+    const [_newStart, newEnd] = getFountainRange(garden, chosenFountain);
 
     missingCoverageStart = newEnd + 1;
   }
