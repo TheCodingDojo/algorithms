@@ -54,21 +54,18 @@ const expected7 = 1;
  * @returns {number} The fewest fountains for full garden coverage.
  */
 function fewestFountains(garden) {
-  const missingCoverage = {
-    start: 0,
-    end: garden.length - 1,
-  };
-
+   let  missingCoverageStart = 0;
+    let missingCoverageEnd = garden.length - 1;
   let count = 0;
 
-  while (missingCoverage.start <= missingCoverage.end) {
-    let chosenFountain = missingCoverage.start;
+  while (missingCoverageStart <= missingCoverageEnd) {
+    let chosenFountain = missingCoverageStart;
     const [_candidateStart, candidateEnd] = getFountainRange(
       garden,
       chosenFountain
     );
 
-    for (let i = missingCoverage.start; i < garden.length; i++) {
+    for (let i = missingCoverageStart; i < garden.length; i++) {
       const [start, end] = getFountainRange(garden, i);
 
       if (start === 0 && end === garden.length - 1) {
@@ -80,7 +77,7 @@ function fewestFountains(garden) {
       that still reaches the start of missing coverage, since the further away
       it is the closer it will reach to the end of the missing coverage.
       */
-      if (start <= missingCoverage.start && end > candidateEnd) {
+      if (start <= missingCoverageStart && end > candidateEnd) {
         chosenFountain = i;
       }
     }
@@ -90,7 +87,7 @@ function fewestFountains(garden) {
       chosenFountain
     );
 
-    missingCoverage.start = newEnd + 1;
+    missingCoverageStart = newEnd + 1;
   }
   return count;
 }
