@@ -88,16 +88,8 @@ function getBackspacedStack(str) {
   return backspacedStack;
 }
 
-function backspaceCompare2(S, T) {
-  let sBackspaced = processBackspaces(S);
-  let tBackspaced = processBackspaces(T);
-
-  if (sBackspaced === tBackspaced) {
-    return true;
-  } else {
-    return false;
-  }
-}
+const backspaceCompare2 = (S, T) =>
+  processBackspaces(S) === processBackspaces(T);
 
 function processBackspaces(s) {
   let backspaceCount = 0;
