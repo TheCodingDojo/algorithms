@@ -22,7 +22,7 @@ module.exports = { rehash };
 /**
  * Rehashes an incorrectly hashed string by combining letter count occurrences
  * and alphabetizing them.
- * Time: O(n) linear.
+ * Time: O(n + n(log(n))) linearithmic. The n(log(n)) is from sorting.
  * Space: O(2n) -> O(n) linear. Duplicate storage of str in obj and new str.
  * @param {string} s An incorrectly hashed string.
  * @returns {string} The correctly rehashed string alphabetized.
@@ -76,7 +76,8 @@ function rehash(str) {
 }
 
 /**
- * Time: O(n) linear. The nested while loop increments "i" as well so every
+ * Time:  * Time: O(n + n(log(n))) linearithmic. The n(log(n)) is from sorting.
+ *    The nested while loop increments "i" as well so every
  *    iteration of it reduces the iterations of the outer for loop so there
  *    is no back-tracking.
  * Space: O(2n) -> O(n) linear. Duplicate storage of str in obj and new str.
