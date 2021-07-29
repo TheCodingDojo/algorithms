@@ -38,7 +38,7 @@ describe("compareVersionNumbers", () => {
     { args: [test6V1, test6V2], expected: expected6 },
   ];
 
-  it("should return the acronym version of the given string.", () => {
+  it("should return an int representing which version number is larger.", () => {
     testCases.forEach(({ args, expected }) => {
       expect(compareVersionNumbers(...args))
         .withContext(argFormatter(compareVersionNumbers, args))

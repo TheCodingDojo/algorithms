@@ -67,7 +67,7 @@ function containerWithMostWater(heights) {
  * the heights at those indexes.
  * @see https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg
  * - Time: O(n^2) quadratic.
- * - SPace: O(1) constant.
+ * - Space: O(1) constant.
  * @param {number[]} heights
  * @returns {number} Representing the max area of a container.
  */
