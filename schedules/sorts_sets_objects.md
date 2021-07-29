@@ -70,11 +70,12 @@
    - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
    - [backspaceStringCompare](../strings/backspaceStringCompare.js) | [backspaceStringCompareSpec](../spec/strings/backspaceStringCompareSpec.js)
 3. Wed
+
    - [rehash](../strings/rehash.js) | [rehashSpec](../spec/strings/rehashSpec.js)
    - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
 
 4. Thur
-   - [containerWithMostWater](../arrays/containerWithMostWater.js)
+   - [containerWithMostWater](../arrays/containerWithMostWater.js) | [containerWithMostWaterSpec](../spec/arrays/containerWithMostWaterSpec.js)
    - [compareVersionNumbers](../strings/compareVersionNumbers.js) | [compareVersionNumbersSpec](../spec/strings/compareVersionNumbersSpec.js)
 5. Fri
    - [amazonMusicRuntime](../arrays/amazonMusicRuntime.js) | [amazonMusicRuntime](../spec/arrays/amazonMusicRuntimeSpec.js)

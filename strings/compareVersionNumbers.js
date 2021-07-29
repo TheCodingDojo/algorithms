@@ -1,16 +1,16 @@
 /* 
-  https://leetcode.com/problems/compare-version-numbers/
+https://leetcode.com/problems/compare-version-numbers/
 
-  Given two strings, version1, and version2, both representing version numbers
-  If version1 > version2 return 1; if version1 < version2 return -1; otherwise return 0.
+Given two strings, version1, and version2, both representing version numbers
+If version1 > version2 return 1; if version1 < version2 return -1; otherwise return 0.
 
-  Helpful methods:
-    - .split(characterToSplitOn)
-      - returns an array of items: "a-b-c".split("-") returns ["a", "b", "c"]
-    - .parseInt
-      - given a string, converts it to and returns int or NaN (Not a Number) if conversion fails
+Helpful methods:
+  - .split(characterToSplitOn)
+    - returns an array of items: "a-b-c".split("-") returns ["a", "b", "c"]
+  - .parseInt
+    - given a string, converts it to and returns int or NaN (Not a Number) if conversion fails
 
-  Bonus, solve without .split
+Bonus, solve without .split
 */
 
 const test1V1 = "0.1";
