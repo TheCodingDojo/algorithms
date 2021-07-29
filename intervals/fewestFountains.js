@@ -58,10 +58,9 @@ function fewestFountains(garden) {}
  */
 function fewestFountains(garden) {
   let missingCoverageStart = 0;
-  let missingCoverageEnd = garden.length - 1;
   let count = 0;
 
-  while (missingCoverageStart <= missingCoverageEnd) {
+  while (missingCoverageStart <= garden.length - 1) {
     let chosenFountain = missingCoverageStart;
     const [_candidateStart, candidateEnd] = getFountainRange(
       garden,
