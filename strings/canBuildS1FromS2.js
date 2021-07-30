@@ -1,10 +1,9 @@
 /* 
+Given two strings,
+return true if the first string can be built from the letters in the 2nd string
+Ignore case
 
-  Given two strings,
-  return true if the first string can be built from the letters in the 2nd string
-  Ignore case
-
-  .indexOf will only tell you if the letter is found one time
+.indexOf will only tell you if the letter is found one time
 */
 
 const strA1 = "Hello World";
