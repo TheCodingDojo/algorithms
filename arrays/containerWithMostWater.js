@@ -85,4 +85,37 @@ function containerWithMostWater2(heights) {
   return max;
 }
 
+/* 
+Unit Testing example using built in node testing library.
+If no errors are logged to the terminal then the tests passed.
+There are multiple comparison methods that can be used, e.g.,
+strictEqual for comparing primitives and deepStrictEqual for collections.
+*/
+const { strictEqual } = require("assert");
+
+/* 
+Using an array here and the .forEach just helps avoid having to copy paste
+The function calls for each test case and the extra error message we gave.
+
+The values don't have to be stored in vars above, they can be written in
+like the first case then the vars above could be deleted.
+*/
+const testCases = [
+  { args: [[1, 8, 6, 2, 5, 4, 8, 3, 7]], expected: 49 },
+  { args: [heights2], expected: expected2 },
+  { args: [heights3], expected: expected3 },
+  { args: [heights4], expected: expected4 },
+];
+
+// Destructure args and expected forEach above object as we test.
+testCases.forEach(({ args, expected }, i) => {
+  const actual = containerWithMostWater(...args);
+
+  strictEqual(
+    actual,
+    expected,
+    `🧪 Case #${i + 1} with arguments: ${JSON.stringify(args)}`
+  );
+});
+
 module.exports = { containerWithMostWater };
