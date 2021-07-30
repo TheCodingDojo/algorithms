@@ -43,7 +43,7 @@ const expected3 = [-1, -1]; // not found.
  */
 function amazonMusicRuntime(busDuration, songDurations) {}
 
-module.exports = { amazonMusicRuntime };
+module.exports = { amazonMusicRuntime: amazonMusicRuntime2 };
 
 /*****************************************************************************/
 
@@ -112,8 +112,8 @@ function amazonMusicRuntime2(busDuration, songDurations) {
     songTable[songDurations[i]] = i;
   }
 
-  for (let i = 0; i < songDurations.length; i++) {
-    const songA = songDurations[i];
+  for (let songAIdx = 0; songAIdx < songDurations.length; songAIdx++) {
+    const songA = songDurations[songAIdx];
     const targetSongDuration = targetPairDuration - songA;
 
     if (targetSongDuration in songTable) {
@@ -123,7 +123,7 @@ function amazonMusicRuntime2(busDuration, songDurations) {
       // Same logic as other solution written slightly different.
       // No existing song pair.
       if (songPair[0] < 0) {
-        songPair = [i, songBIdx];
+        songPair = [songAIdx, songBIdx];
         continue;
       }
 
@@ -136,7 +136,7 @@ function amazonMusicRuntime2(busDuration, songDurations) {
       );
 
       if (max === songA || max === songB) {
-        songPair = [i, songBIdx];
+        songPair = [songAIdx, songBIdx];
       }
     }
   }
