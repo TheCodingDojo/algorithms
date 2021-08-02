@@ -1,7 +1,6 @@
 /**
- * From an interview on 2/8/21. encodeStr algo was also given (aaabbcdd => a3b2cd2)
- *
- * The interviewee mentioned it was mostly a comprehension style question.
+ * From a Chipotle interview.
+ * encodeStr algo was also given in this interview (aaabbcdd => a3b2cd2).
  *
  * It ain't much, but it's honest work. A worker who measures water level
  * fluctuations in a river is asked to find the largest fluctuation in water
