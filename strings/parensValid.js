@@ -1,8 +1,8 @@
 /* 
-  Parens Valid
+Parens Valid
 
-	Given an str that has parenthesis in it
-	return whether the parenthesis are valid
+Given an str that has parenthesis in it
+return whether the parenthesis are valid
 */
 
 const str1 = "Y(3(p)p(3)r)s";
@@ -14,11 +14,11 @@ const expected2 = false;
 
 const str3 = "N(0)t ) 0(k";
 const expected3 = false;
-// Explanation: because the underlined ")" is premature: there is nothing open for it to close.
+// Explanation: because the second ")" is premature: there is nothing open for it to close.
 
 const str4 = "a(b))(c";
 const expected4 = false;
-// Explanation: same number of opens and closes but the 2nd closing closes nothing
+// Explanation: same number of opens and closes but the 2nd closing closes nothing.
 
 /**
  * Determines whether the parenthesis in the given string are valid.

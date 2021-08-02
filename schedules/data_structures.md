@@ -116,8 +116,8 @@ const sortedDupeList = new SinglyLinkedList().seedFromArr([
 ```js
 /**
  * Determines if this list is empty.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @returns {boolean}
  */
 isEmpty() {}
@@ -125,21 +125,12 @@ isEmpty() {}
 /**
  * Creates a new node with the given data and inserts it at the back of
  * this list.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {any} data The data to be added to the new node.
  * @returns {SinglyLinkedList} This list.
  */
 insertAtBack(data) {}
-
-/**
- * Adds each item of the given array to the back of this list.
- * - Time: (?).
- * - Space: (?).
- * @param {Array<any>} vals The data for each new node.
- * @returns {SinglyLinkedList} This list.
- */
-seedFromArr(vals) {}
 ```
 
 - isEmpty

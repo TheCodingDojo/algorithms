@@ -1,7 +1,7 @@
 /* 
-  Braces Valid
+Braces Valid
 
-  Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
+Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
 
 const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
