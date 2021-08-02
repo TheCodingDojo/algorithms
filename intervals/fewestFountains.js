@@ -40,6 +40,9 @@ const expected7 = 1;
 const garden8 = [1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 11, 8];
 const expected8 = 1;
 
+console.log("garden3");
+printRanges(garden3);
+
 /**
  * Finds the fewest fountains that can cover the whole 1d garden.
  * @param {number[]} garden Non-empty and 1d. Numbers are > 0 and represent a
@@ -48,10 +51,61 @@ const expected8 = 1;
  */
 function fewestFountains(garden) {}
 
+/**
+ * Prints the range of each fountain.
+ * @param {number[]} garden
+ * @param {boolean} startAsIdx
+ */
+function printRanges(garden, startAsIdx = false) {
+  console.log(`[${garden.map((_, i) => i).join(" ")}]`, "| indexes.");
+
+  for (let i = 0; i < garden.length; i++) {
+    let str = "";
+    let start, end;
+
+    if (startAsIdx) {
+      start = i;
+      end = ranges[i];
+    } else {
+      [start, end] = getRange(garden, i);
+    }
+
+    for (let j = 0; j < garden.length; j++) {
+      if (start <= j && j <= end) {
+        //
+        str += "~";
+      } else {
+        str += "_";
+      }
+
+      j !== garden.length - 1 && (str += " ".repeat(j.toString().length));
+    }
+    console.log(
+      `[${str}] | i: ${i} | val: ${garden[i]} | startIdx: ${start} | endIdx: ${end}`
+    );
+  }
+  console.log("*".repeat(50));
+}
+
+/**
+ * @param {number[]} garden
+ * @param {number} i
+ * @returns {Array<number, number>} The ith fountain's inclusive range.
+ */
+function getRange(garden, i) {
+  return [
+    Math.max(i - garden[i], 0),
+    Math.min(i + garden[i], garden.length - 1),
+  ];
+}
+
 /*****************************************************************************/
 
 /**
  * Finds the fewest fountains that can cover the whole 1d garden.
+ * Time: O(n^2) quadratic. This does far fewer iterations than a typical
+ *    nested j loop that starts at i + 1 because at worst (all 1s) our outer
+ *    loop increments by 3, but that is a constant so it is ignored.
  * @param {number[]} garden Non-empty and 1d. Numbers are > 0 and represent a
  *    fountain's range: max(i – garden[i], 0) to min(i + garden[i], N - 1).
  * @returns {number} The fewest fountains for full garden coverage.
@@ -62,15 +116,15 @@ function fewestFountains(garden) {
 
   while (missingCoverageStart <= garden.length - 1) {
     let chosenFountain = missingCoverageStart;
-    const [_candidateStart, candidateEnd] = getFountainRange(
+    const [_candidateStartIdx, candidateEndIdx] = getRange(
       garden,
       chosenFountain
     );
 
     for (let i = missingCoverageStart; i < garden.length; i++) {
-      const [start, end] = getFountainRange(garden, i);
+      const [startIdx, endIdx] = getRange(garden, i);
 
-      if (start === 0 && end === garden.length - 1) {
+      if (startIdx === 0 && endIdx === garden.length - 1) {
         return 1;
       }
 
@@ -79,23 +133,16 @@ function fewestFountains(garden) {
       that still reaches the start of missing coverage, since the further away
       it is the closer it will reach to the end of the missing coverage.
       */
-      if (start <= missingCoverageStart && end > candidateEnd) {
+      if (startIdx <= missingCoverageStart && endIdx > candidateEndIdx) {
         chosenFountain = i;
       }
     }
     count++;
-    const [_newStart, newEnd] = getFountainRange(garden, chosenFountain);
+    const [_newStartIdx, newEndIdx] = getRange(garden, chosenFountain);
 
-    missingCoverageStart = newEnd + 1;
+    missingCoverageStart = newEndIdx + 1;
   }
   return count;
-}
-
-function getFountainRange(garden, i) {
-  return [
-    Math.max(i - garden[i], 0),
-    Math.min(i + garden[i], garden.length - 1),
-  ];
 }
 
 module.exports = { fewestFountains };
