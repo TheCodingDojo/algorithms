@@ -53,69 +53,82 @@ So how do we work with linked lists? A common pattern is to declare a local vari
 
 ## Compared To Array
 
-- ```js
-  class SinglyLinkedList {
-    constructor() {
-      this.head = null;
-    }
+```js
+const head = {
+  data: 0,
+  next: {
+    data: 1,
+    next: {
+      data: 2,
+      next: {
+        data: "this is just some data it can be any data type",
+        next: null,
+      },
+    },
+  },
+};
+
+console.log(head);
+
+let runner = head;
+
+while (runner !== null) {
+  console.log(runner.data);
+  runner = runner.next;
+}
+
+function recursiveTraversal(curr) {
+  if (curr === null) {
+    return;
   }
 
-  class Node {
-    constructor(data) {
-      this.data = data;
-      this.next = null;
-    }
-  }
+  console.log(curr.data);
+  recursiveTraversal(curr.next);
+}
 
-  const sList = new SinglyLinkedList();
-  // adding nodes non-programmatically (without looping to the end to add)
-  sList.head = new Node(1);
-  sList.head.next = new Node(2);
-  sList.head.next.next = new Node(3);
+recursiveTraversal(head);
 
-  // sList now contains Node(1), Node(2), Node(3)
-  // similarly the arr contains integers 1, 2, 3 (not nodes)
-  const arr = [1, 2, 3];
-  let currentIdx = 0;
+const arr = [0, 1, 2];
+let currentIdx = 0;
 
-  let currentNode = sList.head;
-  let currentItem = arr[currentIdx];
+let currentNode = head;
+let currentItem = arr[currentIdx];
 
-  /**
-   * moving to next node:
-   * currentNode.next is evaluated first, returning the next node (or null if no next)
-   * to be assigned into the currentNode variable,
-   * which is overwriting the variable's previous contents
-   */
+/**
+ * moving to next node:
+ * currentNode.next is evaluated first, returning the next node (or null if no next)
+ * to be assigned into the currentNode variable,
+ * which is overwriting the variable's previous contents
+ */
+currentNode = currentNode.next;
+
+/**
+ * moving to next item in arr (in a similar way, not the usual way)
+ * currentIdx + 1 is evaluated first, returning the next idx (incremented by 1)
+ * to be assigned into the currentIdx variable,
+ * which is overwriting the variable's previous contents
+ */
+currentIdx = currentIdx + 1;
+currentItem = arr[currentIdx];
+
+// looping programmatically, reset starting points to beginning first
+currentIdx = 0;
+
+currentNode = sList.head;
+currentItem = arr[currentIdx];
+
+while (currentNode !== null) {
+  console.log("current node data:", currentNode.data);
   currentNode = currentNode.next;
+}
 
-  /**
-   * moving to next item in arr (in a similar way, not the usual way)
-   * currentIdx + 1 is evaluated first, returning the next idx (incremented by 1)
-   * to be assigned into the currentIdx variable,
-   * which is overwriting the variable's previous contents
-   */
+// when idx goes out of bounds, undefined is returned
+while (currentItem !== undefined) {
+  console.log("current arr item:", currentItem);
   currentIdx = currentIdx + 1;
   currentItem = arr[currentIdx];
-
-  // looping programmatically, reset starting points to beginning first
-  currentIdx = 0;
-
-  currentNode = sList.head;
-  currentItem = arr[currentIdx];
-
-  while (currentNode !== null) {
-    console.log("current node data:", currentNode.data);
-    currentNode = currentNode.next;
-  }
-
-  // when idx goes out of bounds, undefined is returned
-  while (currentItem !== undefined) {
-    console.log("current arr item:", currentItem);
-    currentIdx = currentIdx + 1;
-    currentItem = arr[currentIdx];
-  }
-  ```
+}
+```
 
 ---
 
