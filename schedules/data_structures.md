@@ -183,16 +183,16 @@ average() {}
 ```js
 /**
  * Removes the last node of this list.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @returns {any} The data from the node that was removed.
  */
 removeBack() {}
 
 /**
  * Determines whether or not the given search value exists in this list.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {any} val The data to search for in the nodes of this list.
  * @returns {boolean}
  */
@@ -200,8 +200,8 @@ contains(val) {}
 
 /**
  * Determines whether or not the given search value exists in this list.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {any} val The data to search for in the nodes of this list.
  * @param {?node} current The current node during the traversal of this list
  *    or null when the end of the list has been reached.
@@ -212,8 +212,8 @@ containsRecursive(val, current = this.head) {}
 // EXTRA
 /**
  * Recursively finds the maximum integer data of the nodes in this list.
- * - Time: (?).
- * - Space: (?).
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {Node} runner The start or current node during traversal, or null
  *    when the end of the list is reached.
  * @param {Node} maxNode Keeps track of the node that contains the current
