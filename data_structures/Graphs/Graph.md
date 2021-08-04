@@ -1,4 +1,4 @@
-# Graph
+# [Graph](./graph.js)
 
 - A non-linear data structures that contains nodes and edges.
 - A node (vertex / point) is a single unique value.
