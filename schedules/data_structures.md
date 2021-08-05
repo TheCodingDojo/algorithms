@@ -261,6 +261,7 @@ removeVal(val) {}
  * @param {any} newVal The value to use for the new node that is being added.
  * @param {any} targetVal The value to use to find the node that the newVal
  *    should be inserted in front of.
+ * @returns {boolean} To indicate whether the node was pre-pended or not.
  */
 prepend(newVal, targetVal) {}
 ```
