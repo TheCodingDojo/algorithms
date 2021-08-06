@@ -366,19 +366,18 @@ class SinglyLinkedList {
     }
 
     if (this.head.data === val) {
-      this.head = this.head.next;
+      this.removeHead();
       return true;
     }
 
     let runner = this.head;
 
-    while (runner.next && runner.next.data !== val) {
+    while (runner.next) {
+      if (runner.next.data === val) {
+        runner.next = runner.next.next;
+        return true;
+      }
       runner = runner.next;
-    }
-
-    if (runner.next && runner.next.data === val) {
-      runner.next = runner.next.next;
-      return true;
     }
     return false;
   }
@@ -401,8 +400,7 @@ class SinglyLinkedList {
     }
 
     if (this.head.data === targetVal) {
-      newNode.next = this.head;
-      this.head = newNode;
+      this.insertAtFront(newVal);
       return true;
     }
 

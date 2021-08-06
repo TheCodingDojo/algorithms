@@ -1,4 +1,4 @@
-// Given to an alumni in 2021.
+// Given to an alumni in 2021 by DocuSign.
 
 /* 
 There is a one-dimensional garden of length N that is non-empty. In each
