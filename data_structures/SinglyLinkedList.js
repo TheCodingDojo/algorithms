@@ -454,7 +454,7 @@ class SinglyLinkedList {
    * - Space: O(1) constant.
    * @returns {SinglyLinkedList} This list.
    */
-  moveMinToFront() {
+  moveMinFront() {
     /* 
       Alternatively, we could swap the data only in min node and head,
       but it's better to swap the nodes themselves in case anyone has variables
@@ -502,7 +502,7 @@ class SinglyLinkedList {
    * - Space: O(n) linear.
    * @returns {SinglyLinkedList} This list.
    */
-  moveMinFront() {
+  moveMinToFront() {
     if (this.isEmpty()) {
       return this;
     }
@@ -511,16 +511,13 @@ class SinglyLinkedList {
     let runner = this.head;
     let prev = this.head;
 
-    while (runner) {
-      if (runner.data < minNode.data) {
-        minNode = runner;
+    // Todo refactor to while runner.next
+    while (runner.next) {
+      if (runner.next.data < minNode.data) {
+        prev = runner;
+        minNode = runner.next;
       }
 
-      // make sure the prev stays the prev of minNode
-      // if minNode is last node, we don't want prev to become the runner
-      if (prev.next !== minNode && runner.next !== null) {
-        prev = runner;
-      }
       runner = runner.next;
     }
 
