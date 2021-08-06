@@ -10,7 +10,6 @@
 
 - [outputToJson]("../strings/outputToJson/outputToJson.js)
 - [dupesBetweenSeparators](../strings/dupesBetweenSeparators.js) | [dupesBetweenSeparatorsSpec](../spec/strings/dupesBetweenSeparatorsSpec.js)
-- [rehash](../strings/rehash.js) | [rehashSpec](../spec/strings/rehashSpec.js)
 - [getQuoteFromCaret](../strings/getQuoteFromCaret.js)
 - [sortAlphaSubstringsByOccurrence](../strings/sortAlphaSubstringsByOccurrence.js)
 - [questionMarks](../strings/questionMarks.js) | [questionMarksSpec](../spec/strings/questionMarksSpec.js)
