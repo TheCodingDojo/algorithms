@@ -63,9 +63,13 @@ class LinkedListStack {
     this.head = null;
   }
 
-  // add to top (add new head)
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * Adds a new item to the top of the stack (the head).
+   * - Time: O(1) constant.
+   * - Space: O(1).
+   * @param {any} val The val to add.
+   * @returns {void}
+   */
   push(val) {
     const newNode = new Node(val);
 
@@ -77,9 +81,12 @@ class LinkedListStack {
     }
   }
 
-  // remove from top, (remove head)
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * Removes the top item (the head).
+   * - Time: O(1) constant.
+   * - Space: O(1).
+   * @returns {any} The top item of the stack.
+   */
   pop() {
     if (this.head === null) {
       return null;
@@ -91,15 +98,43 @@ class LinkedListStack {
     return removed.data;
   }
 
-  // aka top
-  // Time: O(1) constant
-  // Space: O(1)
+  /**
+   * Returns the top item of the stack without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1).
+   * @returns {any} The top item.
+   */
   peek() {
     return this.head ? this.head.data : null;
   }
 
-  // Time: O(n) linear, n = list length
-  // Space: O(1)
+  /**
+   * Determines if the stack is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1).
+   * @returns {boolean}
+   */
+  isEmpty() {
+    return this.head === null;
+  }
+
+  /**
+   * Gets the count of items in the stack.
+   * - Time: O(n) linear, n = list length.
+   * - Space: O(1).
+   * @returns {number} The total number of items.
+   */
+  size() {
+    let len = 0;
+    let runner = this.head;
+
+    while (runner) {
+      len += 1;
+      runner = runner.next;
+    }
+    return len;
+  }
+
   contains(val) {
     let runner = this.head;
 
@@ -110,25 +145,6 @@ class LinkedListStack {
       runner = runner.next;
     }
     return false;
-  }
-
-  // Time: O(1) constant
-  // Space: O(1)
-  isEmpty() {
-    return this.head === null;
-  }
-
-  // Time: O(n) linear, n = list length
-  // Space: O(1)
-  size() {
-    let len = 0;
-    let runner = this.head;
-
-    while (runner) {
-      len += 1;
-      runner = runner.next;
-    }
-    return len;
   }
 
   // Time: O(n) linear, n = list length
