@@ -1,13 +1,18 @@
+// https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
+
 // Given to an alumni in 2021 by DocuSign.
 
 /* 
-There is a one-dimensional garden of length N that is non-empty. In each
-position of the N length garden, a fountain has been installed. Given an
-array a[] such that a[i] describes the coverage limit of ith fountain.
-A fountain can cover the range from the position
-max(i – a[i], 0) to min(i + a[i], N - 1). In beginning, all the fountains
-are switched off. The task is to find the minimum number of fountains needed to
-be activated such that the whole N-length garden can be covered by water.
+There is a one-dimensional garden on the x-axis. The garden starts at
+the point 0 and ends at the point n. (i.e The length of the garden is n).
+
+There are n + 1 taps located at points [0, 1, ..., n] in the garden.
+
+Given an integer array ranges of length n + 1 where ranges[i] (0-indexed)
+means the i-th tap can water the area 
+[i - ranges[i], i + ranges[i]] if it was open.
+
+Return the minimum number of taps that should be open to water the whole garden, If the garden cannot be watered return -1.
 */
 
 const garden1 = [1, 2, 1];
@@ -40,24 +45,30 @@ const expected7 = 1;
 const garden8 = [1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 11, 8];
 const expected8 = 1;
 
-console.log("garden3");
+const garden9 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+const expected9 = 5;
+
+const garden10 = [3, 1, 2, 1, 0, 0, 0, 1, 1, 2, 1, 3];
+const expected10 = -1;
+
 printRanges(garden3);
 
 /**
- * Finds the fewest fountains that can cover the whole 1d garden.
+ * Finds the fewest taps that can cover the whole 1d garden.
  * @param {number[]} garden Non-empty and 1d. Numbers are > 0 and represent a
- *    fountain's range: max(i – garden[i], 0) to min(i + garden[i], N - 1).
- * @returns {number} The fewest fountains for full garden coverage.
+ *    tap's range: [i - ranges[i], i + ranges[i]].
+ * @returns {number} The fewest taps for full garden coverage.
  */
-function fewestFountains(garden) {}
+function minTaps(garden) {}
 
 /**
- * Prints the range of each fountain.
+ * Prints the range of each tap.
  * @param {number[]} garden
  * @param {boolean} startAsIdx
  */
 function printRanges(garden, startAsIdx = false) {
-  console.log(`[${garden.map((_, i) => i).join(" ")}]`, "| indexes.");
+  console.log("\n\n");
+  console.log(`[${garden.map((_, i) => i % 10).join(" ")}]`, "| indexes.");
 
   for (let i = 0; i < garden.length; i++) {
     let str = "";
@@ -78,19 +89,18 @@ function printRanges(garden, startAsIdx = false) {
         str += "_";
       }
 
-      j !== garden.length - 1 && (str += " ".repeat(j.toString().length));
+      j !== garden.length - 1 && (str += " ");
     }
     console.log(
-      `[${str}] | i: ${i} | val: ${garden[i]} | startIdx: ${start} | endIdx: ${end}`
+      `[${str}] | startIdx: ${start} | endIdx: ${end} | i: ${i} | garden[i]: ${garden[i]}`
     );
   }
-  console.log("*".repeat(50));
 }
 
 /**
  * @param {number[]} garden
  * @param {number} i
- * @returns {Array<number, number>} The ith fountain's inclusive range.
+ * @returns {Array<number, number>} The ith tap's inclusive range.
  */
 function getRange(garden, i) {
   return [
@@ -102,7 +112,7 @@ function getRange(garden, i) {
 /*****************************************************************************/
 
 /**
- * Finds the fewest fountains that can cover the whole 1d garden.
+ * Finds the fewest taps that can water the whole 1d garden with water.
  * Time: O(n^2) quadratic. This does far fewer iterations than a typical
  *    nested j loop that starts at i + 1 because at worst (all 1s) our outer
  *    loop increments by 3, but that is a constant so it is ignored.
@@ -110,11 +120,11 @@ function getRange(garden, i) {
  *    fountain's range: max(i – garden[i], 0) to min(i + garden[i], N - 1).
  * @returns {number} The fewest fountains for full garden coverage.
  */
-function fewestFountains(garden) {
+function minTaps(garden) {
   let missingCoverageStart = 0;
   let count = 0;
 
-  while (missingCoverageStart <= garden.length - 1) {
+  while (missingCoverageStart < garden.length) {
     let chosenFountain = missingCoverageStart;
     const [_candidateStartIdx, candidateEndIdx] = getRange(
       garden,
@@ -145,4 +155,52 @@ function fewestFountains(garden) {
   return count;
 }
 
-module.exports = { fewestFountains };
+/**
+ * - Time: O(2n) -> O(n) linear.
+ * - Space: O(n) linear.
+ */
+function minTaps(ranges) {
+  const calRanges = new Array(ranges.length).fill(0);
+
+  for (let i = 0; i < ranges.length; ++i) {
+    const [rangeStartIdx, rangeEndIdx] = getRange(ranges, i);
+
+    if (rangeStartIdx === 0 && rangeEndIdx === ranges.length) {
+      return 1;
+    }
+
+    if (rangeEndIdx > calRanges[rangeStartIdx]) {
+      // This tap reaches the same start but reaches further to the right.
+      calRanges[rangeStartIdx] = rangeEndIdx;
+    }
+  }
+
+  let count = 1;
+  let selectedRangeEndIdx = calRanges[0];
+  let nextRangeEndIdx = calRanges[0];
+
+  for (let rangeStartIdx = 1; rangeStartIdx < ranges.length; rangeStartIdx++) {
+    if (rangeStartIdx > nextRangeEndIdx) {
+      return -1;
+    }
+
+    if (rangeStartIdx > selectedRangeEndIdx) {
+      selectedRangeEndIdx = nextRangeEndIdx;
+
+      if (selectedRangeEndIdx === calRanges.length - 1) {
+        return count;
+      }
+
+      ++count;
+    }
+
+    const currRangeEndIdx = calRanges[rangeStartIdx];
+
+    if (currRangeEndIdx > nextRangeEndIdx) {
+      nextRangeEndIdx = currRangeEndIdx;
+    }
+  }
+  return count;
+}
+
+module.exports = { minTaps };

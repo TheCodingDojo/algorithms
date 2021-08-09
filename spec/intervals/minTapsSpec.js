@@ -1,7 +1,7 @@
-const { fewestFountains } = require("../../intervals/fewestFountains");
+const { minTaps } = require("../../intervals/minTaps");
 const argFormatter = require("../helpers/argFormatter");
 
-describe("fewestFountains", () => {
+describe("minTaps", () => {
   const garden1 = [1, 2, 1];
   const expected1 = 1;
   // Explanation:
@@ -32,6 +32,12 @@ describe("fewestFountains", () => {
   const garden8 = [1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 11, 8];
   const expected8 = 1;
 
+  const garden9 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  const expected9 = 5;
+
+  const garden10 = [3, 1, 2, 1, 0, 0, 0, 1, 1, 2, 1, 3];
+  const expected10 = -1;
+
   const testCases = [
     { args: [garden1], expected: expected1 },
     { args: [garden2], expected: expected2 },
@@ -41,12 +47,14 @@ describe("fewestFountains", () => {
     { args: [garden6], expected: expected6 },
     { args: [garden7], expected: expected7 },
     { args: [garden8], expected: expected8 },
+    { args: [garden9], expected: expected9 },
+    { args: [garden10], expected: expected10 },
   ];
 
-  it("should return fewest number of fountains that need to be used to achieve full garden water coverage.", () =>
+  it("should return fewest number of taps that need to be used to achieve full garden water coverage.", () =>
     testCases.forEach(({ args, expected }) =>
-      expect(fewestFountains(...args))
-        .withContext(argFormatter(fewestFountains, args))
+      expect(minTaps(...args))
+        .withContext(argFormatter(minTaps, args))
         .toEqual(expected)
     ));
 });
