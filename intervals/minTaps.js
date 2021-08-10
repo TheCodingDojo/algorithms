@@ -49,9 +49,9 @@ const garden9 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 const expected9 = 5;
 
 const garden10 = [3, 1, 2, 1, 0, 0, 0, 1, 1, 2, 1, 3];
-const expected10 = -1;
+const expected10 = -1; // There is a gap that can't be covered.
 
-printRanges(garden3);
+// printRanges(garden3);
 
 /**
  * Finds the fewest taps that can cover the whole 1d garden.
@@ -76,7 +76,7 @@ function printRanges(garden, startAsIdx = false) {
 
     if (startAsIdx) {
       start = i;
-      end = ranges[i];
+      end = garden[i];
     } else {
       [start, end] = getRange(garden, i);
     }
@@ -125,11 +125,8 @@ function minTaps(garden) {
   let count = 0;
 
   while (missingCoverageStart < garden.length) {
-    let chosenFountain = missingCoverageStart;
-    const [_candidateStartIdx, candidateEndIdx] = getRange(
-      garden,
-      chosenFountain
-    );
+    let chosenTap = missingCoverageStart;
+    const [_candidateStartIdx, candidateEndIdx] = getRange(garden, chosenTap);
 
     for (let i = missingCoverageStart; i < garden.length; i++) {
       const [startIdx, endIdx] = getRange(garden, i);
@@ -144,22 +141,33 @@ function minTaps(garden) {
       it is the closer it will reach to the end of the missing coverage.
       */
       if (startIdx <= missingCoverageStart && endIdx > candidateEndIdx) {
-        chosenFountain = i;
+        chosenTap = i;
       }
     }
-    count++;
-    const [_newStartIdx, newEndIdx] = getRange(garden, chosenFountain);
+    const [_newStartIdx, newEndIdx] = getRange(garden, chosenTap);
 
+    // No coverage progress was found because the chosenTap hasn't changed.
+    // aside from the first and last possible edge cases.
+    if (
+      chosenTap === missingCoverageStart &&
+      chosenTap !== 0 &&
+      newEndIdx < garden.length - 1
+    ) {
+      return -1;
+    }
+    count++;
     missingCoverageStart = newEndIdx + 1;
   }
   return count;
 }
 
+minTaps2(garden9);
+
 /**
  * - Time: O(2n) -> O(n) linear.
  * - Space: O(n) linear.
  */
-function minTaps(ranges) {
+function minTaps2(ranges) {
   const calRanges = new Array(ranges.length).fill(0);
 
   for (let i = 0; i < ranges.length; ++i) {
@@ -170,28 +178,21 @@ function minTaps(ranges) {
     }
 
     if (rangeEndIdx > calRanges[rangeStartIdx]) {
-      // This tap reaches the same start but reaches further to the right.
+      // This tap reaches the same start but also reaches further to the right.
       calRanges[rangeStartIdx] = rangeEndIdx;
     }
   }
+
+  // printRanges(calRanges, true);
 
   let count = 1;
   let selectedRangeEndIdx = calRanges[0];
   let nextRangeEndIdx = calRanges[0];
 
   for (let rangeStartIdx = 1; rangeStartIdx < ranges.length; rangeStartIdx++) {
+    // There is a gap that cannot be covered.
     if (rangeStartIdx > nextRangeEndIdx) {
       return -1;
-    }
-
-    if (rangeStartIdx > selectedRangeEndIdx) {
-      selectedRangeEndIdx = nextRangeEndIdx;
-
-      if (selectedRangeEndIdx === calRanges.length - 1) {
-        return count;
-      }
-
-      ++count;
     }
 
     const currRangeEndIdx = calRanges[rangeStartIdx];
@@ -199,8 +200,18 @@ function minTaps(ranges) {
     if (currRangeEndIdx > nextRangeEndIdx) {
       nextRangeEndIdx = currRangeEndIdx;
     }
+
+    if (rangeStartIdx > selectedRangeEndIdx) {
+      selectedRangeEndIdx = nextRangeEndIdx;
+      ++count;
+    }
+
+    // Early exit.
+    if (selectedRangeEndIdx === calRanges.length - 1) {
+      return count;
+    }
   }
   return count;
 }
 
-module.exports = { minTaps };
+module.exports = { minTaps: minTaps2 };
