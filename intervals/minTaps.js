@@ -168,26 +168,30 @@ minTaps2(garden9);
  * - Space: O(n) linear.
  */
 function minTaps2(ranges) {
-  const calRanges = new Array(ranges.length).fill(0);
+  const furthestRangeEnds = [];
 
-  for (let i = 0; i < ranges.length; ++i) {
+  for (let i = 0; i < ranges.length; i++) {
     const [rangeStartIdx, rangeEndIdx] = getRange(ranges, i);
+
+    if (furthestRangeEnds[i] === undefined) {
+      furthestRangeEnds[i] = 0;
+    }
 
     if (rangeStartIdx === 0 && rangeEndIdx === ranges.length) {
       return 1;
     }
 
-    if (rangeEndIdx > calRanges[rangeStartIdx]) {
+    if (rangeEndIdx > furthestRangeEnds[rangeStartIdx]) {
       // This tap reaches the same start but also reaches further to the right.
-      calRanges[rangeStartIdx] = rangeEndIdx;
+      furthestRangeEnds[rangeStartIdx] = rangeEndIdx;
     }
   }
 
   // printRanges(calRanges, true);
 
   let count = 1;
-  let selectedRangeEndIdx = calRanges[0];
-  let nextRangeEndIdx = calRanges[0];
+  let selectedRangeEndIdx = furthestRangeEnds[0];
+  let nextRangeEndIdx = furthestRangeEnds[0];
 
   for (let rangeStartIdx = 1; rangeStartIdx < ranges.length; rangeStartIdx++) {
     // There is a gap that cannot be covered.
@@ -195,7 +199,7 @@ function minTaps2(ranges) {
       return -1;
     }
 
-    const currRangeEndIdx = calRanges[rangeStartIdx];
+    const currRangeEndIdx = furthestRangeEnds[rangeStartIdx];
 
     if (currRangeEndIdx > nextRangeEndIdx) {
       nextRangeEndIdx = currRangeEndIdx;
@@ -207,7 +211,7 @@ function minTaps2(ranges) {
     }
 
     // Early exit.
-    if (selectedRangeEndIdx === calRanges.length - 1) {
+    if (selectedRangeEndIdx === furthestRangeEnds.length - 1) {
       return count;
     }
   }

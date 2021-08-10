@@ -54,8 +54,11 @@ function containerWithMostWater(heights) {
   let maxArea = 0;
 
   while (left < right) {
+    // area = length * height using shorter height since water overflows
+    // the short side first.
     const area = (right - left) * Math.min(heights[left], heights[right]);
     area > maxArea && (maxArea = area);
+    // Increment the idx that points to the shorter wall to find a taller wall.
     heights[left] < heights[right] ? left++ : right--;
   }
   return maxArea;
@@ -76,9 +79,11 @@ function containerWithMostWater2(heights) {
 
   for (let i = 0; i < heights.length; i++) {
     for (let j = i + 1; j < heights.length; j++) {
-      const length = j - i,
-        height = Math.min(heights[i], heights[j]),
-        area = length * height;
+      // x axis.
+      const length = j - i;
+      // y axis. Limited by shorter wall since water overflows the short side.
+      const height = Math.min(heights[i], heights[j]);
+      const area = length * height;
       area > max && (max = area);
     }
   }
