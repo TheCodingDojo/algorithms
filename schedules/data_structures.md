@@ -487,8 +487,8 @@ class Queue {
    * @returns {boolean} Whether all the items of the two queues are equal and
    *    in the same order.
    */
-
   compareQueues(q2) {}
+
   /**
    * Determines if the queue is a palindrome (same items forward and backwards).
    * Avoid indexing queue items directly via bracket notation, instead use the
