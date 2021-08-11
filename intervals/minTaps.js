@@ -193,19 +193,23 @@ function minTaps2(ranges) {
   let selectedRangeEndIdx = furthestRangeEnds[0];
   let nextRangeEndIdx = furthestRangeEnds[0];
 
-  for (let rangeStartIdx = 1; rangeStartIdx < ranges.length; rangeStartIdx++) {
+  for (
+    let currRangeStartIdx = 1;
+    currRangeStartIdx < ranges.length;
+    currRangeStartIdx++
+  ) {
     // There is a gap that cannot be covered.
-    if (rangeStartIdx > nextRangeEndIdx) {
+    if (currRangeStartIdx > nextRangeEndIdx) {
       return -1;
     }
 
-    const currRangeEndIdx = furthestRangeEnds[rangeStartIdx];
+    const currRangeEndIdx = furthestRangeEnds[currRangeStartIdx];
 
     if (currRangeEndIdx > nextRangeEndIdx) {
       nextRangeEndIdx = currRangeEndIdx;
     }
 
-    if (rangeStartIdx > selectedRangeEndIdx) {
+    if (currRangeStartIdx > selectedRangeEndIdx) {
       selectedRangeEndIdx = nextRangeEndIdx;
       ++count;
     }
