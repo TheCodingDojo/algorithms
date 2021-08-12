@@ -125,6 +125,6 @@ Even though we have logic to avoid re-processing an already visited node, the
 soonest we can stop re-processing it is as soon as we see it again and realize
 we are re-visiting it.
 
-## Video
+## Videos
 
-[![Alternate Text](https://i.ytimg.com/an_webp/fi8N9vyWJuY/mqdefault_6s.webp?du=3000&sqp=CLzQq4gG&rs=AOn4CLDJIqvxS1TgCiH2Nl5MiSai60VuZQ)](https://www.youtube.com/watch?v=fi8N9vyWJuY "Graphs Video")
+[![Graphs Video](./Dijkstras-video-screencap.png)](https://www.youtube.com/watch?v=fi8N9vyWJuY)
