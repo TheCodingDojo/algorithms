@@ -684,7 +684,7 @@ twoLevelTree.root.right = new Node(15);
 
 ### W3 Mon
 
-- Go over and provide [BST Intro](../data_structures/BinarySearchTree.md)
+- [BST Intro](../data_structures/BinarySearchTree.md)
 - **Provide the `print` method and test trees from above code snippet**.
 
 ```js
