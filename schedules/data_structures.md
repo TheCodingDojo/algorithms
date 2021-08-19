@@ -809,7 +809,7 @@ insertRecursive(newVal, curr = this.root) {}
 
 ```js
 /**
- * DFS Preorder: (Parent, Left, Right)
+ * DFS Preorder: (CurrNode, Left, Right)
  * Converts this BST into an array following Depth First Search preorder.
  * Example on the fullTree var:
  * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
@@ -820,7 +820,7 @@ insertRecursive(newVal, curr = this.root) {}
 toArrPreorder(node = this.root, vals = []) {}
 
 /**
- * DFS Inorder: (Left, Parent, Right)
+ * DFS Inorder: (Left, CurrNode, Right)
  * Converts this BST into an array following Depth First Search inorder.
  * See debugger call stack to help understand the recursion.
  * Example on the fullTree var:
@@ -832,7 +832,7 @@ toArrPreorder(node = this.root, vals = []) {}
 toArrInorder(node = this.root, vals = []) {}
 
 /**
- * DFS Postorder (Left, Right, Parent)
+ * DFS Postorder (Left, Right, CurrNode)
  * Converts this BST into an array following Depth First Search postorder.
  * Example on the fullTree var:
  * [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
