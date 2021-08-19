@@ -28,15 +28,24 @@ function flatten2dArray(twoDimArr) {
   // code here
 }
 
-// Tests
-const result1 = flatten2dArray(twoDimArr1);
-console.log(result1, "should equal", expected1);
+// Advanced Unit Testing Example:
+const assert = require("assert");
 
-const result2 = flatten2dArray(twoDimArr2);
-console.log(result2, "should equal", expected2);
-
-const result3 = flatten2dArray(twoDimArr3);
-console.log(result3, "should equal", expected3);
+// This will print an error if any case fails.
+[
+  [twoDimArr1, expected1],
+  [twoDimArr2, expected2],
+  [twoDimArr3, expected3],
+].forEach((testCase, i) => {
+  // Destructure 1st and 2nd item from testCase.
+  const [arg, expected] = testCase;
+  const actual = flatten2dArr(arg);
+  assert.deepStrictEqual(
+    actual,
+    expected,
+    `Test Case ${i + 1} with arg: ${JSON.stringify(arg)}`
+  );
+});
 
 module.exports = { flatten2dArray };
 
