@@ -128,7 +128,7 @@ function amazonMusicRuntime(busDuration, songDurations) {
 }
 ```
 
-- Add up the above terms, but ignore all the constants. All that's left is an `O(n)` loop nested inside an `O(n)` loop, so we multiple since what is inside a loop is multiple by how many times the loop iterates.
+- Add up the above terms, but ignore all the constants. All that's left is an `O(n)` loop nested inside an `O(n)` loop, so we multiply since what is inside a loop is multiplied by how many times the loop iterates.
 
   - `O(n) * O(n)`
   - Simplify: `O(n^2)`.
