@@ -1,11 +1,12 @@
 # README
 
-## WARNING
+## CURRENT STUDENT WARNING
 
-- **PLEASE SERIOUSLY CONSIDER** that looking up answers too soon before you've put in effort to solve it on your own is setting yourself up for failure because you need to practice building up your problem solving skills and resilience.
+- If you get in the habit of looking up answers before putting in a real effort to solve them yourself, you are setting yourself up for failure in interviews.
 
 ## Links
 
+- [RIOTWalk Interview Method](./RIOTWalk-interview-method)
 - [Algo Schedules](/schedules)
 - [Lecture Outlines](https://github.com/TheCodingDojo/lecture-outlines)
 - [Big O Notation Cheat Sheet](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/big-O-notation.html)
