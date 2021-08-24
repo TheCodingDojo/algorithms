@@ -6,7 +6,7 @@
 
 ## Links
 
-- [RIOTWalk Interview Method](./RIOTWalk-interview-method)
+- [RIOTWalk Interview Method](./RIOTWalk-interview-method.md)
 - [Algo Schedules](/schedules)
 - [Lecture Outlines](https://github.com/TheCodingDojo/lecture-outlines)
 - [Big O Notation Cheat Sheet](https://cooervo.github.io/Algorithms-DataStructures-BigONotation/big-O-notation.html)
