@@ -30,8 +30,3 @@ Hamiltonian cycle (path that visits every node once) of minimum cost?
 | 17  | 355687428096000 | 37879808   |
 
 ### Dynamic Programming Approach
-
-DP Idea: compute the optimal solution for all the subpaths of length N while
-using information from the already known optimal partial tours of length N-1.
-
-Pick starting node "S" whose index is 0 <= S < N (including 0 to N exclusive)

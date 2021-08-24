@@ -390,6 +390,9 @@ class Graph {
     return ret;
   }
 
+  // TODO
+  pathShortest() {}
+
   print() {
     let str = [...this.vertices.values()]
       .map(
@@ -415,3 +418,10 @@ Graph.DIRECTED = Symbol("undirected graph"); // two-way edges
 
 const flightPaths = new Graph().addEdges(routes);
 flightPaths.print();
+
+module.exports = {
+  Vertex,
+  Graph,
+};
+
+// https://www.youtube.com/watch?v=pVfj6mxhdMw

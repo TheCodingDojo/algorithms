@@ -4,7 +4,7 @@ the shortest possible route that visits each city exactly once and returns to
 the origin city?
 
 In Technical Terms:
-Given a complete graph with weighted edges (as an adjacency matrix) what is the
+Given a complete graph with weighted edges (as an adjacency map) what is the
 Hamiltonian cycle (path that visits every node once) of minimum cost?
 
 Time Complexity:
