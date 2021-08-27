@@ -1061,7 +1061,7 @@ removeMiddleNode() {}
   - Given some new data, add it to the back of the DList
 - removeMiddleNode
 
-### W4 Wed - DoublyLinkedList
+### W4 Wed - [DoublyLinkedList](../data_structures/DoublyLinkedList.js)
 
 ```js
 /**

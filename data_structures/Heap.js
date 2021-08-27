@@ -60,11 +60,6 @@ class MinHeap {
     const heap = this.heap;
     let idxOfNodeToShiftUp = heap.length - 1;
 
-    this.printArr(
-      `shiftUp start from back to shift ${heap[idxOfNodeToShiftUp]} up:`
-    );
-    this.printHorizontalTree();
-
     while (idxOfNodeToShiftUp > 1) {
       const idxOfParent = Math.floor(idxOfNodeToShiftUp / 2);
 
@@ -79,16 +74,9 @@ class MinHeap {
         heap[idxOfParent],
         heap[idxOfNodeToShiftUp],
       ];
-
-      this.printArr(
-        `shiftUp swapped ${heap[idxOfParent]} & ${heap[idxOfNodeToShiftUp]}:`
-      );
-      this.printHorizontalTree();
-
       // since it was swapped with parent, it is now located at the idxOfParent
       idxOfNodeToShiftUp = idxOfParent;
     }
-    console.log("shiftUp done\n");
   }
 
   /**
@@ -108,9 +96,9 @@ class MinHeap {
       return null;
     }
 
-    const heap = this.heap,
-      min = heap[1],
-      lastNode = heap.pop();
+    const heap = this.heap;
+    const min = heap[1];
+    const lastNode = heap.pop();
 
     // last item is being removed, no more work required
     if (heap.length === 1) {
@@ -128,13 +116,8 @@ class MinHeap {
   shiftDown() {
     const heap = this.heap;
 
-    let idxOfNodeToShiftDown = 1,
-      idxOfLeftChild = idxOfNodeToShiftDown * 2;
-
-    this.printArr(
-      `shiftDown start from front to shift ${heap[idxOfNodeToShiftDown]} down:`
-    );
-    this.printHorizontalTree();
+    let idxOfNodeToShiftDown = 1;
+    let idxOfLeftChild = idxOfNodeToShiftDown * 2;
 
     // while there is at least 1 child
     while (idxOfLeftChild < heap.length) {
@@ -159,16 +142,10 @@ class MinHeap {
         heap[idxOfNodeToShiftDown],
       ];
 
-      this.printArr(
-        `shiftDown swapped ${heap[idxOfSmallestChild]} & ${heap[idxOfNodeToShiftDown]}:`
-      );
-      this.printHorizontalTree();
-
       // follow this node since it was just swapped to see if it needs to be swapped again
       idxOfNodeToShiftDown = idxOfSmallestChild;
       idxOfLeftChild = idxOfNodeToShiftDown * 2;
     }
-    console.log("shiftDown done\n");
   }
 
   // static allows this method to be executed directly on the class itself rather than needing to be executed on an instance or going through the .prototype
