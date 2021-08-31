@@ -23,7 +23,7 @@ class BehaviorSubject {
 
   emit() {
     for (let i = 0; i < this.subscribers.length; i++) {
-      this.subscribers[i]();
+      this.subscribers[i](this.value);
     }
   }
 
