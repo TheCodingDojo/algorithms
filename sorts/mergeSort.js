@@ -130,9 +130,10 @@ function mergeSort(nums) {
     return nums;
   }
 
-  const middle = Math.floor(nums.length / 2); // get the middle item of the array rounded down
-  const left = nums.slice(0, middle); // items on the left side
-  const right = nums.slice(middle); // items on the right side
-
-  return merge(mergeSort(left), mergeSort(right));
+  const middleIdx = Math.floor(nums.length / 2);
+  const left = nums.slice(0, middleIdx);
+  const right = nums.slice(middleIdx);
+  const sortedLeft = mergeSort(left);
+  const sortedRight = mergeSort(right);
+  return merge(sortedLeft, sortedRight);
 }
