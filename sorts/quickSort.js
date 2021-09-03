@@ -37,7 +37,10 @@ const nums2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
 const expected2 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
 
 const nums3 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
-const expected3 = [2, 3, 3, 6, 7, 8, 11, 14];
+const expected3 = [2, 3, 3, 3, 6, 7, 8, 11, 14];
+
+const nums4 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
+const expected4 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
 
 /**
  * Recursively sorts the given array in-place by mutating the array.
