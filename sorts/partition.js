@@ -27,6 +27,7 @@
 const nums1 = [11, 8, 14, 3, 6, 2, 7];
 const nums2 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
 const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
+const nums4 = [2, 1];
 
 /**
  * Partitions the given array in-place by selecting the number at the middle
@@ -34,6 +35,9 @@ const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
  * pivot to be to it's left and all larger numbers to the right of the pivot.
  * - Time: O(?).
  * - Space: O(?).
+ * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+ *    visualization of quickSort. Focus only on the first cycle of the visualization
+ *    for the partition portion only.
  * @param {Array<number>} nums
  * @param {number} left The index indicating the start of the slice of array
  *    being processed.
@@ -42,6 +46,8 @@ const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
  * @returns {Array<number>} The idx where left section of smaller items ends.
  */
 function partition(nums = [], left = 0, right = nums.length - 1) {}
+
+module.exports = { partition };
 
 /*****************************************************************************/
 
@@ -57,6 +63,9 @@ function partition(nums = [], left = 0, right = nums.length - 1) {}
  * - Time: O(n) linear despite nested loops because we still don't visit an
  *    index more than once.
  * - Space: O(1) constant.
+ * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+ *    visualization of quickSort. Focus only on the first cycle of the visualization
+ *    for the partition portion only.
  * @param {Array<number>} nums
  * @param {number} left The index indicating the start of the slice of array
  *    being processed.
@@ -64,34 +73,46 @@ function partition(nums = [], left = 0, right = nums.length - 1) {}
  *    being processed.
  * @returns {number} The index where the smaller section ends.
  */
-function partition(nums, left = 0, right = nums.length - 1) {
-  const midIdx = Math.floor((left + right) / 2);
+function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
+  const midIdx = Math.floor((leftIdx + rightIdx) / 2);
   const pivotVal = nums[midIdx];
-  let leftIdx = left;
-  let rightIdx = right;
+  const tempPivotIdx = rightIdx;
 
+  // Swap the pivot to the end of the section being partitioned so its
+  // position can be kept track of, then move it last to its final position.
+  [nums[midIdx], nums[tempPivotIdx]] = [nums[tempPivotIdx], nums[midIdx]];
+
+  // Skip over the pivot that was moved to the end so it stays there for now.
+  rightIdx = tempPivotIdx - 1;
+
+  // Look for a num on the left and on the right that both need to be moved to
+  // the other side so one swap can move both of them to the correct side.
   while (true) {
+    // Move leftIdx until we find a num that is out of place.
     while (nums[leftIdx] < pivotVal) {
       leftIdx += 1;
     }
 
+    // Move rightIdx until we find a num that is out of place.
     while (nums[rightIdx] > pivotVal) {
       rightIdx -= 1;
     }
 
+    // All nums have been iterated over, partitioning is complete.
     if (leftIdx >= rightIdx) {
-      return rightIdx;
+      // Swap the pivot to it's final location.
+      [nums[tempPivotIdx], nums[leftIdx]] = [nums[leftIdx], nums[tempPivotIdx]];
+      return leftIdx;
     }
 
+    // Swap the two out of place nums so they will both be on the correct side.
     [nums[leftIdx], nums[rightIdx]] = [nums[rightIdx], nums[leftIdx]];
+
+    // After swapping, we're done with this pair, move on.
     leftIdx += 1;
     rightIdx -= 1;
   }
 }
-
-module.exports = {
-  partition,
-};
 
 /**
  * The lomuto partition scheme does on average 3x more swaps than Hoare's

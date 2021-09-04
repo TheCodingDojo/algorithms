@@ -47,6 +47,8 @@ const expected4 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
  * Best: O(n log(n)) linearithmic.
  * Average: O(n log(n)) linearithmic.
  * Worst: O(n^2) quadratic.
+ * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+ *    visualization.
  * @param {Array<number>} nums
  * @param {number} left The index indicating the start of the slice of the
  *    given array being processed.
@@ -65,6 +67,8 @@ module.exports = { quickSort };
  * Best: O(n log(n)) linearithmic.
  * Average: O(n log(n)) linearithmic.
  * Worst: O(n^2) quadratic.
+ * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+ *    visualization.
  * @param {Array<number>} nums
  * @param {number} left The index indicating the start of the slice of the
  *    given array being processed.
