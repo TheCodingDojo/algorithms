@@ -61,56 +61,57 @@ module.exports = { orderedMultisetUnion };
  *    not the combined amount from both sets.
  */
 function orderedMultisetUnion(sortedA, sortedB) {
-  const res = [];
-  let idxA = 0,
-    idxB = 0;
+  const union = [];
+  let idxA = 0;
+  let idxB = 0;
 
   while (idxA < sortedA.length || idxB < sortedB.length) {
     if (idxA === sortedA.length) {
       // sortedB is longer, push in all remaining sortedB nums
-      res.push(sortedB[idxB++]);
+      union.push(sortedB[idxB++]);
       continue;
     } else if (idxB === sortedB.length) {
       // sortedA is longer, push in remaining sortedA nums
-      res.push(sortedA[idxA++]);
+      union.push(sortedA[idxA++]);
       continue;
     }
 
     if (sortedA[idxA] === sortedB[idxB]) {
-      res.push(sortedA[idxA++]);
+      union.push(sortedA[idxA++]);
       idxB++; // since both were same, increment both
     } else if (sortedA[idxA] < sortedB[idxB]) {
-      res.push(sortedA[idxA++]);
+      union.push(sortedA[idxA++]);
     } else {
-      res.push(sortedB[idxB++]);
+      union.push(sortedB[idxB++]);
     }
   }
-  return res;
+  return union;
 }
 
 function orderedMultisetUnion2(sortedA, sortedB) {
-  let idxA = 0,
-    idxB = 0;
-  const ret = [],
-    len1 = sortedA.length,
-    len2 = sortedB.length;
+  let idxA = 0;
+  let idxB = 0;
+
+  const union = [];
+  const len1 = sortedA.length;
+  const len2 = sortedB.length;
 
   while (idxA < len1 && idxB < len2) {
     const n1 = sortedA[idxA],
       n2 = sortedB[idxB];
 
     if (n1 === n2) {
-      ret.push(n1);
+      union.push(n1);
       idxA++;
       idxB++;
     } else if (n1 < n2) {
-      ret.push(n1);
+      union.push(n1);
       idxA++;
     } else {
-      ret.push(n2);
+      union.push(n2);
       idxB++;
     }
   }
   // arrays might be different lengths, if any elems are remaining, concat them
-  return ret.concat(sortedA.slice(idxA)).concat(sortedB.slice(idxB));
+  return union.concat(sortedA.slice(idxA)).concat(sortedB.slice(idxB));
 }
