@@ -21,7 +21,7 @@ const expected3 = [];
 
 /**
  * Venn Diagram Visualization (bottom):
- * https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
+ * @see https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} sortedA
@@ -51,8 +51,8 @@ module.exports = { orderedIntersection };
  *    deduped.
  */
 function orderedIntersection(sortedA, sortedB) {
-  let idxA = 0,
-    idxB = 0;
+  let idxA = 0;
+  let idxB = 0;
 
   const intersection = [];
 

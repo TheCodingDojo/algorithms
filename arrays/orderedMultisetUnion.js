@@ -25,7 +25,7 @@ const expected2 = [1, 2, 2, 2, 6, 6, 7, 10, 15, 20];
 /**
  * Combines two already sorted multiset arrays into an ordered multiset union
  * Venn Diagram Visualization (top):
- * https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
+ * @see https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} sortedA Both sets are sorted multisets
