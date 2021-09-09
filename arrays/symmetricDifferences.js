@@ -52,7 +52,7 @@ module.exports = { symmetricDifferences };
 /**
  * Produces the symmetric differences, aka disjunctive union of two sets.
  * Venn Diagram Visualization:
- * https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
+ * @see https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
  * - Time: O(2(n * m)) -> O(n * m), n = numsA.length, m = numsB.length the two
  *    constant 2 was because we are doing the n * m twice. The constant 2 is
  *    dropped.
