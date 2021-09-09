@@ -32,7 +32,7 @@ const expected3 = [4, 5];
 /**
  * Produces the symmetric differences, aka disjunctive union of two sets.
  * Venn Diagram Visualization:
- * https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
+ * @see https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
  * - Time: O(?).
  * - Space: O(?).
  * @param  {Array<number>} numsA
