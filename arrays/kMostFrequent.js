@@ -122,7 +122,11 @@ function kMostFrequentSort(nums, k) {
   const keys = [...freq.keys()];
 
   // sort gives us two elements side by side, A and B, a - b sorts ascending, b - a for descending
-  keys.sort((keyA, keyB) => freq.get(keyB) - freq.get(keyA));
+  keys.sort((numA, numB) => {
+    const freqA = freq.get(numA);
+    const freqB = freq.get(numB);
+    return freqB - freqA;
+  });
 
   // slice only the first k keys, if using a plain object for the freq table instead of the
   // built in Map object, would need to convert the keys back to ints, could do this with .map
