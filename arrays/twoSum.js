@@ -49,14 +49,14 @@ function twoSum(nums, targetSum) {
   const numsAndIndices = {};
 
   for (let i = 0; i < nums.length; i++) {
-    const num = nums[i],
-      diff = targetSum - num;
+    const numA = nums[i];
+    const numB = targetSum - numA;
 
-    if (numsAndIndices.hasOwnProperty(diff)) {
-      const addendIdx = numsAndIndices[diff];
-      return [addendIdx, i];
+    if (numsAndIndices.hasOwnProperty(numB)) {
+      const idxB = numsAndIndices[numB];
+      return [idxB, i];
     }
-    numsAndIndices[num] = i;
+    numsAndIndices[numA] = i;
   }
   return [];
 }
