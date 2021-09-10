@@ -46,17 +46,17 @@ module.exports = { twoSum, twoSumSpaceOptimized };
  *    that add up to the targetSum.
  */
 function twoSum(nums, targetSum) {
-  const numsAndIndices = {};
+  const numsToIndex = {};
 
   for (let i = 0; i < nums.length; i++) {
     const numA = nums[i];
     const numB = targetSum - numA;
 
-    if (numsAndIndices.hasOwnProperty(numB)) {
-      const idxB = numsAndIndices[numB];
+    if (numsToIndex.hasOwnProperty(numB)) {
+      const idxB = numsToIndex[numB];
       return [idxB, i];
     }
-    numsAndIndices[numA] = i;
+    numsToIndex[numA] = i;
   }
   return [];
 }
