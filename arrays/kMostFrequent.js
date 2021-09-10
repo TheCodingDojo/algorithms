@@ -128,39 +128,3 @@ function kMostFrequentSort(nums, k) {
   // built in Map object, would need to convert the keys back to ints, could do this with .map
   return keys.slice(0, k);
 }
-
-function kMostFrequent2(arr, k) {
-  const freqTable = {};
-
-  for (let i = 0; i < arr.length; i++) {
-    const elem = arr[i];
-
-    if (!freqTable.hasOwnProperty(elem)) {
-      freqTable[elem] = 1;
-    } else {
-      freqTable[elem]++;
-    }
-  }
-
-  const ordered = [];
-
-  for (const key in freqTable) {
-    const freq = freqTable[key];
-
-    if (typeof ordered[freq] === "undefined") {
-      ordered[freq] = [+key];
-    } else {
-      ordered[freq].push(+key);
-    }
-  }
-
-  const output = [];
-
-  for (let i = ordered.length - 1; i >= 0; i--) {
-    if (typeof ordered[i] === "undefined") continue;
-    for (let j = 0; j < ordered[i].length; j++) {
-      output.push(ordered[i][j]);
-      if (output.length === k) return output;
-    }
-  }
-}
