@@ -35,6 +35,7 @@
 ## Intervals
 
 - [fewestFountains](../intervals/fewestFountains.js) | [fewestFountains](../spec/intervals/fewestFountainsSpec.js)
+- [mergeSortedIntervals](../intervals/mergeSortedIntervals.js) | [mergeSortedIntervals](../spec/intervals/mergeSortedIntervalsSpec.js)
 
 ## Recursion
 
