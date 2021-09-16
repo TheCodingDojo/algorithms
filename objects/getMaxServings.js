@@ -108,12 +108,10 @@ function getMaxServings(recipe, available) {
  *    are all loops.
  * Space: O(2n) from .entries and .map array -> O(n) linear.
  */
-function getMaxServingsFunctional(recipe, available) {
-  return (
-    Math.min(
-      ...Object.entries(recipe).map(
-        ([ingred, requiredAmnt]) => available[ingred] / requiredAmnt
-      )
-    ) || 0
-  );
-}
+const getMaxServingsFunctional = (recipe, available) =>
+  Math.min(
+    ...Object.entries(recipe).map(
+      ([requiredIngred, requiredAmnt]) =>
+        available[requiredIngred] / requiredAmnt
+    )
+  ) || 0;

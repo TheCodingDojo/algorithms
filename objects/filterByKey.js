@@ -1,13 +1,19 @@
 /* 
-  Given an array of objects, a searchFor string, and searchBy key that exists in the object
-  return a new array of only those objects whose value for the given key starts with the given search string
+  Given an array of objects, a searchFor string, and searchBy key that exists
+  in the object return a new array of only those objects whose value for the
+  given key starts with the given search string.
 
-  You can assume the key will exist on the object and the value of that key will be a string
+  You can assume the key will exist on the object and the value of that key
+  will be a string.
 
-  Bonus: make the search case insensitive
-  Bonus: re-write it with functional programming in mind, using built in methods
-  Bonus: allow the search method to be provided as a parameter, e.g., string methods: includes, startsWith, endsWith
-    - you can assume the searchMethod will be valid
+  Bonus: make the search case insensitive.
+  Bonus: re-write it with functional programming, using built in methods.
+  Bonus: allow the search method to be provided as a parameter, e.g.,
+      string methods: includes, startsWith, endsWith.
+    - you can assume the searchMethod will be valid.
+
+  This kind of algorithm can be used in react onChange as you type into a
+  search bar to live-filter a list.
 */
 
 const people = [
