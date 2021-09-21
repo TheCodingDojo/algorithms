@@ -103,6 +103,8 @@ function processBackspaces(s) {
     } else if (isBackspace) {
       backspaceCount++;
     } else {
+      // prepend so the strings aren't reversed due to looping backwards,
+      // however, it wouldn't break the final comparison if both are reversed.
       newS = s[i] + newS;
     }
   }
