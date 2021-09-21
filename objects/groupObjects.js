@@ -1,10 +1,13 @@
 /* 
-  Given an array of objects that contain a category key,
-  return a hash table to group the objects by their category.
+This was extracted from a react interview challenge. The items were to be
+displayed in category groups.
 
-  Make the grouping case-insensitive.
+Given an array of objects that contain a category key,
+return a hash table to group the objects by their category.
 
-  Bonus: allow the key that is grouped by to be provided.
+Make the grouping case-insensitive.
+
+Bonus: allow the key that is grouped by to be provided.
 */
 
 const objects = [
