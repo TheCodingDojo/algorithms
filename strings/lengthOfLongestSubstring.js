@@ -112,8 +112,8 @@ function lengthOfLongestSubString2(str) {
  */
 function longestSubstring(str) {
   const seenChars = {};
-  let longest = 0,
-    startIndex = 0;
+  let longest = 0;
+  let startIndex = 0;
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
