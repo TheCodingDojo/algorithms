@@ -40,11 +40,11 @@ const expected6 = 1;
 
 /**
  * Determines which version number is greater or if they are equal.
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {string} v1
  * @param {string} v2
  * @returns {number} 1 if v1 greater, -1 if v1 smaller, 0 if equal.
- * - Time: O(?).
- * - Space: O(?).
  */
 function compareVersionNumbers(v1, v2) {}
 
@@ -53,10 +53,13 @@ module.exports = { compareVersionNumbers };
 /*****************************************************************************/
 
 /**
- * - Time: O(n + m + max(n, m)) -> O(n) linear, n = @v1 length, m = @v2 length
+ * - Time: O(n + m + max(n, m)) -> O(n) linear, n = v1 length, m = v2 length
  *    .split loops over both, then we loop over the larger of the two arrays
  *    from the .split.
  * - Space: O(n + m) The two versions are copied into the split arrays.
+ * @param {string} v1
+ * @param {string} v2
+ * @returns {number} 1 if v1 greater, -1 if v1 smaller, 0 if equal.
  */
 function compareVersionNumbers(v1, v2) {
   const v1Split = v1.split(".");
