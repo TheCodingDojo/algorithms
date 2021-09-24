@@ -65,7 +65,7 @@ Often the interviewer will throw in some extra requirements after you solve it t
 ## Calculating Big O Example
 
 Calculate the Big O of each line then add up the terms (multiply for terms nested in a loop).
-Don't forget that many built in methods require a loop, such as `.slice`, `.splice`.
+Don't forget that many built in methods require a loop, such as `.slice`, `.splice`. The way you calculate Big O Space Complexity is the same but focusing on usage of data structures that take up space based on the length of the input.
 
 ```js
 /**
@@ -73,9 +73,9 @@ Don't forget that many built in methods require a loop, such as `.slice`, `.spli
  * ride ends.
  *
  * Terms: n = songDurations.length.
- * O(1) = constant, one operation, no loop, doesn't change if n changes.
- * O(2) = constant, 2 operations, ...
- * O(n) = same # of operations as songDurations.length.
+ * O(1) = 'constant', one operation, no loop, doesn't change if n changes.
+ * O(2) = 'constant', 2 operations, ...
+ * O(n) = 'linear', same # of operations as songDurations.length.
  *
  * @param {number} busDuration Seconds.
  * @param {number} songDurations Seconds.
