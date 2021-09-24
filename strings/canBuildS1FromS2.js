@@ -27,7 +27,7 @@ const expected4 = true;
 const strA5 = "hello";
 const strB5 = "heloxyz";
 const expected5 = false;
-// Explanation: not strB5 does not have enough "l" chars.
+// Explanation: strB5 does not have enough "l" chars.
 
 /**
  * Determines whether s1 can be built using the chars of s2.
