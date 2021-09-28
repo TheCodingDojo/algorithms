@@ -1,6 +1,6 @@
 # Web Fund Algo Schedule
 
-- Solving push and pop with them before sending them into groups might best because those algos are kind of like trick questions almost.
+- **NOTE: A new set of web fund algos were added to web fund 2021 curriculum so these are no longer used, but they are a great fundamental set if more algos are desired and the platform doesn't cover the recreation of some of the fundamental array methods that are covered here.**
 - [Printable Basic 13](https://docs.google.com/document/d/1Vw-8ZzZy_kfkcK-6MUkXJNfNQ7qX9_nkxnIBNoVNdbM/edit#heading=h.wr6t3eu5n64f)
 
 ---
