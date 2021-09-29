@@ -106,6 +106,16 @@ finishes.
 
 ---
 
+## Space Complexity
+
+If you have two functions that simply loop through an array and print the values but one uses a `for` or `while` loop and the other uses recursion and none of the functions copy the array elements into another data structure, the recursive function will take up more space because recursion requires adding pending function calls onto the call stack.
+
+The space complexity is therefore calculated by the maximum depth of the call stack which is often `O(n)` where `n` is the size of the input whether it's an array or a number that determines how much recursion happens, such as in the case of recursive factorial where the passed in number is recursively multiplied to one number less than itself until you get down to 0.
+
+If the recursive function also creates a data structure that takes up `n` space each recursive call, that additional space taken up needs to be multiplied to the call stack `m` space to calculate the total space complexity: `O(n) * O(m)` -> `O(n * m)` -> `O(nm)`.
+
+---
+
 ## Pass By Value / Reference
 
 - Primitive data types are passed into functions by value, or as a "copy"
