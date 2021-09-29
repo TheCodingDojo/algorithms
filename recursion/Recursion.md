@@ -24,8 +24,7 @@
 - When a function is called from within another function, the inner function must finish before the outer function can finish, which is a Last In First Out (LIFO) ordering pattern.
 - LIFO is implemented using what is called a stack. Imagine a stack of heavy blocks, it is easier to add to the top and remove from the top than trying to remove from anywhere else because it would be much heavier. Adding to the top and removing from the top is LIFO.
 - A stack is implemented using an array or a linked list, with an array, the "top" of the stack is at the back of the array, so `.push` and `.pop` are used for LIFO. With a linked list the "top" of the stack is at the front, so `insertAtFront` and `removeHead` are used for LIFO. A linked list uses the front so that `O(1)` constant time complexity can be achieved for both add and remove operations just like `.push` and `.pop` are `O(1)` constant time, meaning no iteration is required for these operations to do their job.
-- In a call stack, it is a stack of the pending functions that have been started but have not been finished yet, the last function to be called will be the first function to finish and then removed from the call stack (LIFO)
-- The call stack can be seen in debug mode in the debug side panel. Clicking on each function in the call stack will change the values of the variables and parameters in the debug panel as well so you can see how the parameters changed from call-to-call.
+- In a call stack, it is a stack of the pending functions that have been started but have not been finished yet, the last function to be called will be the first function to finish and then removed from the call stack (LIFO) when the function's `return` happens.
 
 ### Simple Non-recursive call stack example
 
@@ -95,6 +94,8 @@ finishes.
 ƒ'first'  returned the value: one.   ƒ'first' was popped out of the call stack.
 */
 ```
+
+The below picture shows the call stack of the above code in debug mode. Adding breakpoints to the top and to the return line(s) of your recursive function or for non-recursion adding breakpoints in those places to each of the functions being called can be very helpful to watch how the call stack is filled up (`push`), follow the changing parameter values and local vars, and to see the call stack 'unwind' (`pop`).
 
 ![call-stack-order-debug.png](./call-stack-order-debug.png)
 
