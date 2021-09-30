@@ -115,6 +115,8 @@ The space complexity is therefore calculated by the maximum depth of the call st
 
 If the recursive function also creates a data structure that takes up `n` space each recursive call, that additional space taken up needs to be multiplied to the call stack `m` space to calculate the total space complexity: `O(n) * O(m)` -> `O(n * m)` -> `O(nm)`.
 
+Because of this, iterative (non-recursive) solutions have a space complexity advantage.
+
 ---
 
 ## Pass By Value / Reference

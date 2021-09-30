@@ -20,8 +20,12 @@ module.exports = { sumArr };
 /*****************************************************************************/
 
 /**
+ * Add params if needed for recursion
+ * Recursively sums the given array.
  * - Time: O(n) linear.
- * - Space: O(1) constant.
+ * - Space: O(n) linear due to the call stack.
+ * @param {Array<number>} nums
+ * @returns {number} The sum of the given nums.
  */
 function sumArr(nums, i = 0) {
   if (i === nums.length) {

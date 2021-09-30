@@ -59,7 +59,6 @@ module.exports = { coronaVirusFloodFill };
  * - Time: O(n^2) quadratic for square 2d grid matrix,
  *    or O(n * m) for non-square matrix,
  *    n = outer arr.length m = inner arr.length.
- * - Space: O(n^2) quadratic, or O(n * m).
  * @param {Array<Array<string|null>>} grid A 2d array representing a social
  *    space.
  * @param {Object} point The location of patient zero.

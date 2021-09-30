@@ -27,9 +27,10 @@ module.exports = { generateAnagrams };
 /*****************************************************************************/
 
 /**
+ * Generates all anagrams (permutations) for the given string
+ * @see https://www.geeksforgeeks.org/time-complexity-permutations-string/
  * - Time: O(n^2 * n!)
- *    https://www.geeksforgeeks.org/time-complexity-permutations-string/
- * - Space: O(n!) factorial
+ * - Space: O(n!) factorial due to the call stack.
  */
 function generateAnagrams(str, solutions = [], partial = "") {
   if (!str) {

@@ -39,8 +39,12 @@ module.exports = { factorial };
 /*****************************************************************************/
 
 /**
+ * Recursively multiples 1 to the given int.
  * - Time: O(n) linear.
- * - Space: O(1) constant.
+ * - Space: O(n) linear due to the call stack.
+ * @param {number} n The int to factorial. Treat negatives as zero and
+ *    floor decimals.
+ * @returns {number} The result of !n.
  */
 function factorial(n) {
   // Termination Condition if it's bad data (not a number)

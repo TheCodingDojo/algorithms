@@ -35,7 +35,8 @@ module.exports = { reverseStr };
  * '' + c + b + a
  *
  * - Time: O(n) linear, n = str.length
- * - Space: O(n) to build the new reversed strings since strings are immutable
+ * - Space: O(2n) -> O(n) linear. Every char of the string is copied into a new
+ *    string and one function call added to the stack for each char.
  */
 function reverseStr(str) {
   if (str === "") {

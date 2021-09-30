@@ -3,7 +3,7 @@
 /* 
   Flood Fill
 
-  Most graphical “paint” applications, have a ‘paintcan fill’ function that floods part of an image with a certain color. We change the image as if we painted a canvas: a two-dimensional array of integers, where each integer represents a color for that pixel. The canvas Array.length is the Y dimension of our canvas; each spot in the canvas array is a row in our image, with a length equal to our canvas’ X dimension. You are given a canvas (2 dimensional array of integers), starting coordinate (2-element array), and the color to flood (integer value). Build floodFill(canvas2D,startXY,newColor) ! Replace a pixel’s color value only if it is the same color as the origin coordinate and is directly adjacent via X or Y to another pixel you will change. Note: diagonally related pixels are not considered adjacent.
+  Most graphical “paint” applications, have a ‘paint can fill’ function that floods part of an image with a certain color. We change the image as if we painted a canvas: a two-dimensional array of integers, where each integer represents a color for that pixel. The canvas Array.length is the Y dimension of our canvas; each spot in the canvas array is a row in our image, with a length equal to our canvas’ X dimension. You are given a canvas (2 dimensional array of integers), starting coordinate (2-element array), and the color to flood (integer value). Build floodFill(canvas2D,startXY,newColor) ! Replace a pixel’s color value only if it is the same color as the origin coordinate and is directly adjacent via X or Y to another pixel you will change. Note: diagonally related pixels are not considered adjacent.
   
   Input:
   [
@@ -28,10 +28,22 @@
 ]
 */
 
-// src=https://bitbucket.org/morleytatro/dojo-algorithms/src/master/
+/**
+ * Replaces the originalColor with the newColor from the startXY for every
+ * neighboring pixels that is the originalColor.
+ * - Time: O(n * m). n is canvas2d.length and m is max len of the child arrays.
+ * - Space: O(n * m) due to the call stack size based on total pixels that can
+ *    be painted.
+ * @param {number[][]} canvas2D The pixels to paint.
+ * @param {[number, number]} startXY The starting point.
+ * @param {string} newColor
+ * @param {string} originalColor
+ * @returns {number[][]} The painted canvas.
+ */
 function floodFill(canvas2D, startXY, newColor, originalColor = null) {
-  const x = startXY[0],
-    y = startXY[1];
+  const x = startXY[0];
+  const y = startXY[1];
+
   if (originalColor && canvas2D[y][x] !== originalColor) {
     return;
   }

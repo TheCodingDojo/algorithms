@@ -33,10 +33,11 @@ module.exports = { removeConsecDupeWords };
  *    another loop to recurse over words.length, and the .slice that happens
  *    every iteration ultimately will slice each word once, which is the third
  *    'n' iterations.
- * - Space: O(2n) -> O(n) linear. The str is duplicated twice, one in words and
- *    another in dedupedStr. Worst case is every word is unique so every word
- *    is copied twice.
+ * - Space: O(3n) -> O(n) linear. One 'n' for the call stack.
+ *    The str is duplicated twice, one in words and another in dedupedStr.
+ *    Worst case is every word is unique so every word is copied twice.
  * @param {string} str With space separated words.
+ * @returns {string} The given string deduped.
  */
 function removeConsecDupeWords(str, words = str.split(" "), dedupedStr = "") {
   if (!words.length) {

@@ -43,7 +43,7 @@ module.exports = { binarySearch };
  * Recursively performs a binary search (divide and conquer) to determine if
  * the given sorted nums array contains the given number to search for.
  * - Time: O(log n) logarithmic due to divide and conquer approach.
- * - Space: O(1) constant.
+ * - Space: O(log n) logarithmic due to the call stack.
  * @param {Array<number>} sortedNums
  * @param {number} searchNum
  * @param {number} leftIdx The left index of the current slice of the array

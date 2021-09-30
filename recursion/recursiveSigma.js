@@ -1,9 +1,8 @@
 /* 
-  Recursive Sigma
+Recursive Sigma
 
-  Input: integer
-  Output: sum of integers from 1 to Input integer
-
+Input: integer
+Output: sum of integers from 1 to Input integer
 */
 
 const num1 = 5;
@@ -31,8 +30,11 @@ module.exports = { recursiveSigma };
 /*****************************************************************************/
 
 /**
+ * Recursively sum the given int and every previous positive int.
  * - Time: O(n) linear.
- * - Space: O(n) linear.
+ * - Space: O(n) linear due to the call stack.
+ * @param {number} num
+ * @returns {number}
  */
 function recursiveSigma(n) {
   // get rid of decimals

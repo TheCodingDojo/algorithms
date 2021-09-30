@@ -41,7 +41,7 @@ module.exports = { fibonacci };
 /**
  * Naive recursion.
  * - Time: O(2^n) exponential.
- * - Space: O(1) constant.
+ * - Space: O(n) linear due to the max call stack depth.
  */
 function fibNaiveRecursion(n) {
   if (n < 0) {
@@ -61,7 +61,7 @@ function fibNaiveRecursion(n) {
  * function calls and returning the cached result when the same inputs occur
  * again.
  * - Time: O(2n) -> O(n) linear.
- * - Space: O(n) linear.
+ * - Space: O(2n) -> O(n) linear. Call stack depth memo length are both 'n'.
  */
 function fibonacci(n, memo = { 0: 0, 1: 1 }) {
   if (n < 0) {
@@ -80,7 +80,7 @@ function fibonacci(n, memo = { 0: 0, 1: 1 }) {
 /**
  * Non recursive.
  * - Time: O(n) linear.
- * - Space: O(1) constant.
+ * - Space: O(2n) -> O(n) linear. Call stack depth seq length are both 'n'.
  */
 function fibonacciIterative(n) {
   if (n < 0) {
@@ -95,15 +95,22 @@ function fibonacciIterative(n) {
   return seq[n];
 }
 
-// src=https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+/**
+ * Iteratively calculates the nth fib num.
+ * - Time: O(n) linear.
+ * - Space: O(3) -> O(1) constant. There are 3 vars used.
+ * @see https://medium.com/developers-writing/fibonacci-sequence-algorithm-in-javascript-b253dc7e320e
+ * @param {number} n The nth fib num to be calculated
+ * @returns {number} The nth fib num.
+ */
 function fib(n) {
   if (n < 0) {
     return null;
   }
 
-  var prev = 1,
-    prev2 = 0,
-    temp;
+  let prev = 1;
+  let prev2 = 0;
+  let temp;
 
   while (n > 0) {
     temp = prev;
