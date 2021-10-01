@@ -3,7 +3,7 @@
 const {
   Node,
   SinglyLinkedList,
-} = require("../../data_structures/SinglyLinkedList");
+} = require("../../../data_structures/LinkedLists/SinglyLinkedList");
 
 console.log("Only methods with the below names will be tested if they exist:");
 console.table([

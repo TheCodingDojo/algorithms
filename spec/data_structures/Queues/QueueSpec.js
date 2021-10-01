@@ -1,4 +1,4 @@
-const Queue = require("../../data_structures/Queue");
+const Queue = require("../../../data_structures/Queue");
 
 console.log("Only methods with the below names will be tested if they exist:");
 console.table([

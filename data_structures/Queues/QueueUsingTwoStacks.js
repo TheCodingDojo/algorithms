@@ -1,5 +1,5 @@
 // Import our stack data structure to use in this file.
-const Stack = require("./Stack");
+const Stack = require("../Stacks/Stack");
 
 /**
  * Class to represent a Queue but is implemented using two stacks to store the

@@ -1,7 +1,7 @@
 const {
   Node,
   DoublyLinkedList,
-} = require("../../data_structures/DoublyLinkedList");
+} = require("../../../data_structures/LinkedLists/DoublyLinkedList");
 
 console.log("");
 

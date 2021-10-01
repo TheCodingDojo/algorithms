@@ -4,9 +4,9 @@
 
 ---
 
-## [Week 1 - Singly Linked Lists](../data_structures/SinglyLinkedList.js)
+## [Week 1 - Singly Linked Lists](../data_structures/LinkedLists/SinglyLinkedList.js)
 
-- [SinglyLinkedListSpec](../spec/data_structures/SinglyLinkedListSpec.js)
+- [SinglyLinkedListSpec](../spec/data_structures/LinkedLists/SinglyLinkedListSpec.js)
 
 ### Documented `LinkedList` Class Setup
 
@@ -112,7 +112,7 @@ const sortedDupeList = new SinglyLinkedList().seedFromArr([
 
 ### W1 Mon
 
-- **Go over and provide** [Singly Linked List Intro](../data_structures/SinglyLinkedList.md)
+- **Go over and provide** [Singly Linked List Intro](../data_structures/LinkedLists/SinglyLinkedList.md)
 - **Provide the above starter code.**
 
 ```js
@@ -324,14 +324,14 @@ splitOnVal(val) {}
 ## [Week 2 - Stacks and Queues](../data_structures)
 
 - [Stacks and Queues Intro](../data_structures/StacksAndQueues.md)
-- [Stack](../data_structures/Stack.js)
+- [Stack](../data_structures/Stacks/Stack.js)
 - [LinkedListStack](../data_structures/LinkedListStack.js)
-- [Queue](../data_structures/Queue.js)
-- [LinkedListQueue](../data_structures/LinkedListQueue.js)
-- [MinStack](../data_structures/MinStack.js)
-- [PriorityQueue](../data_structures/PriorityQueue.js)
-- [QueueUsingTwoStacks Picture](../data_structures/QueueUsingTwoStacks.png)
-- [NextQueue](../data_structures/NextQueue.js)
+- [Queue](../data_structures/Queues/Queue.js)
+- [LinkedListQueue](../data_structures/Queues/LinkedListQueue.js)
+- [MinStack](../data_structures/Stacks/MinStack.js)
+- [PriorityQueue](../data_structures/Queues/PriorityQueue.js)
+- [QueueUsingTwoStacks Picture](../data_structures/Queues/QueueUsingTwoStacks.png)
+- [NextQueue](../data_structures/Queues/NextQueue.js)
 - [AlgoORM](../csharp/AlgoORM/Program.cs) can be optionally given just before the first entity framework lecture to give students a better understanding of ORMs
 
 ### W2 Mon
@@ -421,7 +421,7 @@ class LinkedListStack {
 
 ### W2 Tue
 
-- [Queue.js](../data_structures/Queue.js)
+- [Queue.js](../data_structures/Queues/Queue.js)
 
 ```js
 /**
@@ -462,7 +462,7 @@ class Queue {
 
 ### W2 Wed
 
-- [Queue.js](../data_structures/Queue.js)
+- [Queue.js](../data_structures/Queues/Queue.js)
 
 - compareQueues
   - Write a method on the Queue class that, given another queue, will return whether they are equal (same items in same order).
@@ -506,11 +506,11 @@ class Queue {
 
 ### W2 Thur
 
-- [sumOfHalvesEqual](../data_structures/Queue.js)
+- [sumOfHalvesEqual](../data_structures/Queues/Queue.js)
   - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
   - DO NOT manually index the queue items via bracket notation, only use the provided queue methods, use no additional arrays or objects for storage.
   - Restore the queue to it's original state before returning.
-- [TwoStackQueue](../data_structures/QueueUsingTwoStacks.js)
+- [TwoStackQueue](../data_structures/Queues/QueueUsingTwoStacks.js)
 
 ```js
   /**
@@ -566,7 +566,7 @@ class TwoStackQueue {
 
 ### W2 Fri
 
-- [PriorityQueue](../data_structures/PriorityQueue.js)
+- [PriorityQueue](../data_structures/Queues/PriorityQueue.js)
 
   - Create enqueue and dequeue methods. _You can loop and index the underlying array._
   - Design a new PriorityQueue class where the queue maintains an ascending order when items are added based on a queue item's provided priority integer value. A priority value of 1 is most important which means it should be at the front of the queue, the first to be dequeued.
@@ -574,12 +574,13 @@ class TwoStackQueue {
 
 - LinkedListPriorityQueue
 - Bonus: Queue method: processPallets
-  - see [Queue](../data_structures/Queue.js) for comment explanation and sample input data.
+  - see [Queue](../data_structures/Queues/Queue.js) for comment explanation and sample input data.
 
 ---
 
-## [Week 3 - Binary Search Tree](../data_structures/BinarySearchTree.js)
+## [Week 3 - Binary Search Tree](../data_structures/BinaryTrees/BinarySearchTree.js)
 
+- [BinarySearchTreeSpec](../spec/data_structures/BinaryTrees/BinarySearchTreeSpec.js)
 - `insert` is not done first because of it being harder than `isEmpty`, `min`, `max`.
 - You can remove the given parameters for recursion if you want students to practice coming up with them on their own after reinforcing the reason more params are often needed for recursion.
 
@@ -686,7 +687,7 @@ twoLevelTree.root.right = new Node(15);
 
 ### W3 Mon
 
-- [BST Intro](../data_structures/BinarySearchTree.md)
+- [BST Intro](../data_structures/BinaryTrees/BinarySearchTree.md)
 - **Provide the `print` method and test trees from above code snippet**.
 
 ```js
@@ -905,7 +906,7 @@ isFull(node = this.root) {}
 
 ## Week 4 - Min Heap & Linked Lists Part 2
 
-### W4 Mon - [SinglyLinkedList](../data_structures/SinglyLinkedList.js) | [SinglyLinkedListSpec](../spec/data_structures/SinglyLinkedListSpec.js)
+### W4 Mon - [SinglyLinkedList](../data_structures/LinkedLists/SinglyLinkedList.js) | [SinglyLinkedListSpec](../spec/data_structures/LinkedLists/SinglyLinkedListSpec.js)
 
 ```js
 /**
@@ -941,7 +942,7 @@ removeNegatives() {}
   - Return whether or not the linked list connects back to itself. If it connects to itself, what does that mean will happen when you loop through it?
 - EXTRA: removeNegatives (in place, no new list)
 
-### W4 Tue - [DoublyLinkedList](../data_structures/DoublyLinkedList.js) | [DoublyLinkedListSpec](../spec/data_structures/DoublyLinkedListSpec.js)
+### W4 Tue - [DoublyLinkedList](../data_structures/LinkedLists/DoublyLinkedList.js) | [DoublyLinkedListSpec](../spec/data_structures/LinkedLists/DoublyLinkedListSpec.js)
 
 - **Provide the below commented test lists**
 
@@ -1094,9 +1095,9 @@ insertBefore(targetVal, newVal) {}
 - insertBefore
   - Add new val before a target val
 
-### W4 Thur - [Heap.js](../data_structures/Heap.js) | [HeapSpec](../spec/data_structures/HeapSpec.js)
+### W4 Thur - [Heap.js](../data_structures/BinaryTrees/Heap.js) | [HeapSpec](../spec/data_structures/BinaryTrees/HeapSpec.js)
 
-- Review and provide [Heaps Intro](../data_structures/Heaps.md)
+- Review and provide [Heaps Intro](../data_structures/BinaryTrees/Heaps.md)
 
 ```js
 /**
@@ -1183,7 +1184,7 @@ class MinHeap {
 
 - Implement extract, see extract section in Heaps.md for details
 
-### [SinglyLinkedList](../data_structures/SinglyLinkedList.js) Extra Algos
+### [SinglyLinkedList](../data_structures/LinkedLists/SinglyLinkedList.js) Extra Algos
 
 ```js
 /**

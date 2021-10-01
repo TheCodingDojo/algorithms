@@ -1,4 +1,4 @@
-const { MinHeap } = require("../../data_structures/Heap");
+const { MinHeap } = require("../../../data_structures/BinaryTrees/Heap");
 
 console.log("Only methods with the below names will be tested if they exist:");
 console.table(["insert", "extract"]);

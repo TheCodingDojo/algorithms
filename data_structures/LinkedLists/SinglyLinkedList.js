@@ -82,7 +82,7 @@ class SinglyLinkedList {
    * Creates a new node with the given data and inserts it at the back of
    * this list.
    * - Time: O(n) linear, n = length of list.
-   * - Space: O(1) constant.
+   * - Space: O(n) linear due to the call stack.
    * @param {any} data The data to be added to the new node.
    * @param {?Node} runner The current node during the traversal of this list
    *    or null when the end of the list has been reached.
@@ -288,7 +288,7 @@ class SinglyLinkedList {
   /**
    * Determines whether or not the given search value exists in this list.
    * - Time: O(n) linear, n = length of list.
-   * - Space: O(1) constant.
+   * - Space: O(n) linear due to the call stack.
    * @param {any} val The data to search for in the nodes of this list.
    * @param {?node} current The current node during the traversal of this list
    *    or null when the end of the list has been reached.
@@ -306,8 +306,8 @@ class SinglyLinkedList {
 
   /**
    * Recursively finds the maximum integer data of the nodes in this list.
-   * Time: O(n) linear, n = list length. Max could be at end.
-   * Space: O(1) constant.
+   * - Time: O(n) linear, n = list length. Max could be at end.
+   * - Space: O(n) linear due to the call stack.
    * @param {Node} runner The start or current node during traversal, or null
    *    when the end of the list is reached.
    * @param {Node} maxNode Keeps track of the node that contains the current
@@ -957,7 +957,7 @@ class SinglyLinkedList {
   /**
    * Recursively retrieves the data of the last node in this list.
    * - Time: O(n) linear, n = list length.
-   * - Space: O(1) constant.
+   * - Space: O(n) linear due to the call stack.
    * @param {Node} runner The start or current node during traversal, or null
    *    when the end of the list is reached.
    * @returns {any} The data of the last node.

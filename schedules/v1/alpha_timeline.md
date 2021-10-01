@@ -1,4 +1,4 @@
-# [Alpha Timeline](/) Algo Schedule
+# Alpha Timeline Algo Schedule
 
 ---
 
@@ -59,7 +59,7 @@
 - insertAsc: in a sorted linked list, insert a new value, maintaining ascending order
 - insertPersonAscAge: build an add person method that adds a person object to linked list maintaining asc order by person's age key
 
-### [DoublyLinkedList](../../data_structures/DoublyLinkedList.js) Extra Algos
+### [DoublyLinkedList](../../data_structures/LinkedLists/DoublyLinkedList.js) Extra Algos
 
 - nthToLast
 - isPalindrome
@@ -67,9 +67,9 @@
 
 ---
 
-## [Week 3 - Binary Search Tree](../../data_structures/BinarySearchTree.js)
+## [Week 3 - Binary Search Tree](../../data_structures/BinaryTrees/BinarySearchTree.js)
 
-- go over and provide [BST Intro](../../data_structures/BinarySearchTree.md)
+- go over and provide [BST Intro](../../data_structures/BinaryTrees/BinarySearchTree.md)
 - provide the `print` method
 
 1. Mon

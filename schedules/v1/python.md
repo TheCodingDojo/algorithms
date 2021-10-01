@@ -30,9 +30,9 @@
 
 ---
 
-## [Week 2 - Singly Linked Lists](../../data_structures/SinglyLinkedList.js)
+## [Week 2 - Singly Linked Lists](../../data_structures/LinkedLists/SinglyLinkedList.js)
 
-- go over and provide [Singly Linked List Intro](../../data_structures/SinglyLinkedList.md)
+- go over and provide [Singly Linked List Intro](../../data_structures/LinkedLists/SinglyLinkedList.md)
 
 1. Mon
    1. isEmpty
@@ -80,14 +80,14 @@
 
 ## [Week 3 - Stacks and Queues](../../data_structures)
 
-- [Stacks and Queues Intro](../../data_structures/StacksAndQueues.md)
-- [Stack](../../data_structures/Stack.js)
-- [LinkedListStack](../../data_structures/LinkedListStack.js)
-- [Queue](../../data_structures/Queue.js)
-- [LinkedListQueue](../../data_structures/LinkedListQueue.js)
-- [MinStack](../../data_structures/MinStack.js)
-- [PriorityQueue](../../data_structures/PriorityQueue.js)
-- [NextQueue](../../data_structures/NextQueue.js)
+- [Stacks and Queues Intro](../../data_structures/Queues/StacksAndQueues.md)
+- [Stack](../../data_structures/Stacks/Stack.js)
+- [LinkedListStack](../../data_structures/Stacks/LinkedListStack.js)
+- [Queue](../../data_structures/Queues/Queue.js)
+- [LinkedListQueue](../../data_structures/Queues/LinkedListQueue.js)
+- [MinStack](../../data_structures/Stacks/MinStack.js)
+- [PriorityQueue](../../data_structures/Queues/PriorityQueue.js)
+- [NextQueue](../../data_structures/Queues/NextQueue.js)
 
 1. Mon
    - A Stack is a LIFO (Last in First Out) data structure

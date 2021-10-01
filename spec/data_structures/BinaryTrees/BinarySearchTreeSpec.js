@@ -1,7 +1,7 @@
 const {
   Node,
   BinarySearchTree,
-} = require("../../data_structures/BinarySearchTree");
+} = require("../../../data_structures/BinaryTrees/BinarySearchTree");
 
 console.log("Only methods with the below names will be tested if they exist:");
 console.table([

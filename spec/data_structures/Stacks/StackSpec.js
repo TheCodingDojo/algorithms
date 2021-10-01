@@ -1,4 +1,4 @@
-const Stack = require("../../data_structures/Stack");
+const Stack = require("../../../data_structures/Stack");
 
 console.log("Only methods with the below names will be tested if they exist:");
 console.table(["isEmpty", "push", "pop", "size", "peek"]);
