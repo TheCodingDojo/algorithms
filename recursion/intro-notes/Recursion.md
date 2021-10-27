@@ -95,7 +95,7 @@ finishes.
 */
 ```
 
-The below picture shows the call stack of the above code in debug mode. Adding breakpoints to the top and to the return line(s) of your recursive function or for non-recursion adding breakpoints in those places to each of the functions being called can be very helpful to watch how the call stack is filled up (`push`), follow the changing parameter values and local vars, and to see the call stack 'unwind' (`pop`).
+The below picture shows the call stack of the above code in debug mode. Adding breakpoints to the top and to the return line(s) of your functions can be very helpful to watch how the call stack is filled up (`push`) and follow the changing parameter values and local vars, and to see the call stack 'unwind' (`pop`).
 
 ![call-stack-order-debug.png](./call-stack-order-debug.png)
 
