@@ -108,6 +108,46 @@ function letHoist(x) {
 
 letHoist(1);
 
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+function varPrintMatrix(matrix) {
+  console.log("\nfunction varPrintMatrix:");
+  for (var i = 0; i < matrix.length; i++) {
+    var row = matrix[i];
+    for (var i = 0; i < row.length; i++) {
+      var element = row[i];
+      console.log(element);
+    }
+  }
+
+  console.log({
+    note: "The second `var i` gets hoisted and overwrites the first `var i` which makes the first `i` get stuck on 0.",
+  });
+}
+
+varPrintMatrix(matrix);
+
+function letPrintMatrix(matrix) {
+  console.log("\nfunction letPrintMatrix:");
+  for (let i = 0; i < matrix.length; i++) {
+    const row = matrix[i];
+    for (let i = 0; i < row.length; i++) {
+      const element = row[i];
+      console.log(element);
+    }
+  }
+
+  console.log({
+    note: "`let` allows two separate `i` variables to exist. Even though this works. Even though this works with `let` it's still often better to use `j` in case you need to use `arr[i][j]` syntax which wouldn't be possible otherwise.",
+  });
+}
+
+letPrintMatrix(matrix);
+
 // Advanced example
 
 function letCallbacksWork() {
