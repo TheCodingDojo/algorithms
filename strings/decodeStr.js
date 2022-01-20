@@ -26,9 +26,10 @@ module.exports = { decodeStr };
 /**
  * Decodes the given string by duplicating each character by the following int
  * amount if there is an int after the character.
- * - Time: O(n) linear. The nested loop increments i as well, so every
- *    nested iteration gets us closer to finishing the outer loop which at most
- *    amounts to looping over the full string.
+ * - Time: O(n * m) linear. n = str.length, m = max char.repeat amount since
+ *    repeating a char x times is x repetitions (iterations).
+ *    The nested while loop can be ignored because it increments i as well,
+ *    so every char is only visited once.
  * - Space: Worst case is max string size is reached because we don't know how
  *    large the given ints will be.
  * @param {string} str An encoded string with characters that may have an int

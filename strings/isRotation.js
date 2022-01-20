@@ -27,26 +27,20 @@ module.exports = { isRotation };
 
 /*****************************************************************************/
 
-/* 
-  Solution approach:
-  s1: ABCD
-  s1 + s1: ABCDABCD
-  s2: CDAB
-  s2: DABC
-  s2: BCDA
-
-  all rotated versions of s2 are included in s1 + s1
-*/
-
 /**
  * Solution approach:
  *    All rotated versions of s2 are included in s1 + s1.
  *    s1: "ABCD".
  *    s1 + s1: "ABCDABCD".
+ *
+ *    s2 Rotation variations:
  *    s2: "CDAB".
  *    s2: "DABC".
  *    s2: "BCDA".
- * - Time: O(n) linear, from the .includes loop.
+ * - Time: O(4n) -> O(n) linear. Concatenating s1 + s1 requires the characters
+ *    of s1 to be copied into a new string twice (2n). The .includes is then
+ *    looping over the string that is twice the length of s1 (2n) again. Add
+ *    up both 2n to get 4n.
  * - Space: O(2n) -> O(n) linear, where n is s1.length, 2n from s1 + s1.
  */
 function isRotation(s1, s2) {
