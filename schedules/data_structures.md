@@ -113,6 +113,9 @@ const emptyList = new SinglyLinkedList();
 // const sortedDupeList = new SinglyLinkedList().seedFromArr([
 //   1, 1, 1, 2, 3, 3, 4, 5, 5,
 // ]);
+
+// Print your list like so:
+// console.log(firstThreeList.toArr());
 ```
 
 ### W1 Mon
