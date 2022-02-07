@@ -87,27 +87,32 @@ class SinglyLinkedList {
   }
 }
 
+/******************************************************************* 
+Multiple test lists already constructed to test your methods on.
+Below commented code depends on insertAtBack method to be completed,
+after completing it, uncomment the code.
+*/
 const emptyList = new SinglyLinkedList();
 
-const singleNodeList = new SinglyLinkedList().seedFromArr([1]);
-const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
-const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
-const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
-const unorderedList = new SinglyLinkedList().seedFromArr([
-  -5, -10, 4, -3, 6, 1, -7, -2,
-]);
+// const singleNodeList = new SinglyLinkedList().seedFromArr([1]);
+// const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
+// const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
+// const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
+// const unorderedList = new SinglyLinkedList().seedFromArr([
+//   -5, -10, 4, -3, 6, 1, -7, -2,
+// ]);
 
-// node 4 connects to node 1, back to head
-const perfectLoopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
-perfectLoopList.head.next.next.next = perfectLoopList.head;
+/* node 4 connects to node 1, back to head */
+// const perfectLoopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+// perfectLoopList.head.next.next.next = perfectLoopList.head;
 
-// node 4 connects to node 2
-const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
-loopList.head.next.next.next = loopList.head.next;
+/* node 4 connects to node 2 */
+// const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+// loopList.head.next.next.next = loopList.head.next;
 
-const sortedDupeList = new SinglyLinkedList().seedFromArr([
-  1, 1, 1, 2, 3, 3, 4, 5, 5,
-]);
+// const sortedDupeList = new SinglyLinkedList().seedFromArr([
+//   1, 1, 1, 2, 3, 3, 4, 5, 5,
+// ]);
 ```
 
 ### W1 Mon
