@@ -1,5 +1,5 @@
 const {
-  Node,
+  BSTNode,
   BinarySearchTree,
 } = require("../../../data_structures/BinaryTrees/BinarySearchTree");
 
@@ -27,12 +27,12 @@ function arrToBST(nums) {
   const bst = new BinarySearchTree();
 
   if (nums.length >= 1) {
-    bst.root = new Node(nums[0]);
+    bst.root = new BSTNode(nums[0]);
   }
 
   for (let i = 1; i < nums.length; i++) {
     const n = nums[i],
-      node = new Node(n);
+      node = new BSTNode(n);
     let current = bst.root;
 
     while (1) {
@@ -70,9 +70,9 @@ beforeEach(() => {
   ]);
 });
 
-describe("new Node(5)", () => {
+describe("new BSTNode(5)", () => {
   it("should instantiate a new empty node that has left and right keys set to null and a data key set to the passed in data.", () => {
-    const node = new Node(5);
+    const node = new BSTNode(5);
     expect(node.left).toEqual(null);
     expect(node.right).toEqual(null);
     expect(node.data).toEqual(5);

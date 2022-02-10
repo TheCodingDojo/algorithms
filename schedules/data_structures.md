@@ -15,13 +15,13 @@
  * Class to represents a single item of a SinglyLinkedList that can be
  * linked to other Node instances to form a list of linked nodes.
  */
-class Node {
+class ListNode {
   /**
    * Constructs a new Node instance. Executed when the 'new' keyword is used.
    * @param {any} data The data to be added into this new instance of a Node.
    *    The data can be anything, just like an array can contain strings,
    *    numbers, objects, etc.
-   * @returns {Node} A new Node instance is returned automatically without
+   * @returns {ListNode} A new Node instance is returned automatically without
    *    having to be explicitly written (implicit return).
    */
   constructor(data) {
@@ -31,6 +31,8 @@ class Node {
      * in the list. By default, this new node is not linked to any other
      * nodes, so the setting / updating of this property will happen sometime
      * after this node is created.
+     *
+     * @type {ListNode|null}
      */
     this.next = null;
   }
@@ -52,6 +54,7 @@ class SinglyLinkedList {
    *    returned without having to explicitly write "return".
    */
   constructor() {
+    /** @type {ListNode|null} */
     this.head = null;
   }
 
@@ -62,7 +65,7 @@ class SinglyLinkedList {
    * @param {Array<any>} vals The data for each new node.
    * @returns {SinglyLinkedList} This list.
    */
-  seedFromArr(vals) {
+  insertAtBackMany(vals) {
     for (const item of vals) {
       this.insertAtBack(item);
     }
@@ -94,23 +97,23 @@ after completing it, uncomment the code.
 */
 const emptyList = new SinglyLinkedList();
 
-// const singleNodeList = new SinglyLinkedList().seedFromArr([1]);
-// const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
-// const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
-// const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
-// const unorderedList = new SinglyLinkedList().seedFromArr([
+// const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+// const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+// const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+// const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+// const unorderedList = new SinglyLinkedList().insertAtBackMany([
 //   -5, -10, 4, -3, 6, 1, -7, -2,
 // ]);
 
 /* node 4 connects to node 1, back to head */
-// const perfectLoopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+// const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
 // perfectLoopList.head.next.next.next = perfectLoopList.head;
 
 /* node 4 connects to node 2 */
-// const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+// const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
 // loopList.head.next.next.next = loopList.head.next;
 
-// const sortedDupeList = new SinglyLinkedList().seedFromArr([
+// const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 //   1, 1, 1, 2, 3, 3, 4, 5, 5,
 // ]);
 
@@ -147,7 +150,7 @@ insertAtBack(data) {}
   - Returns whether or not this list is empty.
 - insertAtBack
   - Creates a new node with the given data and inserts it at the back of this list.
-- seedFromArr
+- insertAtBackMany
   - adds all the items from a given array to the back of this list.
 
 ### W1 Tue
@@ -213,7 +216,7 @@ contains(val) {}
  * - Time: O(?).
  * - Space: O(?).
  * @param {any} val The data to search for in the nodes of this list.
- * @param {?node} current The current node during the traversal of this list
+ * @param {?ListNode} current The current node during the traversal of this list
  *    or null when the end of the list has been reached.
  * @returns {boolean}
  */
@@ -224,9 +227,9 @@ containsRecursive(val, current = this.head) {}
  * Recursively finds the maximum integer data of the nodes in this list.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Node} runner The start or current node during traversal, or null
+ * @param {ListNode} runner The start or current node during traversal, or null
  *    when the end of the list is reached.
- * @param {Node} maxNode Keeps track of the node that contains the current
+ * @param {ListNode} maxNode Keeps track of the node that contains the current
  *    max integer as it's data.
  * @returns {?number} The max int or null if none.
  */
@@ -598,7 +601,7 @@ class TwoStackQueue {
 /**
  * Class to represent a Node in a Binary Search Tree (BST).
  */
-class Node {
+class BSTNode {
   /**
    * Constructs a new instance of a BST node.
    * @param {number} data The integer to store in the node.
@@ -611,8 +614,11 @@ class Node {
      * be connected to two other nodes. To start, new nodes will not be
      * connected to any other nodes, these properties will be set after
      * the new node is instantiated.
+     *
+     * @type {BSTNode|null}
      */
     this.left = null;
+    /** @type {BSTNode|null} */
     this.right = null;
   }
 }
@@ -626,6 +632,8 @@ class BinarySearchTree {
     /**
      * Just like the head of a linked list, this is the start of our tree which
      * branches downward from here.
+     *
+     * @type {BSTNode|null}
      */
     this.root = null;
   }
@@ -650,7 +658,7 @@ class BinarySearchTree {
 
 const emptyTree = new BinarySearchTree();
 const oneNodeTree = new BinarySearchTree();
-oneNodeTree.root = new Node(10);
+oneNodeTree.root = new BSTNode(10);
 
 /* twoLevelTree
         root
@@ -659,9 +667,9 @@ oneNodeTree.root = new Node(10);
     5     15
 */
 const twoLevelTree = new BinarySearchTree();
-twoLevelTree.root = new Node(10);
-twoLevelTree.root.left = new Node(5);
-twoLevelTree.root.right = new Node(15);
+twoLevelTree.root = new BSTNode(10);
+twoLevelTree.root.left = new BSTNode(5);
+twoLevelTree.root.right = new BSTNode(15);
 
 /* fullTree
                     root
@@ -955,16 +963,15 @@ removeNegatives() {}
 - **Provide the below commented test lists**
 
 ```js
-// Create the node class that allows for forwards & backwards traversal.
+/* 
+TODO: Create the DLLNode class and implement the DoublyLinkedList constructor
+and the empty methods below the constructor.
+*/
 
 /**
- * Class to represent a doubly linked list. Nodes can be linked together
- * WITHOUT this class to form a list, but the class is helpful to give all
- * doubly linked lists access to the same helpful methods for consistency
- * and to always keep track of the head and the tail nodes.
- *
- * Unlike a singly linked list, a doubly linked list allows you to traverse
- * backwards as well.
+ * A class to represent a doubly linked list and contain all of it's methods.
+ * A doubly linked list is a singly linked list that can be traversed in both
+ * directions.
  */
 class DoublyLinkedList {
   /**
@@ -972,10 +979,35 @@ class DoublyLinkedList {
    * instance that inherits these methods and properties.
    */
   constructor() {
-    // The list is empty to start.
-    this.head = null;
-    this.tail = null;
+    // TODO: implement the instructor.
   }
+
+  /**
+   * Creates a new node and adds it at the front of this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} data The data for the new node.
+   * @returns {DoublyLinkedList} This list.
+   */
+  insertAtFront(data) {}
+
+  /**
+   * Creates a new node and adds it at the back of this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} data The data for the new node.
+   * @returns {DoublyLinkedList} This list.
+   */
+  insertAtBack(data) {}
+
+  // EXTRA
+  /**
+   * Removes the middle node in this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The data of the removed node.
+   */
+  removeMiddleNode() {}
 
   /**
    * Determines if this list is empty.
@@ -1009,7 +1041,7 @@ class DoublyLinkedList {
    * @param {Array<any>} items Items to be added to the back of this list.
    * @returns {DoublyLinkedList} This list.
    */
-  seedFromArr(items = []) {
+  insertAtBackMany(items = []) {
     items.forEach((item) => this.insertAtBack(item));
     return this;
   }
@@ -1020,9 +1052,9 @@ const emptyList = new DoublyLinkedList();
 /**************** Uncomment these test lists after insertAtBack is created. ****************/
 // const singleNodeList = new DoublyLinkedList().insertAtBack(1);
 // const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
-// const firstThreeList = new DoublyLinkedList().seedFromArr([1, 2, 3]);
-// const secondThreeList = new DoublyLinkedList().seedFromArr([4, 5, 6]);
-// const unorderedList = new DoublyLinkedList().seedFromArr([
+// const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
+// const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
+// const unorderedList = new DoublyLinkedList().insertAtBackMany([
 //   -5,
 //   -10,
 //   4,
@@ -1032,35 +1064,6 @@ const emptyList = new DoublyLinkedList();
 //   -7,
 //   -2,
 // ]);
-```
-
-```js
-/**
- * Creates a new node and adds it at the front of this list.
- * - Time: O(?).
- * - Space: O(?).
- * @param {any} data The data for the new node.
- * @returns {DoublyLinkedList} This list.
- */
-insertAtFront(data) {}
-
-/**
- * Creates a new node and adds it at the back of this list.
- * - Time: O(?).
- * - Space: O(?).
- * @param {any} data The data for the new node.
- * @returns {DoublyLinkedList} This list.
- */
-insertAtBack(data) {}
-
-// EXTRA
-/**
- * Removes the middle node in this list.
- * - Time: O(?).
- * - Space: O(?).
- * @returns {any} The data of the removed node.
- */
-removeMiddleNode() {}
 ```
 
 - A Doubly Linked List is a singly linked list with the added functionality of being able to traverse in both directions.

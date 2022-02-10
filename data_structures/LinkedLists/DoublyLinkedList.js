@@ -1,7 +1,7 @@
 /**
  * Class to represent a Node for a DoublyLinkedList.
  */
-class Node {
+class DLLNode {
   /**
    * Executed when the new keyword is used to construct a new node instance.
    * @param {any} data The data the new node will store.
@@ -12,20 +12,19 @@ class Node {
      * By default a new node instance will not be connected to any other nodes,
      * these properties will be set after instantiation to connect the node to
      * a list. However, the head prev should remain null.
+     *
+     * @type {DLLNode|null}
      */
     this.prev = null;
+    /** @type {DLLNode|null} */
     this.next = null;
   }
 }
 
 /**
- * Class to represent a doubly linked list. Nodes can be linked together
- * WITHOUT this class to form a list, but the class is helpful to give all
- * doubly linked lists access to the same helpful methods for consistency
- * and to always keep track of the head and the tail nodes.
- *
- * Unlike a singly linked list, a doubly linked list allows you to traverse
- * backwards as well.
+ * A class to represent a doubly linked list and contain all of it's methods.
+ * A doubly linked list is a singly linked list that can be traversed in both
+ * directions.
  */
 class DoublyLinkedList {
   /**
@@ -34,7 +33,9 @@ class DoublyLinkedList {
    */
   constructor() {
     // The list is empty to start.
+    /** @type {DLLNode|null} */
     this.head = null;
+    /** @type {DLLNode|null} */
     this.tail = null;
   }
 
@@ -70,7 +71,7 @@ class DoublyLinkedList {
    * @param {Array<any>} items Items to be added to the back of this list.
    * @returns {DoublyLinkedList} This list.
    */
-  seedFromArr(items = []) {
+  insertAtBackMany(items = []) {
     items.forEach((item) => this.insertAtBack(item));
     return this;
   }
@@ -83,7 +84,7 @@ class DoublyLinkedList {
    * @returns {DoublyLinkedList} This list.
    */
   insertAtFront(data) {
-    const newNode = new Node(data);
+    const newNode = new DLLNode(data);
 
     if (!this.head) {
       this.head = this.tail = newNode;
@@ -103,7 +104,7 @@ class DoublyLinkedList {
    * @returns {DoublyLinkedList} This list.
    */
   insertAtBack(data) {
-    const newTail = new Node(data);
+    const newTail = new DLLNode(data);
 
     if (!this.head) {
       // if no head set the newTail to be both the head and the tail
@@ -182,7 +183,7 @@ class DoublyLinkedList {
       return false;
     }
 
-    const newNode = new Node(newVal);
+    const newNode = new DLLNode(newVal);
     newNode.prev = runner;
     newNode.next = runner.next;
 
@@ -218,7 +219,7 @@ class DoublyLinkedList {
     // for comparison purposes but the logic is almost the same.
     while (runner) {
       if (runner.data === targetVal) {
-        const newNode = new Node(newVal);
+        const newNode = new DLLNode(newVal);
         newNode.next = runner;
         newNode.prev = runner.prev;
 
@@ -331,7 +332,7 @@ class DoublyLinkedList {
    * Determines if a given node in this list is in the left half of this list.
    * - Time: O(n) linear, n = list length.
    * - Space: O(1) constant.
-   * @param {Node} node
+   * @param {DLLNode} node
    * @returns {boolean}
    */
   isNodeInLeftHalf(node) {
@@ -358,7 +359,7 @@ class DoublyLinkedList {
    * Finds the given node in this list and removes it.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node A node in this list.
+   * @param {DLLNode} node A node in this list.
    * @returns {DoublyLinkedList} This list.
    */
   removeNode(node) {
@@ -394,7 +395,7 @@ class DoublyLinkedList {
    * Removes the head node from this list.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node A node in this list.
+   * @param {DLLNode} node A node in this list.
    * @returns {DoublyLinkedList} This list.
    */
   removeHead() {
@@ -405,7 +406,7 @@ class DoublyLinkedList {
    * Removes the tail node from this list.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {Node} node A node in this list.
+   * @param {DLLNode} node A node in this list.
    * @returns {DoublyLinkedList} This list.
    */
   removeTail() {
@@ -416,10 +417,10 @@ class DoublyLinkedList {
 const emptyList = new DoublyLinkedList();
 const singleNodeList = new DoublyLinkedList().insertAtFront(1);
 const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
-const firstThreeList = new DoublyLinkedList().seedFromArr([1, 2, 3]);
-const secondThreeList = new DoublyLinkedList().seedFromArr([4, 5, 6]);
-const unorderedList = new DoublyLinkedList().seedFromArr([
+const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
+const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
+const unorderedList = new DoublyLinkedList().insertAtBackMany([
   -5, -10, 4, -3, 6, 1, -7, -2,
 ]);
 
-module.exports = { DoublyLinkedList, Node };
+module.exports = { DoublyLinkedList, DLLNode };

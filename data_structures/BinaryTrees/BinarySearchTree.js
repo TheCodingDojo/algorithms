@@ -1,7 +1,7 @@
 /**
  * Class to represent a Node in a Binary Search Tree (BST).
  */
-class Node {
+class BSTNode {
   /**
    * Constructs a new instance of a BST node.
    * @param {number} data The integer to store in the node.
@@ -14,8 +14,11 @@ class Node {
      * be connected to two other nodes. To start, new nodes will not be
      * connected to any other nodes, these properties will be set after
      * the new node is instantiated.
+     *
+     * @type {BSTNode|null}
      */
     this.left = null;
+    /** @type {BSTNode|null} */
     this.right = null;
   }
 }
@@ -29,6 +32,8 @@ class BinarySearchTree {
     /**
      * Just like the head of a linked list, this is the start of our tree which
      * branches downward from here.
+     *
+     * * @type {BSTNode|null}
      */
     this.root = null;
   }
@@ -47,7 +52,7 @@ class BinarySearchTree {
    * Retrieves the smallest integer data from this tree.
    * - Time: O(h) linear, h = height of left sub tree starting from current node.
    * - Space: O(1) constant.
-   * @param {Node} current The node that is currently accessed from the tree as
+   * @param {BSTNode} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
    * @returns {number} The smallest integer from this tree.
    */
@@ -66,7 +71,7 @@ class BinarySearchTree {
    * Retrieves the smallest integer data from this tree.
    * - Time: O(h) linear, h = height of left sub tree starting from current node.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} current The node that is currently accessed from the tree as
+   * @param {BSTNode} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
    * @returns {number} The smallest integer from this tree.
    */
@@ -85,7 +90,7 @@ class BinarySearchTree {
    * Retrieves the largest integer data from this tree.
    * - Time: O(h) linear, h = height of right sub tree starting from current node.
    * - Space: O(1) constant.
-   * @param {Node} current The node that is currently accessed from the tree as
+   * @param {BSTNode} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
    * @returns {number} The largest integer from this tree.
    */
@@ -104,7 +109,7 @@ class BinarySearchTree {
    * Retrieves the largest integer data from this tree.
    * - Time: O(h) linear, h = height of right sub tree starting from current node.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} current The node that is currently accessed from the tree as
+   * @param {BSTNode} current The node that is currently accessed from the tree as
    *    the tree is being traversed.
    * @returns {number} The largest integer from this tree.
    */
@@ -173,7 +178,7 @@ class BinarySearchTree {
    * - Time: O(rightHeight + leftHeight) -> still linear so simplify to O(h).
    * - Space: O(h) linear due to the call stack. The max side finishes before
    *    the right min side is added to the stack.
-   * @param {Node} startNode The node to start from to calculate the range.
+   * @param {BSTNode} startNode The node to start from to calculate the range.
    * @returns {number|null} The range of this tree or a sub tree depending on if the
    *    startNode is the root or not.
    */
@@ -194,7 +199,7 @@ class BinarySearchTree {
    * @returns {BinarySearchTree} This tree.
    */
   insert(newVal) {
-    const node = new Node(newVal);
+    const node = new BSTNode(newVal);
 
     if (this.isEmpty()) {
       this.root = node;
@@ -230,26 +235,26 @@ class BinarySearchTree {
    *    be added at the bottom.
    * - Space: O(h) linear due to the call stack.
    * @param {number} newVal The data to be added to a new node.
-   * @param {Node} curr The node that is currently accessed from the tree as
+   * @param {BSTNode} curr The node that is currently accessed from the tree as
    *    the tree is being traversed.
    * @returns {BinarySearchTree} This tree.
    */
   insertRecursive(newVal, curr = this.root) {
     if (this.isEmpty()) {
-      this.root = new Node(newVal);
+      this.root = new BSTNode(newVal);
       return this;
     }
 
     if (newVal > curr.data) {
       if (curr.right === null) {
-        curr.right = new Node(newVal);
+        curr.right = new BSTNode(newVal);
         return this;
       }
       return this.insertRecursive(newVal, curr.right);
     }
 
     if (curr.left === null) {
-      curr.left = new Node(newVal);
+      curr.left = new BSTNode(newVal);
       return this;
     }
     return this.insertRecursive(newVal, curr.left);
@@ -262,7 +267,7 @@ class BinarySearchTree {
    * [25, 15, 10, 4, 12, 22, 18, 24, 50, 35, 31, 44, 70, 66, 90]
    * - Time: O(n) linear, every node is visited.
    * - Space: O(h + n) linear due to the call stack + vals array.
-   * @param {Node} node The current node during the traversal of this tree.
+   * @param {BSTNode} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
    * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
@@ -283,7 +288,7 @@ class BinarySearchTree {
    * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
    * - Time: O(n) linear, every node is visited.
    * - Space: O(h + n) linear due to the call stack + vals array.
-   * @param {Node} node The current node during the traversal of this tree.
+   * @param {BSTNode} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
    * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
@@ -304,7 +309,7 @@ class BinarySearchTree {
    * [4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90]
    * - Time: O(n) linear.
    * - Space: O(h + n) linear due to the stack + the vals array.
-   * @param {Node} node The current node during the traversal of this tree.
+   * @param {BSTNode} node The current node during the traversal of this tree.
    * @returns {Array<number>} All node's data in DFS Preorder.
    */
   toArrInorderNonRecursive(node = this.root) {
@@ -334,7 +339,7 @@ class BinarySearchTree {
    * [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
    * - Time: O(n) linear, every node is visited.
    * - Space: O(h + n) linear due to the call stack + vals array.
-   * @param {Node} node The current node during the traversal of this tree.
+   * @param {BSTNode} node The current node during the traversal of this tree.
    * @param {Array<number>} vals The data that has been visited so far.
    * @returns {Array<number>} The vals in DFS Preorder once all nodes visited.
    */
@@ -354,7 +359,7 @@ class BinarySearchTree {
    * [25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90]
    * - Time: O(n) linear, every node is visited.
    * - Space: O(h + n) linear due to the queue + vals array.
-   * @param {Node} current The current node during the traversal of this tree.
+   * @param {BSTNode} current The current node during the traversal of this tree.
    * @returns {Array<number>} The data of all nodes in BFS order.
    */
   toArrLevelorder(current = this.root) {
@@ -403,7 +408,7 @@ class BinarySearchTree {
    * Recursively counts the total number of nodes in this tree.
    * - Time: O(n) linear, n = number of nodes.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} node The current node during the traversal of this tree.
+   * @param {BSTNode} node The current node during the traversal of this tree.
    * @returns {number} The total number of nodes.
    */
   size(node = this.root) {
@@ -419,7 +424,7 @@ class BinarySearchTree {
    * Recursively counts the total number of nodes in this tree.
    * - Time: O(n) linear, n = number of nodes.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} current The current node during the traversal of this tree.
+   * @param {BSTNode} current The current node during the traversal of this tree.
    * @param {number} total The current total as this tree is being traversed.
    * @returns {number} The total number of nodes.
    */
@@ -452,7 +457,7 @@ class BinarySearchTree {
    * - Time: O(n) linear, n = total number of nodes because to find out which
    *    side is the tallest, must go down both sides.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} node The current node during traversal of this tree.
+   * @param {BSTNode} node The current node during traversal of this tree.
    * @returns {number} The height of the tree.
    */
   height(node = this.root) {
@@ -468,7 +473,7 @@ class BinarySearchTree {
    * node has both a left and a right except for the leaf nodes (last nodes)
    * - Time: O(n) linear, n = total number of nodes.
    * - Space: O(h) linear due to the call stack.
-   * @param {Node} node The current node during traversal of this tree.
+   * @param {BSTNode} node The current node during traversal of this tree.
    * @returns {boolean} Indicates if this tree is full.
    */
   isFull(node = this.root) {
@@ -534,7 +539,7 @@ class BinarySearchTree {
 
 const emptyTree = new BinarySearchTree();
 const oneNodeTree = new BinarySearchTree();
-oneNodeTree.root = new Node(10);
+oneNodeTree.root = new BSTNode(10);
 
 /* twoLevelTree 
         root
@@ -543,9 +548,9 @@ oneNodeTree.root = new Node(10);
     5     15
 */
 const twoLevelTree = new BinarySearchTree();
-twoLevelTree.root = new Node(10);
-twoLevelTree.root.left = new Node(5);
-twoLevelTree.root.right = new Node(15);
+twoLevelTree.root = new BSTNode(10);
+twoLevelTree.root.left = new BSTNode(5);
+twoLevelTree.root.right = new BSTNode(15);
 
 /* fullTree
                     root
@@ -575,7 +580,7 @@ fullTree
   .insert(66)
   .insert(90);
 
-module.exports = { Node, BinarySearchTree };
+module.exports = { BSTNode, BinarySearchTree };
 
 // console.log(fullTree.toArrPreorder());
 // console.log(fullTree.toArrInorder());

@@ -1,7 +1,7 @@
 // TODO: beforeEach cleanup, see DoublyLinkedListSpec
 
 const {
-  Node,
+  ListNode,
   SinglyLinkedList,
 } = require("../../../data_structures/LinkedLists/SinglyLinkedList");
 
@@ -28,7 +28,7 @@ console.table([
 
 function arrToLinkedList(arr = []) {
   return arr.reduceRight((list, data) => {
-    const node = new Node(data);
+    const node = new ListNode(data);
 
     if (!list.head) {
       list.head = node;
@@ -264,7 +264,7 @@ describe("prepend", () => {
 
       expect(testList.prepend(0, 5))
         .withContext("empty list with a target value that isn't null")
-        .toEqual(false);
+        .toEqual(null);
       expect(testList)
         .withContext(
           "the list should not have been mutated since the target val wasn't found"
@@ -273,23 +273,27 @@ describe("prepend", () => {
 
       testList.insertAtBack(2);
 
-      expect(testList.prepend(1, 2))
-        .withContext("prepend before the head")
-        .toEqual(true);
+      let prependedNode = testList.prepend(1, 2);
+      expect(prependedNode.data)
+        .withContext("prepend before the head and return new node.")
+        .toEqual(1);
       expect(testList)
-        .withContext("a new head should have been added")
+        .withContext("a new head should have been added and returned.")
         .toEqual(twoNodeList);
 
-      expect(testList.prepend(0, 2))
-        .withContext("prepend before last node")
-        .toEqual(true);
+      prependedNode = testList.prepend(0, 2);
+      expect(prependedNode.data)
+        .withContext("prepend before last node and return new node.")
+        .toEqual(0);
       expect(testList)
-        .withContext("a new node should have been added before the last node")
+        .withContext(
+          "a new node should have been returned and added before the last node and"
+        )
         .toEqual(arrToLinkedList([1, 0, 2]));
 
       expect(testList.prepend(5, 1000))
         .withContext("the target value should not have been found")
-        .toEqual(false);
+        .toEqual(null);
       expect(testList)
         .withContext(
           "the list should be unchanged since the target value wasn't in the list"

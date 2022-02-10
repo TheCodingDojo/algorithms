@@ -1,5 +1,5 @@
 const {
-  Node,
+  DLLNode,
   DoublyLinkedList,
 } = require("../../../data_structures/LinkedLists/DoublyLinkedList");
 
@@ -7,7 +7,7 @@ console.log("");
 
 function arrToLinkedList(arr = []) {
   return arr.reduceRight((list, data) => {
-    const node = new Node(data);
+    const node = new DLLNode(data);
 
     if (!list.head) {
       list.head = node;

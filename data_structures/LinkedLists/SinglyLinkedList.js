@@ -2,13 +2,13 @@
  * Class to represents a single item of a SinglyLinkedList that can be
  * linked to other Node instances to form a list of linked nodes.
  */
-class Node {
+class ListNode {
   /**
    * Constructs a new Node instance. Executed when the 'new' keyword is used.
    * @param {any} data The data to be added into this new instance of a Node.
    *    The data can be anything, just like an array can contain strings,
    *    numbers, objects, etc.
-   * @returns {Node} This new Node instance is returned automatically without
+   * @returns {ListNode} This new Node instance is returned automatically without
    *    having to be explicitly written (implicit return).
    */
   constructor(data) {
@@ -18,6 +18,8 @@ class Node {
      * in the list. By default, this new node is not linked to any other
      * nodes, so the setting / updating of this property will happen sometime
      * after this node is created.
+     *
+     * @type {ListNode|null}
      */
     this.next = null;
   }
@@ -39,6 +41,7 @@ class SinglyLinkedList {
    *    returned without having to explicitly write "return".
    */
   constructor() {
+    /** @type {ListNode|null} */
     this.head = null;
   }
 
@@ -61,7 +64,7 @@ class SinglyLinkedList {
    * @returns {SinglyLinkedList} This list.
    */
   insertAtBack(data) {
-    const newBack = new Node(data);
+    const newBack = new ListNode(data);
 
     if (this.isEmpty()) {
       this.head = newBack;
@@ -84,18 +87,18 @@ class SinglyLinkedList {
    * - Time: O(n) linear, n = length of list.
    * - Space: O(n) linear due to the call stack.
    * @param {any} data The data to be added to the new node.
-   * @param {?Node} runner The current node during the traversal of this list
+   * @param {?ListNode} runner The current node during the traversal of this list
    *    or null when the end of the list has been reached.
    * @returns {SinglyLinkedList} This list.
    */
   insertAtBackRecursive(data, runner = this.head) {
     if (this.isEmpty()) {
-      this.head = new Node(data);
+      this.head = new ListNode(data);
       return this;
     }
 
     if (runner.next === null) {
-      runner.next = new Node(data);
+      runner.next = new ListNode(data);
       return this;
     }
     return this.insertAtBackRecursive(data, runner.next);
@@ -108,7 +111,7 @@ class SinglyLinkedList {
    * @param {Array<any>} vals The data for each new node.
    * @returns {SinglyLinkedList} This list.
    */
-  seedFromArr(vals) {
+  insertAtBackMany(vals) {
     for (const item of vals) {
       this.insertAtBack(item);
     }
@@ -158,7 +161,7 @@ class SinglyLinkedList {
    * @returns {SinglyLinkedList} This list.
    */
   insertAtFront(data) {
-    const newHead = new Node(data);
+    const newHead = new ListNode(data);
     newHead.next = this.head;
     this.head = newHead;
     return this;
@@ -308,9 +311,9 @@ class SinglyLinkedList {
    * Recursively finds the maximum integer data of the nodes in this list.
    * - Time: O(n) linear, n = list length. Max could be at end.
    * - Space: O(n) linear due to the call stack.
-   * @param {Node} runner The start or current node during traversal, or null
+   * @param {ListNode} runner The start or current node during traversal, or null
    *    when the end of the list is reached.
-   * @param {Node} maxNode Keeps track of the node that contains the current
+   * @param {ListNode} maxNode Keeps track of the node that contains the current
    *    max integer as it's data.
    * @returns {?number} The max int or null if none.
    */
@@ -390,18 +393,16 @@ class SinglyLinkedList {
    * @param {any} newVal The value to use for the new node that is being added.
    * @param {any} targetVal The value to use to find the node that the newVal
    *    should be inserted in front of.
-   * @returns {boolean} To indicate whether the node was pre-pended or not.
+   * @returns {ListNode|null} The added node, or null.
    */
   prepend(newVal, targetVal) {
-    const newNode = new Node(newVal);
-
     if (this.isEmpty()) {
-      return false;
+      return null;
     }
 
     if (this.head.data === targetVal) {
       this.insertAtFront(newVal);
-      return true;
+      return this.head;
     }
 
     // we already know we're not going to need to prepend before the head
@@ -410,13 +411,14 @@ class SinglyLinkedList {
     while (runner) {
       // End of list and not found.
       if (runner.next === null) {
-        return false;
+        return null;
       }
 
       if (runner.next.data === targetVal) {
-        newNode.next = runner.next;
-        runner.next = newNode;
-        return true;
+        const prependNode = new ListNode(newVal);
+        prependNode.next = runner.next;
+        runner.next = prependNode;
+        return prependNode;
       }
       runner = runner.next;
     }
@@ -655,7 +657,7 @@ class SinglyLinkedList {
    * @returns {SinglyLinkedList} This list.
    */
   insertAsc(data) {
-    const newNode = new Node(data);
+    const newNode = new ListNode(data);
 
     if (!this.head) {
       this.head = newNode;
@@ -718,7 +720,7 @@ class SinglyLinkedList {
    * @returns {SinglyLinkedList} This list.
    */
   insertPersonAscAge(data) {
-    const newNode = new Node(data);
+    const newNode = new ListNode(data);
 
     if (!this.head) {
       this.head = newNode;
@@ -958,7 +960,7 @@ class SinglyLinkedList {
    * Recursively retrieves the data of the last node in this list.
    * - Time: O(n) linear, n = list length.
    * - Space: O(n) linear due to the call stack.
-   * @param {Node} runner The start or current node during traversal, or null
+   * @param {ListNode} runner The start or current node during traversal, or null
    *    when the end of the list is reached.
    * @returns {any} The data of the last node.
    */
@@ -1225,24 +1227,24 @@ class SinglyLinkedList {
 }
 
 const emptyList = new SinglyLinkedList();
-const singleNodeList = new SinglyLinkedList().seedFromArr([1]);
-const biNodeList = new SinglyLinkedList().seedFromArr([1, 2]);
-const firstThreeList = new SinglyLinkedList().seedFromArr([1, 2, 3]);
-const secondThreeList = new SinglyLinkedList().seedFromArr([4, 5, 6]);
-const unorderedList = new SinglyLinkedList().seedFromArr([
+const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+const unorderedList = new SinglyLinkedList().insertAtBackMany([
   -5, -10, 4, -3, 6, 1, -7, -2,
 ]);
 
 // node 4 connects to node 1, back to head
-const perfectLoopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
 perfectLoopList.head.next.next.next = perfectLoopList.head;
 
 // node 4 connects to node 2
-const loopList = new SinglyLinkedList().seedFromArr([1, 2, 3, 4]);
+const loopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
 loopList.head.next.next.next = loopList.head.next;
 
-const sortedDupeList = new SinglyLinkedList().seedFromArr([
+const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
   1, 1, 1, 2, 3, 3, 4, 5, 5,
 ]);
 
-module.exports = { Node, SinglyLinkedList };
+module.exports = { ListNode, SinglyLinkedList };
