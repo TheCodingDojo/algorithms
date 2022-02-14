@@ -1,4 +1,4 @@
-# [Stacks] & Queues
+# Stacks & Queues
 
 ---
 
