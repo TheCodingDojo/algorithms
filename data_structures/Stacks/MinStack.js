@@ -32,7 +32,7 @@ class MinStack {
   push(n) {
     this.items.push(n);
 
-    if (this.minStack.length === 0 || n < minStack[this.minStack.length - 1]) {
+    if (this.minStack.length === 0 || n <= minStack[this.minStack.length - 1]) {
       this.minStack.push(item);
     }
     return this.items.length;
