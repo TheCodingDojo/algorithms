@@ -1075,7 +1075,7 @@ const emptyList = new DoublyLinkedList();
   - Given some new data, add it to the back of the DList
 - removeMiddleNode
 
-### W4 Wed - [DoublyLinkedList](../data_structures/DoublyLinkedList.js)
+### W4 Wed - [DoublyLinkedList](../data_structures/LinkedLists/DoublyLinkedList.js)
 
 ```js
 /**

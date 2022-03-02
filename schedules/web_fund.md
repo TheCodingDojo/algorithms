@@ -12,10 +12,10 @@
    - basics review: variables, loops, functions
      - [Functions Intro](../functions-intro.md)
 2. Tue
-   - [basicAlgos](../basicAlgos.js)
+   - [basicAlgos](../intro/basicAlgos.js)
 3. Wed
    - [indexOf](../recreated_methods/Array/indexOf.js) | [indexOfSpec](../spec/recreated_methods/Array/indexOfSpec.js)
-   - unfinished [basicAlgos](../basicAlgos.js)
+   - unfinished [basicAlgos](../intro/basicAlgos.js)
 4. Thur
    - [nthLast](../arrays/nthLast.js) | [nthLastSpec](../spec/arrays/nthLastSpec.js)
    - [countEvenNegatives](../arrays/countEvenNegatives.js)
