@@ -27,16 +27,14 @@ function concatArrWithSelf(items) {
 }
 
 // Tests
-const result1 = concatArrWithSelf(arr1);
-console.log(result1, "should be", expected1);
+// const result1 = concatArrWithSelf(arr1);
+// console.log(result1, "should be", expected1);
 
-const result2 = concatArrWithSelf(arr2);
-console.log(result2, "should be", expected2);
+// const result2 = concatArrWithSelf(arr2);
+// console.log(result2, "should be", expected2);
 
-const result3 = concatArrWithSelf(arr3);
-console.log(result3, "should be", expected3);
-
-module.exports = { concatArrWithSelf };
+// const result3 = concatArrWithSelf(arr3);
+// console.log(result3, "should be", expected3);
 
 /*****************************************************************************/
 
@@ -82,5 +80,4 @@ module.exports = {
   concatArrWithSelf,
   spreadArrWithSelf,
   concatArrWithSelfManually,
-  concatArrWithSelfManually2,
 };

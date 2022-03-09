@@ -91,7 +91,10 @@ function containerWithMostWater2(heights) {
 }
 
 /* 
-Unit Testing example using built in node testing library.
+Unit Testing example using built in deprecating node testing library.
+You should use a library like jasmine instead, but if you don't have
+access to it, this could help for some quick testing.
+
 If no errors are logged to the terminal then the tests passed.
 There are multiple comparison methods that can be used, e.g.,
 strictEqual for comparing primitives and deepStrictEqual for collections.
@@ -106,21 +109,29 @@ The values don't have to be stored in vars above, they can be written in
 like the first case then the vars above could be deleted.
 */
 const testCases = [
-  { args: [[1, 8, 6, 2, 5, 4, 8, 3, 7]], expected: 49 },
-  { args: [heights2], expected: expected2 },
-  { args: [heights3], expected: expected3 },
-  { args: [heights4], expected: expected4 },
+  {
+    args: [[1, 8, 6, 2, 5, 4, 8, 3, 7]],
+    expected: 49,
+    description: "a wide container solution ignoring first",
+  },
+  { args: [heights2], expected: expected2, description: "two same heights" },
+  {
+    args: [heights3],
+    expected: expected3,
+    description: "a whole container solution",
+  },
+  {
+    args: [heights4],
+    expected: expected4,
+    description: "a whole container solution with short sides",
+  },
 ];
 
-// Destructure args and expected forEach above object as we test.
-testCases.forEach(({ args, expected }, i) => {
+// testCases.forEach((testData, i) => {});
+testCases.forEach(({ args, expected, description }, i) => {
   const actual = containerWithMostWater(...args);
 
-  strictEqual(
-    actual,
-    expected,
-    `🧪 Case #${i + 1} with arguments: ${JSON.stringify(args)}`
-  );
+  strictEqual(actual, expected, description);
 });
 
-module.exports = { containerWithMostWater };
+module.exports = { containerWithMostWater, containerWithMostWater2 };

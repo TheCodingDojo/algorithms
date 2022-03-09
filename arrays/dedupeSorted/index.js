@@ -31,8 +31,6 @@ const expected4 = [1];
  */
 function dedupeSorted(nums) {}
 
-module.exports = { dedupeSorted };
-
 /*****************************************************************************/
 
 /**
@@ -158,3 +156,12 @@ function dedupeUnorderedInPlace(nums) {
   nums.length = idxToOverwrite;
   return nums;
 }
+
+module.exports = {
+  dedupeSorted,
+  dedupeSortedInPlace,
+  dedupeUnordered,
+  dedupeSortedUsingSet,
+  dedupeInPlace,
+  dedupeUnorderedInPlace,
+};

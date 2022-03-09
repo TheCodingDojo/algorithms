@@ -34,13 +34,16 @@
 
 ## Intervals
 
-- [fewestFountains](../intervals/fewestFountains.js) | [fewestFountains](../spec/intervals/fewestFountainsSpec.js)
+- [dateOverlapChecker](../intervals/dateOverlapChecker/index.js)
+- [minTaps](../intervals/minTaps.js) | [minTaps](../spec/intervals/minTapsSpec.js)
 - [mergeSortedIntervals](../intervals/mergeSortedIntervals.js) | [mergeSortedIntervals](../spec/intervals/mergeSortedIntervalsSpec.js)
 
 ## Recursion
 
 - [displayFolderStructure](../recursion/displayFolderStructure/displayFolderStructure.js)
 - [removeConsecDupeWords](../recursion/removeConsecDupeWords.js)
+
+## [Bit Arithmetic](../bit_arithmetic/)
 
 ## Misc
 

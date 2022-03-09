@@ -43,8 +43,6 @@ const expected2 = 0;
  */
 function diagonalDifference(sqrMatrix) {}
 
-module.exports = { diagonalDifference };
-
 /*****************************************************************************/
 
 /**
@@ -74,10 +72,12 @@ function diagonalDifference(sqrMatrix) {
  * - Time: O(n) linear.
  * - Space: O(1) constant.
  */
-const diagonalDifference2 = (sqrMatrix) =>
+const functionalDiagonalDifference = (sqrMatrix) =>
   Math.abs(
     sqrMatrix.reduce(
       (diff, row, i) => diff + row[i] - row[row.length - i - 1],
       0
     )
   );
+
+module.exports = { diagonalDifference, functionalDiagonalDifference };

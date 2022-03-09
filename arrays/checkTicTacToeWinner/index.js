@@ -46,8 +46,6 @@ const expected4 = true;
  */
 function checkTicTacToeWinner(grid) {}
 
-module.exports = { checkTicTacToeWinner };
-
 /*****************************************************************************/
 
 /**
@@ -130,10 +128,19 @@ function checkTicTacToeWinner(grid) {
 // Code golf
 const checkTicTacToeWinner2 = (g) =>
   [
-    g.map((row) => row.reduce((s, curr) => s + curr)), // array of concatenated row vals
-    g.map((_, i) => g.reduce((s, _, j) => s + g[j][i], "")), // array of concatenated col vals
+    // array of concatenated row vals
+    g.map((row) => row.reduce((s, curr) => s + curr)),
+    // array of concatenated col vals
+    g.map((_, i) => g.reduce((s, _, j) => s + g[j][i], "")),
+    // array of concatenated diagonals
     [
       g.reduce((s, _, i) => s + g[i][i], ""),
       g.reduce((s, _, i) => s + g[i][g.length - 1 - i], ""),
-    ], // array of concatenated diagonals
+    ],
   ].some((arr) => arr.some((s) => s === "xxx" || s === "ooo"));
+
+module.exports = {
+  checkTicTacToeWinner,
+  checkTicTacToeWinner2,
+  checkTicTacToeWinnerHardCoded,
+};

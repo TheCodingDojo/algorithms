@@ -12,10 +12,18 @@ const expected1 = [
   [3, 6, 7],
 ];
 
+const nums2 = [];
+const sum2 = 5;
+const expected2 = [];
+
+const nums3 = [10, 15, 20, 35, 30];
+const sum3 = 5;
+const expected3 = [];
+
 // Bonus:
-const nums2 = [2, 5, 3, 6, 7, 0, 0, 23, 12];
-const sum2 = 16;
-const expected2 = [
+const nums4 = [2, 5, 3, 6, 7, 0, 0, 23, 12];
+const sum4 = 16;
+const expected4 = [
   [2, 5, 3, 6],
   [3, 6, 7],
   [3, 6, 7, 0],
@@ -23,9 +31,9 @@ const expected2 = [
 ];
 
 // Bonus:
-const nums3 = [-2, -5, -3, -6, -7, -0, -0, -23, -12];
-const sum3 = -16;
-const expected3 = [
+const nums5 = [-2, -5, -3, -6, -7, -0, -0, -23, -12];
+const sum5 = -16;
+const expected5 = [
   [-2, -5, -3, -6],
   [-3, -6, -7],
   [-3, -6, -7, -0],
@@ -61,17 +69,17 @@ module.exports = { findConsqSums };
  *    only.
  */
 function findConsqSums(nums, targetSum) {
-  const arr = [];
+  const summableSubsets = [];
 
   for (let i = 0; i < nums.length; i++) {
     let sum = nums[i];
 
     for (let j = i + 1; j <= nums.length; j++) {
       if (sum === targetSum) {
-        arr.push(nums.slice(i, j));
+        summableSubsets.push(nums.slice(i, j));
       }
       sum += nums[j];
     }
   }
-  return arr;
+  return summableSubsets;
 }
