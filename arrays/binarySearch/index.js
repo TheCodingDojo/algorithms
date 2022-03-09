@@ -100,7 +100,7 @@ function countAdjacentDupes(arr, idx) {
 }
 
 /**
- * Exponential search (O(log n) logarithmic time) can out-perform binary search
+ * Exponential search can out-perform binary search
  *    when the element being searched for is near the beginning of the array.
  *    Exponential search narrows down the array first, then calls binary search
  *    on the narrowed down array.

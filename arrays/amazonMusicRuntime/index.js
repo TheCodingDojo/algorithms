@@ -43,7 +43,11 @@ const expected3 = [-1, -1]; // not found.
  */
 function amazonMusicRuntime(busDuration, songDurations) {}
 
-module.exports = { amazonMusicRuntime };
+module.exports = {
+  amazonMusicRuntime,
+  amazonMusicRuntime2,
+  amazonMusicRuntime3,
+};
 
 /*****************************************************************************/
 

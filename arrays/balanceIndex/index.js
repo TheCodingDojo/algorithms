@@ -26,7 +26,7 @@ const expected2 = -1;
  */
 function balanceIndex(nums) {}
 
-module.exports = { balanceIndex };
+module.exports = { balanceIndex, balanceIndexOutsideIn };
 
 /*****************************************************************************/
 

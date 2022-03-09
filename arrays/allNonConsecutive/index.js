@@ -14,6 +14,17 @@ const expected1 = [
   { i: 7, n: 10 },
 ];
 
+const nums2 = [];
+const expected2 = [];
+
+const nums3 = [1, 3, 7, 9];
+const expected3 = [
+  { i: 1, n: 3 },
+  { i: 2, n: 7 },
+  { i: 3, n: 9 },
+];
+// Explanation: Index 0 has no number before it, so it is not included.
+
 /**
  * Finds all the non-consecutive (out of order) numbers from the given array.
  * - Time: O(?).

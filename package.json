@@ -13,7 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/TheCodingDojo/algorithms.git"
   },
-  "author": "neilm813",
+  "author": {
+    "name": "Neil Mosunic",
+    "email": "neilm813@gmail.com",
+    "url": "https://github.com/neilm813"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TheCodingDojo/algorithms/issues"
