@@ -38,7 +38,7 @@ function firstNonRepeated(nums) {}
  * - Time: O(2n) -> O(n) linear.
  * - Space: O(n) linear.
  */
-function firstNonRepeated(nums) {
+function firstNonRepeated(nums = []) {
   const freq = {};
 
   for (const num of nums) {
@@ -63,7 +63,7 @@ function firstNonRepeated(nums) {
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
  */
-function firstUniq(nums) {
+function firstUniq(nums = []) {
   for (let i = 0; i < nums.length; i++) {
     let isUnique = true;
 

@@ -99,9 +99,7 @@ const expected4 = [
  * @param {string} searchFor The value of the given key to search for.
  * @returns {Array<Objects>} The matched items.
  */
-function filterByKey(items, searchFor, searchBy) {}
-
-module.exports = { filterByKey };
+function functionalFilterByKey(items, searchFor, searchBy) {}
 
 /*****************************************************************************/
 
@@ -116,7 +114,7 @@ module.exports = { filterByKey };
  * @param {string} searchFor The value of the given key to search for.
  * @returns {Array<Objects>} The matched items.
  */
-function filterByKey(
+function functionalFilterByKey(
   items,
   searchFor,
   searchBy,
@@ -149,11 +147,18 @@ console[consoleMethod]("name of method saved to var.");
 consoleMethod = "table";
 console[consoleMethod](["a", "b", "c"]);
 
-function filterByKeyStartsWith(items, searchFor, searchBy) {
+function filterByKeyStartsWith(
+  items,
+  searchFor,
+  searchBy,
+  stringSearchMethod = "startsWith"
+) {
   const filteredItems = [];
 
   for (const item of items) {
-    if (item[searchBy].toLowerCase().startsWith(searchFor.toLowerCase())) {
+    if (
+      item[searchBy].toLowerCase()[stringSearchMethod](searchFor.toLowerCase())
+    ) {
       filteredItems.push(item);
     }
   }
@@ -161,6 +166,7 @@ function filterByKeyStartsWith(items, searchFor, searchBy) {
 }
 
 // early exit via not committing to lowerCasing full string
+// this would require a lot more hard-coding to handle the bonus search method
 function filterByKeyStartsWith2(items, searchFor, searchBy) {
   const filteredItems = [];
 
@@ -180,3 +186,5 @@ function filterByKeyStartsWith2(items, searchFor, searchBy) {
   }
   return filteredItems;
 }
+
+module.exports = { functionalFilterByKey, filterByKeyStartsWith };

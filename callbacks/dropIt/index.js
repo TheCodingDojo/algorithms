@@ -38,7 +38,7 @@ const expected3 = [];
  */
 function dropIt(arr, cb) {}
 
-module.exports = { dropIt: dropIt };
+module.exports = { dropIt, dropItFunctional };
 
 /*****************************************************************************/
 

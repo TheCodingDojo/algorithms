@@ -1,7 +1,7 @@
 # Sets
 
 - A set is a mathematical term for a collection of values
-- Arrays / lists can be referred to as a set, but there are also built in `Set` data types that have some additional rules to them
+- We will mostly use arrays when doing `set` based operations because, although a `Set` datatype exists and can be useful, JS doesn't natively have a multi-set data type.
 
 ---
 

@@ -29,8 +29,6 @@ const expected4 = { quarter: 3, dime: 2, penny: 4 };
  */
 function fewestCoinChange(cents) {}
 
-module.exports = { fewestCoinChange };
-
 /*****************************************************************************/
 
 /**
@@ -90,3 +88,5 @@ function fewestCoinChange2(cents) {
   }
   return changeMap;
 }
+
+module.exports = { fewestCoinChange, fewestCoinChange2 };

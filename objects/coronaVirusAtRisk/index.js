@@ -96,10 +96,6 @@ function coronaVirusAtRisk(persons) {}
  */
 function coronaVirusAtRiskFunctional(persons) {}
 
-module.exports = {
-  coronaVirusAtRisk,
-};
-
 /*****************************************************************************/
 
 /**
@@ -137,7 +133,7 @@ function coronaVirusAtRisk(persons) {
  *    .map is another loop but not nested.
  * - Space: O(n) linear.
  */
-const coronaVirusAtRiskFunctional = (persons) =>
+const functionalCoronaVirusAtRisk = (persons) =>
   persons
     .filter(
       (person) =>
@@ -147,3 +143,8 @@ const coronaVirusAtRiskFunctional = (persons) =>
         ) > -1
     )
     .map((person) => `${person.firstName} ${person.lastName}`);
+
+module.exports = {
+  coronaVirusAtRisk,
+  functionalCoronaVirusAtRisk,
+};
