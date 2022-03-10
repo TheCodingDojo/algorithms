@@ -5,14 +5,20 @@ that space,
 
 return whether or not there is at least 6 feet separating every person.
 
-Bonus: O(n) linear time (avoid nested loops that cause re-visited indexes).
+Bonus: O(n) linear time (avoid nested loops that cause re-visiting indexes).
 */
 
-const queue1 = [0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1];
+const queue1 = [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1];
 const expected1 = false;
 
 const queue2 = [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1];
 const expected2 = true;
+
+const queue3 = [1, 0, 0, 0, 0, 0, 0, 0, 1];
+const expected3 = true;
+
+const queue4 = [];
+const expected4 = true;
 
 /**
  * Determines whether each occupied space in the line of people is separated by

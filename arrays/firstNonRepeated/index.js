@@ -32,8 +32,6 @@ const expected5 = null;
  */
 function firstNonRepeated(nums) {}
 
-module.exports = { firstNonRepeated };
-
 /*****************************************************************************/
 
 /**
@@ -86,18 +84,4 @@ function firstUniq(nums) {
   return null; // all dupes
 }
 
-/**
- * Will return 0 if all dupes and can't return null when 0 is returned, because
- * 0 could also be a valid answer.
- */
-const findUniqueXOR = (arr) => {
-  // Instantiate a variable to hold a result.
-  let result = 0;
-  // Iterate over the array of numbers provided.
-  for (const num of arr) {
-    // Perform xor operation comparing current result and given number.
-    // Can be shortened to result ^= num; shown long-form for clarity.
-    result = result ^ num;
-  }
-  return result;
-};
+module.exports = { firstNonRepeated, firstUniq };

@@ -32,7 +32,7 @@ const expected4 = [42, 0, 6];
  */
 function interleaveArrays(arr1, arr2) {}
 
-module.exports = { interleaveArrays };
+module.exports = { interleaveArrays, interleaveArrays2, interleaveArrays3 };
 
 /*****************************************************************************/
 

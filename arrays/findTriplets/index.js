@@ -26,7 +26,7 @@ const expected3 = true;
  */
 function findTriplets(nums) {}
 
-module.exports = { findTriplets };
+module.exports = { findTriplets, findTripletsBruteForce, findTriplets2 };
 
 /*****************************************************************************/
 

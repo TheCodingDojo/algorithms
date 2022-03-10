@@ -8,7 +8,6 @@
   Second: Return location of first match found ( [-1,-1] if no match). In example above, return [2,1] .
 */
 
-// src=https://bitbucket.org/morleytatro/dojo-algorithms/src/master/chapter-7-arrays-part-2.js
 function matrixSearch(matrix, image) {
   const first = image[0][0];
   const imageHeight = image.length;

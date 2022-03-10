@@ -2,37 +2,54 @@ const functions = require(".");
 
 Object.values(functions).forEach((testFn) => {
   describe(testFn.name, () => {
-    const nums1 = [1, 5, -1, 2, -4, 9, -10, 0, -3, -2];
-    const expected1 = 3;
+    const numsA1 = [0, 1, 2, 2, 2, 7];
+    const numsB1 = [2, 2, 6, 6, 7];
+    const expected1 = [2, 7];
 
-    const nums2 = [];
-    const expected2 = 0;
+    const numsA2 = [0, 1, 2, 2, 2, 7];
+    const numsB2 = [2, 2];
+    const expected2 = [2];
 
-    const nums3 = [-4, -2, -6];
-    const expected3 = 3;
+    const numsA3 = [0, 1, 2, 2, 2, 7];
+    const numsB3 = [10];
+    const expected3 = [];
 
     const testCases = [
       {
-        args: [nums1],
+        args: [numsA1, numsB1],
         expected: expected1,
-        description: "an unordered mixture",
+        description: "a first array longer by one than the second array",
       },
       {
-        args: [nums2],
+        args: [numsA2, numsB2],
         expected: expected2,
-        description: "an empty array",
+        description:
+          "a first array more than double the size of the second array",
       },
       {
-        args: [nums3],
+        args: [numsA3, numsB3],
         expected: expected3,
-        description: "all negative evens",
+        description:
+          "a second array with only one number that is larger than all the first array numbers",
       },
     ];
 
-    testCases.forEach(({ args, expected, description }) => {
+    testCases.forEach(({ args: [numsA, numsB], expected, description }) => {
       describe("when given " + description, () => {
-        it("should return a count of how many numbers are both negative and even.", () => {
-          expect(testFn(...args)).toEqual(expected);
+        const copyOfNumsA = [...numsA];
+        const copyOfNumsB = [...numsB];
+        const actual = testFn(numsA, numsB);
+
+        it("should return the ordered deduped intersection of two given sorted arrays.", () => {
+          expect(actual).toEqual(expected);
+        });
+
+        it("should not mutate the first given array", () => {
+          expect(numsA).toEqual(copyOfNumsA);
+        });
+
+        it("should not mutate the second given array", () => {
+          expect(numsB).toEqual(copyOfNumsB);
         });
       });
     });

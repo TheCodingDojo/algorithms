@@ -10,13 +10,25 @@
   Venn Diagram Visualization (top) https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
 */
 
-const numsA1 = [1, 2, 2, 2, 7];
-const numsB1 = [2, 2, 6, 6, 7];
+const nums1A = [1, 2, 2, 2, 7];
+const nums1B = [2, 2, 6, 6, 7];
 const expected1 = [1, 2, 2, 2, 6, 6, 7];
 
-const numsA2 = [1, 2, 2, 2, 7, 10, 15, 20];
-const numsB2 = [2, 2, 6, 6, 7];
-const expected2 = [1, 2, 2, 2, 6, 6, 7, 10, 15, 20];
+const nums2A = [1, 1, 2, 2, 2, 3, 7, 10, 20, 30];
+const nums2B = [2, 6, 6, 7];
+const expected2 = [1, 1, 2, 2, 2, 3, 6, 6, 7, 10, 20, 30];
+
+const nums3A = [];
+const nums3B = [2, 2, 3, 3, 3];
+const expected3 = [2, 2, 3, 3, 3];
+
+const nums4A = [2, 2, 3, 3, 3];
+const nums4B = [];
+const expected4 = [2, 2, 3, 3, 3];
+
+const nums5A = [];
+const nums5B = [];
+const expected5 = [];
 /* 
   Explanation: Every int from each set is included in the result, for dupes, like 2, include it 3 times,
   because it occurs 3 times at most in ONE set
@@ -38,7 +50,7 @@ const expected2 = [1, 2, 2, 2, 6, 6, 7, 10, 15, 20];
  */
 function orderedMultisetUnion(sortedA, sortedB) {}
 
-module.exports = { orderedMultisetUnion };
+module.exports = { orderedMultisetUnion, orderedMultisetUnion2 };
 
 /*****************************************************************************/
 

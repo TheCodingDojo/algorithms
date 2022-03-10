@@ -31,6 +31,7 @@
 - [rotate](../arrays/rotate.js)
 - [checkTicTacToeWinner](../arrays/checkTicTacToeWinner.js) | [checkTicTacToeWinnerSpec](../spec/arrays/checkTicTacToeWinnerSpec.js)
 - [balancePoint](../arrays/balancePoint.js) | [balancePoint](../spec/arrays/balancePointSpec.js)
+- [matrixSearch](../arrays/matrixSearch/index.js)
 
 ## Intervals
 

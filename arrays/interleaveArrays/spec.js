@@ -2,36 +2,48 @@ const functions = require(".");
 
 Object.values(functions).forEach((testFn) => {
   describe(testFn.name, () => {
-    const nums1 = [1, 5, -1, 2, -4, 9, -10, 0, -3, -2];
-    const expected1 = 3;
+    const arrA1 = [1, 2, 3];
+    const arrB1 = ["a", "b", "c"];
+    const expected1 = [1, "a", 2, "b", 3, "c"];
 
-    const nums2 = [];
-    const expected2 = 0;
+    const arrA2 = [1, 3];
+    const arrB2 = [2, 4, 6, 8];
+    const expected2 = [1, 2, 3, 4, 6, 8];
 
-    const nums3 = [-4, -2, -6];
-    const expected3 = 3;
+    const arrA3 = [1, 3, 5, 7];
+    const arrB3 = [2, 4];
+    const expected3 = [1, 2, 3, 4, 5, 7];
+
+    const arrA4 = [];
+    const arrB4 = [42, 0, 6];
+    const expected4 = [42, 0, 6];
 
     const testCases = [
       {
-        args: [nums1],
+        args: [arrA1, arrB1],
         expected: expected1,
-        description: "an unordered mixture",
+        description: "three numbers and three letters",
       },
       {
-        args: [nums2],
+        args: [arrA2, arrB2],
         expected: expected2,
-        description: "an empty array",
+        description: "a first array half the size of the second array",
       },
       {
-        args: [nums3],
+        args: [arrA3, arrB3],
         expected: expected3,
-        description: "all negative evens",
+        description: "a second array half the size of the first array",
+      },
+      {
+        args: [arrA4, arrB4],
+        expected: expected4,
+        description: "the first array empty",
       },
     ];
 
     testCases.forEach(({ args, expected, description }) => {
       describe("when given " + description, () => {
-        it("should return a count of how many numbers are both negative and even.", () => {
+        it("should return a new array that contains the items of the given arrays interleaved (alternated).", () => {
           expect(testFn(...args)).toEqual(expected);
         });
       });

@@ -10,24 +10,31 @@
     - https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
 */
 
-const test1NumsA = [1, 2];
-const test1NumsB = [2, 1];
+const setA1 = [1, 2];
+const setB1 = [2, 1];
 const expected1 = [];
 // Explanation: 1 and 2 are in both arrays so are excluded
 
-const test2NumsA = [1, 2, 3];
-const test2NumsB = [4, 5, 6];
+const setA2 = [1, 2, 3];
+const setB2 = [4, 5, 6];
 const expected2 = [1, 2, 3, 4, 5, 6];
 // Explanation: neither array has shared values, so all are included
 
-const test3NumsA = [4, 1, 2, 3, 4];
-const test3NumsB = [1, 2, 3, 5, 5, 2];
+const setA3 = [4, 1, 2, 3, 4];
+const setB3 = [1, 2, 3, 5, 5];
 const expected3 = [4, 5];
 /* 
   Explanation: 1, 2, and 3 are shared so are excluded
-    4 and 5 are included because they exist only in 1 array,
-    but have duplicates, so only one copy of each is kept.
+    4 and 5 are included because they exist only in 1 array, but have duplicates, so only one copy of each is kept
 */
+
+const setA4 = [];
+const setB4 = [];
+const expected4 = [];
+
+const setA5 = [];
+const setB5 = [1, 2, 3];
+const expected5 = [1, 2, 3];
 
 /**
  * Produces the symmetric differences, aka disjunctive union of two sets.
@@ -45,7 +52,12 @@ const expected3 = [4, 5];
  */
 function symmetricDifferences(numsA, numsB) {}
 
-module.exports = { symmetricDifferences };
+module.exports = {
+  symmetricDifferences,
+  symmetricDifferencesHashTable,
+  symmetricDifferencesSets,
+  symmetricDifferencesMath,
+};
 
 /*****************************************************************************/
 

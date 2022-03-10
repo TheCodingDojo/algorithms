@@ -95,4 +95,8 @@ function reverse(arr, start = 0, end = arr.length) {
   return arr;
 }
 
-console.log(rotate2(nums1, k1));
+module.exports = {
+  rotate,
+  rotate2,
+  rotateByReversing,
+};

@@ -115,3 +115,9 @@ console.log(oddOccurrencesInArray3(nums1), expected1);
 console.log(oddOccurrencesInArray3(nums2), expected2);
 console.log(oddOccurrencesInArray3(nums3), expected3);
 console.log(oddOccurrencesInArray3(nums4), expected4);
+
+module.exports = {
+  oddOccurrencesInArray,
+  oddOccurrencesInArray2,
+  oddOccurrencesInArray3,
+};

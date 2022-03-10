@@ -21,6 +21,10 @@ const arr4 = ["a", "b", "c", "d"];
 const idx4 = -1;
 const expected4 = null;
 
+const arr5 = [];
+const idx5 = 2;
+const expected5 = null;
+
 /**
  * Retrieves the nth to last indexed item from the given array.
  * - Time: O(?).
@@ -45,6 +49,9 @@ console.log(result3, "should be", expected3);
 
 const result4 = nthLast(arr4, idx4);
 console.log(result4, "should be", expected4);
+
+const result5 = nthLast(arr5, idx5);
+console.log(result5, "should be", expected5);
 
 /*****************************************************************************/
 

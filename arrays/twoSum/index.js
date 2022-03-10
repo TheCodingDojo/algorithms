@@ -10,16 +10,16 @@
 
 const nums1 = [2, 11, 7, 15];
 const targetSum1 = 9;
-// Order doesn't matter. Explanation: nums[0] + nums[2] = 2 + 7 = 9
 const expected1 = [0, 2];
+// Explanation: nums[0] + nums[2] = 2 + 7 = 9. Return order doesn't matter.
 
 const nums2 = [10, 3, 2, 5, 4, -1];
 const targetSum2 = 6;
 const expected2 = [2, 4];
 
-const nums3 = [3, 8, 4, 1, 9, -2, 0];
+const nums3 = [3, 8, 4, 1, 9, 0, -2];
 const targetSum3 = 6;
-const expected3 = [1, 5];
+const expected3 = [1, 6];
 
 /**
  * Finds the indexes of the nums that add up to the given target sum.

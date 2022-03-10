@@ -2,37 +2,35 @@ const functions = require(".");
 
 Object.values(functions).forEach((testFn) => {
   describe(testFn.name, () => {
-    const nums1 = [1, 5, -1, 2, -4, 9, -10, 0, -3, -2];
-    const expected1 = 3;
+    const nums1 = [1, 5, 2, 9];
+    const expected1 = [1, 5, 2, 9];
 
-    const nums2 = [];
-    const expected2 = 0;
-
-    const nums3 = [-4, -2, -6];
-    const expected3 = 3;
+    const nums2 = [5, 1, 0, 2, 3, 0];
+    const expected2 = [0, 5, 1, 2, 3, 0];
 
     const testCases = [
       {
         args: [nums1],
         expected: expected1,
-        description: "an unordered mixture",
+        description: "the minimum at the front",
       },
       {
         args: [nums2],
         expected: expected2,
-        description: "an empty array",
-      },
-      {
-        args: [nums3],
-        expected: expected3,
-        description: "all negative evens",
+        description: "the minimum near the front and at the end",
       },
     ];
 
     testCases.forEach(({ args, expected, description }) => {
       describe("when given " + description, () => {
-        it("should return a count of how many numbers are both negative and even.", () => {
-          expect(testFn(...args)).toEqual(expected);
+        const ret = testFn(...args);
+
+        it("should move the min value in the given array to the front and return the given array.", () => {
+          expect(ret).toEqual(expected);
+        });
+
+        it("should return the given array, not a new array.", () => {
+          expect(ret).toBe(args[0]);
         });
       });
     });

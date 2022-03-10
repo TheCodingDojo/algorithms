@@ -28,26 +28,7 @@ function flatten2dArray(twoDimArr) {
   // code here
 }
 
-// Advanced Unit Testing Example:
-const assert = require("assert");
-
-// This will print an error if any case fails.
-[
-  [twoDimArr1, expected1],
-  [twoDimArr2, expected2],
-  [twoDimArr3, expected3],
-].forEach((testCase, i) => {
-  // Destructure 1st and 2nd item from testCase.
-  const [arg, expected] = testCase;
-  const actual = flatten2dArr(arg);
-  assert.deepStrictEqual(
-    actual,
-    expected,
-    `Test Case ${i + 1} with arg: ${JSON.stringify(arg)}`
-  );
-});
-
-module.exports = { flatten2dArray };
+module.exports = { flatten2dArray, flatten2dArr };
 
 /*****************************************************************************/
 

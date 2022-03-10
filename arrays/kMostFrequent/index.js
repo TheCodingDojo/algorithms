@@ -39,7 +39,7 @@ const expected3 = [1, 2, 3];
  */
 function kMostFrequent(nums, k) {}
 
-module.exports = { kMostFrequent };
+module.exports = { kMostFrequent, kMostFrequentSort };
 
 /*****************************************************************************/
 

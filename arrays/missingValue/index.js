@@ -37,7 +37,7 @@ const expected4 = 6;
  */
 function missingValue(unorderedNums) {}
 
-module.exports = { missingValue };
+module.exports = { missingValue, missingValueSeenTable };
 
 /*****************************************************************************/
 
