@@ -39,8 +39,7 @@ const user = {
   personalInfo: {
     name: "Jack",
     address: {
-      line1: "westwish st",
-      line2: "washmasher",
+      street: "westwish st",
       city: "wallas",
       state: "WX",
     },
@@ -74,8 +73,6 @@ const expected5 = user;
  * @returns {any} The value at end of path of given keys or null.
  */
 function lens(obj, keys) {}
-
-module.exports = { lens };
 
 /*****************************************************************************/
 
@@ -121,16 +118,13 @@ function lensReduce(obj, keys) {
   return val === undefined ? null : val;
 }
 
-/**
- * .reduce + optional chaining (optional chaining only works in node ver 14+)
- */
-// function lensReduce2(obj, keys) {
-//   const val = keys.reduce((curr, key) => curr?.[key], obj);
-//   return val === undefined ? null : val;
-// }
+function lensReduce2(obj, keys) {
+  const val = keys.reduce((curr, key) => curr?.[key], obj);
+  return val === undefined ? null : val;
+}
 
 function simpleLensRecursive(obj, keys) {
-  if (!keys.length) {
+  if (keys.length === 0 && obj !== undefined) {
     return obj;
   }
   if (obj === undefined || obj === null) {
@@ -156,3 +150,5 @@ function splitKeyPath(path) {
   }
   return [];
 }
+
+module.exports = { lens, lensReduce, lensReduce2, simpleLensRecursive };

@@ -20,18 +20,18 @@
 
 const recipe1 = {
   "organic fat": 99,
-  "live squid": 1,
-  "birds nest": 1,
-  "fried flesh": 1,
+  "broccoli seeds": 1,
+  okra: 1,
+  potato: 1,
   spicy: 5,
   "gourmet memes": 4200,
 };
 
 const available1 = {
   "organic fat": 990,
-  "live squid": 1,
-  "birds nest": 10,
-  "fried flesh": 10,
+  "broccoli seeds": 1,
+  okra: 10,
+  potato: 10,
   spicy: 50,
   "gourmet memes": 42000,
   sugar: 9001,
@@ -40,16 +40,16 @@ const available1 = {
   "triple point water": 5,
 };
 const expected1 = 1;
-// because only 1 live squid is available and that is the limiting ingredient
+// because only 1 broccoli seeds is available and that is the limiting ingredient
 
-// same as available1, except live squid has 10.
-const available2 = { ...available1, ["live squid"]: 10 };
+// same as available1, except broccoli seeds has 10.
+const available2 = { ...available1, ["broccoli seeds"]: 10 };
 const expected2 = 10;
 
-// same as available1 except live squid key is deleted.
+// same as available1 except broccoli seeds key is deleted.
 const available3 = { ...available1 };
-delete available3["live squid"];
-const expected3 = 0; // live squid key doesn't exist in available ingredients
+delete available3["broccoli seeds"];
+const expected3 = 0; // broccoli seeds key doesn't exist in available ingredients
 
 /**
  * Determines how many servings can be made of the given recipe.
@@ -63,10 +63,6 @@ const expected3 = 0; // live squid key doesn't exist in available ingredients
  * @returns {number} Max servings of the recipe that can be made.
  */
 function getMaxServings(recipe, available) {}
-
-module.exports = {
-  getMaxServings,
-};
 
 /*****************************************************************************/
 
@@ -108,10 +104,15 @@ function getMaxServings(recipe, available) {
  *    are all loops.
  * Space: O(2n) from .entries and .map array -> O(n) linear.
  */
-const getMaxServingsFunctional = (recipe, available) =>
+const functionalGetMaxServings = (recipe, available) =>
   Math.min(
     ...Object.entries(recipe).map(
       ([requiredIngred, requiredAmnt]) =>
         available[requiredIngred] / requiredAmnt
     )
   ) || 0;
+
+module.exports = {
+  getMaxServings,
+  functionalGetMaxServings,
+};

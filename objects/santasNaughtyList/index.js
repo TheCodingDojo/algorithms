@@ -70,10 +70,6 @@ function santasNaughtyList(persons, badHabit) {}
  */
 function santasNaughtyListFunctional(persons, badHabit) {}
 
-module.exports = {
-  santasNaughtyList,
-};
-
 /*****************************************************************************/
 
 /**
@@ -117,3 +113,8 @@ function santasNaughtyListFunctional(persons, badHabit) {
     .filter((person) => person.habits.includes(badHabit))
     .map((person) => `${person.firstName} ${person.lastName}`);
 }
+
+module.exports = {
+  santasNaughtyList,
+  santasNaughtyListFunctional,
+};

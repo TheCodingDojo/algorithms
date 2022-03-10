@@ -82,8 +82,6 @@ const expected = {
  */
 function groupObjects(items) {}
 
-module.exports = { groupObjects };
-
 /*****************************************************************************/
 
 /**
@@ -126,3 +124,5 @@ const groupObjectsReduce = (items, groupByKey = "category") =>
 
     return table;
   }, {});
+
+module.exports = { groupObjects, groupObjectsReduce };

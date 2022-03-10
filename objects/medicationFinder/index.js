@@ -52,23 +52,17 @@ const medications = [
   },
 ];
 
-/* 
-Input: ailments1, medications
-Output: ["PainAssassinator", "Longvida Curcumin"] 
-*/
 const ailments1 = ["pain"];
+const expected1 = ["PainAssassinator", "Longvida Curcumin"];
 
-/* 
-Input: ailments2, medications
-Output: ["Longvida Curcumin"] 
-*/
 const ailments2 = ["pain", "inflammation", "depression"];
+const expected2 = ["Longvida Curcumin"];
 
-/* 
-Input: ailments3, medications
-Output: [] 
-*/
 const ailments3 = ["existential dread"];
+const expected3 = [];
+
+const ailments4 = [];
+const expected4 = [];
 
 // Time: O(n*m) where n is meds length and m is longest treatableSymptoms length
 function getMeMyMeds(ailments, meds) {
@@ -104,3 +98,5 @@ function getMeMyMeds(ailments, meds) {
   }
   return matchedMeds;
 }
+
+module.exports = { getMeMyMeds };

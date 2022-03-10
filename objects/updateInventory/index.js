@@ -45,8 +45,6 @@ const expected3 = [{ name: "Peanut Butter", quantity: 20 }];
  */
 function updateInventory(newInv, currInv) {}
 
-module.exports = { updateInventory };
-
 /*****************************************************************************/
 
 /**
@@ -104,3 +102,5 @@ function updateInventory2(newInv, currentInv) {
   }
   return currentInv;
 }
+
+module.exports = { updateInventory, updateInventory2 };

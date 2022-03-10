@@ -42,6 +42,7 @@ function insertFunctional(tableName, columnValuePairs) {}
 
 module.exports = {
   insert,
+  insertFunctional,
 };
 
 /*****************************************************************************/

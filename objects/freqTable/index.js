@@ -36,7 +36,7 @@ const expected3 = {};
  */
 function frequencyTableBuilder(arr) {}
 
-module.exports = { frequencyTableBuilder };
+module.exports = { frequencyTableBuilder, frequencyTableBuilder2 };
 
 /*****************************************************************************/
 

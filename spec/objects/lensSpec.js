@@ -8,8 +8,7 @@ describe("lens", () => {
     personalInfo: {
       name: "Jack",
       address: {
-        line1: "westwish st",
-        line2: "washmasher",
+        street: "Westwish st",
         city: "wallas",
         state: "WX",
       },

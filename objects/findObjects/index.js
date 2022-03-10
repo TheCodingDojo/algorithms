@@ -49,10 +49,6 @@ function findObjects(criteria, collection) {}
  */
 function findObjectsFunctional(criteria, collection) {}
 
-module.exports = {
-  findObjects,
-};
-
 /*****************************************************************************/
 
 /**
@@ -87,7 +83,12 @@ function findObjects(criteria, collection) {
   return foundDocuments;
 }
 
-const findObjectsFunctional2 = (criteria, collection) =>
+const functionalFindObjects = (criteria, collection) =>
   collection.filter((item) =>
     Object.keys(criteria).every((key) => item[key] === criteria[key])
   );
+
+module.exports = {
+  findObjects,
+  functionalFindObjects,
+};

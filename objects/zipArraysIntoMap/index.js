@@ -15,6 +15,10 @@ const expected1 = {
   yo: true,
 };
 
+const keys2 = [];
+const vals2 = [];
+const expected2 = {};
+
 /**
  * Converts the given arrays of keys and values into an object.
  * - Time: O(?).
@@ -24,8 +28,6 @@ const expected1 = {
  * @returns {Object} The object with the given keys and values.
  */
 function zipArraysIntoMap(keys, values) {}
-
-module.exports = { zipArraysIntoMap };
 
 /*****************************************************************************/
 
@@ -44,3 +46,5 @@ function zipArraysIntoMap(keys, values) {
   }
   return hashMap;
 }
+
+module.exports = { zipArraysIntoMap };
