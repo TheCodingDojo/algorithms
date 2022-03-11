@@ -8,12 +8,16 @@
 const arr1 = [1, 2, 3];
 const expected1 = 1;
 // after running function arr1 should now be:
-const arr1Expected = [2, 3];
+const expectedArr1 = [2, 3];
 
 const arr2 = ["a", "b", "c", "d"];
 const expected2 = "a";
 // after running function arr2 should now be:
-const arr2Expected = ["b", "c", "d"];
+const expectedArr2 = ["b", "c", "d"];
+
+const arr3 = [];
+const expected3 = undefined;
+const expectedArr3 = [];
 
 /**
  * Shifts every item of the array to the left by 1 so that the first item is
@@ -30,13 +34,15 @@ function shift(items) {
 // Tests
 const result1 = shift(arr1);
 console.log(result1, "should be", expected1);
-console.log(arr1, "should be", arr1Expected);
+console.log(arr1, "should be", expectedArr1);
 
 const result2 = shift(arr2);
 console.log(result2, "should be", expected2);
-console.log(arr2, "should be", arr2Expected);
+console.log(arr2, "should be", expectedArr2);
 
-module.exports = { shift };
+const result3 = shift(arr3);
+console.log(result3, "should be", expected3);
+console.log(arr3, "should be", expectedArr3);
 
 /*****************************************************************************/
 
@@ -50,13 +56,18 @@ module.exports = { shift };
  * @param {Array<any>} items
  * @returns {any} The removed value previously at idx 0.
  */
-function shift(items) {
+function shift(items = []) {
   const firstItem = items[0];
 
-  for (let i = 1; i < items.length; i++) {
-    items[i - 1] = items[i];
+  if (items.length > 0) {
+    for (let i = 1; i < items.length; i++) {
+      items[i - 1] = items[i];
+    }
+
+    items.length = items.length - 1; // cut off 'empty' value at the end
   }
 
-  items.length = items.length - 1; // cut off 'empty' value at the end
   return firstItem;
 }
+
+module.exports = { shift };

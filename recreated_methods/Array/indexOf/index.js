@@ -46,8 +46,6 @@ console.log(result3, "should be", expected3);
 const result4 = indexOf(arr4, searchItem4);
 console.log(result4, "should be", expected4);
 
-module.exports = { indexOf };
-
 /*****************************************************************************/
 
 /**
@@ -80,3 +78,5 @@ function indexOf2(items, searchItem) {
   }
   return foundIdx;
 }
+
+module.exports = { indexOf };

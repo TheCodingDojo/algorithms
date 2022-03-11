@@ -35,8 +35,6 @@ const expected5 = "";
  */
 function join(arr, separator) {}
 
-module.exports = { join };
-
 /*****************************************************************************/
 
 /**
@@ -102,3 +100,5 @@ function join3(arr, separator = ", ") {
   }
   return joined;
 }
+
+module.exports = { join, join2, join3 };

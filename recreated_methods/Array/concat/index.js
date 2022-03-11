@@ -36,8 +36,6 @@ console.log(result1, "should be", expected1);
 const result2 = concat(arrA2, arrB2);
 console.log(result2, "should be", expected2);
 
-module.exports = { concat };
-
 /*****************************************************************************/
 
 /**
@@ -70,3 +68,5 @@ function concat(arr1, arr2) {
 
   return newArr;
 }
+
+module.exports = { concat };

@@ -1,5 +1,6 @@
 /* 
-  Given array and an additional value, insert this value at the beginning of the array by making space for it at the beginning of the array.
+  Given array and an additional value, insert this value at the beginning of
+  the array by making space for it at the beginning of the array.
   return the new length of the array.
   
   Do this without using any built-in array methods.
@@ -39,8 +40,6 @@ const result2 = unshift(arr2, newItem2);
 console.log(result2, "should be", expected2);
 console.log(arr2, "should be", arr2Expected);
 
-module.exports = { unshift };
-
 /*****************************************************************************/
 
 /**
@@ -61,3 +60,5 @@ function unshift(arr, newItem) {
   arr[0] = newItem;
   return arr.length;
 }
+
+module.exports = { unshift };

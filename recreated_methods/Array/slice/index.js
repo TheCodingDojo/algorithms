@@ -71,8 +71,6 @@ console.log(result5, "should be", expected5);
 const result6 = slice(arr6, startIdx6, endIdx6);
 console.log(result6, "should be", expected6);
 
-module.exports = { slice };
-
 /*****************************************************************************/
 
 /**
@@ -107,3 +105,5 @@ function slice(arr, startIdx, endIdx) {
 
   return slicedArr;
 }
+
+module.exports = { slice };

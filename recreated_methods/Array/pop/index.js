@@ -21,6 +21,7 @@ const expectedArr3 = ["hello"]; // the last item was removed
 
 const arr4 = [];
 const expected4 = undefined;
+const expectedArr4 = [];
 
 /**
  * Removes the last item from the given array.
@@ -50,8 +51,6 @@ console.log(arr3, "should be", expectedArr3);
 const result4 = pop(arr4);
 console.log(result4, "should be", expected4);
 
-module.exports = { pop };
-
 /*****************************************************************************/
 
 /**
@@ -73,3 +72,5 @@ function pop(items) {
   items.length = items.length - 1;
   return popped;
 }
+
+module.exports = { pop };

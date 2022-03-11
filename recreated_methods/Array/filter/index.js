@@ -1,5 +1,3 @@
-// This is the week that LINQ is introduced in C#, may be good to throw this algo in.
-
 /* 
   Recreate js .filter method (.Where in C#).
   Add it to the Array prototype so all arrays will have
