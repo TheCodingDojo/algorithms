@@ -43,8 +43,6 @@ const expected2 = [
  */
 function entries(obj) {}
 
-module.exports = { entries };
-
 /*****************************************************************************/
 
 /**
@@ -69,3 +67,5 @@ function entries(obj) {
   }
   return keyValPairs;
 }
+
+module.exports = { entries };
