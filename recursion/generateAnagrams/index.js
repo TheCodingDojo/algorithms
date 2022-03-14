@@ -22,8 +22,6 @@ const expected1 = ["ilm", "iml", "lim", "lmi", "mil", "mli"];
  */
 function generateAnagrams(str) {}
 
-module.exports = { generateAnagrams };
-
 /*****************************************************************************/
 
 /**
@@ -44,3 +42,5 @@ function generateAnagrams(str, solutions = [], partial = "") {
   }
   return solutions;
 }
+
+module.exports = { generateAnagrams };

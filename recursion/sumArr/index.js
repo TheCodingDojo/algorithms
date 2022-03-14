@@ -5,6 +5,12 @@
 const nums1 = [1, 2, 3];
 const expected1 = 6;
 
+const nums2 = [1];
+const expected2 = 1;
+
+const nums3 = [];
+const expected3 = 0;
+
 /**
  * Add params if needed for recursion
  * Recursively sums the given array.
@@ -14,8 +20,6 @@ const expected1 = 6;
  * @returns {number} The sum of the given nums.
  */
 function sumArr(nums) {}
-
-module.exports = { sumArr };
 
 /*****************************************************************************/
 
@@ -27,16 +31,18 @@ module.exports = { sumArr };
  * @param {Array<number>} nums
  * @returns {number} The sum of the given nums.
  */
-function sumArr(nums, i = 0) {
+function sumArr(nums = [], i = 0) {
   if (i === nums.length) {
     return 0;
   }
   return nums[i] + sumArr(nums, i + 1);
 }
 
-function sumArr2(nums, sum = 0, i = 0) {
+function sumArr2(nums = [], sum = 0, i = 0) {
   if (i === nums.length) {
     return sum;
   }
   return sumArr2(nums, sum + nums[i], i + 1);
 }
+
+module.exports = { sumArr, sumArr2 };

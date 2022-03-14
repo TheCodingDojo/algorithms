@@ -27,8 +27,6 @@ const expected3 = 7;
  */
 function sumToOneDigit(num) {}
 
-module.exports = { sumToOneDigit };
-
 /*****************************************************************************/
 
 function sumToOneDigit(n) {
@@ -52,7 +50,6 @@ function sumToOneDigit(n) {
   return sumToOneDigit(sum);
 }
 
-// src = Morley Tatro
 function sumToOneDigit2(num) {
   if (num < 10) {
     return num;
@@ -66,3 +63,5 @@ function sumToOneDigit2(num) {
   }
   return sumToOneDigit2(sum);
 }
+
+module.exports = { sumToOneDigit, sumToOneDigit2 };

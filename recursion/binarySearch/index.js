@@ -35,8 +35,6 @@ const expected3 = true;
  */
 function binarySearch(sortedNums, searchNum) {}
 
-module.exports = { binarySearch };
-
 /*****************************************************************************/
 
 /**
@@ -101,3 +99,5 @@ function exponentialSearch(sortedNums, searchNum) {
     Math.min(i, sortedNums.length)
   );
 }
+
+module.exports = { binarySearch };

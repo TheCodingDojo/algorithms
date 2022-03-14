@@ -25,8 +25,6 @@ const expected3 = 0;
  */
 function recursiveSigma(num) {}
 
-module.exports = { recursiveSigma };
-
 /*****************************************************************************/
 
 /**
@@ -71,7 +69,7 @@ function recursiveSigma(n) {
   5 + 10 = 15
 */
 
-function recursiveSig(n, sum = 0) {
+function recursiveSigma2(n, sum = 0) {
   // get rid of decimals
   const int = parseInt(n);
 
@@ -84,5 +82,7 @@ function recursiveSig(n, sum = 0) {
   if (int < 1) {
     return sum;
   }
-  return recursiveSig(int - 1, sum + int);
+  return recursiveSigma2(int - 1, sum + int);
 }
+
+module.exports = { recursiveSigma, recursiveSigma2 };

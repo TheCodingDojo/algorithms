@@ -21,8 +21,6 @@ const expected2 = "";
  */
 function reverseStr(str) {}
 
-module.exports = { reverseStr };
-
 /*****************************************************************************/
 
 /**
@@ -38,18 +36,25 @@ module.exports = { reverseStr };
  * - Space: O(2n) -> O(n) linear. Every char of the string is copied into a new
  *    string and one function call added to the stack for each char.
  */
-function reverseStr(str) {
+function reverseStr(str = "") {
   if (str === "") {
     return "";
   }
-  const strLessFirst = str.slice(1);
-  return reverseStr(strLessFirst) + str[0];
+  const strWithoutFirstChar = str.slice(1);
+  const firstChar = str[0];
+  return reverseStr(strWithoutFirstChar) + firstChar;
 }
 
-function reverseStr2(str, i = str.length - 1) {
+function reverseStr2(str = "", i = str.length - 1) {
+  if (str === "") {
+    return "";
+  }
+
   if (i === 0) {
     return str[i];
-  } else {
-    return str[i] + reverseStr2(str, i - 1);
   }
+
+  return str[i] + reverseStr2(str, i - 1);
 }
+
+module.exports = { reverseStr, reverseStr2 };

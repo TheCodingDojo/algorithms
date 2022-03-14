@@ -1,19 +1,19 @@
 /* 
-  recursively find the lowest common multiple between two numbers
+  Recursively find the lowest common multiple between two numbers
 
   "A common multiple is a number that is a multiple of two or more integers. 
   The common multiples of 3 and 4 are 0, 12, 24, .... 
-  The least common multiple (LCM) of two numbers is the smallest number (not zero) 
-  that is a multiple of both."
+  The least common multiple (LCM) of two numbers is the smallest
+  number (not zero) that is a multiple of both."
   
   Try writing two columns of multiples as a starting point:
-  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
-  then turn this in to a step by step instruction
+  starting with 15 and 25 and keep writing their multiples until you find the
+  lowest common one then turn this in to a step by step instruction
 
   15 25
   30 50
   45 75
-  60
+  60 
   75
 
   75 is the first common
@@ -46,37 +46,36 @@ const expected5 = 75;
  * @param {number} b
  * @returns {number} The lowest common multiple of the given ints.
  */
-function lowestCommonMult(a, b) {}
-
-module.exports = { lowestCommonMult };
+function lowestCommonMultiple(a, b) {}
 
 /*****************************************************************************/
 
-function lowestCommonMult(a, b, am = a, bm = b) {
+function lowestCommonMultiple(a, b, am = a, bm = b) {
   if (am === bm) {
     return am;
   }
 
   if (am < bm) {
-    return lowestCommonMult(a, b, am + a, bm);
+    return lowestCommonMultiple(a, b, am + a, bm);
   }
 
   if (bm < am) {
-    return lowestCommonMult(a, b, am, bm + b);
+    return lowestCommonMultiple(a, b, am, bm + b);
   }
 }
 
-// src = Morley Tatro
-function lowestCommonMultiple(num1, num2, base1 = num1, base2 = num2) {
+function lowestCommonMultiple2(num1, num2, base1 = num1, base2 = num2) {
   if (num1 === num2) {
     return num1;
   }
 
   if (num1 < num2) {
     const numToAdd = Math.ceil((num2 - num1) / base1) * base1;
-    return lowestCommonMultiple(num1 + numToAdd, num2, base1, base2);
+    return lowestCommonMultiple2(num1 + numToAdd, num2, base1, base2);
   }
 
   const numToAdd = Math.ceil((num1 - num2) / base2) * base2;
-  return lowestCommonMultiple(num1, num2 + numToAdd, base1, base2);
+  return lowestCommonMultiple2(num1, num2 + numToAdd, base1, base2);
 }
+
+module.exports = { lowestCommonMultiple, lowestCommonMultiple2 };

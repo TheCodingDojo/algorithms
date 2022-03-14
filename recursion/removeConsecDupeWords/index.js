@@ -23,8 +23,6 @@ const expected4 = "one two";
  */
 function removeConsecDupeWords(str) {}
 
-module.exports = { removeConsecDupeWords };
-
 /*****************************************************************************/
 
 /**
@@ -58,4 +56,4 @@ function removeConsecDupeWords(str, words = str.split(" "), dedupedStr = "") {
   return removeConsecDupeWords(str, words, dedupedStr);
 }
 
-removeConsecDupeWords(s4);
+module.exports = { removeConsecDupeWords };

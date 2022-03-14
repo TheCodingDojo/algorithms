@@ -14,9 +14,9 @@
     [1, 2, 3, 3, 3] 
   ]
 
-   and startXY of [2,2], and newColor of 1.
-   
-   we examine the cells that are directly (not diagonally) adjacent to startXY. If any have a value of 3 (the original value at startXY), we change its value to 1 ( newColor ) and repeat the process with its directly-adjacent neighbor cells. We repeat this until th e entire zone of similarly-colored cells is changed .
+  and startXY of [2,2], and newColor of 1.
+  
+  we examine the cells that are directly (not diagonally) adjacent to startXY. If any have a value of 3 (the original value at startXY), we change its value to 1 ( newColor ) and repeat the process with its directly-adjacent neighbor cells. We repeat this until th e entire zone of similarly-colored cells is changed .
 
   Output: 
   [
@@ -79,3 +79,7 @@ function floodFill(canvas2D, startXY, newColor, originalColor = null) {
 
   return canvas2D;
 }
+
+module.exports = {
+  floodFill,
+};

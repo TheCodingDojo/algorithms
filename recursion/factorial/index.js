@@ -34,8 +34,6 @@ const expected3 = 1;
  */
 function factorial(n) {}
 
-module.exports = { factorial };
-
 /*****************************************************************************/
 
 /**
@@ -60,3 +58,5 @@ function factorial(n) {
   }
   return n * factorial(n - 1);
 }
+
+module.exports = { factorial };

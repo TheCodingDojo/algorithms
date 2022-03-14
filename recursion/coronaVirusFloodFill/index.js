@@ -49,8 +49,6 @@ const expected = ["Jane4", "Jon4", "Jon1", "Jane1", "Jane2", "Jon2"];
  */
 function coronaVirusFloodFill(grid, point) {}
 
-module.exports = { coronaVirusFloodFill };
-
 /*****************************************************************************/
 
 /**
@@ -114,3 +112,5 @@ function coronaVirusFloodFill(
   }
   return newCases;
 }
+
+module.exports = { coronaVirusFloodFill };

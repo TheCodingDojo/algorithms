@@ -25,8 +25,6 @@ const expected1 = ["1000", "1001", "1100", "1101"];
  */
 function binaryStringExpansion(str) {}
 
-module.exports = { binaryStringExpansion };
-
 /*****************************************************************************/
 
 /**
@@ -52,3 +50,5 @@ function binaryStringExpansion(str, solutions = [], partial = "") {
   }
   return solutions;
 }
+
+module.exports = { binaryStringExpansion };
