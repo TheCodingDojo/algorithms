@@ -32,7 +32,7 @@ const expected6 = 21;
  * @param {number} num The position of the desired number in the fibonacci sequence.
  * @returns {number} The fibonacci number at the given position.
  */
-function fibNaiveMemo(num) {}
+function fibonacci(num) {}
 
 /*****************************************************************************/
 

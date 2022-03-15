@@ -9,7 +9,7 @@
   a, ab, abc, b, bc, c
 */
 
-const { isPalindrome } = require("./isPalindrome");
+const { isPalindrome } = require("../isPalindrome/isPalindrome");
 const str1 = "what up, daddy-o?";
 const expected1 = "dad";
 
