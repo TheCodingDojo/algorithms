@@ -30,8 +30,6 @@ const expected4 = 4;
  */
 function lengthOfLongestSubString(str) {}
 
-module.exports = { lengthOfLongestSubString };
-
 /*****************************************************************************/
 
 /**
@@ -110,7 +108,7 @@ function lengthOfLongestSubString2(str) {
  * Time: O(n) linear.
  * Space: O(n) linear.
  */
-function longestSubstring(str) {
+function lengthOfLongestSubString3(str) {
   const seenChars = {};
   let longest = 0;
   let startIndex = 0;
@@ -131,3 +129,9 @@ function longestSubstring(str) {
   }
   return longest;
 }
+
+module.exports = {
+  lengthOfLongestSubString,
+  lengthOfLongestSubString2,
+  lengthOfLongestSubString3,
+};

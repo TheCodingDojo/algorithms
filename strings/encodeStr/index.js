@@ -35,8 +35,6 @@ const expected4 = "bbcc";
  */
 function encodeStr(str) {}
 
-module.exports = { encodeStr };
-
 /*****************************************************************************/
 
 /**
@@ -115,3 +113,5 @@ function strEncodeHashTable(str) {
   }
   return encoded.length < str.length ? encoded : str;
 }
+
+module.exports = { encodeStr };

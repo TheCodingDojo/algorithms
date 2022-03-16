@@ -35,8 +35,6 @@ const expected4 = true;
  */
 function isAnagram(s1, s2) {}
 
-module.exports = { isAnagram };
-
 /*****************************************************************************/
 
 /**
@@ -115,3 +113,5 @@ function isAnagram2(s1, s2) {
   }
   return true;
 }
+
+module.exports = { isAnagram, isAnagram2 };

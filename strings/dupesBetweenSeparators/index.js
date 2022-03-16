@@ -25,8 +25,6 @@ const expected1 = ["to", "be"];
  */
 function dupesBetweenSeparators(s) {}
 
-module.exports = { dupesBetweenSeparators };
-
 /*****************************************************************************/
 
 /**
@@ -70,3 +68,5 @@ function dupesBetweenSeparators(s, separators = " :;-,\t") {
   word.length && dupes.push(word);
   return dupes;
 }
+
+module.exports = { dupesBetweenSeparators };

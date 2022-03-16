@@ -40,8 +40,6 @@ to the original position.
  */
 function rotateStr(str, amnt) {}
 
-module.exports = { rotateStr: rotateStr2 };
-
 /*****************************************************************************/
 
 /**
@@ -49,17 +47,6 @@ module.exports = { rotateStr: rotateStr2 };
  * - Space: O(n) linear. Every character is stored again in the new str.
  */
 function rotateStr(str, amnt) {
-  const rotateAmnt = amnt % str.length;
-  return (
-    str.slice(str.length - rotateAmnt) + str.slice(0, str.length - rotateAmnt)
-  );
-}
-
-/**
- * - Time: O(n) linear. Every character is visited once.
- * - Space: O(n) linear. Every character is stored again in the new str.
- */
-function rotateStr2(str, amnt) {
   /* 
   We need to use the modulo operator only when the amnt > str.length, to get
   the remainder, but when amnt < str.length, rotateAmnt will be the same as
@@ -83,3 +70,16 @@ function rotateStr2(str, amnt) {
   }
   return charsToRotate + newStr;
 }
+
+/**
+ * - Time: O(n) linear. Every character is visited once.
+ * - Space: O(n) linear. Every character is stored again in the new str.
+ */
+function rotateStr2(str, amnt) {
+  const rotateAmnt = amnt % str.length;
+  return (
+    str.slice(str.length - rotateAmnt) + str.slice(0, str.length - rotateAmnt)
+  );
+}
+
+module.exports = { rotateStr, rotateStr2 };

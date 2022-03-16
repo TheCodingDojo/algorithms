@@ -20,8 +20,6 @@ const expected2 = "helo";
  */
 function stringDedupe(str) {}
 
-module.exports = { stringDedupe };
-
 /*****************************************************************************/
 
 /**
@@ -47,7 +45,7 @@ function stringDedupe(str) {
  * - Time: O(n^2) quadratic due to .include being nested loop.
  * - Space: O(n) linear.
  */
-function strDedupe(str) {
+function stringDedupe2(str) {
   let distinctStr = "";
 
   for (const char of str) {
@@ -57,3 +55,5 @@ function strDedupe(str) {
   }
   return distinctStr;
 }
+
+module.exports = { stringDedupe, stringDedupe2 };

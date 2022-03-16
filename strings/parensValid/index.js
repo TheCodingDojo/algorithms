@@ -30,8 +30,6 @@ const expected4 = false;
  */
 function parensValid(str) {}
 
-module.exports = { parensValid };
-
 /*****************************************************************************/
 
 /**
@@ -73,3 +71,5 @@ function parensValidCount(str) {
   }
   return openLessCloseCount === 0;
 }
+
+module.exports = { parensValid, parensValidCount };

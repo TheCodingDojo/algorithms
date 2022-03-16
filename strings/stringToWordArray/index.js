@@ -1,24 +1,37 @@
 /* 
-  String to Word Array
+Helpful notes:
 
-  Input: string of words (with spaces, tabs and linefeeds)
-  Output: array of words
-  
-  Input: "Life is not a drill!"
-  Output: ["Life", "is" "not", "a", "drill!"]
+'\n' == true
+    => false
+
+if ('\n') { console.log(true) }
+  => true
+
+if ('\n' == false) { console.log(true) }
+  => true
 */
 
-/* 
-  '\n' == true
-      => false
+const str1 = "Life is not a drill!";
+const expected1 = ["Life", "is", "not", "a", "drill!"];
 
-  if ('\n') { console.log(true) }
-    => true
+/**
+ * Converts a string of space separated words into an array of words.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {string} wordsStr Space separated words.
+ * @returns {string} An array of words.
+ */
+function stringToWordArr(wordsStr) {}
 
-  if ('\n' == false) { console.log(true) }
-    => true
-*/
+/*****************************************************************************/
 
+/**
+ * Converts a string of space separated words into an array of words.
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ * @param {string} wordsStr Space separated words.
+ * @returns {string} An array of words.
+ */
 function stringToWordArr(wordsStr) {
   const words = [];
   let currWord = "";
@@ -41,3 +54,5 @@ function stringToWordArr(wordsStr) {
   }
   return words;
 }
+
+module.exports = { stringToWordArr };

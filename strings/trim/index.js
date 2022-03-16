@@ -17,8 +17,6 @@ const expected1 = "hello world";
  */
 function trim(str) {}
 
-module.exports = { trim };
-
 /*****************************************************************************/
 
 /**
@@ -43,3 +41,5 @@ function trim(str) {
 
   return str.slice(startIdx, endIdx + 1);
 }
+
+module.exports = { trim };

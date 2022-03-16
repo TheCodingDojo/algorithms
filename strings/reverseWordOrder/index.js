@@ -8,6 +8,12 @@
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
+const str2 = "hello";
+const expected2 = "hello";
+
+const str3 = "   This  is a   test  ";
+const expected3 = "test a is This";
+
 /**
  * Reverses the order of the words but not the words themselves form the given
  * string of space separated words.
@@ -18,8 +24,6 @@ const expected1 = "test a is This";
  *    themselves are not reversed.
  */
 function reverseWordOrder(wordsStr) {}
-
-module.exports = { reverseWordOrder };
 
 /*****************************************************************************/
 
@@ -42,12 +46,16 @@ function reverseWordOrderSplit(wordsStr) {
 
   // loop backwards
   for (let i = words.length - 1; i >= 0; --i) {
-    reversedWordOrder += words[i];
+    // Skip empty strings resulting from .split encountering multiple spaces.
+    if (words[i] === "") {
+      continue;
+    }
 
-    // don't add an extra space at the end
-    if (i !== 0) {
+    if (reversedWordOrder.length > 0) {
       reversedWordOrder += " ";
     }
+
+    reversedWordOrder += words[i];
   }
   return reversedWordOrder;
 }
@@ -65,26 +73,27 @@ function reverseWordOrder(wordsStr) {
   let currWord = "";
   let reversedWordOrder = "";
 
-  for (let i = wordsStr.length - 1; i >= 0; --i) {
-    if (wordsStr[i] !== " ") {
-      // prepend so the Word itself is not reversed by looping backWords
-      currWord = wordsStr[i] + currWord;
-    }
-    // space found
-    else {
-      // add a space in front of the word, except on first word
-      if (reversedWordOrder.length > 0) {
-        currWord = " " + currWord;
-      }
+  for (let i = 0; i < wordsStr.length; i++) {
+    const char = wordsStr[i];
+    const isSpace = char === " ";
+    const isLastIteration = i === wordsStr.length - 1;
+    const isFirstWord = reversedWordOrder.length === 0;
 
-      reversedWordOrder += currWord;
+    if (isSpace === false) {
+      currWord += char;
+    }
+
+    if (currWord.length > 0 && (isSpace || isLastIteration)) {
+      if (isFirstWord === false) {
+        // Add a space to separate words with no extra space at start / end.
+        reversedWordOrder = " " + reversedWordOrder;
+      }
+      // Prepend the word so the order is reversed.
+      reversedWordOrder = currWord + reversedWordOrder;
       currWord = "";
     }
   }
-
-  // no space at end of string means we didn't add the last word
-  if (currWord.length > 0) {
-    reversedWordOrder += " " + currWord;
-  }
   return reversedWordOrder;
 }
+
+module.exports = { reverseWordOrder, reverseWordOrderSplit };

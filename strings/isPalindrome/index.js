@@ -28,8 +28,6 @@ const expected4 = false;
  */
 function isPalindrome(str) {}
 
-module.exports = { isPalindrome };
-
 /*****************************************************************************/
 
 /**
@@ -39,8 +37,8 @@ module.exports = { isPalindrome };
 function isPalindrome(str) {
   for (let i = 0; i < Math.floor(str.length / 2); i++) {
     // Looping inwards from both sides.
-    let leftChar = str[i];
-    let rightChar = str[str.length - 1 - i];
+    const leftChar = str[i];
+    const rightChar = str[str.length - 1 - i];
 
     if (leftChar !== rightChar) {
       return false; // early exit
@@ -48,3 +46,5 @@ function isPalindrome(str) {
   }
   return true;
 }
+
+module.exports = { isPalindrome };

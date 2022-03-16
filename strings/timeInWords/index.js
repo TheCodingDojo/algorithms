@@ -54,8 +54,6 @@ const expected11 = "twelve o' clock";
  */
 function timeInWords(hour, min) {}
 
-module.exports = { timeInWords };
-
 /*****************************************************************************/
 
 /**
@@ -126,3 +124,5 @@ function timeInWords(h, m) {
     ? `${hourWord} ${minWord}`
     : `${minWord} ${minuteNoun}${temporalPreposition} ${hourWord}`;
 }
+
+module.exports = { timeInWords };

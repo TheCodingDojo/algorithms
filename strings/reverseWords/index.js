@@ -24,8 +24,6 @@ const expected3 = "cba fed ihg";
  */
 function reverseWords(str) {}
 
-module.exports = { reverseWords };
-
 /*****************************************************************************/
 
 /**
@@ -60,34 +58,36 @@ function reverseWordsSplit(wordsStr) {
  * - Space: O(n) linear.
  */
 function reverseWords(wordsStr) {
-  let reversedWord = "";
+  // if all spaces
+  if (wordsStr == false) {
+    return wordsStr;
+  }
+
+  let currWord = "";
   let wordsReversed = "";
 
-  for (const char of wordsStr) {
-    if (char !== " ") {
-      // prepend to reverse it
-      reversedWord = char + reversedWord;
+  for (let i = 0; i < wordsStr.length; i++) {
+    const char = wordsStr[i];
+    const isSpace = char === " ";
+    const isLastIteration = i === wordsStr.length - 1;
+    const isFirstWord = wordsReversed.length === 0;
+
+    if (isSpace === false) {
+      // Prepend char to reverse the word.
+      currWord = char + currWord;
     }
-    // space found
-    else {
-      // add space in front of word if not first word added
-      if (wordsReversed.length > 0) {
-        reversedWord = " " + reversedWord;
+
+    if (currWord.length > 0 && (isSpace || isLastIteration)) {
+      if (isFirstWord === false) {
+        // Add a space to separate words with no extra space at start / end.
+        wordsReversed += " ";
       }
 
-      wordsReversed += reversedWord;
-      reversedWord = ""; // reset
+      wordsReversed += currWord;
+      currWord = "";
     }
   }
-
-  // last word wasn't added if there are no trailing spaces at the end to cause it to be added
-  if (reversedWord.length > 0) {
-    // to avoid adding a space when it's the only word
-    if (wordsReversed.length !== 0) {
-      reversedWord = " " + reversedWord;
-    }
-    wordsReversed += reversedWord;
-  }
-
   return wordsReversed;
 }
+
+module.exports = { reverseWords, reverseWordsSplit };

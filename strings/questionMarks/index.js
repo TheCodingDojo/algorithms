@@ -23,27 +23,26 @@ const str3 = "?3?d?dad?7??????3";
 const expected3 = true;
 
 const str4 = "7??????3";
+// Explanation: too many question marks.
 const expected4 = false;
-// Explanation: too many question marks
 
 /**
  * Determines if there are exactly 3 "?" chars between
  * EVERY two ints that add up to 10.
- * @param   {string} str
- * @return  {boolean}
  * - Time: O(?).
  * - Space: O(?).
+ * @param {string} str
+ * @return {boolean}
  */
 function questionMarks(str) {}
-
-module.exports = { questionMarks };
 
 /*****************************************************************************/
 
 /**
- * - Time:    O(n) linear
- *          n = @str length
- * - Space:   O(1)
+ * - Time: O(n) linear. n = str length
+ * - Space: O(1) constant.
+ * @param {string} str
+ * @return {boolean}
  */
 function questionMarks(str) {
   let prevInt = 0;
@@ -73,3 +72,5 @@ function questionMarks(str) {
   }
   return sumTenExists ? true : false;
 }
+
+module.exports = { questionMarks };

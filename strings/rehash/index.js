@@ -1,5 +1,5 @@
 /* 
-Given to alumni by Riot games in 2021.
+Given by Riot games.
 */
 
 const str1 = "b70a164c32a20c10";
@@ -14,8 +14,6 @@ const expected1 = "a184b70c42";
  * @returns {string} The correctly rehashed string alphabetized.
  */
 function rehash(s) {}
-
-module.exports = { rehash };
 
 /*****************************************************************************/
 
@@ -121,3 +119,5 @@ function rehash2(s) {
 
   return newHash;
 }
+
+module.exports = { rehash, rehash2 };

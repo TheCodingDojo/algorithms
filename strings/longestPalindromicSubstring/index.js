@@ -1,7 +1,9 @@
 /* 
   Longest Palindrome
 
-  For this challenge, we will look not only at the entire string provided, but also at the substrings within it. Return the longest palindromic substring. 
+  For this challenge, we will look not only at the entire string provided,
+  but also at the substrings within it.
+  Return the longest palindromic substring. 
 
   Strings longer or shorter than complete words are OK.
 
@@ -9,7 +11,8 @@
   a, ab, abc, b, bc, c
 */
 
-const { isPalindrome } = require("../isPalindrome/isPalindrome");
+const { isPalindrome } = require("../isPalindrome/index.js");
+
 const str1 = "what up, daddy-o?";
 const expected1 = "dad";
 
@@ -33,8 +36,6 @@ const expected5 = "567765";
  * @returns {string} The longest palindromic substring from the given string.
  */
 function longestPalindromicSubstring(str) {}
-
-module.exports = { longestPalindromicSubstring: longestPal };
 
 /*****************************************************************************/
 
@@ -65,7 +66,7 @@ function longestPalindromicSubstring(str) {
  * - Time: O(n^2) quadratic.
  * - Space: O(n) linear.
  */
-function longestPal(str) {
+function longestPalindromicSubstring2(str) {
   let longestPal = "";
   const midIdx = Math.floor(str.length / 2);
 
@@ -81,8 +82,14 @@ function longestPal(str) {
 
     const oddPalindrome = concatPalindromeFromCenter(str, i, i);
     const evenPalindrome = concatPalindromeFromCenter(str, i, i + 1);
-    oddPalindrome.length > longestPal.length && (longestPal = oddPalindrome);
-    evenPalindrome.length > longestPal.length && (longestPal = evenPalindrome);
+
+    if (oddPalindrome.length > longestPal.length) {
+      longestPal = oddPalindrome;
+    }
+
+    if (evenPalindrome.length > longestPal.length) {
+      longestPal = evenPalindrome;
+    }
   }
   return longestPal;
 }
@@ -97,8 +104,8 @@ function longestPal(str) {
  * @returns {string} The longest palindrome from the starting given indexes.
  */
 function concatPalindromeFromCenter(str, left, right) {
-  let leftPalSub = "",
-    rightPalSub = "";
+  let leftPalSub = "";
+  let rightPalSub = "";
 
   // Used for checking odd palindrome.
   if (left === right) {
@@ -115,3 +122,5 @@ function concatPalindromeFromCenter(str, left, right) {
   }
   return leftPalSub + rightPalSub;
 }
+
+module.exports = { longestPalindromicSubstring, longestPalindromicSubstring2 };

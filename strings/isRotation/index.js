@@ -5,13 +5,18 @@
 
 const strA1 = "ABCD";
 const strB1 = "CDAB";
-const expected1 = true;
 // Explanation: if you start from A in the 2nd string, the letters are in the same order, just rotated
+const expected1 = true;
 
 const strA2 = "ABCD";
 const strB2 = "CDBA";
-const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
+const expected2 = false;
+
+const strA3 = "ABCD";
+const strB3 = "BCDAB";
+// Explanation: same letters in correct order but there is an extra letter.
+const expected3 = false;
 
 /**
  * Determines whether the second string is a rotated version of the first.
@@ -22,8 +27,6 @@ const expected2 = false;
  * @returns {boolean} Whether the second string is a rotated version of the 1st.
  */
 function isRotation(s1, s2) {}
-
-module.exports = { isRotation };
 
 /*****************************************************************************/
 
@@ -49,3 +52,5 @@ function isRotation(s1, s2) {
   }
   return (s1 + s1).includes(s2);
 }
+
+module.exports = { isRotation };

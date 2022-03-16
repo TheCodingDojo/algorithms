@@ -19,8 +19,6 @@ const expected2 = "aaabbccccccccccccdddddddddd";
  */
 function decodeStr(str) {}
 
-module.exports = { decodeStr };
-
 /*****************************************************************************/
 
 /**
@@ -84,3 +82,5 @@ function decodeStr2(str) {
   // Since we end with a number concat above doesn't happen for the last one.
   return decoded + letter.repeat(numStr);
 }
+
+module.exports = { decodeStr, decodeStr2 };

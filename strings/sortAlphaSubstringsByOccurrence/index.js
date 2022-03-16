@@ -1,16 +1,16 @@
-/**
- * Feb 2021 Interview
- *
- * Given a string find all alphabetic character substrings within the string.
- *
- * Sort them by occurrence and then alphabetically and ignore case.
- *
- * Your output should be a string with the occurrence count followed by a
- * comma followed by the substring with each line separated by a new line.
- *
- * Non alphabetic characters serve as delimiters and thus substrings are
- * only obtainable within alphabetic character sequences.
- */
+/*
+From an interview.
+
+Given a string find all alphabetic character substrings within the string.
+
+Sort them by occurrence and then alphabetically and ignore case.
+
+Your output should be a string with the occurrence count followed by a
+comma followed by the substring with each line separated by a new line.
+
+Non alphabetic characters serve as delimiters and thus substrings are
+only obtainable within alphabetic character sequences.
+*/
 
 /**
  * Finds all the substrings between non alpha char delimiters and sorts them
@@ -21,6 +21,8 @@
  * @returns {string} In the format of occurrence,substring on new lines.
  */
 function sortAlphaSubstringsByOccurrence(s) {}
+
+/*****************************************************************************/
 
 /**
  * Finds all the substrings between non alpha char delimiters and sorts them
@@ -93,4 +95,6 @@ function sortAlphaSubstringsByOccurrence(s) {
   return ret;
 }
 
-console.log(sortAlphaSubstringsByOccurrence("abcd1bc2def3"));
+module.exports = {
+  sortAlphaSubstringsByOccurrence,
+};

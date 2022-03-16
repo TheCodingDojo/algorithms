@@ -1,5 +1,5 @@
 /* 
-  Alumni Interview 2020
+  Given in an interview.
 
   Given a string of words
   return a string with the duplicate words removed
@@ -20,6 +20,7 @@ const s4 = "hello flat hello flat world";
 const expected4 = "hello flat world";
 
 function removeDupeWords(str) {}
+
 /*****************************************************************************/
 
 function removeDupeWords(str) {
