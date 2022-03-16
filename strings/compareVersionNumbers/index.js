@@ -48,8 +48,6 @@ const expected6 = 1;
  */
 function compareVersionNumbers(v1, v2) {}
 
-module.exports = { compareVersionNumbers };
-
 /*****************************************************************************/
 
 /**
@@ -87,7 +85,7 @@ function compareVersionNumbers(v1, v2) {
  * - Space: O(n) linear, as v1 or v2 grow is size v1Revision or v2Revision
  *    could grow in size if there is a long revision number.
  */
-function compareVers(v1, v2) {
+function compareVersionNumbers2(v1, v2) {
   let v1Revision = "";
   let v2Revision = "";
   let idx1 = 0;
@@ -117,3 +115,5 @@ function compareVers(v1, v2) {
   }
   return 0;
 }
+
+module.exports = { compareVersionNumbers, compareVersionNumbers2 };

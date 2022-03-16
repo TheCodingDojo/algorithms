@@ -23,8 +23,6 @@ const expected3 = false;
  */
 function caseInsensitiveStringCompare(strA, strB) {}
 
-module.exports = { caseInsensitiveStringCompare };
-
 /*****************************************************************************/
 
 /**
@@ -77,13 +75,20 @@ function caseInsensitiveStringCompare2(strA, strB) {
 
   // check both sides for early exit
   for (let i = 0; i <= strA.length / 2; i++) {
-    if (
-      strA[i].toUpperCase() !== strB[i].toUpperCase() ||
-      strA[strA.length - 1 - i].toUpperCase() !==
-        strB[strB.length - 1 - i].toUpperCase()
-    ) {
+    const leftCharA = strA[i].toUpperCase();
+    const leftCharB = strB[i].toUpperCase();
+    const rightCharA = strA[strA.length - 1 - i].toUpperCase();
+    const rightCharB = strB[strB.length - 1 - i].toUpperCase();
+
+    // Check outside in at the same time to increase chance of early exit.
+    if (leftCharA !== leftCharB || rightCharA !== rightCharB) {
       return false;
     }
   }
   return true;
 }
+
+module.exports = {
+  caseInsensitiveStringCompare,
+  caseInsensitiveStringCompare2,
+};
