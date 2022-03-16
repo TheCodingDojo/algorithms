@@ -51,8 +51,6 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  */
 function insertionSort(nums) {}
 
-module.exports = { insertionSort };
-
 /*****************************************************************************/
 
 /**
@@ -96,3 +94,5 @@ function insertionSortSwap(nums) {
   }
   return nums;
 }
+
+module.exports = { insertionSort, insertionSortSwap };

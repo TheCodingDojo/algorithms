@@ -69,8 +69,6 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  */
 function mergeSort(nums) {}
 
-module.exports = { merge, mergeSort };
-
 /*****************************************************************************/
 
 /**
@@ -137,3 +135,5 @@ function mergeSort(nums) {
   const sortedRight = mergeSort(right);
   return merge(sortedLeft, sortedRight);
 }
+
+module.exports = { merge, mergeSort };

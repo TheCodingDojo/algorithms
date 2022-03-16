@@ -28,7 +28,7 @@
         (right of the returned partition idx), recursively.
 */
 
-const { partition } = require("./partition");
+const { partition } = require("../partition");
 
 const nums1 = [11, 8, 14, 3, 6, 2, 7];
 const expected1 = [2, 3, 6, 7, 8, 11, 14];
@@ -58,8 +58,6 @@ const expected4 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
  */
 function quickSort(nums = [], left = 0, right = nums.length - 1) {}
 
-module.exports = { quickSort };
-
 /*****************************************************************************/
 
 /**
@@ -84,3 +82,5 @@ function quickSort(nums = [], left = 0, right = nums.length - 1) {
   }
   return nums;
 }
+
+module.exports = { quickSort };

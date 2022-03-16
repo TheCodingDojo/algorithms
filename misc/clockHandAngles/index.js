@@ -1,5 +1,3 @@
-// src = Instructor Anne Jurack
-
 // For input of 3600 secs (equivalent to 1:00:00), print "Hour hand: 30 degs. Minute hand: 0 degs. Second hand: 0 degs."
 clockHandAngles(3600);
 

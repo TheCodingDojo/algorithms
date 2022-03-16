@@ -1,7 +1,3 @@
-// http://algorithms.dojo.news/static/Algorithms/index.html#LinkTarget_2129
-
-// src=https://reactgo.com/radix-sort-algorithm-javascript/
-
 // setup
 function getPosition(num, place) {
   return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
@@ -41,4 +37,6 @@ function radixSort(arr) {
   return arr;
 }
 
-console.log(radixSort([4, 57, 7, 3, 933])); // [3,4,7,57,933]
+module.exports = {
+  radixSort,
+};
