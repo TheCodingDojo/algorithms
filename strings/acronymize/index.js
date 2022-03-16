@@ -7,11 +7,12 @@
   Do it with .split first if you need to, then try to do it without
 */
 
-const str1 = "abstraction polymorphism inheritance encapsulation";
-const expected1 = "APIE";
+const str1 = "object oriented programming";
+const expected1 = "OOP";
 
-const str2 = "object oriented programming";
-const expected2 = "OOP";
+// The 4 pillars of OOP
+const str2 = "abstraction polymorphism inheritance encapsulation";
+const expected2 = "APIE";
 
 const str3 = "software development life cycle";
 const expected3 = "SDLC";
@@ -25,7 +26,7 @@ const expected4 = "GIT";
  * - Time: O(?).
  * - Space: O(?).
  * @param {string} str A string to be turned into an acronym.
- * @returns {string} The given str converted into an acronym.
+ * @returns {string} The acronym.
  */
 function acronymize(str) {}
 
@@ -84,9 +85,10 @@ function acronymize(wordsStr) {
  */
 const functionalAcronymize = (s) =>
   s
-    // Regex to split on non-alphabetical chars to remove special chars.
+    // Regex can be used if more control over split is needed.
+    // This example removes any non alphabetical chars with split.
     .split(/[^A-Za-z]/)
-    // Remove empty strings resulting from spaces and special chars being split.
+    // Create a new array without empty strings from the split array.
     .filter((word) => word.length > 0)
     // map the filtered words into a new arr of upper-cased first letters.
     .map((word) => word[0].toUpperCase())
@@ -94,5 +96,7 @@ const functionalAcronymize = (s) =>
     .join("");
 
 module.exports = {
-  /* acronymizeWithSplit, acronymize, */ functionalAcronymize,
+  acronymizeWithSplit,
+  acronymize,
+  functionalAcronymize,
 };

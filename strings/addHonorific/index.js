@@ -33,11 +33,6 @@ function addHonorific(honorific, fullNames) {}
 
 function addHonorificFunctional(honorific, fullNames) {}
 
-module.exports = {
-  addHonorific,
-  // addHonorific: addHonorificFunctional
-};
-
 /*****************************************************************************/
 
 /**
@@ -113,3 +108,10 @@ function addHonorific(honorific, fullNames) {
   }
   return namesWithHonorific;
 }
+
+module.exports = {
+  addHonorific,
+  addHonorificSplit,
+  addHonorificFunctional,
+  addHonorificFunctionalReduce,
+};

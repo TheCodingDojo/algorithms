@@ -39,8 +39,6 @@ const expected5 = false;
  */
 function canBuildS1FromS2(s1, s2) {}
 
-module.exports = { canBuildS1FromS2 };
-
 /*****************************************************************************/
 
 /**
@@ -83,3 +81,5 @@ function canBuildS1FromS2(neededChars, availableChars) {
   }
   return true;
 }
+
+module.exports = { canBuildS1FromS2 };

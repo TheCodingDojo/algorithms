@@ -23,8 +23,6 @@ const expected3 = false;
  */
 function bracesValid(str) {}
 
-module.exports = { bracesValid };
-
 /*****************************************************************************/
 
 /**
@@ -81,3 +79,5 @@ function bracesValid2(str) {
   }
   return stack.length === 0;
 }
+
+module.exports = { bracesValid, bracesValid2 };

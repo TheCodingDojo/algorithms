@@ -40,8 +40,6 @@ const expected4 = false;
  */
 function backspaceStringCompare(S, T) {}
 
-module.exports = { backspaceStringCompare };
-
 /*****************************************************************************/
 
 /**
@@ -110,3 +108,5 @@ function processBackspaces(s) {
   }
   return newS;
 }
+
+module.exports = { backspaceStringCompare, backspaceCompare2 };

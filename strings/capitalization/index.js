@@ -33,35 +33,6 @@ function capitalize(string) {}
 const strings1 = ["hello", "world"];
 const expectedStrings1 = ["Hello", "World"];
 
-const strings2 = [
-  "",
-  "Harry",
-  "Mack",
-  "is",
-  "the",
-  "best",
-  "freestyle",
-  "rapper",
-  "",
-  "in",
-  "the",
-  "world",
-];
-const expectedStrings2 = [
-  "",
-  "Harry",
-  "Mack",
-  "Is",
-  "The",
-  "Best",
-  "Freestyle",
-  "Rapper",
-  "",
-  "In",
-  "The",
-  "World",
-];
-
 /**
  * Capitalizes the first letter of each string in the given array.
  * - Time: O(?).
@@ -112,3 +83,8 @@ function capitalization2(strings) {
   }
   return strings;
 }
+
+module.exports = {
+  capitalization,
+  capitalization2,
+};
