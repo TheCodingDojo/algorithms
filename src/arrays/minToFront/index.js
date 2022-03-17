@@ -78,7 +78,7 @@ function minToFront(nums) {
 }
 
 // If we re-use other functions, this function can be easier to build and read
-function minToFrontFunctional(nums) {
+function functionalMinToFront(nums) {
   const minIdx = findMinIdx(nums);
 
   if (minIdx > -1) {
@@ -144,9 +144,10 @@ function moveMinFrontBuiltIn(nums) {
   // we can't do both at the same time.
   const idxOfMin = nums.indexOf(minVal);
 
-  // Remove it which has to loop to reassign the items to shift them.
+  // Remove it which has to loop to shift them.
   nums.splice(idxOfMin, 1);
-  return minVal;
+  nums.unshift(minVal);
+  return nums;
 }
 
-module.exports = { minToFront, moveMinFrontBuiltIn };
+module.exports = { minToFront, moveMinFrontBuiltIn, functionalMinToFront };
