@@ -1,6 +1,6 @@
 # [Data Structures](../src/data_structures) Algo Schedule
 
-- Recursion review [Recursion Intro](../recursion/intro-notes/Recursion.md)
+- [Recursion intro review](../src/recursion/intro-notes/intro.md)
 
 ---
 
@@ -117,7 +117,7 @@ const emptyList = new SinglyLinkedList();
 // console.log(firstThreeList.toArr());
 ```
 
-### W1 Mon
+### Mon
 
 - [Singly Linked List Intro](../src/data_structures/SinglyLinkedList/intro.md)
 
@@ -148,7 +148,7 @@ insertAtBack(data) {}
 - insertAtBackMany
   - adds all the items from a given array to the back of this list.
 
-### W1 Tue
+### Tue
 
 ```js
 /**
@@ -186,7 +186,7 @@ average() {}
 - EXTRA: average
   - Calculates the average of this list based on the integer data of each node.
 
-### W1 Wed
+### Wed
 
 ```js
 /**
@@ -239,7 +239,7 @@ recursiveMax(runner = this.head, maxNode = this.head) {}
 - EXTRA: recursiveMax
   - Recursively finds the maximum integer data of the nodes in this list.
 
-### W1 Thur
+### Thur
 
 ```js
 /**
@@ -281,7 +281,7 @@ prepend(newVal, targetVal) {}
 - EXTRA: prepend
   - Inserts a new node before a node that has the given value as its data.
 
-### W1 Fri
+### Fri
 
 ```js
 /**
@@ -327,254 +327,10 @@ splitOnVal(val) {}
 
 ---
 
-## Week 2 - Stacks and Queues
-
-### W2 Mon [Stacks](../src/data_structures/Stack/index.js)
-
-- [Intro](../src/data_structures/Queue/intro.md)
-
-```js
-/**
- * Class to represent a stack using an array to store the stacked items.
- * Follows a LIFO (Last In First Out) order where new items are stacked on
- * top (back of array) and removed items are removed from the top / back.
- */
-class Stack {
-  /**
-   * The constructor is executed when instantiating a new Stack() to construct
-   * a new instance.
-   * @returns {Stack} This new Stack instance is returned without having to
-   *    explicitly write 'return' (implicit return).
-   */
-  constructor() {
-    this.items = [];
-  }
-
-  /**
-   * Adds a new given item to the top / back of this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @param {any} item The new item to be added to the top / back.
-   * @returns {number} The new length of this stack.
-   */
-  push(item) {}
-
-  /**
-   * Removes the top / last item from this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {any} The removed item or undefined if this stack was empty.
-   */
-  pop() {}
-
-  /**
-   * Retrieves the top / last item from this stack without removing it.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {any} The top / last item of this stack.
-   */
-  peek() {}
-
-  /**
-   * Returns whether or not this stack is empty.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {boolean}
-   */
-  isEmpty() {}
-
-  /**
-   * Returns the size of this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {number} The length.
-   */
-  size() {}
-}
-
-class StackNode {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
-class LinkedListStack {
-  constructor() {
-    this.head = null;
-  }
-}
-```
-
-- A Stack is a LIFO (Last in First Out) data structure
-- Design a class to represent a stack using an array to store the items
-- Create these methods for each of the Stack classes with O(1) time complexity:
-  - push (adds new item and returns new size)
-  - pop (returns removed item)
-  - isEmpty
-  - size
-  - peek (return top item without removing)
-- Recreate the stack class using a singly linked list to store the items instead of an array
-
-### W2 Tue
-
-- [Queue.js](../src/data_structures/Queue/index.js)
-
-```js
-/**
- * Class to represent a queue using an array to store the queued items.
- * Follows a FIFO (First In First Out) order where new items are added to the
- * back and items are removed from the front.
- */
-class Queue {
-  /**
-   * The constructor is executed when instantiating a new Queue() to construct
-   * a new instance.
-   * @returns {Queue} This new Queue instance is returned without having to
-   *    explicitly write 'return' (implicit return).
-   */
-  constructor() {
-    this.items = [];
-  }
-
-  // methods go here
-  hello() {
-    console.log("world");
-  }
-}
-```
-
-- A Queue is a FIFO (First in First Out) data structure
-- Design a class to represent a queue using an array to store the items.
-- Recreate the queue class using a singly linked list to store the items.
-- Create these methods for both classes:
-  - enqueue (add item, return new size)
-  - dequeue (remove and return item)
-  - isEmpty
-  - size
-  - front (return first item without removing)
-- Time complexities should be as follows:
-  - Array Queue: enqueue: O(1), dequeue: O(n), size: O(1), front: O(1)
-  - Linked List Queue: enqueue: O(1), dequeue: O(1), size: O(1), front: O(1)
-
-### W2 Wed
-
-- [Queue.js](../src/data_structures/Queue/index.js)
-
-- compareQueues
-  - Write a method on the Queue class that, given another queue, will return whether they are equal (same items in same order).
-  - Use ONLY the provided queue methods, do not manually index the queue items via bracket notation, use no extra array or objects.
-  - Restore the queues to their original state
-- queueIsPalindrome
-  - Write a method on the Queue class that returns whether or not the queue is a palindrome
-  - Use only 1 stack as additional storage (no additional arrays / objects).
-  - Do not manually index the queue via bracket notation, use the provided queue methods and stack methods, restore the queue to original order when done.
-- Extra: MinStack
-  - Design a stack that supports push, pop, top, and min methods where the min method retrieves the minimum int in the stack
-  - Bonus: retrieve min element in constant time (no looping).
-
-```js
-  /**
-   * Compares this queue to another given queue to see if they are equal.
-   * Avoid indexing the queue items directly via bracket notation, use the
-   * queue methods instead for practice.
-   * Use no extra array or objects.
-   * The queues should be returned to their original order when done.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @param {Queue} q2 The queue to be compared against this queue.
-   * @returns {boolean} Whether all the items of the two queues are equal and
-   *    in the same order.
-   */
-  compareQueues(q2) {}
-
-  /**
-   * Determines if the queue is a palindrome (same items forward and backwards).
-   * Avoid indexing queue items directly via bracket notation, instead use the
-   * queue methods for practice.
-   * Use only 1 stack as additional storage, no other arrays or objects.
-   * The queue should be returned to its original order when done.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @returns {boolean}
-   */
-  isPalindrome() {}
-```
-
-### W2 Thur
-
-- [sumOfHalvesEqual](../src/data_structures/Queue/index.js)
-  - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
-  - DO NOT manually index the queue items via bracket notation, only use the provided queue methods, use no additional arrays or objects for storage.
-  - Restore the queue to it's original state before returning.
-- [TwoStackQueue](../src/data_structures/Queue/index.js)
-
-```js
-  /**
-   * Determines whether the sum of the left half of the queue items is equal to
-   * the sum of the right half. Avoid indexing the queue items directly via
-   * bracket notation, use the queue methods instead for practice.
-   * Use no extra array or objects.
-   * The queue should be returned to it's original order when done.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @returns {boolean} Whether the sum of the left and right halves is equal.
-   */
-  isSumOfHalvesEqual() {}
-```
-
-```js
-// Import our stack data structure to use in this file.
-const Stack = require("./Stacks/Stack");
-
-/**
- * Class to represent a Queue but is implemented using two stacks to store the
- * queued items without using any other objects or arrays to store the items.
- * Retains the FIFO (First in First Out) ordering when adding / removing items.
- */
-class TwoStackQueue {
-  constructor() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
-  }
-
-  /**
-   * Adds a new item to the back of the queue.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @param {any} item To be added.
-   * @returns {number} The new number of items in the queue.
-   */
-  enqueue(item) {}
-
-  /**
-   * Removes the next item in the line / queue.
-   * - Time: O(?).
-   * - Space: O(?).
-   * @returns {any} The removed item.
-   */
-  dequeue() {}
-}
-```
-
-### W2 Fri
-
-- [PriorityQueue](../src/data_structures/PriorityQueue/index.js)
-
-  - Create enqueue and dequeue methods. _You can loop and index the underlying array._
-  - Design a new PriorityQueue class where the queue maintains an ascending order when items are added based on a queue item's provided priority integer value. A priority value of 1 is most important which means it should be at the front of the queue, the first to be dequeued.
-  - A priority queue item could be any data type.
-
-- Rebuild the PriorityQueue using a linked list.
-
----
-
-## [Week 3 - Binary Search Tree](../src/data_structures/BinarySearchTree/index.js)
+## [Week 2 - Binary Search Tree](../src/data_structures/BinarySearchTree/index.js)
 
 - `insert` is not done first because of it being harder than `isEmpty`, `min`, `max`.
 - You can remove the given parameters for recursion if you want students to practice coming up with them on their own after reinforcing the reason more params are often needed for recursion.
-
-### Documented BST Class Setup
 
 ```js
 /**
@@ -680,9 +436,9 @@ twoLevelTree.root.right = new BSTNode(15);
 //   .insert(90);
 ```
 
-### W3 Mon
+### Mon
 
-- [Intro](../src/data_structures/BinarySearchTree/intro.md)
+- [intro](../src/data_structures/BinarySearchTree/intro.md)
 
 ```js
 /**
@@ -738,7 +494,7 @@ maxRecursive(current = this.root) {}
 2. min & minRecursive (find min)
 3. max & maxRecursive (find max)
 
-### W3 Tue
+### Tue
 
 ```js
 /**
@@ -773,7 +529,7 @@ range(startNode = this.root) {}
 1. contains & containsRecursive (does val exist)
 2. range (range is max minus min)
 
-### W3 Wed
+### Wed
 
 ```js
 /**
@@ -802,7 +558,7 @@ insertRecursive(newVal, curr = this.root) {}
 1. insert & insertRecursive
    - insert the new value in the appropriate place in the tree
 
-### W3 Thur
+### Thur
 
 ```js
 /**
@@ -847,7 +603,7 @@ toArrPostorder(node = this.root, vals = []) {}
 3. toArrPostorder
    - Postorder (Left, Right, Parent): on the provided fullTree var, it should be in this order: [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
 
-### W3 Fri
+### Fri
 
 ```js
 /**
@@ -898,9 +654,99 @@ isFull(node = this.root) {}
 
 ---
 
-## Week 4 - Min Heap & Linked Lists Part 2
+## Week 3 - Min Heap & Linked Lists Part 2
 
-### W4 Mon - [SinglyLinkedList](../src/data_structures/SinglyLinkedList/index.js)
+### Mon - [Min Heap](../src/data_structures/MinHeap/index.js)
+
+- [intro](../src/data_structures/MinHeap/intro.md)
+  - contains pseudo-code
+
+```js
+/**
+ * Class to represent a MinHeap which is a Priority Queue optimized for fast
+ * retrieval of the minimum value. It is implemented using an array but it is
+ * best visualized as a tree structure where each 'node' has left and right
+ * children except the 'node' may only have a left child.
+ * - parent is located at: Math.floor(i / 2);
+ * - left child is located at: i * 2
+ * - right child is located at: i * 2 + 1
+ */
+class MinHeap {
+  constructor() {
+    /**
+     * 0th index not used, so null is a placeholder. Not using 0th index makes
+     * calculating the left and right children's index cleaner.
+     * This also effectively makes our array start at index 1.
+     */
+    this.heap = [null];
+  }
+
+  /**
+   * Retrieves the top (minimum number) in the heap without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {?number} Null if empty.
+   */
+  top() {}
+
+  /**
+   * Inserts a new number into the heap and maintains the heaps order.
+   * 1. Push new num to back then.
+   * 2. Iteratively swap the new num with it's parent while it is smaller than
+   *    it's parent.
+   * - Time: O(log n) logarithmic due to shiftUp / iterative swapping.
+   * - Space: O(1) constant.
+   * @param {number} num The num to add.
+   */
+  insert(num) {}
+
+  /**
+   * Logs the tree horizontally with the root on the left and the index in
+   * parenthesis using reverse inorder traversal.
+   */
+  printHorizontalTree(parentIdx = 1, spaceCnt = 0, spaceIncr = 10) {
+    if (parentIdx > this.heap.length - 1) {
+      return;
+    }
+
+    spaceCnt += spaceIncr;
+    this.printHorizontalTree(parentIdx * 2 + 1, spaceCnt);
+
+    console.log(
+      " ".repeat(spaceCnt < spaceIncr ? 0 : spaceCnt - spaceIncr) +
+        `${this.heap[parentIdx]} (${parentIdx})`
+    );
+
+    this.printHorizontalTree(parentIdx * 2, spaceCnt);
+  }
+}
+```
+
+- insert method
+  - see insert section in Heaps.md for details
+- top method
+  - return the first node
+
+### Tue - Min Heap
+
+```js
+  /**
+   * Extracts the min num from the heap and then re-orders the heap to
+   * maintain order so the next min is ready to be extracted.
+   * 1. Save the first node to a temp var.
+   * 2. Pop last node off and set idx1 equal to the popped value.
+   * 3. Iteratively swap the old last node that is now at idx1 with it's
+   *    smallest child IF the smallest child is smaller than it.
+   * - Time: O(log n) logarithmic due to shiftDown.
+   * - Space: O(1) constant.
+   * @returns {?number} The min number or null if empty.
+   */
+  extract() {}
+```
+
+- Implement extract, see pseudo-code in [heap intro](../src/data_structures/MinHeap/intro.md)
+
+### Wed - [SinglyLinkedList](../src/data_structures/SinglyLinkedList/index.js)
 
 ```js
 /**
@@ -936,7 +782,7 @@ removeNegatives() {}
   - Return whether or not the linked list connects back to itself. If it connects to itself, what does that mean will happen when you loop through it?
 - EXTRA: removeNegatives (in place, no new list)
 
-### W4 Tue - [DoublyLinkedList](../src/data_structures/DoublyLinkedList/index.js)
+### Thur - [DoublyLinkedList](../src/data_structures/DoublyLinkedList/index.js)
 
 ```js
 /* 
@@ -955,7 +801,7 @@ class DoublyLinkedList {
    * instance that inherits these methods and properties.
    */
   constructor() {
-    // TODO: implement the instructor.
+    // TODO: implement the constructor.
   }
 
   /**
@@ -1051,7 +897,7 @@ const emptyList = new DoublyLinkedList();
   - Given some new data, add it to the back of the DList
 - removeMiddleNode
 
-### W4 Wed - [DoublyLinkedList](../src/data_structures/DoublyLinkedList/index.js)
+### Fri - [DoublyLinkedList](../src/data_structures/DoublyLinkedList/index.js)
 
 ```js
 /**
@@ -1082,94 +928,249 @@ insertBefore(targetVal, newVal) {}
 - insertBefore
   - Add new val before a target val
 
-### W4 Thur - [Heap.js](../src/data_structures/MinHeap/index.js)
+---
 
-- [Intro](../src/data_structures/intro.md)
+## Week 4 - Stacks and Queues
+
+### Mon [Stacks](../src/data_structures/Stack/index.js)
+
+- [intro](../src/data_structures/Queue/intro.md)
 
 ```js
 /**
- * Class to represent a MinHeap which is a Priority Queue optimized for fast
- * retrieval of the minimum value. It is implemented using an array but it is
- * best visualized as a tree structure where each 'node' has left and right
- * children except the 'node' may only have a left child.
- * - parent is located at: Math.floor(i / 2);
- * - left child is located at: i * 2
- * - right child is located at: i * 2 + 1
+ * Class to represent a stack using an array to store the stacked items.
+ * Follows a LIFO (Last In First Out) order where new items are stacked on
+ * top (back of array) and removed items are removed from the top / back.
  */
-class MinHeap {
+class Stack {
+  /**
+   * The constructor is executed when instantiating a new Stack() to construct
+   * a new instance.
+   * @returns {Stack} This new Stack instance is returned without having to
+   *    explicitly write 'return' (implicit return).
+   */
   constructor() {
-    /**
-     * 0th index not used, so null is a placeholder. Not using 0th index makes
-     * calculating the left and right children's index cleaner.
-     * This also effectively makes our array start at index 1.
-     */
-    this.heap = [null];
+    this.items = [];
   }
 
   /**
-   * Retrieves the top (minimum number) in the heap without removing it.
+   * Adds a new given item to the top / back of this stack.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @returns {?number} Null if empty.
+   * @param {any} item The new item to be added to the top / back.
+   * @returns {number} The new length of this stack.
    */
-  top() {}
+  push(item) {}
 
   /**
-   * Inserts a new number into the heap and maintains the heaps order.
-   * 1. Push new num to back then.
-   * 2. Iteratively swap the new num with it's parent while it is smaller than
-   *    it's parent.
-   * - Time: O(log n) logarithmic due to shiftUp / iterative swapping.
+   * Removes the top / last item from this stack.
+   * - Time: O(1) constant.
    * - Space: O(1) constant.
-   * @param {number} num The num to add.
+   * @returns {any} The removed item or undefined if this stack was empty.
    */
-  insert(num) {}
+  pop() {}
 
   /**
-   * Logs the tree horizontally with the root on the left and the index in
-   * parenthesis using reverse inorder traversal.
+   * Retrieves the top / last item from this stack without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The top / last item of this stack.
    */
-  printHorizontalTree(parentIdx = 1, spaceCnt = 0, spaceIncr = 10) {
-    if (parentIdx > this.heap.length - 1) {
-      return;
-    }
+  peek() {}
 
-    spaceCnt += spaceIncr;
-    this.printHorizontalTree(parentIdx * 2 + 1, spaceCnt);
+  /**
+   * Returns whether or not this stack is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean}
+   */
+  isEmpty() {}
 
-    console.log(
-      " ".repeat(spaceCnt < spaceIncr ? 0 : spaceCnt - spaceIncr) +
-        `${this.heap[parentIdx]} (${parentIdx})`
-    );
+  /**
+   * Returns the size of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {number} The length.
+   */
+  size() {}
+}
 
-    this.printHorizontalTree(parentIdx * 2, spaceCnt);
+class StackNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedListStack {
+  constructor() {
+    this.head = null;
   }
 }
 ```
 
-- insert method
-  - see insert section in Heaps.md for details
-- top method
-  - return the first node
+- A Stack is a LIFO (Last in First Out) data structure
+- Design a class to represent a stack using an array to store the items
+- Create these methods for each of the Stack classes with O(1) time complexity:
+  - push (adds new item and returns new size)
+  - pop (returns removed item)
+  - isEmpty
+  - size
+  - peek (return top item without removing)
+- Recreate the stack class using a singly linked list to store the items instead of an array
 
-### W4 Fri - Heaps
+### Tue
+
+- [Queue.js](../src/data_structures/Queue/index.js)
+
+```js
+/**
+ * Class to represent a queue using an array to store the queued items.
+ * Follows a FIFO (First In First Out) order where new items are added to the
+ * back and items are removed from the front.
+ */
+class Queue {
+  /**
+   * The constructor is executed when instantiating a new Queue() to construct
+   * a new instance.
+   * @returns {Queue} This new Queue instance is returned without having to
+   *    explicitly write 'return' (implicit return).
+   */
+  constructor() {
+    this.items = [];
+  }
+
+  // methods go here
+  hello() {
+    console.log("world");
+  }
+}
+```
+
+- A Queue is a FIFO (First in First Out) data structure
+- Design a class to represent a queue using an array to store the items.
+- Recreate the queue class using a singly linked list to store the items.
+- Create these methods for both classes:
+  - enqueue (add item, return new size)
+  - dequeue (remove and return item)
+  - isEmpty
+  - size
+  - front (return first item without removing)
+- Time complexities should be as follows:
+  - Array Queue: enqueue: O(1), dequeue: O(n), size: O(1), front: O(1)
+  - Linked List Queue: enqueue: O(1), dequeue: O(1), size: O(1), front: O(1)
+
+### Wed
+
+- [Queue.js](../src/data_structures/Queue/index.js)
+
+- compareQueues
+  - Write a method on the Queue class that, given another queue, will return whether they are equal (same items in same order).
+  - Use ONLY the provided queue methods, do not manually index the queue items via bracket notation, use no extra array or objects.
+  - Restore the queues to their original state
+- queueIsPalindrome
+  - Write a method on the Queue class that returns whether or not the queue is a palindrome
+  - Use only 1 stack as additional storage (no additional arrays / objects).
+  - Do not manually index the queue via bracket notation, use the provided queue methods and stack methods, restore the queue to original order when done.
+- Extra: MinStack
+  - Design a stack that supports push, pop, top, and min methods where the min method retrieves the minimum int in the stack
+  - Bonus: retrieve min element in constant time (no looping).
 
 ```js
   /**
-   * Extracts the min num from the heap and then re-orders the heap to
-   * maintain order so the next min is ready to be extracted.
-   * 1. Save the first node to a temp var.
-   * 2. Pop last node off and set idx1 equal to the popped value.
-   * 3. Iteratively swap the old last node that is now at idx1 with it's
-   *    smallest child IF the smallest child is smaller than it.
-   * - Time: O(log n) logarithmic due to shiftDown.
-   * - Space: O(1) constant.
-   * @returns {?number} The min number or null if empty.
+   * Compares this queue to another given queue to see if they are equal.
+   * Avoid indexing the queue items directly via bracket notation, use the
+   * queue methods instead for practice.
+   * Use no extra array or objects.
+   * The queues should be returned to their original order when done.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Queue} q2 The queue to be compared against this queue.
+   * @returns {boolean} Whether all the items of the two queues are equal and
+   *    in the same order.
    */
-  extract() {}
+  compareQueues(q2) {}
+
+  /**
+   * Determines if the queue is a palindrome (same items forward and backwards).
+   * Avoid indexing queue items directly via bracket notation, instead use the
+   * queue methods for practice.
+   * Use only 1 stack as additional storage, no other arrays or objects.
+   * The queue should be returned to its original order when done.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {boolean}
+   */
+  isPalindrome() {}
 ```
 
-- Implement extract, see extract section in Heaps.md for details
+### Thur
+
+- [sumOfHalvesEqual](../src/data_structures/Queue/index.js)
+  - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
+  - DO NOT manually index the queue items via bracket notation, only use the provided queue methods, use no additional arrays or objects for storage.
+  - Restore the queue to it's original state before returning.
+- [TwoStackQueue](../src/data_structures/Queue/index.js)
+
+```js
+  /**
+   * Determines whether the sum of the left half of the queue items is equal to
+   * the sum of the right half. Avoid indexing the queue items directly via
+   * bracket notation, use the queue methods instead for practice.
+   * Use no extra array or objects.
+   * The queue should be returned to it's original order when done.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {boolean} Whether the sum of the left and right halves is equal.
+   */
+  isSumOfHalvesEqual() {}
+```
+
+```js
+// Import our stack data structure to use in this file.
+const Stack = require("./Stacks/Stack");
+
+/**
+ * Class to represent a Queue but is implemented using two stacks to store the
+ * queued items without using any other objects or arrays to store the items.
+ * Retains the FIFO (First in First Out) ordering when adding / removing items.
+ */
+class TwoStackQueue {
+  constructor() {
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
+  }
+
+  /**
+   * Adds a new item to the back of the queue.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} item To be added.
+   * @returns {number} The new number of items in the queue.
+   */
+  enqueue(item) {}
+
+  /**
+   * Removes the next item in the line / queue.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {any} The removed item.
+   */
+  dequeue() {}
+}
+```
+
+### Fri
+
+- [PriorityQueue](../src/data_structures/PriorityQueue/index.js)
+
+  - Create enqueue and dequeue methods. _You can loop and index the underlying array._
+  - Design a new PriorityQueue class where the queue maintains an ascending order when items are added based on a queue item's provided priority integer value. A priority value of 1 is most important which means it should be at the front of the queue, the first to be dequeued.
+  - A priority queue item could be any data type.
+
+- Rebuild the PriorityQueue using a linked list.
+
+---
 
 ### [SinglyLinkedList](../src/data_structures/SinglyLinkedList/index.js) Extra Algos
 

@@ -4,7 +4,7 @@
 
 ## Week 1 - [Sorts](../src/sorts)
 
-- [Sorts Resources](../src/sorts/intro.md)
+- [intro](../src/sorts/intro.md)
 
 1. Mon
    - [bubbleSort](../src/sorts/bubbleSort/index.js)
@@ -22,7 +22,7 @@
 
 ## Week 2 - Sets & Arrays
 
-- [sets intro](../src/sets/intro.md)
+- [intro](../src/sets/intro.md)
 
 1. Mon
    - [orderedIntersection](../src/sets/orderedIntersection/index.js)
@@ -54,10 +54,10 @@
    - [coronaVirusAtRisk](../src/objects/coronaVirusAtRisk/index.js)
    - [santasNaughtyList](../src/objects/santasNaughtyList/index.js)
 4. Thur
-   - [lens](../src/objects/lens/index.js)
+   - [flattenObjectOfArrays](../src/objects/flattenObjectOfArrays/index.js)
    - [getMaxServings](../src/objects/getMaxServings/index.js)
 5. Fri
-   - [modelAChair](../src/design/modelAChair/index.js)
+   - [lens](../src/objects/lens/index.js)
 
 ---
 
