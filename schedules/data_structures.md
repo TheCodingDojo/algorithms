@@ -1,6 +1,6 @@
 # [Data Structures](../src/data_structures) Algo Schedule
 
-- Recursion review [Recursion Intro](../recursion/intro-notes/Recursion.md)
+- [recursion review](../recursion/intro-notes/Recursion.md)
 
 ---
 
@@ -119,7 +119,7 @@ const emptyList = new SinglyLinkedList();
 
 ### W1 Mon
 
-- [Singly Linked List Intro](../src/data_structures/SinglyLinkedList/intro.md)
+- [intro](../src/data_structures/SinglyLinkedList/intro.md)
 
 ```js
 /**
@@ -331,7 +331,7 @@ splitOnVal(val) {}
 
 ### W2 Mon [Stacks](../src/data_structures/Stack/index.js)
 
-- [Intro](../src/data_structures/Queue/intro.md)
+- [intro](../src/data_structures/Queue/intro.md)
 
 ```js
 /**
@@ -682,7 +682,7 @@ twoLevelTree.root.right = new BSTNode(15);
 
 ### W3 Mon
 
-- [Intro](../src/data_structures/BinarySearchTree/intro.md)
+- [intro](../src/data_structures/BinarySearchTree/intro.md)
 
 ```js
 /**
@@ -1082,9 +1082,9 @@ insertBefore(targetVal, newVal) {}
 - insertBefore
   - Add new val before a target val
 
-### W4 Thur - [Heap.js](../src/data_structures/MinHeap/index.js)
+### W4 Thur - [MinHeap](../src/data_structures/MinHeap/index.js)
 
-- [Intro](../src/data_structures/intro.md)
+- [intro](../src/data_structures/MinHeap/intro.md)
 
 ```js
 /**

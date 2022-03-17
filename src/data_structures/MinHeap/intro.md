@@ -1,4 +1,4 @@
-# [Heaps / Binary Heap](./index.js)
+# [Min Heap / Binary Heap](./index.js)
 
 - [visualize min heap](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
 - [visualgo max heap](https://visualgo.net/en/heap?slide=1)
