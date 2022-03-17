@@ -2,81 +2,81 @@
 
 ---
 
-## Week 1 - [Sorts](../sorts)
+## Week 1 - [Sorts](../src/sorts)
 
-- [Sorts Resources](../sorts/Sorts.md)
+- [Sorts Resources](../src/sorts/intro.md)
 
 1. Mon
-   - [bubbleSort](../sorts/bubbleSort.js) | [bubbleSort](../spec/sorts/bubbleSortSpec.js)
-   - [selectionSort](../sorts/selectionSort.js) | [selectionSort](../spec/sorts/selectionSortSpec.js)
+   - [bubbleSort](../src/sorts/bubbleSort/index.js)
+   - [selectionSort](../src/sorts/selectionSort/index.js)
 2. Tue
-   - [insertionSort](../sorts/insertionSort.js) | [insertionSort](../spec/sorts/insertionSortSpec.js)
+   - [insertionSort](../src/sorts/insertionSort/index.js)
 3. Wed
-   - [mergeSort](../sorts/mergeSort.js) | [mergeSort](../spec/sorts/mergeSortSpec.js)
+   - [mergeSort](../src/sorts/mergeSort/index.js)
 4. Thur
-   - [partition](../sorts/partition.js)
+   - [partition](../src/sorts/partition/index.js)
 5. Fri
-   - [quickSort](../sorts/quickSort.js) | [quickSort](../spec/sorts/quickSortSpec.js)
+   - [quickSort](../src/sorts/quickSort/index.js)
 
 ---
 
-## Week 2 - [Sets & Arrays](../arrays)
+## Week 2 - Sets & Arrays
 
-- [sets intro](../arrays/sets.md)
+- [sets intro](../src/sets/intro.md)
 
 1. Mon
-   - [orderedIntersection](../arrays/orderedIntersection.js) | [orderedIntersection](../spec/arrays/orderedIntersectionSpec.js)
+   - [orderedIntersection](../src/sets/orderedIntersection/index.js)
 2. Tue
-   - [diagonalDifference](../arrays/diagonalDifference.js) | [diagonalDifference](../spec/arrays/diagonalDifferenceSpec.js)
-   - [orderedMultisetUnion](../arrays/orderedMultisetUnion.js) | [orderedMultisetUnion](../spec/arrays/orderedMultisetUnionSpec.js)
+   - [diagonalDifference](../src/arrays/diagonalDifference/index.js)
+   - [orderedMultisetUnion](../src/sets/orderedMultisetUnion/index.js)
 3. Wed
-   - [measureWaterLevels](../arrays/measureWaterLevels.js) | [measureWaterLevels](../spec/arrays/measureWaterLevelsSpec.js)
-   - [symmetricDifferences](../arrays/symmetricDifferences.js) | [symmetricDifferences](../spec/arrays/symmetricDifferencesSpec.js)
+   - [measureWaterLevels](../src/arrays/measureWaterLevels/index.js)
+   - [symmetricDifferences](../src/sets/symmetricDifferences/index.js)
 4. Thur
-   - [allNonConsecutive](../arrays/allNonConsecutive.js) | [allNonConsecutive](../spec/arrays/allNonConsecutiveSpec.js)
-   - [findConsqSums](../arrays/findConsqSums.js) | [findConsqSums](../spec/arrays/findConsqSumsSpec.js)
+   - [allNonConsecutive](../src/arrays/allNonConsecutive/index.js)
+   - [findConsqSums](../src/arrays/findConsqSums/index.js)
 5. Fri
-   - [twoSum](../arrays/twoSum.js) | [twoSum](../spec/arrays/twoSumSpec.js)
-   - [kMostFrequent](../arrays/kMostFrequent.js) | [kMostFrequent](../spec/arrays/kMostFrequentSpec.js)
+   - [twoSum](../src/arrays/twoSum/index.js)
+   - [kMostFrequent](../src/arrays/kMostFrequent/index.js)
 
 ---
 
 ## Week 3 - Object Practice
 
 1. Mon
-   - [entries](../recreated_methods/Object/entries.js) | [entries](../spec/recreated_methods/Object/entriesSpec.js)
-   - [insert](../objects/insert.js) | [insertSpec](../spec/objects/insertSpec.js)
+   - [entries](../src/recreated_methods/Object/entries/index.js)
+   - [insert](../src/objects/insert/index.js)
 2. Tue
-   - [findObjects](../objects/findObjects.js) | [findObjectsSpec](../spec/objects/findObjectsSpec.js)
-   - [findByIdAndUpdate](../objects/findByIdAndUpdate.js) | [findByIdAndUpdateSpec](../spec/objects/findByIdAndUpdateSpec.js)
+   - [findObjects](../src/objects/findObjects/index.js)
+   - [findByIdAndUpdate](../src/objects/findByIdAndUpdate/index.js)
 3. Wed
-   - [filterByKey](../objects/filterByKey.js) | [filterByKeySpec](../spec/objects/filterByKeySpec.js)
-   - [coronaVirusAtRisk](../objects/coronaVirusAtRisk.js) | [coronaVirusAtRiskSpec](../spec/objects/coronaVirusAtRiskSpec.js)
-   - [santasNaughtyList](../objects/santasNaughtyList.js) | [santasNaughtyListSpec](../spec/objects/santasNaughtyListSpec.js)
+   - [filterByKey](../src/objects/filterByKey/index.js)
+   - [coronaVirusAtRisk](../src/objects/coronaVirusAtRisk/index.js)
+   - [santasNaughtyList](../src/objects/santasNaughtyList/index.js)
 4. Thur
-   - [lens](../objects/lens.js) | [lensSpec](../spec/objects/lensSpec.js)
-   - [getMaxServings](../objects/getMaxServings.js) | [getMaxServingsSpec](../spec/objects/getMaxServingsSpec.js)
+   - [lens](../src/objects/lens/index.js)
+   - [getMaxServings](../src/objects/getMaxServings/index.js)
 5. Fri
-   - [modelAChair](../design/modelAChair.js)
+   - [modelAChair](../src/design/modelAChair/index.js)
 
 ---
 
 ## Week 4 - Misc
 
 1. Mon
-   - [dropIt](../callbacks/dropIt.js) | [dropItSpec](../spec/callbacks/dropItSpec.js)
-   - [canStringBecomePalindrome](../strings/canStringBecomePalindrome.js) | [canStringBecomePalindromeSpec](../spec/strings/canStringBecomePalindromeSpec.js)
+   - [dropIt](../src/callbacks/dropIt/index.js)
+   - [canStringBecomePalindrome](../src/strings/canStringBecomePalindrome/index.js)
 2. Tue
-   - [groupObjects](../objects/groupObjects.js) | [groupObjectsSpec](../spec/objects/groupObjectsSpec.js)
-   - [backspaceStringCompare](../strings/backspaceStringCompare.js) | [backspaceStringCompareSpec](../spec/strings/backspaceStringCompareSpec.js)
+   - [groupObjects](../src/objects/groupObjects/index.js)
+   - [backspaceStringCompare](../src/strings/backspaceStringCompare/index.js)
 3. Wed
 
-   - [rehash](../strings/rehash.js) | [rehashSpec](../spec/strings/rehashSpec.js)
-   - [lengthOfLongestSubstring](../strings/lengthOfLongestSubstring.js) | [lengthOfLongestSubstringSpec](../spec/strings/lengthOfLongestSubstringSpec.js)
+   - [rehash](../src/strings/rehash/index.js)
+   - [lengthOfLongestSubstring](../src/strings/lengthOfLongestSubstring/index.js)
 
 4. Thur
-   - [containerWithMostWater](../arrays/containerWithMostWater.js) | [containerWithMostWaterSpec](../spec/arrays/containerWithMostWaterSpec.js)
-   - [compareVersionNumbers](../strings/compareVersionNumbers.js) | [compareVersionNumbersSpec](../spec/strings/compareVersionNumbersSpec.js)
+   - [containerWithMostWater](../src/arrays/containerWithMostWater/index.js)
+   - [compareVersionNumbers](../src/strings/compareVersionNumbers/index.js)
 5. Fri
-   - [amazonMusicRuntime](../arrays/amazonMusicRuntime.js) | [amazonMusicRuntime](../spec/arrays/amazonMusicRuntimeSpec.js)
-   - [canBuildS1FromS2](../strings/canBuildS1FromS2.js) | [canBuildS1FromS2Spec](../spec/strings/canBuildS1FromS2Spec.js)
+   - [amazonMusicRuntime](../src/arrays/amazonMusicRuntime/index.js)
+   - [canBuildS1FromS2](../src/strings/canBuildS1FromS2/index.js)

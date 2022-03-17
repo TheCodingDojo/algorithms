@@ -10,36 +10,36 @@
 1. Mon
    - Orientation
    - basics review: variables, loops, functions
-     - [Functions Intro](../functions-intro.md)
+     - [Functions Intro](../src/intro/basicAlgos/intro.md)
 2. Tue
-   - [basicAlgos](../intro/basicAlgos.js)
+   - [basicAlgos](../src/intro/basicAlgos/index.js)
 3. Wed
-   - [indexOf](../recreated_methods/Array/indexOf.js) | [indexOfSpec](../spec/recreated_methods/Array/indexOfSpec.js)
-   - unfinished [basicAlgos](../intro/basicAlgos.js)
+   - [indexOf](../src/recreated_methods/Array/indexOf/index.js)
+   - unfinished [basicAlgos](../src/intro/basicAlgos/index.js)
 4. Thur
-   - [nthLast](../arrays/nthLast.js) | [nthLastSpec](../spec/arrays/nthLastSpec.js)
-   - [countEvenNegatives](../arrays/countEvenNegatives.js)
+   - [nthLast](../src/arrays/nthLast/index.js)
+   - [countEvenNegatives](../src/arrays/countEvenNegatives/index.js)
 5. Fri
-   - [slice](../recreated_methods/Array/slice.js) | [sliceSpec](../spec/recreated_methods/Array/sliceSpec.js)
-   - [capitalization](../strings/capitalization.js)
+   - [slice](../src/recreated_methods/Array/slice/index.js)
+   - [capitalization](../src/strings/capitalization/index.js)
 
 ---
 
 ## Week 2 - Arrays
 
 1. Mon
-   - [concat](../recreated_methods/Array/concat.js) | [concatSpec](../spec/recreated_methods/Array/concatSpec.js)
-   - [concatSelf](../arrays/concatSelf.js) | [concatSelfSpec](../spec/arrays/concatSelfSpec.js)
+   - [concat](../src/recreated_methods/Array/concat/index.js)
+   - [concatSelf](../src/arrays/concatSelf/index.js)
 2. Tue
-   - [indexOfMinVal](../arrays/indexOfMinVal.js) | [indexOfMinValSpec](../spec/arrays/indexOfMinValSpec.js)
-   - [reverseArr](../arrays/reverseArr.js) | [reverseArrSpec](../spec/arrays/reverseArrSpec.js)
+   - [indexOfMinVal](../src/arrays/indexOfMinVal/index.js)
+   - [reverseArr](../src/arrays/reverseArr/index.js)
 3. Wed
-   - [unshift](../recreated_methods/Array/unshift.js) | [unshiftSpec](../spec/recreated_methods/Array/unshiftSpec.js)
-   - [shift](../recreated_methods/Array/shift.js) | [shiftSpec](../spec/recreated_methods/Array/shiftSpec.js)
+   - [unshift](../src/recreated_methods/Array/unshift/index.js)
+   - [shift](../src/recreated_methods/Array/shift/index.js)
 4. Thur
-   - [removeAt](../arrays/removeAt.js) | [removeAtSpec](../spec/arrays/removeAtSpec.js)
-   - [minToFront](../arrays/minToFront.js) | [minToFrontSpec](../spec/arrays/minToFrontSpec.js)
+   - [removeAt](../src/arrays/removeAt/index.js)
+   - [minToFront](../src/arrays/minToFront/index.js)
 5. Fri
-   - [flatten2dArray](../arrays/flatten2dArray.js) | [flatten2dArraySpec](../spec/arrays/flatten2dArraySpec.js)
-   - [secondLargest](../arrays/secondLargest.js) | [secondLargestSpec](../spec/arrays/secondLargestSpec.js)
-   - [sumArrColumns](../arrays/sumArrColumns.js) | [sumArrColumnsSpec](../spec/arrays/sumArrColumnsSpec.js)
+   - [flatten2dArray](../src/arrays/flatten2dArray/index.js)
+   - [secondLargest](../src/arrays/secondLargest/index.js)
+   - [sumArrColumns](../src/arrays/sumArrColumns/index.js)

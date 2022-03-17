@@ -5,87 +5,87 @@
 
 ---
 
-## Week 1 - [Strings](../strings) & [Dicts](../objects)
+## Week 1 - [Strings](../src/strings) & [Dicts](../src/objects)
 
 1. Mon
-   - [caseInsensitiveStringCompare](../strings/caseInsensitiveStringCompare.js) | [caseInsensitiveStringCompareSpec](../spec/strings/caseInsensitiveStringCompareSpec.js)
-   - [acronymize](../strings/acronymize.js) | [acronymizeSpec](../spec/strings/acronymizeSpec.js)
-   - [reverse](../strings/reverseString.js) | [reverseSpec](../spec/strings/reverseStringSpec.js)
+   - [caseInsensitiveStringCompare](../src/strings/caseInsensitiveStringCompare/index.js)
+   - [acronymize](../src/strings/acronymize/index.js)
+   - [reverse](../src/strings/reverseString/index.js)
 2. Tue
-   - [join](../recreated_methods/Array/join.js) | [joinSpec](../spec/recreated_methods/Array/joinSpec.js)
-   - [bookIndex](../strings/bookIndex.js) | [bookIndexSpec](../spec/strings/bookIndexSpec.js)
+   - [join](../src/recreated_methods/Array/join/index.js)
+   - [bookIndex](../src/strings/bookIndex/index.js)
 3. Wed
-   - [encodeStr](../strings/encodeStr.js) | [encodeStrSpec](../spec/strings/encodeStrSpec.js)
-   - [decodeStr](../strings/decodeStr.js) | [decodeStrSpec](../spec/strings/decodeStrSpec.js)
+   - [encodeStr](../src/strings/encodeStr/index.js)
+   - [decodeStr](../src/strings/decodeStr/index.js)
 4. Thur
-   - [isPalindrome](../strings/isPalindrome.js) | [isPalindromeSpec](../spec/strings/isPalindromeSpec.js)
-   - [longestPalindromicSubstring](../strings/longestPalindromicSubstring.js) | [longestPalindromicSubstringSpec](../spec/strings/longestPalindromicSubstringSpec.js)
+   - [isPalindrome](../src/strings/isPalindrome/index.js)
+   - [longestPalindromicSubstring](../src/strings/longestPalindromicSubstring/index.js)
 5. Fri
-   - [zipArraysIntoMap](../objects/zipArraysIntoMap.js) | [zipArraysIntoMapSpec](../spec/objects/zipArraysIntoMapSpec.js)
-   - [invertHash](../objects/invertObj.js) | [invertHashSpec](../spec/objects/invertObjSpec.js)
+   - [zipArraysIntoMap](../src/objects/zipArraysIntoMap/index.js)
+   - [invertHash](../src/objects/invertObj/index.js)
 
 ---
 
-## Week 2 - [Strings](../strings) & [Dicts](../objects)
+## Week 2 - [Strings](../src/strings) & [Dicts](../src/objects)
 
 - [Hash Table Intro](https://docs.google.com/document/d/1r_01EQDb5jGwPPDH0cVolo1L8FJZlHp9p2jd3nfW3TQ/edit?usp=sharing)
 
 1. Mon
-   - [freqTable](../objects/freqTable.js) | [freqTableSpec](../spec/objects/freqTableSpec.js)
-   - [oddOccurrencesInArray](../arrays/oddOccurrencesInArray.js)
+   - [freqTable](../src/objects/freqTable/index.js)
+   - [oddOccurrencesInArray](../src/arrays/oddOccurrencesInArray/index.js)
 2. Tue
-   - [stringDedupe](../strings/stringDedupe.js) | [stringDedupeSpec](../spec/strings/stringDedupeSpec.js)
-   - [reverseWords](../strings/reverseWords.js) | [reverseWordsSpec](../spec/strings/reverseWordsSpec.js)
-   - [reverseWordOrder](../strings/reverseWordOrder.js) | [reverseWordOrderSpec](../spec/strings/reverseWordOrderSpec.js)
+   - [stringDedupe](../src/strings/stringDedupe/index.js)
+   - [reverseWords](../src/strings/reverseWords/index.js)
+   - [reverseWordOrder](../src/strings/reverseWordOrder/index.js)
 3. Wed
-   - [parensValid](../strings/parensValid.js) | [parensValidSpec](../spec/strings/parensValidSpec.js)
-   - [bracesValid](../strings/bracesValid.js) | [bracesValidSpec](../spec/strings/bracesValidSpec.js)
+   - [parensValid](../src/strings/parensValid/index.js)
+   - [bracesValid](../src/strings/bracesValid/index.js)
 4. Thur
-   - [rotateStr](../strings/rotateStr.js) | [rotateStrSpec](../spec/strings/rotateStrSpec.js)
-   - [isRotation](../strings/isRotation.js) | [isRotationSpec](../spec/strings/isRotationSpec.js)
+   - [rotateStr](../src/strings/rotateStr/index.js)
+   - [isRotation](../src/strings/isRotation/index.js)
 5. Fri
-   - [updateInventory](../objects/updateInventory.js) | [updateInventorySpec](../spec/objects/updateInventorySpec.js)
-   - [trim](../strings/trim.js) | [trimSpec](../spec/strings/trimSpec.js)
-   - [isAnagram](../strings/isAnagram.js) | [isAnagramSpec](../spec/strings/isAnagramSpec.js)
+   - [updateInventory](../src/objects/updateInventory/index.js)
+   - [trim](../src/strings/trim/index.js)
+   - [isAnagram](../src/strings/isAnagram/index.js)
 
 ---
 
-## Week 3 - [Arrays](../arrays)
+## Week 3 - [Arrays](../src/arrays)
 
 1. Mon
-   - [socialDistancingEnforcer](../arrays/socialDistancingEnforcer.js) | [socialDistancingEnforcerSpec](../spec/arrays/socialDistancingEnforcerSpec.js)
-   - [balanceIndex](../arrays/balanceIndex.js) | [balanceIndex](../spec/arrays/balanceIndexSpec.js)
+   - [socialDistancingEnforcer](../src/arrays/socialDistancingEnforcer/index.js)
+   - [balanceIndex](../src/arrays/balanceIndex/index.js)
 2. Tue
-   - [binarySearch](../arrays/binarySearch.js) | [binarySearch](../spec/arrays/binarySearchSpec.js)
-   - [interleaveArrays](../arrays/interleaveArrays.js) | [interleaveArrays](../spec/arrays/interleaveArraysSpec.js)
+   - [binarySearch](../src/arrays/binarySearch/index.js)
+   - [interleaveArrays](../src/arrays/interleaveArrays/index.js)
 3. Wed
-   - [dedupeSorted](../arrays/dedupeSorted.js) | [dedupeSorted](../spec/arrays/dedupeSortedSpec.js)
-   - [firstNonRepeated](../arrays/firstNonRepeated.js) | [firstNonRepeated](../spec/arrays/firstNonRepeatedSpec.js)
+   - [dedupeSorted](../src/arrays/dedupeSorted/index.js)
+   - [firstNonRepeated](../src/arrays/firstNonRepeated/index.js)
 4. Thur
-   - [fewestCoinChange](../objects/fewestCoinChange.js) | [fewestCoinChange](../spec/objects/fewestCoinChangeSpec.js)
-   - [missingValue](../arrays/missingValue.js) | [missingValue](../spec/arrays/missingValueSpec.js)
+   - [fewestCoinChange](../src/objects/fewestCoinChange/index.js)
+   - [missingValue](../src/arrays/missingValue/index.js)
 5. Fri
-   - [mode](../arrays/mode.js) | [mode](../spec/arrays/modeSpec.js)
+   - [mode](../src/arrays/mode/index.js)
 
 ---
 
-## Week 4 - [Recursion](../recursion)
+## Week 4 - [Recursion](../src/recursion)
 
-- [Recursion Intro](../recursion/intro-notes/Recursion.md)
+- [Recursion Intro](../src/recursion/intro-notes/intro)
 
 1. Mon
-   - [sumArr](../recursion/sumArr.js) | [sumArrSpec](../spec/recursion/sumArrSpec.js)
-   - [recursiveSigma](../recursion/recursiveSigma.js) | [recursiveSigmaSpec](../spec/recursion/recursiveSigmaSpec.js)
+   - [sumArr](../src/recursion/sumArr/index.js)
+   - [recursiveSigma](../src/recursion/recursiveSigma/index.js)
 2. Tue
-   - [factorial](../recursion/factorial.js) | [factorialSpec](../spec/recursion/factorialSpec.js)
-   - [fibonacci](../recursion/fibonacci.js) | [fibonacciSpec](../spec/recursion/fibonacciSpec.js)
+   - [factorial](../src/recursion/factorial/index.js)
+   - [fibonacci](../src/recursion/fibonacci/index.js)
 3. Wed
-   - [binarySearch](../recursion/binarySearch.js) | [binarySearchSpec](../spec/recursion/binarySearchSpec.js)
-   - [reverseStr](../recursion/reverseStr.js) | [reverseStrSpec](../spec/recursion/reverseStrSpec.js)
+   - [binarySearch](../src/recursion/binarySearch/index.js)
+   - [reverseStr](../src/recursion/reverseStr/index.js)
 4. Thur
-   - [sumToOneDigit](../recursion/sumToOneDigit.js) | [sumToOneDigitSpec](../spec/recursion/sumToOneDigitSpec.js)
-   - [generateAnagrams](../recursion/generateAnagrams.js) | [generateAnagramsSpec](../spec/recursion/generateAnagramsSpec.js)
+   - [sumToOneDigit](../src/recursion/sumToOneDigit/index.js)
+   - [generateAnagrams](../src/recursion/generateAnagrams/index.js)
 5. Fri
-   - [lowestCommonMult](../recursion/lowestCommonMult.js) | [lowestCommonMultSpec](../spec/recursion/lowestCommonMultSpec.js)
-   - [coronaVirusFloodFill](../recursion/coronaVirusFloodFill.js) | [coronaVirusFloodFillSpec](../spec/recursion/coronaVirusFloodFillSpec.js)
-   - [binaryStringExpansion](../recursion/binaryStringExpansion.js) | [binaryStringExpansionSpec](../spec/recursion/binaryStringExpansionSpec.js)
+   - [lowestCommonMult](../src/recursion/lowestCommonMult/index.js)
+   - [coronaVirusFloodFill](../src/recursion/coronaVirusFloodFill/index.js)
+   - [binaryStringExpansion](../src/recursion/binaryStringExpansion/index.js)
