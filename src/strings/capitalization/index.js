@@ -61,6 +61,13 @@ function capitalize(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
 
+/**
+ * - Time: O(n) linear.
+ * - Space: O(m) linear, m = longest string that has to be copied to be
+ *    capitalized since strings are immutable. The array is mutated, not copied.
+ * @param {Array<string>} strings
+ * @returns {Array<string>}
+ */
 function capitalization(strings) {
   for (let i = 0; i < strings.length; i++) {
     /* 
@@ -84,7 +91,30 @@ function capitalization2(strings) {
   return strings;
 }
 
+/**
+ * NOTE: This `.map` returns a NEW array, it does not mutate the given array
+ * so this version doesn't satisfy the mutation requirement. See the solution
+ * using `.reduce` to see how it can be used to mutate.
+ *
+ * Passes our `capitalize` function to `.map` as the callback so `.map` will
+ * execute `capitalize` while it loops and pass it `strings[i]`.
+ * @param {Array<string>} strings
+ * @returns {Array<string>}
+ */
+const functionalCapitalizationMap = (strings) => strings.map(capitalize);
+
+/**
+ * @param {Array<string>} strings
+ * @returns {Array<string>}
+ */
+const functionalCapitalization = (strings) =>
+  strings.reduce((mutatedStrings, currStr, i) => {
+    mutatedStrings[i] = capitalize(currStr);
+    return mutatedStrings;
+  }, strings);
+
 module.exports = {
   capitalization,
   capitalization2,
+  functionalCapitalization,
 };

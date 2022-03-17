@@ -69,4 +69,39 @@ function concat(arr1, arr2) {
   return newArr;
 }
 
-module.exports = { concat };
+/**
+ * Spreads the two arrays together into a new array.
+ * @param {Array<any>} arr1
+ * @param {Array<any>} arr2
+ * @returns {Array<any>}
+ */
+const concatSpread = (arr1, arr2) => [...arr1, ...arr2];
+
+/**
+ * @param {...any[]} arrays An array of all the arrays passed in to the
+ *    function. The `...` spread operator collects the passed in arguments
+ *    into an array.
+ * @returns {Array<any>}
+ */
+function concatMany(...arrays) {
+  const newArr = [];
+
+  for (const arr of arrays) {
+    // Here, the spread operator spreads apart the array and passes in each
+    // item like so: newArr.push(arr[0], arr[1], arr[2]...)
+    newArr.push(...arr);
+  }
+
+  return newArr;
+}
+
+/**
+ * Since the `...` spread operator is used to collect all the passed-in arrays
+ * into an array, it is now a 2d array which we can flatten with `.flat` which
+ * will return a new 1d array when used on a 2d array.
+ * @param {...any[]} arrays
+ * @returns {Array<any>}
+ */
+const concatManyWithFlat = (...arrays) => arrays.flat();
+
+module.exports = { concat, concatSpread, concatMany, concatManyWithFlat };

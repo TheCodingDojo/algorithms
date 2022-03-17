@@ -1,6 +1,8 @@
 /* 
-  Given an array and an int which represents the position starting from the back,
-  return the nth-to-last element
+Given an array and an int which represents the position starting from the back,
+return the nth-to-last element.
+
+JS has introduced the .at method for this purpose, but solve this algo w/o it.
 */
 
 // Last element:

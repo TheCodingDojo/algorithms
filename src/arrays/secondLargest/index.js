@@ -119,6 +119,8 @@ function secondLargest(nums) {
  * - Time: O(n) linear, because worst case have to loop through whole array.
  * - Space: O(1) constant, algo doesn't need to use up any extra memory as the
  *    size of input grows.
+ * @param {Array<number>} nums
+ * @returns {?number}
  */
 function secondLargest2(nums) {
   if (nums.length < 2) {
