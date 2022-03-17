@@ -101,8 +101,8 @@ function reverseWords(wordsStr) {
 /**
  * Reverses the letters in each words in the given space separated
  * string of words. Does NOT reverse the order of the words themselves.
- * - Time: O(n) linear.
- * - Space: O(n) linear.
+ * - Time: O(4n) -> O(n) linear. Each method is looping.
+ * - Space: O(4n) -> O(n) linear. Each method creates a new array.
  * @param {string} wordsStr Contains space separated words.
  * @returns {string} The given string with each word's letters reversed.
  */
@@ -111,8 +111,9 @@ const functionalReverseWords = (wordsStr) =>
     // Convert to array of words split on space. Whenever the split separated
     // has repeated duplicates, empty strings will be present in the new array.
     .split(" ")
-    // Remove falsy values: Boolean("") returns false so empty strings are
-    // removed
+    // Remove falsy values. .filter will call the Boolean constructor and pass
+    // it the current item it is looping over. Boolean("") returns false which
+    // means filter will remove empty strings.
     .filter(Boolean)
     // Convert the filtered array into a new array with the words reversed.
     .map((word) => word.split("").reverse().join(""))

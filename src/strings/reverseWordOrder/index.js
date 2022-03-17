@@ -34,6 +34,8 @@ function reverseWordOrder(wordsStr) {}
  *    because of the spaces being removed from the .split.
  * - Space: O(2n) -> O(n) linear. Storing wordsStr twice, once in words
  *    array and again in reversedWordOrder.
+ * @param {string} wordsStr
+ * @returns {string}
  */
 function reverseWordOrderSplit(wordsStr) {
   // if all spaces
@@ -63,6 +65,8 @@ function reverseWordOrderSplit(wordsStr) {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear. wordsStr is stored again in reversedWOrdOrder var.
+ * @param {string} wordsStr
+ * @returns {string}
  */
 function reverseWordOrder(wordsStr) {
   // if all spaces
@@ -96,4 +100,28 @@ function reverseWordOrder(wordsStr) {
   return reversedWordOrder;
 }
 
-module.exports = { reverseWordOrder, reverseWordOrderSplit };
+/**
+ * - Time: O(4n) -> O(n) linear. Each method is looping.
+ * - Space: O(3n) -> O(n) linear. Each method creates a new array except
+ *    reverse.
+ * @param {string} wordsStr
+ * @returns {string}
+ */
+const functionalReverseWordOrder = (wordsStr) =>
+  wordsStr
+    // Convert to array split on spaces. Could result in empty strings
+    // if there are multiple spaces in a row.
+    .split(" ")
+    // Create a new filtered array removing empty strings.
+    .filter((word) => word !== "")
+    // Reverse the filtered array in place. This doesn't mutate the original
+    // array since filter already split and filter already created a new one.
+    .reverse()
+    // Join the words back together with a space between.
+    .join(" ");
+
+module.exports = {
+  reverseWordOrder,
+  reverseWordOrderSplit,
+  functionalReverseWordOrder,
+};
