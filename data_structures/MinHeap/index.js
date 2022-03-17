@@ -220,4 +220,5 @@ minHeap.extract();
 minHeap.extract();
 minHeap.extract();
 minHeap.extract();
+
 module.exports = { MinHeap };
