@@ -1,6 +1,6 @@
 # [Data Structures](../src/data_structures) Algo Schedule
 
-- [recursion review](../recursion/intro-notes/Recursion.md)
+- [recursion review](../src/recursion/intro-notes/intro.md)
 
 ---
 
