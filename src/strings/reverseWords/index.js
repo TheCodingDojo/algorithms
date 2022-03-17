@@ -58,12 +58,10 @@ function reverseWordsSplit(wordsStr) {
 }
 
 /**
- * Reverses the letters in each words in the given space separated
- * string of words. Does NOT reverse the order of the words themselves.
  * - Time: O(n) linear.
  * - Space: O(n) linear.
- * @param {string} wordsStr Contains space separated words.
- * @returns {string} The given string with each word's letters reversed.
+ * @param {string} wordsStr
+ * @returns {string}
  */
 function reverseWords(wordsStr) {
   // if all spaces
@@ -99,12 +97,10 @@ function reverseWords(wordsStr) {
 }
 
 /**
- * Reverses the letters in each words in the given space separated
- * string of words. Does NOT reverse the order of the words themselves.
  * - Time: O(4n) -> O(n) linear. Each method is looping.
  * - Space: O(4n) -> O(n) linear. Each method creates a new array.
- * @param {string} wordsStr Contains space separated words.
- * @returns {string} The given string with each word's letters reversed.
+ * @param {string} wordsStr
+ * @returns {string}
  */
 const functionalReverseWords = (wordsStr) =>
   wordsStr
