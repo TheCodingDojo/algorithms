@@ -6,8 +6,6 @@
 
 ## [Week 1 - Singly Linked Lists](../src/data_structures/SinglyLinkedList/index.js)
 
-### Documented `LinkedList` Class Setup
-
 ```js
 /**
  * Class to represents a single item of a SinglyLinkedList that can be
@@ -331,9 +329,9 @@ splitOnVal(val) {}
 
 ## Week 2 - Stacks and Queues
 
-- [Intro](../src/data_structures/Queue/intro.md)
-
 ### W2 Mon [Stacks](../src/data_structures/Stack/index.js)
+
+- [Intro](../src/data_structures/Queue/intro.md)
 
 ```js
 /**
