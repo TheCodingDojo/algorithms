@@ -14,10 +14,12 @@ const object1 = {
     {
       id: 123,
       type: "delivery",
+      gateCode: "#2552",
     },
     {
       id: 153,
       type: "delivery",
+      instructions: "Place in secure delivery box.",
     },
   ],
   openPickupOrders: [
@@ -65,7 +67,12 @@ function flattenObjectOfArrays(obj) {
     const arrOfObjects = obj[key];
 
     for (const nestedObj of arrOfObjects) {
-      mergedArr.push(nestedObj);
+      // Extract only the keys wanted.
+      const data = {
+        id: nestedObj.id,
+        type: nestedObj.type,
+      };
+      mergedArr.push(data);
     }
   }
 
@@ -82,9 +89,14 @@ function flattenObjectOfArrays(obj) {
  * @returns {Object[]} An array of objects.
  */
 const functionalFlattenObjectOfArrays = (o) =>
-  Object.values(o).reduce(
-    (mergedArr, arrOfObjects) => mergedArr.concat(arrOfObjects),
-    []
-  );
+  // Get an array of the object's values. Since they are arrays it will be 2d.
+  Object.values(o)
+    // Reduce the nested arrays into a single array.
+    .reduce((mergedArr, arrOfObjects) => mergedArr.concat(arrOfObjects), [])
+    // Transform the data to the structure we want (not all keys are wanted).
+    .map(({ id, type }) => ({
+      id,
+      type,
+    }));
 
 module.exports = { flattenObjectOfArrays, functionalFlattenObjectOfArrays };
