@@ -41,8 +41,10 @@ function frequencyTableBuilder(arr) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {Array<string>} arr
+ * @returns {Object<string, number>}
  */
-function frequencyTableBuilder(arr) {
+function frequencyTableBuilder(arr = []) {
   const freqTable = {};
 
   for (let i = 0; i < arr.length; i++) {
@@ -58,19 +60,60 @@ function frequencyTableBuilder(arr) {
   return freqTable;
 }
 
-function frequencyTableBuilder2(arr) {
+/**
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ * @param {Array<string>} arr
+ * @returns {Object<string, number>}
+ */
+function frequencyTableBuilder2(arr = []) {
   const freqTable = {};
 
   for (const str of arr) {
     if (freqTable.hasOwnProperty(str) === false) {
       // first occurrence found
-      freqTable[str] = 1;
-    } else {
-      freqTable[str]++;
+      freqTable[str] = 0;
     }
+    freqTable[str]++;
   }
 
   return freqTable;
 }
 
-module.exports = { frequencyTableBuilder, frequencyTableBuilder2 };
+/**
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ * @param {Array<string>} arr
+ * @returns {Object<string, number>}
+ */
+const functionalFrequencyTable = (arr = []) =>
+  arr.reduce((freq, currStr) => {
+    if (currStr in freq === false) {
+      freq[currStr] = 0;
+    }
+    freq[currStr]++;
+    return freq;
+  }, {});
+
+/**
+ * Technically the `Map` object is better because the keys can be any data,
+ * so it can count anything, rather than only strings or nums-as-strings.
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ * @param {Array<any>} arr
+ * @returns {Object<string, number>}
+ */
+const functionalFrequencyMap = (arr = []) =>
+  arr.reduce((freq, item) => {
+    if (freq.has(item) === false) {
+      freq.set(item, 0);
+    }
+    freq.set(item, freq.get(item) + 1);
+    return freq;
+  }, new Map());
+
+module.exports = {
+  frequencyTableBuilder,
+  frequencyTableBuilder2,
+  functionalFrequencyTable,
+};

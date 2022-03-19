@@ -37,7 +37,7 @@ function reverseWords(str) {}
  * @param {string} wordsStr Contains space separated words.
  * @returns {string} The given string with each word's letters reversed.
  */
-function reverseWordsSplit(wordsStr) {
+function reverseWordsSplit(wordsStr = "w") {
   const words = wordsStr.split(" ");
   let wordsReversed = "";
 
@@ -63,7 +63,7 @@ function reverseWordsSplit(wordsStr) {
  * @param {string} wordsStr
  * @returns {string}
  */
-function reverseWords(wordsStr) {
+function reverseWords(wordsStr = "w") {
   // if all spaces
   if (wordsStr == false) {
     return wordsStr;
@@ -102,7 +102,7 @@ function reverseWords(wordsStr) {
  * @param {string} wordsStr
  * @returns {string}
  */
-const functionalReverseWords = (wordsStr) =>
+const functionalReverseWords = (wordsStr = "w") =>
   wordsStr
     // Convert to array of words split on space. Whenever the split separated
     // has repeated duplicates, empty strings will be present in the new array.

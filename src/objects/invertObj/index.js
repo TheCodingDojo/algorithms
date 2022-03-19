@@ -30,7 +30,7 @@ function invertObj(obj) {}
  * @param {Object<string, any>} obj
  * @return The given object with key value pairs inverted.
  */
-function invertObj(obj) {
+function invertObj(obj = {}) {
   const inverted = {};
 
   for (let key in obj) {
@@ -49,7 +49,7 @@ function invertObj(obj) {
  * @param {Object<string, any>} obj
  * @return The given object with key value pairs inverted.
  */
-const functionalInvertObj = (obj) =>
+const functionalInvertObj = (obj = {}) =>
   Object.entries(obj).reduce((inverted, [key, value]) => {
     inverted[value] = key;
     return inverted;

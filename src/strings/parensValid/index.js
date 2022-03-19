@@ -35,8 +35,10 @@ function parensValid(str) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {boolean}
  */
-function parensValid(str) {
+function parensValid(str = "") {
   const parensStack = [];
 
   for (const char of str) {
@@ -56,8 +58,10 @@ function parensValid(str) {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {boolean}
  */
-function parensValidCount(str) {
+function parensValidCount(str = "") {
   let openLessCloseCount = 0;
 
   for (const char of str) {

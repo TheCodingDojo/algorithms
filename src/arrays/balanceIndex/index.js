@@ -32,7 +32,7 @@ function balanceIndex(nums) {}
  * - Time: O(2n) linear -> O(n).
  * - Space: O(1) constant.
  */
-function balanceIndex(nums) {
+function balanceIndex(nums = []) {
   if (nums.length < 3) {
     return -1;
   }
@@ -59,7 +59,7 @@ function balanceIndex(nums) {
  * - Time: O(n/2) -> O(n) linear, n/2 since looping from outside towards center.
  * - Space: O(1) constant.
  */
-function balanceIndexOutsideIn(nums) {
+function balanceIndexOutsideIn(nums = []) {
   if (nums.length < 3) {
     return -1;
   }

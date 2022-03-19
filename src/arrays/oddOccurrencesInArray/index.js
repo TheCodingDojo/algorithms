@@ -20,6 +20,11 @@ const expected4 = 1;
 
 function oddOccurrencesInArray(nums) {}
 
+console.log(oddOccurrencesInArray(nums1), "should equal", expected1);
+console.log(oddOccurrencesInArray(nums2), "should equal", expected2);
+console.log(oddOccurrencesInArray(nums3), "should equal", expected3);
+console.log(oddOccurrencesInArray(nums4), "should equal", expected4);
+
 /*****************************************************************************/
 
 /**
@@ -29,7 +34,7 @@ function oddOccurrencesInArray(nums) {}
  * @param {number[]} nums Odd-lengthed.
  * @returns {number} The number that occurs odd times.
  */
-function oddOccurrencesInArray(nums) {
+function oddOccurrencesInArray(nums = []) {
   const freqTable = {};
 
   for (const n of nums) {
@@ -56,7 +61,7 @@ function oddOccurrencesInArray(nums) {
  * @param {number[]} nums Odd-lengthed.
  * @returns {number} The number that occurs odd times.
  */
-function oddOccurrencesInArray2(nums) {
+function oddOccurrencesInArray2(nums = []) {
   // Map lets us store ints as keys so we don't have to convert back to int.
   const freqMap = new Map();
 
@@ -83,7 +88,7 @@ function oddOccurrencesInArray2(nums) {
  * @param {number[]} nums Odd-lengthed.
  * @returns {number} The number that occurs odd times.
  */
-function oddOccurrencesInArray3(nums) {
+function oddOccurrencesInArray3(nums = []) {
   for (let i = 0; i < nums.length; i++) {
     let cnt = 1;
 
@@ -100,24 +105,34 @@ function oddOccurrencesInArray3(nums) {
   }
 }
 
-console.log(oddOccurrencesInArray(nums1), expected1);
-console.log(oddOccurrencesInArray(nums2), expected2);
-console.log(oddOccurrencesInArray(nums3), expected3);
-console.log(oddOccurrencesInArray(nums4), expected4);
-console.log("-----------------------------------");
-console.log(oddOccurrencesInArray2(nums1), expected1);
-console.log(oddOccurrencesInArray2(nums2), expected2);
-console.log(oddOccurrencesInArray2(nums3), expected3);
-console.log(oddOccurrencesInArray2(nums4), expected4);
-console.log("-----------------------------------");
+const { functionalFrequencyTable } = require("../../objects/freqTable");
 
-console.log(oddOccurrencesInArray3(nums1), expected1);
-console.log(oddOccurrencesInArray3(nums2), expected2);
-console.log(oddOccurrencesInArray3(nums3), expected3);
-console.log(oddOccurrencesInArray3(nums4), expected4);
+/**
+  `.entries` gives an array of key value pairs from our frequency table object:
+  [[key1, val1], [key2, val2]]
+  the + in front converts our final result into a number. Our frequency table
+  put numbers from the arr into keys in the freq obj, but keys become strings
+  so we need that to be converted back. Could also use parseInt() or Number()
+  Using a Map object as our freq table would avoid the need to convert.
+  
+ * - Time: O(3n) -> O(n) linear. Creating the table is a loop, `.entries` is
+ *    a loop, and `.filter` is a loop.
+ * - Space: O(1) constant.
+ * @param {number[]} nums
+ * @returns {number}
+ */
+const functionalOddOccurrencesInArray = (nums = []) =>
+  +Object.entries(functionalFrequencyTable(nums))
+    /* 
+    Filter out the even frequencies so we are left with the one
+    that has an odd frequency. Since our array is an array of arrays:
+    [[theKeyWeWant, value]][0][0] <- get the nested arr, then the key.
+    */
+    .filter(([numStr, frequency]) => frequency % 2 !== 0)[0][0];
 
 module.exports = {
   oddOccurrencesInArray,
   oddOccurrencesInArray2,
   oddOccurrencesInArray3,
+  functionalOddOccurrencesInArray,
 };

@@ -8,9 +8,17 @@ Object.values(functions).forEach((testFn) => {
     const str2 = "helloo";
     const expected2 = "helo";
 
+    const str3 = "";
+    const expected3 = "";
+
+    const str4 = "aa";
+    const expected4 = "a";
+
     const testCases = [
       { args: [str1], expected: expected1 },
       { args: [str2], expected: expected2 },
+      { args: [str3], expected: expected3 },
+      { args: [str4], expected: expected4 },
     ];
 
     testCases.forEach(({ args, expected }, i) => {

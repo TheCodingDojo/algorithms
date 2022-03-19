@@ -40,8 +40,10 @@ function encodeStr(str) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function encodeStr(str) {
+function encodeStr(str = "") {
   if (str.length === 0) {
     return "";
   }
@@ -68,8 +70,10 @@ function encodeStr(str) {
  *    reducing the for loops iterations equally.
  * - Space: O(n) linear, because worst case every letter occurs one time so the
  *    output will be as long as input.
+ * @param {string} str
+ * @returns {string}
  */
-function strEncode(str) {
+function strEncode(str = "") {
   let encoded = "";
 
   for (let i = 0; i < str.length; i++) {
@@ -89,8 +93,10 @@ function strEncode(str) {
  * - Time: O(2n) linear -> O(n).
  * - Space: O(2n) -> O(n), because given str is stored twice, in hash table and
  *    output str.
+ * @param {string} str
+ * @returns {string}
  */
-function strEncodeHashTable(str) {
+function strEncodeHashTable(str = "") {
   const charFreq = {};
   let encoded = "";
 
@@ -114,4 +120,4 @@ function strEncodeHashTable(str) {
   return encoded.length < str.length ? encoded : str;
 }
 
-module.exports = { encodeStr };
+module.exports = { encodeStr, strEncode, strEncodeHashTable };

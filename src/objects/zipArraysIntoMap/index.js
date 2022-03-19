@@ -39,7 +39,7 @@ function zipArraysIntoMap(keys, values) {}
  * @param {Array<any>} values
  * @returns {Object} The object with the given keys and values.
  */
-function zipArraysIntoMap(keys, values) {
+function zipArraysIntoMap(keys = [], values = []) {
   const hashMap = {};
 
   for (let i = 0; i < keys.length; i++) {
@@ -59,7 +59,7 @@ function zipArraysIntoMap(keys, values) {
  * @param {Array<any>} values
  * @returns {Object} The object with the given keys and values.
  */
-const functionalZipArraysIntoMap = (keys, values) =>
+const functionalZipArraysIntoMap = (keys = [], values = []) =>
   keys.reduce((obj, key, i) => {
     obj[key] = values[i];
     return obj;

@@ -40,7 +40,7 @@ function socialDistancingEnforcer(queue) {}
  * @param {Array<0|1>} queue
  * @returns {Boolean}
  */
-function socialDistancingEnforcer(queue) {
+function socialDistancingEnforcer(queue = []) {
   let distance = 0;
   let firstPersonSeen = false;
 

@@ -34,7 +34,7 @@ function reverseString(str) {}
  * @param {string} str
  * @returns {string}
  */
-function reverseString(str) {
+function reverseString(str = "") {
   let reversed = "";
 
   for (let i = str.length - 1; i >= 0; i--) {
@@ -50,7 +50,7 @@ function reverseString(str) {
  * @param {string} str
  * @returns {string}
  */
-function reverseString2(str) {
+function reverseString2(str = "") {
   let reversed = "";
 
   for (let i = 0; i < str.length; i++) {
@@ -67,6 +67,6 @@ function reverseString2(str) {
  * @param {string} str
  * @returns {string}
  */
-const functionalReverseStr = (str) => str.split("").reverse().join("");
+const functionalReverseStr = (str = "") => str.split("").reverse().join("");
 
 module.exports = { reverseString, reverseString2, functionalReverseStr };

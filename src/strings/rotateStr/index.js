@@ -46,7 +46,7 @@ function rotateStr(str, amnt) {}
  * - Time: O(n) linear. Every character is visited once.
  * - Space: O(n) linear. Every character is stored again in the new str.
  */
-function rotateStr(str, amnt) {
+function rotateStr(str = "", amnt = 0) {
   /* 
   We need to use the modulo operator only when the amnt > str.length, to get
   the remainder, but when amnt < str.length, rotateAmnt will be the same as
@@ -58,6 +58,11 @@ function rotateStr(str, amnt) {
   remainder that needs to be rotated.
   */
   const rotateAmnt = amnt % str.length;
+
+  if (!rotateAmnt || rotateAmnt <= 0) {
+    return str;
+  }
+
   let charsToRotate = "";
   let newStr = "";
 

@@ -28,8 +28,10 @@ function bracesValid(str) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {boolean}
  */
-function bracesValid(str) {
+function bracesValid(str = "") {
   const stack = [];
   const closeToOpen = { ")": "(", "}": "{", "]": "[" };
 
@@ -60,8 +62,10 @@ function bracesValid(str) {
  * - Time: O(n * m) where n = str.length and m = opens.length,
  *    since opens.length is constant length of 3 -> O(3n) -> O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {boolean}
  */
-function bracesValid2(str) {
+function bracesValid2(str = "") {
   const stack = [];
   const opens = "({[";
   const closeToOpen = { ")": "(", "}": "{", "]": "[" };

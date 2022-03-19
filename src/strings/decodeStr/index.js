@@ -34,7 +34,7 @@ function decodeStr(str) {}
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
-function decodeStr(str) {
+function decodeStr(str = "") {
   let decoded = "";
   let i = 0;
 
@@ -60,7 +60,7 @@ function decodeStr(str) {
   return decoded;
 }
 
-function decodeStr2(str) {
+function decodeStr2(str = "") {
   let decoded = "";
   let numStr = "";
   let letter = str[0];

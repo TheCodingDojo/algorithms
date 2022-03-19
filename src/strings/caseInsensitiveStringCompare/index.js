@@ -39,8 +39,11 @@ function caseInsensitiveStringCompare(strA, strB) {}
  * - Space: O(n + m) -> O(n).
  *    .toUpperCase has to create a new copy of each string since strings
  *    are immutable.
+ * @param {string} strA
+ * @param {string} strB
+ * @returns {boolean}
  */
-function caseInsensitiveStringCompareNaive(strA, strB) {
+function caseInsensitiveStringCompareNaive(strA = "", strB = "") {
   return strA.toUpperCase() === strB.toUpperCase();
 }
 
@@ -48,8 +51,11 @@ function caseInsensitiveStringCompareNaive(strA, strB) {
  * Best case is early termination on first different char.
  * - Time: O(n) linear, due to worst case looping to end.
  * - Space: O(1) constant, only upperCasing two letters at a time.
+ * @param {string} strA
+ * @param {string} strB
+ * @returns {boolean}
  */
-function caseInsensitiveStringCompare(strA, strB) {
+function caseInsensitiveStringCompare(strA = "", strB = "") {
   if (strA.length !== strB.length) {
     return false;
   }
@@ -67,8 +73,11 @@ function caseInsensitiveStringCompare(strA, strB) {
  * - Time: O(n/2) b/c loop is half length. This is still linear because if
  *    n doubles in size, the iterations double, so simplified to O(n).
  * - Space: O(1) constant.
+ * @param {string} strA
+ * @param {string} strB
+ * @returns {boolean}
  */
-function caseInsensitiveStringCompare2(strA, strB) {
+function caseInsensitiveStringCompare2(strA = "", strB = "") {
   if (strA.length !== strB.length) {
     return false;
   }
@@ -89,6 +98,7 @@ function caseInsensitiveStringCompare2(strA, strB) {
 }
 
 module.exports = {
+  caseInsensitiveStringCompareNaive,
   caseInsensitiveStringCompare,
   caseInsensitiveStringCompare2,
 };

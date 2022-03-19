@@ -46,7 +46,7 @@ function isRotation(s1, s2) {}
  *    up both 2n to get 4n.
  * - Space: O(2n) -> O(n) linear, where n is s1.length, 2n from s1 + s1.
  */
-function isRotation(s1, s2) {
+function isRotation(s1 = "", s2 = "") {
   if (s1.length !== s2.length || s1 === s2) {
     return false;
   }

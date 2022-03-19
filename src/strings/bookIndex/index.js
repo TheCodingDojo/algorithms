@@ -32,7 +32,7 @@ function bookIndex(nums) {}
  * - Time: O(n) linear.
  * - Space: O(n) linear.
  */
-function bookIndex(pageNums) {
+function bookIndex(pageNums = "") {
   let formattedPageNums = "";
   let pageRangeStartIdx = 0;
 

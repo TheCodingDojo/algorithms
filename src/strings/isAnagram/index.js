@@ -40,8 +40,11 @@ function isAnagram(s1, s2) {}
 /**
  * - Time: O(2n) -> O(n) linear.
  * - Space: O(2n) -> O(n) linear.
+ * @param {string} s1
+ * @param {string} s2
+ * @returns {boolean}
  */
-function isAnagram(s1, s2) {
+function isAnagram(s1 = "", s2 = "") {
   if (s1.length !== s2.length) {
     return false;
   }
@@ -85,8 +88,11 @@ function isAnagram(s1, s2) {
 /**
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
+ * @param {string} s1
+ * @param {string} s2
+ * @returns {boolean}
  */
-function isAnagram2(s1, s2) {
+function isAnagram2(s1 = "", s2 = "") {
   if (s1.length !== s2.length) {
     return false;
   }

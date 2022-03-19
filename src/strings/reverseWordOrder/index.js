@@ -37,7 +37,7 @@ function reverseWordOrder(wordsStr) {}
  * @param {string} wordsStr
  * @returns {string}
  */
-function reverseWordOrderSplit(wordsStr) {
+function reverseWordOrderSplit(wordsStr = "") {
   // if all spaces
   if (wordsStr == false) {
     return wordsStr;
@@ -68,7 +68,7 @@ function reverseWordOrderSplit(wordsStr) {
  * @param {string} wordsStr
  * @returns {string}
  */
-function reverseWordOrder(wordsStr) {
+function reverseWordOrder(wordsStr = "") {
   // if all spaces
   if (wordsStr == false) {
     return wordsStr;
@@ -107,7 +107,7 @@ function reverseWordOrder(wordsStr) {
  * @param {string} wordsStr
  * @returns {string}
  */
-const functionalReverseWordOrder = (wordsStr) =>
+const functionalReverseWordOrder = (wordsStr = "") =>
   wordsStr
     // Convert to array split on spaces. Could result in empty strings
     // if there are multiple spaces in a row.
