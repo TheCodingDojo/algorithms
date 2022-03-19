@@ -64,7 +64,7 @@ console.log(arr3, "should equal", arr3Expected);
  * @param {number} idx Index of the item to be removed.
  * @returns {any} The removed item.
  */
-function removeAt(arr, idx) {
+function removeAt(arr = [], idx) {
   if (idx < 0 || idx >= arr.length) {
     return null;
   }

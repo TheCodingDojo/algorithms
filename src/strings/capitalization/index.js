@@ -53,7 +53,7 @@ function capitalization(strings) {}
  * @returns {string} The given string with the first letter capitalized or an
  *    empty string.
  */
-function capitalize(string) {
+function capitalize(string = "") {
   if (string.length === 0) {
     return "";
   }
@@ -68,7 +68,7 @@ function capitalize(string) {
  * @param {Array<string>} strings
  * @returns {Array<string>}
  */
-function capitalization(strings) {
+function capitalization(strings = []) {
   for (let i = 0; i < strings.length; i++) {
     /* 
     Reassign this index to what the capitalize function returns.
@@ -79,7 +79,7 @@ function capitalization(strings) {
 }
 
 // Without the helper function it would look like this.
-function capitalization2(strings) {
+function capitalization2(strings = []) {
   for (let i = 0; i < strings.length; i++) {
     let s = strings[i];
 
@@ -101,13 +101,13 @@ function capitalization2(strings) {
  * @param {Array<string>} strings
  * @returns {Array<string>}
  */
-const functionalCapitalizationMap = (strings) => strings.map(capitalize);
+const functionalCapitalizationMap = (strings = []) => strings.map(capitalize);
 
 /**
  * @param {Array<string>} strings
  * @returns {Array<string>}
  */
-const functionalCapitalization = (strings) =>
+const functionalCapitalization = (strings = []) =>
   strings.reduce((mutatedStrings, currStr, i) => {
     mutatedStrings[i] = capitalize(currStr);
     return mutatedStrings;

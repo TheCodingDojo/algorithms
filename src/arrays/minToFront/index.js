@@ -51,7 +51,7 @@ console.log(nums3, "should equal", expected3);
  * @param {Array<number>} nums
  * @returns {Array<number>} The given arr after the min has been moved to front.
  */
-function minToFront(nums) {
+function minToFront(nums = []) {
   if (nums.length === 0) {
     return nums;
   }
@@ -78,7 +78,7 @@ function minToFront(nums) {
 }
 
 // If we re-use other functions, this function can be easier to build and read
-function functionalMinToFront(nums) {
+function functionalMinToFront(nums = []) {
   const minIdx = findMinIdx(nums);
 
   if (minIdx > -1) {
@@ -130,7 +130,7 @@ function unshift(arr, val) {
 }
 
 // What it looks like using built in methods.
-function moveMinFrontBuiltIn(nums) {
+function moveMinFrontBuiltIn(nums = []) {
   if (nums.length === 0) {
     return null;
   }

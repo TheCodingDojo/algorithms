@@ -58,7 +58,7 @@ console.log(result4, "should be", expected4);
  * @param {any} searchItem The item to find.
  * @returns {number} The index of found item, or -1 if not found.
  */
-function indexOf(items, searchItem) {
+function indexOf(items = [], searchItem) {
   for (let i = 0; i < items.length; i++) {
     if (items[i] === searchItem) {
       return i;
@@ -67,7 +67,7 @@ function indexOf(items, searchItem) {
   return -1;
 }
 
-function indexOf2(items, searchItem) {
+function indexOf2(items = [], searchItem) {
   let foundIdx = -1;
 
   for (let i = 0; i < items.length; i++) {

@@ -84,7 +84,7 @@ console.log(result8, "should equal", expected8);
  * @returns {?number} The second largest int from the given array or null.
  *    The ? in front means it's nullable.
  */
-function secondLargest(nums) {
+function secondLargest(nums = []) {
   if (nums.length < 2) {
     return null;
   }
@@ -122,7 +122,7 @@ function secondLargest(nums) {
  * @param {Array<number>} nums
  * @returns {?number}
  */
-function secondLargest2(nums) {
+function secondLargest2(nums = []) {
   if (nums.length < 2) {
     return null;
   }

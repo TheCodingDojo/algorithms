@@ -84,7 +84,7 @@ console.log(result6, "should be", expected6);
  * @param {number} endIdx Exclusive.
  * @returns {Array<any>} The slice of the given arr from startIdx to the endIdx.
  */
-function slice(arr, startIdx, endIdx) {
+function slice(arr = [], startIdx = 0, endIdx = arr.length) {
   // we might need to adjust the params
   // make a new var so we don't change the original input
   let adjustedStartIdx = startIdx;

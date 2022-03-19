@@ -37,7 +37,7 @@ console.log(result1, "should equal", expected1);
  * @param {Array<number>} nums2
  * @returns {Array<number>} The column sums.
  */
-function sumArrColumns(nums1, nums2) {
+function sumArrColumns(nums1 = [], nums2 = []) {
   const summedCols = [];
 
   for (let i = 0; i < nums1.length; i++) {

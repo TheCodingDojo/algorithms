@@ -67,7 +67,7 @@ console.log(result5, "should be", expected5);
  * @param {number} nthToLast
  * @returns {any} The item at the nthToLast index or null.
  */
-function nthLast(items, nthToLast) {
+function nthLast(items = [], nthToLast = 1) {
   let idx = items.length - nthToLast;
 
   if (idx >= 0 && idx < items.length) {

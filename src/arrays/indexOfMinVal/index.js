@@ -49,7 +49,7 @@ console.log(result3, "should be", expected3);
  * @param {Array<number>} nums
  * @returns {number} Index of smallest number or -1 if empty given array.
  */
-function indexOfMinVal(nums) {
+function indexOfMinVal(nums = []) {
   if (nums.length === 0) {
     return -1;
   }

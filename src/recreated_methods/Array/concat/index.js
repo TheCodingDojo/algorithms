@@ -55,7 +55,7 @@ console.log(result2, "should be", expected2);
  * @param {Array<any>} arr2
  * @returns {Array<any>} The new arr that is a concatenation of the given arrays.
  */
-function concat(arr1, arr2) {
+function concat(arr1 = [], arr2 = []) {
   const newArr = [];
 
   for (let i = 0; i < arr1.length; i++) {
@@ -75,7 +75,7 @@ function concat(arr1, arr2) {
  * @param {Array<any>} arr2
  * @returns {Array<any>}
  */
-const concatSpread = (arr1, arr2) => [...arr1, ...arr2];
+const concatSpread = (arr1 = [], arr2 = []) => [...arr1, ...arr2];
 
 /**
  * @param {...any[]} arrays An array of all the arrays passed in to the

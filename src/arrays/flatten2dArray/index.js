@@ -44,7 +44,7 @@ function flatten2dArray(twoDimArr) {
  * @param {Array<Array<any>>} twoDimArr An array of arrays of any data type.
  * @returns {Array<any>} The flattened array that should be one dimensional.
  */
-function flatten2dArray(twoDimArr) {
+function flatten2dArray(twoDimArr = []) {
   var flattened = [];
 
   for (let i = 0; i < twoDimArr.length; i++) {
@@ -55,7 +55,7 @@ function flatten2dArray(twoDimArr) {
   return flattened;
 }
 
-function flatten2dArr(twoDimArr) {
+function flatten2dArr(twoDimArr = []) {
   var flattened = [];
 
   for (const subArr of twoDimArr) {
