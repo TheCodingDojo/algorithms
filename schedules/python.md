@@ -5,7 +5,7 @@
 
 ---
 
-## Week 1 - [Strings](../src/strings) & [Dicts](../src/objects)
+## Week 1 - [strings](../src/strings) & [dicts](../src/objects)
 
 1. Mon
    - [caseInsensitiveStringCompare](../src/strings/caseInsensitiveStringCompare/index.js)
@@ -26,9 +26,7 @@
 
 ---
 
-## Week 2 - [Strings](../src/strings) & [Dicts](../src/objects)
-
-- [Hash Table Intro](https://docs.google.com/document/d/1r_01EQDb5jGwPPDH0cVolo1L8FJZlHp9p2jd3nfW3TQ/edit?usp=sharing)
+## Week 2 - [strings](../src/strings) & [dicts](../src/objects)
 
 1. Mon
    - [makeFrequencyTable](../src/objects/makeFrequencyTable/index.js)
@@ -50,7 +48,7 @@
 
 ---
 
-## Week 3 - [Arrays](../src/arrays)
+## Week 3 - [arrays](../src/arrays)
 
 1. Mon
    - [socialDistancingEnforcer](../src/arrays/socialDistancingEnforcer/index.js)
@@ -69,7 +67,7 @@
 
 ---
 
-## Week 4 - [Recursion](../src/recursion)
+## Week 4 - [recursion](../src/recursion)
 
 - [intro](../src/recursion/intro-notes/intro.md)
 
