@@ -71,7 +71,7 @@
 
 ## Week 4 - [Recursion](../src/recursion)
 
-- [Recursion Intro](../src/recursion/intro-notes/intro)
+- [intro](../src/recursion/intro-notes/intro.md)
 
 1. Mon
    - [sumArr](../src/recursion/sumArr/index.js)
