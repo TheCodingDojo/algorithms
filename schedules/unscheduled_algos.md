@@ -3,7 +3,6 @@
 ## Objects
 
 - [discordAlertTimeout](../src/objects/discordAlertTimeout/index.js)
-- [flattenObjectOfArrays](../src/objects/flattenObjectOfArrays/index.js)
 
 ## Strings
 
