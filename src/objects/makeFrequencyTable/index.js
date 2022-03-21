@@ -34,7 +34,7 @@ const expected3 = {};
  * @returns {Object<string, number>} A frequency table where the keys are items
  *    from the given arr and the values are the amnt of times that item occurs.
  */
-function frequencyTableBuilder(arr) {}
+function makeFrequencyTable(arr) {}
 
 /*****************************************************************************/
 
@@ -44,7 +44,7 @@ function frequencyTableBuilder(arr) {}
  * @param {Array<string>} arr
  * @returns {Object<string, number>}
  */
-function frequencyTableBuilder(arr = []) {
+function makeFrequencyTable(arr = []) {
   const freqTable = {};
 
   for (let i = 0; i < arr.length; i++) {
@@ -66,7 +66,7 @@ function frequencyTableBuilder(arr = []) {
  * @param {Array<string>} arr
  * @returns {Object<string, number>}
  */
-function frequencyTableBuilder2(arr = []) {
+function makeFrequencyTable2(arr = []) {
   const freqTable = {};
 
   for (const str of arr) {
@@ -86,7 +86,7 @@ function frequencyTableBuilder2(arr = []) {
  * @param {Array<string>} arr
  * @returns {Object<string, number>}
  */
-const functionalFrequencyTable = (arr = []) =>
+const makeFrequencyTable3 = (arr = []) =>
   arr.reduce((freq, currStr) => {
     if (currStr in freq === false) {
       freq[currStr] = 0;
@@ -103,7 +103,7 @@ const functionalFrequencyTable = (arr = []) =>
  * @param {Array<any>} arr
  * @returns {Object<string, number>}
  */
-const functionalFrequencyMap = (arr = []) =>
+const makeFrequencyMap = (arr = []) =>
   arr.reduce((freq, item) => {
     if (freq.has(item) === false) {
       freq.set(item, 0);
@@ -113,7 +113,8 @@ const functionalFrequencyMap = (arr = []) =>
   }, new Map());
 
 module.exports = {
-  frequencyTableBuilder,
-  frequencyTableBuilder2,
-  functionalFrequencyTable,
+  makeFrequencyTable,
+  makeFrequencyTable2,
+  makeFrequencyTable3,
+  makeFrequencyMap,
 };

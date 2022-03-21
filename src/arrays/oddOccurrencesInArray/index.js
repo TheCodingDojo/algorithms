@@ -105,7 +105,7 @@ function oddOccurrencesInArray3(nums = []) {
   }
 }
 
-const { functionalFrequencyTable } = require("../../objects/freqTable");
+const { makeFrequencyTable } = require("../../objects/makeFrequencyTable");
 
 /**
   `.entries` gives an array of key value pairs from our frequency table object:
@@ -122,7 +122,7 @@ const { functionalFrequencyTable } = require("../../objects/freqTable");
  * @returns {number}
  */
 const functionalOddOccurrencesInArray = (nums = []) =>
-  +Object.entries(functionalFrequencyTable(nums))
+  +Object.entries(makeFrequencyTable(nums))
     /* 
     Filter out the even frequencies so we are left with the one
     that has an odd frequency. Since our array is an array of arrays:

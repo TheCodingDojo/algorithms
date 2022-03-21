@@ -36,8 +36,19 @@ Object.values(functions).forEach((testFn) => {
 
     testCases.forEach(({ args, expected }, i) => {
       describe(`when given testCases[${i}]`, () => {
-        it("should return an object that has keys corresponding to the given array's items and values that are a count of the item's frequency.", () =>
-          expect(testFn(...args)).toEqual(expected));
+        it("should return an object that has keys corresponding to the given array's items and values that are a count of the item's frequency.", () => {
+          const actual = testFn(...args);
+
+          if (actual instanceof Map) {
+            const pojo = [...actual.entries()].reduce((obj, [key, value]) => {
+              obj[key] = value;
+              return obj;
+            }, {});
+            expect(pojo).toEqual(expected);
+          } else {
+            expect(actual).toEqual(expected);
+          }
+        });
       });
     });
   });

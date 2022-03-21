@@ -31,7 +31,7 @@
 - [Hash Table Intro](https://docs.google.com/document/d/1r_01EQDb5jGwPPDH0cVolo1L8FJZlHp9p2jd3nfW3TQ/edit?usp=sharing)
 
 1. Mon
-   - [freqTable](../src/objects/freqTable/index.js)
+   - [makeFrequencyTable](../src/objects/makeFrequencyTable/index.js)
    - [oddOccurrencesInArray](../src/arrays/oddOccurrencesInArray/index.js)
 2. Tue
    - [stringDedupe](../src/strings/stringDedupe/index.js)
