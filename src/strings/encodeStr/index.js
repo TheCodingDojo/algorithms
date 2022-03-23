@@ -44,10 +44,6 @@ function encodeStr(str) {}
  * @returns {string}
  */
 function encodeStr(str = "") {
-  if (str.length === 0) {
-    return "";
-  }
-
   let encoded = "";
   let currChar = str[0];
   let currCharCount = 0;
@@ -56,13 +52,20 @@ function encodeStr(str = "") {
     if (str[i] === currChar) {
       currCharCount++;
     }
+
+    /* 
+    Making the below an else is too restrictive and makes it more complex to
+    cover all the cases w/o repeating conditions and nesting conditions.
+    However, the above if statement could be turned into an else below this,
+    but it can be argued that it's clearer to avoid the else.
+    */
     if (str[i] !== currChar || i === str.length - 1) {
       encoded += currChar + currCharCount;
       currChar = str[i];
       currCharCount = 1;
     }
   }
-  return encoded.length < str.length ? encoded : str;
+  return encoded.length > 0 && encoded.length < str.length ? encoded : str;
 }
 
 /**
@@ -77,11 +80,11 @@ function strEncode(str = "") {
   let encoded = "";
 
   for (let i = 0; i < str.length; i++) {
-    let currChar = str[i],
-      dupeCount = 1;
+    let currChar = str[i];
+    let dupeCount = 1;
 
     while (str[i + 1] === currChar) {
-      ++dupeCount;
+      dupeCount++;
       i++;
     }
     encoded += currChar + dupeCount;
@@ -111,9 +114,9 @@ function strEncodeHashTable(str = "") {
   // iterate back over str to get the proper order
   // order of keys on obj is not guaranteed to be in order
   for (const char of str) {
-    if (charFreq[char]) {
+    if (charFreq[char] > 0) {
       encoded += char + charFreq[char];
-      // we need to avoid the dupes
+      // Next time the same letter is looked up, it won't be added again.
       charFreq[char] = 0;
     }
   }
