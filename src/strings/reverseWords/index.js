@@ -102,7 +102,7 @@ function reverseWords(wordsStr = "w") {
  * @param {string} wordsStr
  * @returns {string}
  */
-const functionalReverseWords = (wordsStr = "w") =>
+const functionalReverseWords = (wordsStr = "") =>
   wordsStr
     // Convert to array of words split on space. Whenever the split separated
     // has repeated duplicates, empty strings will be present in the new array.
