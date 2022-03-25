@@ -49,9 +49,10 @@ function encodeStr(str = "") {
   let compareCharCount = 0;
 
   for (let i = 0; i < str.length; i++) {
+    const isDuplicate = str[i] === compareChar;
     const isLastIteration = i === str.length - 1;
 
-    if (str[i] === compareChar) {
+    if (isDuplicate) {
       compareCharCount++;
     }
 
@@ -62,7 +63,7 @@ function encodeStr(str = "") {
     but it may be clearer to keep it as two ifs since the conditions are both
     stated explicitly.
     */
-    if (str[i] !== compareChar || isLastIteration) {
+    if (isDuplicate === false || isLastIteration) {
       encoded += compareChar + compareCharCount;
       compareChar = str[i];
       compareCharCount = 1;
