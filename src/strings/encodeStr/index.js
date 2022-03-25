@@ -49,6 +49,8 @@ function encodeStr(str = "") {
   let currCharCount = 0;
 
   for (let i = 0; i < str.length; i++) {
+    const isLastIteration = i === str.length - 1;
+
     if (str[i] === currChar) {
       currCharCount++;
     }
@@ -59,7 +61,7 @@ function encodeStr(str = "") {
     However, the above if statement could be turned into an else below this,
     but it can be argued that it's clearer to avoid the else.
     */
-    if (str[i] !== currChar || i === str.length - 1) {
+    if (str[i] !== currChar || isLastIteration) {
       encoded += currChar + currCharCount;
       currChar = str[i];
       currCharCount = 1;
