@@ -61,6 +61,7 @@ console.log(result4, "should be", expected4);
 function indexOf(items = [], searchItem) {
   for (let i = 0; i < items.length; i++) {
     if (items[i] === searchItem) {
+      // the function is over when returning, so this also breaks the loop.
       return i;
     }
   }
