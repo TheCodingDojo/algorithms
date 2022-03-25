@@ -45,7 +45,7 @@ function flatten2dArray(twoDimArr) {
  * @returns {Array<any>} The flattened array that should be one dimensional.
  */
 function flatten2dArray(twoDimArr = []) {
-  var flattened = [];
+  const flattened = [];
 
   for (let i = 0; i < twoDimArr.length; i++) {
     for (let j = 0; j < twoDimArr[i].length; ++j) {
@@ -55,8 +55,14 @@ function flatten2dArray(twoDimArr = []) {
   return flattened;
 }
 
+/**
+ * - Time: O(n * m).
+ * - Space: O(n * m).
+ * @param {number[][]} twoDimArr
+ * @returns {number[]}
+ */
 function flatten2dArr(twoDimArr = []) {
-  var flattened = [];
+  const flattened = [];
 
   for (const subArr of twoDimArr) {
     for (const elem of subArr) {
@@ -66,4 +72,34 @@ function flatten2dArr(twoDimArr = []) {
   return flattened;
 }
 
-module.exports = { flatten2dArray, flatten2dArr };
+/**
+ * - Time: O(n * m).
+ * - Space: O(n * m).
+ * @param {number[][]} twoDimArr
+ * @returns {number[]}
+ */
+function flatten2dArraySpread(twoDimArr = []) {
+  const flattened = [];
+
+  for (const subArr of twoDimArr) {
+    flattened.push(...subArr);
+  }
+
+  return flattened;
+}
+
+/**
+ * - Time: O(n * m).
+ * - Space: O(n * m).
+ * @param {number[][]} twoDimArr
+ * @returns {number[]}
+ */
+const flatten2dArrayFunctional = (twoDimArr = []) =>
+  twoDimArr.reduce((flat, subArr) => flat.concat(subArr), []);
+
+module.exports = {
+  flatten2dArray,
+  flatten2dArr,
+  flatten2dArraySpread,
+  flatten2dArrayFunctional,
+};
