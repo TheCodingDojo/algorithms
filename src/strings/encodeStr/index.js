@@ -45,26 +45,27 @@ function encodeStr(str) {}
  */
 function encodeStr(str = "") {
   let encoded = "";
-  let currChar = str[0];
-  let currCharCount = 0;
+  let compareChar = str[0];
+  let compareCharCount = 0;
 
   for (let i = 0; i < str.length; i++) {
     const isLastIteration = i === str.length - 1;
 
-    if (str[i] === currChar) {
-      currCharCount++;
+    if (str[i] === compareChar) {
+      compareCharCount++;
     }
 
     /* 
     Making the below an else is too restrictive and makes it more complex to
     cover all the cases w/o repeating conditions and nesting conditions.
     However, the above if statement could be turned into an else below this,
-    but it can be argued that it's clearer to avoid the else.
+    but it may be clearer to keep it as two ifs since the conditions are both
+    stated explicitly.
     */
-    if (str[i] !== currChar || isLastIteration) {
-      encoded += currChar + currCharCount;
-      currChar = str[i];
-      currCharCount = 1;
+    if (str[i] !== compareChar || isLastIteration) {
+      encoded += compareChar + compareCharCount;
+      compareChar = str[i];
+      compareCharCount = 1;
     }
   }
   return encoded.length > 0 && encoded.length < str.length ? encoded : str;
