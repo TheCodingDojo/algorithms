@@ -62,7 +62,7 @@ function mode(nums) {
 
   for (const key in freq) {
     if (freq[key] === maxFreq) {
-      // keys are strings, convert back to int
+      // Keys are strings, convert back to int. Can be avoided if using a Map.
       modes.push(parseInt(key));
     } else {
       allSameFreq = false;

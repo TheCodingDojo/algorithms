@@ -24,7 +24,6 @@ function sumArr(nums) {}
 /*****************************************************************************/
 
 /**
- * Add params if needed for recursion
  * Recursively sums the given array.
  * - Time: O(n) linear.
  * - Space: O(n) linear due to the call stack.

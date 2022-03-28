@@ -47,8 +47,8 @@ function recursiveSigma(n) {
   if (int < 1) {
     return 0;
   }
-  // if the return keyword is missing below, undefined will be returned because
-  // the above return happens in a nested recursive call and doesn't make it all the way out
+  // if the return keyword is missing below, undefined because returns that
+  // happen deeper in the recursion don't get returned all the way out.
   return int + recursiveSigma(int - 1);
 }
 /* 
@@ -82,7 +82,9 @@ function recursiveSigma2(n, sum = 0) {
   if (int < 1) {
     return sum;
   }
-  return recursiveSigma2(int - 1, sum + int);
+
+  const newSum = recursiveSigma2(int - 1, sum + int);
+  return newSum;
 }
 
 module.exports = { recursiveSigma, recursiveSigma2 };

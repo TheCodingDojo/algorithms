@@ -6,16 +6,16 @@
 
 ## Base Case
 
-- the goal of the recursion where you return the result actual desired value
-- additional note: `return functionName()`
-  - the `return` is needed even tho elsewhere you may have a `return someValue` so that the initial function call will return whatever the inner recursive function calls return, otherwise `undefined` will be ultimately returned
+- The goal of the recursion where you return a value instead of more recursive function calls.
+- `return functionName()`
+  - Typically when doing recursion, you need to `return` the recursive function call, otherwise, the base case is only returned within nested function calls and does not get returned all the way out to the first call to the function.
 
 ---
 
 ## Termination Condition
 
-- when something 'bad' happens, exit the recursion
-- prevents bad inputs from triggering the recursion
+- When something 'bad' happens, exit the recursion with `return`.
+- Prevents bad inputs from triggering the recursion.
 
 ---
 
@@ -123,6 +123,6 @@ Because of this, iterative (non-recursive) solutions have a space complexity adv
 
 - Primitive data types are passed into functions by value, or as a "copy"
   - i.e., if you pass a string that is in a var to 3 separate functions, each function gets it's own copy of the string, if the string is changed in one of the 3 functions, it is only being changed in that one place
-  - In some cases with recursion, using a primitive value parameter that you update in recursive function calls will cause a problem since the parameter exists as a copy in multiple recursive calls and therefore can be updated separately from one another and be out of sync.
-    - One solution to this is to save your recursively returned value into a variable before proceeding: `const result = myRecursiveFunction("some string");`
-    - Another solution to this is to put the primitive value parameter into an object or array and then use that as the parameter so that it is passed to functions via reference so that all functions refer to the same single object so if it is updated all pointers have that up-to-date data
+  - In some cases with recursion, using a primitive value parameter that you update in recursive function calls will cause a problem since the parameter exists as a copy in multiple recursive calls and therefore can be updated separately from one another and become out of sync.
+    - One solution to this is to save your recursively returned value into a variable before proceeding: `const result = myRecursiveFunction();`
+    - Another solution to this is to put the primitive value parameter into an object or array and then use that as the parameter so that it is passed to functions via reference so that all recursive functions refer to the same single object, so if it is updated, all pointers have that up-to-date data by reference.
