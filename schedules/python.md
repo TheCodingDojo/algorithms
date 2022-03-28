@@ -72,8 +72,8 @@
 - [intro](../src/recursion/intro-notes/intro.md)
 
 1. Mon
-   - [sumArr](../src/recursion/sumArr/index.js)
    - [recursiveSigma](../src/recursion/recursiveSigma/index.js)
+   - [sumArr](../src/recursion/sumArr/index.js)
 2. Tue
    - [factorial](../src/recursion/factorial/index.js)
    - [fibonacci](../src/recursion/fibonacci/index.js)
