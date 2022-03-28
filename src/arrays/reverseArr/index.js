@@ -51,7 +51,7 @@ console.log(result4, "should be", expected4);
  * @param {Array<any>} items
  * @returns {Array<any>} The given arr after being reversed.
  */
-function reverseArr(items) {
+function reverseArr(items = []) {
   // Without Math.floor the middle item would be swapped with itself. Wouldn't
   // cause a problem but is unnecessary.
   for (let leftIdx = 0; leftIdx < Math.floor(items.length / 2); leftIdx++) {
@@ -65,7 +65,7 @@ function reverseArr(items) {
 
 // destructure array syntax, similar to py syntax for swapping
 // idx vars to make the swap using destructure syntax more obvious
-function revArr(items) {
+function revArr(items = []) {
   for (let leftIdx = 0; leftIdx < Math.floor(items.length / 2); leftIdx++) {
     const rightIdx = items.length - 1 - leftIdx;
     [items[leftIdx], items[rightIdx]] = [items[rightIdx], items[leftIdx]];

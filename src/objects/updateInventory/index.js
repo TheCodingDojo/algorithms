@@ -32,12 +32,15 @@ const currInv3 = [];
 const expected3 = [{ name: "Peanut Butter", quantity: 20 }];
 
 /**
- * Updates the current inventory based on the new inventory.
- * - Time: O(?).
- * - Space: O(?).
  * @typedef {Object} Inventory
  * @property {string} Inventory.name The name of the item.
  * @property {number} Inventory.quantity The quantity of the item.
+ */
+
+/**
+ * Updates the current inventory based on the new inventory.
+ * - Time: O(?).
+ * - Space: O(?).
  * @param {Array<Inventory>} newInv A shipment of new inventory.
  *    An array of inventory objects.
  * @param {Array<Inventory>} currInv
@@ -50,8 +53,11 @@ function updateInventory(newInv, currInv) {}
 /**
  * - Time: O(n * m), where n = newInv.length and m = currInv.length.
  * - Space: O(1) constant.
+ * @param {Array<Inventory>} newInv
+ * @param {Array<Inventory>} currInv
+ * @return
  */
-function updateInventory(newInv, currInv) {
+function updateInventory(newInv = [], currInv = []) {
   for (let i = 0; i < newInv.length; i++) {
     let itemFound = false;
     const newItem = newInv[i];
@@ -77,8 +83,12 @@ function updateInventory(newInv, currInv) {
 /**
  * - Time: O(n + m) -> O(n) linear, n = currentInv.length, m = newInv.length.
  * - Space: O(n) linear, from currInvTable extra storage.
+ * @param {Array<Inventory>} newInv A shipment of new inventory.
+ *    An array of inventory objects.
+ * @param {Array<Inventory>} currInv
+ * @return
  */
-function updateInventory2(newInv, currentInv) {
+function updateInventory2(newInv = [], currentInv = []) {
   const currInvTable = {};
 
   for (let i = 0; i < currentInv.length; i++) {

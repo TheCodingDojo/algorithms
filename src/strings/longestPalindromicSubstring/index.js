@@ -11,7 +11,7 @@
   a, ab, abc, b, bc, c
 */
 
-const { isPalindrome } = require("../isPalindrome/index.js");
+const { isPalindrome } = require("../isPalindrome");
 
 const str1 = "what up, daddy-o?";
 const expected1 = "dad";
@@ -40,20 +40,22 @@ function longestPalindromicSubstring(str) {}
 /*****************************************************************************/
 
 /**
- * - Time: O(n^2 * 2k). The n^2 part comes from the j loop.
- *    2k is from the iterations of getPalindrome & slice.
+ * - Time: O(n^3). Cubed. The nested for loops make it n^2, but then there
+ *    is a 3rd loop that is nested from the slice which in the worst case
+ *    slices the whole string. We focus on the worst case even though all
+ *    but one iteration is not slicing the whole string.
  * - Space: O(n) linear.
  */
-function longestPalindromicSubstring(str) {
+function longestPalindromicSubstring(str = "") {
   let longestPalindrome = str[0];
 
   // generate every sub string 1 at a time and check
-  // if it is a palindrome and if it is longer than
-  // the current longest
+  // if it is a palindrome and how long it is.
   for (let i = 0; i < str.length; i++) {
     for (let j = i + 1; j < str.length + 1; j++) {
       let subStr = str.slice(i, j);
 
+      // No need to check if it is a palindrome if it can't be longer.
       if (subStr.length > longestPalindrome.length && isPalindrome(subStr)) {
         longestPalindrome = subStr;
       }
@@ -66,7 +68,7 @@ function longestPalindromicSubstring(str) {
  * - Time: O(n^2) quadratic.
  * - Space: O(n) linear.
  */
-function longestPalindromicSubstring2(str) {
+function longestPalindromicSubstring2(str = "") {
   let longestPal = "";
   const midIdx = Math.floor(str.length / 2);
 
@@ -103,7 +105,7 @@ function longestPalindromicSubstring2(str) {
  * @param {number} right Right index to expand out from.
  * @returns {string} The longest palindrome from the starting given indexes.
  */
-function concatPalindromeFromCenter(str, left, right) {
+function concatPalindromeFromCenter(str = "", left = 0, right = 0) {
   let leftPalSub = "";
   let rightPalSub = "";
 

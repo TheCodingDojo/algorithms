@@ -37,7 +37,7 @@ console.log(result1, "should equal", expected1);
  * @param {Array<number>} nums2
  * @returns {Array<number>} The column sums.
  */
-function sumArrColumns(nums1, nums2) {
+function sumArrColumns(nums1 = [], nums2 = []) {
   const summedCols = [];
 
   for (let i = 0; i < nums1.length; i++) {
@@ -46,4 +46,17 @@ function sumArrColumns(nums1, nums2) {
   return summedCols;
 }
 
-module.exports = { sumArrColumns };
+/**
+ * - Time: O(n) linear.
+ * - Space: O(n) linear. `.map` creates a new array.
+ * @param {Array<number>} nums1
+ * @param {Array<number>} nums2
+ * @returns {Array<number>}
+ */
+const functionalSumArrColumns = (nums1 = [], nums2 = []) =>
+  nums1.map((n1, i) => n1 + nums2[i]);
+
+module.exports = {
+  sumArrColumns,
+  functionalSumArrColumns,
+};

@@ -11,6 +11,12 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
+const str3 = "";
+const expected3 = "";
+
+const str4 = "aa";
+const expected4 = "a";
+
 /**
  * De-dupes the given string.
  * - Time: O(?).
@@ -25,8 +31,10 @@ function stringDedupe(str) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(2n) -> O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function stringDedupe(str) {
+function stringDedupe(str = "") {
   let distinctStr = "";
   const seen = {};
 
@@ -44,8 +52,10 @@ function stringDedupe(str) {
  * Keeps first occurrence, no hash table approach.
  * - Time: O(n^2) quadratic due to .include being nested loop.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function stringDedupe2(str) {
+function stringDedupe2(str = "") {
   let distinctStr = "";
 
   for (const char of str) {
@@ -56,4 +66,12 @@ function stringDedupe2(str) {
   return distinctStr;
 }
 
-module.exports = { stringDedupe, stringDedupe2 };
+/**
+ * - Time: O(3n) -> O(n) linear. Convert to Set. Convert to array. join.
+ * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
+ */
+const stringDedupeWithSet = (str = "") => [...new Set(str)].join("");
+
+module.exports = { stringDedupe, stringDedupe2, stringDedupeWithSet };

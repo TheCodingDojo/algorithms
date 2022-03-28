@@ -24,8 +24,10 @@ function trim(str) {}
  *    str.length.
  * - Space: O(n) linear, .slice creates a new string, at most it will be as
  *    long as input str.
+ * @param {string} str
+ * @returns {string}
  */
-function trim(str) {
+function trim(str = "") {
   let startIdx = 0;
   let endIdx = str.length - 1;
 

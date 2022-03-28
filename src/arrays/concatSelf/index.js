@@ -47,7 +47,7 @@ function concatArrWithSelf(items) {
  * @returns {Array<any>} The resulting concatenation of the given arr with
  *    itself.
  */
-function concatArrWithSelfManually(arr) {
+function concatArrWithSelfManually(arr = []) {
   const concatArr = [];
 
   for (let i = 0; i < 2; i++) {
@@ -58,16 +58,16 @@ function concatArrWithSelfManually(arr) {
   return concatArr;
 }
 
-function concatArrWithSelf(arr) {
+function concatArrWithSelf(arr = []) {
   return arr.concat(arr);
 }
 
-function spreadArrWithSelf(arr) {
+function spreadArrWithSelf(arr = []) {
   return [...arr, ...arr];
 }
 
 // causes INCORRECT order: ["a", "a", "b", "b", "c", "c"]
-function concatArrWithSelfManually2(arr) {
+function concatArrWithSelfManually2(arr = []) {
   const concatArr = [];
 
   for (const elem of arr) {

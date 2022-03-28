@@ -36,8 +36,10 @@ function acronymize(str) {}
  * - Time: O(n + m) linear -> O(n) where n is wordsStr.length and
  *    m is wordsArr.length.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function acronymizeWithSplit(wordsStr) {
+function acronymizeWithSplit(wordsStr = "") {
   let acronym = "";
   const wordsArr = wordsStr.split(" ");
 
@@ -53,8 +55,10 @@ function acronymizeWithSplit(wordsStr) {
 /**
  * - Time: O(n) linear
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function acronymize(wordsStr) {
+function acronymize(wordsStr = "") {
   let acronym = "";
   let currentWord = "";
 
@@ -80,10 +84,10 @@ function acronymize(wordsStr) {
 /**
  * - Time: O(4n) -> O(n) linear. Split, filter, map, and join each loop.
  * - Space: O(3n) -> O(n) linear. Split, filter, and map each create a new arr.
- * @param {string} s The string to turn into an acronym.
- * @returns {string} An acronym.
+ * @param {string} s
+ * @returns {string}
  */
-const functionalAcronymize = (s) =>
+const functionalAcronymize = (s = "") =>
   s
     // Regex can be used if more control over split is needed.
     // This example removes any non alphabetical chars with split.

@@ -31,8 +31,10 @@ function reverseString(str) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function reverseString(str) {
+function reverseString(str = "") {
   let reversed = "";
 
   for (let i = str.length - 1; i >= 0; i--) {
@@ -45,8 +47,10 @@ function reverseString(str) {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} str
+ * @returns {string}
  */
-function reverseString2(str) {
+function reverseString2(str = "") {
   let reversed = "";
 
   for (let i = 0; i < str.length; i++) {
@@ -57,4 +61,12 @@ function reverseString2(str) {
   return reversed;
 }
 
-module.exports = { reverseString, reverseString2 };
+/**
+ * - Time: O(3n) -> O(n) linear.
+ * - Space: O(2n) -> O(n) linear. Split and join are both duplicating data.
+ * @param {string} str
+ * @returns {string}
+ */
+const functionalReverseStr = (str = "") => str.split("").reverse().join("");
+
+module.exports = { reverseString, reverseString2, functionalReverseStr };

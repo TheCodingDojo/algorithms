@@ -144,12 +144,21 @@ function dedupeUnorderedInPlace(nums) {
   for (let i = 0; i < nums.length; i++) {
     const n = nums[i];
 
-    // If not added.
-    if (!isAddedTable[n]) {
-      nums[idxToOverwrite] = n;
-      isAddedTable[n] = true;
-      idxToOverwrite++;
+    if (isAddedTable[n]) {
+      // 'guard clause' to skip the dupe.
+      continue;
     }
+
+    nums[idxToOverwrite] = n;
+    isAddedTable[n] = true;
+    idxToOverwrite++;
+
+    /* Or this. */
+    // if (isAddedTable[n] === false) {
+    //   nums[idxToOverwrite] = n;
+    //   isAddedTable[n] = true;
+    //   idxToOverwrite++;
+    // }
   }
 
   // If there were dupes the array will be shorter, cut off dupes from the end.

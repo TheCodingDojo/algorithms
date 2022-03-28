@@ -40,8 +40,11 @@ function join(arr, separator) {}
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {Array<string|number|boolean>} arr
+ * @param {string} separator
+ * @returns {string}
  */
-function join(arr, separator = ", ") {
+function join(arr = [], separator = ", ") {
   let joined = "";
 
   if (!arr.length) {
@@ -58,8 +61,11 @@ function join(arr, separator = ", ") {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {Array<string|number|boolean>} arr
+ * @param {string} separator
+ * @returns {string}
  */
-function join2(arr, separator = ", ") {
+function join2(arr = [], separator = ", ") {
   let joined = "";
 
   if (!arr.length) {
@@ -78,8 +84,11 @@ function join2(arr, separator = ", ") {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {Array<string|number|boolean>} arr
+ * @param {string} separator
+ * @returns {string}
  */
-function join3(arr, separator = ", ") {
+function join3(arr = [], separator = ", ") {
   let joined = "";
 
   if (!arr.length) {

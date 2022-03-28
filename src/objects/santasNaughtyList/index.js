@@ -108,13 +108,12 @@ function santasNaughtyList(persons, badHabit) {
  *    The + O(n) is from the .map.
  * - Space: O(n) linear.
  */
-function santasNaughtyListFunctional(persons, badHabit) {
-  return persons
+const functionalSantasNaughtyList = (persons, badHabit) =>
+  persons
     .filter((person) => person.habits.includes(badHabit))
     .map((person) => `${person.firstName} ${person.lastName}`);
-}
 
 module.exports = {
   santasNaughtyList,
-  santasNaughtyListFunctional,
+  functionalSantasNaughtyList,
 };

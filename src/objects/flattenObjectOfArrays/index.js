@@ -1,25 +1,30 @@
 /* 
-My react dev friend had to do this for work.
+My react dev friend had to do this while building a feature at work.
 */
 
 const object1 = {
   closedCreditMemos: [],
   closedDeliveryOrders: [],
-  closedPickupOrders: [],
+  closedPickupOrders: [
+    { id: 112, type: "pickup" },
+    { id: 117, type: "pickup" },
+  ],
   openCreditMemos: [],
   openDeliveryOrders: [
     {
-      number: 123,
+      id: 123,
       type: "delivery",
+      gateCode: "#2552",
     },
     {
-      number: 153,
+      id: 153,
       type: "delivery",
+      instructions: "Place in secure delivery box.",
     },
   ],
   openPickupOrders: [
     {
-      number: 123,
+      id: 123,
       type: "pickup",
     },
   ],
@@ -27,9 +32,11 @@ const object1 = {
 };
 
 const expected1 = [
-  { number: 123, type: "delivery" },
-  { number: 153, type: "delivery" },
-  { number: 123, type: "pickup" },
+  { id: 112, type: "pickup" },
+  { id: 117, type: "pickup" },
+  { id: 123, type: "delivery" },
+  { id: 153, type: "delivery" },
+  { id: 123, type: "pickup" },
 ];
 
 /**
@@ -60,7 +67,12 @@ function flattenObjectOfArrays(obj) {
     const arrOfObjects = obj[key];
 
     for (const nestedObj of arrOfObjects) {
-      mergedArr.push(nestedObj);
+      // Extract only the keys wanted.
+      const data = {
+        id: nestedObj.id,
+        type: nestedObj.type,
+      };
+      mergedArr.push(data);
     }
   }
 
@@ -77,9 +89,14 @@ function flattenObjectOfArrays(obj) {
  * @returns {Object[]} An array of objects.
  */
 const functionalFlattenObjectOfArrays = (o) =>
-  Object.values(o).reduce(
-    (mergedArr, arrOfObjects) => mergedArr.concat(arrOfObjects),
-    []
-  );
+  // Get an array of the object's values. Since they are arrays it will be 2d.
+  Object.values(o)
+    // Reduce the nested arrays into a single array.
+    .reduce((mergedArr, arrOfObjects) => mergedArr.concat(arrOfObjects), [])
+    // Transform the data to the structure we want (not all keys are wanted).
+    .map(({ id, type }) => ({
+      id,
+      type,
+    }));
 
 module.exports = { flattenObjectOfArrays, functionalFlattenObjectOfArrays };

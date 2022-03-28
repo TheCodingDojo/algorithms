@@ -5,21 +5,26 @@ Object.values(functions).forEach((testFn) => {
     const object1 = {
       closedCreditMemos: [],
       closedDeliveryOrders: [],
-      closedPickupOrders: [],
+      closedPickupOrders: [
+        { id: 112, type: "pickup" },
+        { id: 117, type: "pickup" },
+      ],
       openCreditMemos: [],
       openDeliveryOrders: [
         {
-          number: 123,
+          id: 123,
           type: "delivery",
+          gateCode: "#2552",
         },
         {
-          number: 153,
+          id: 153,
           type: "delivery",
+          instructions: "Place in secure delivery box.",
         },
       ],
       openPickupOrders: [
         {
-          number: 123,
+          id: 123,
           type: "pickup",
         },
       ],
@@ -27,9 +32,11 @@ Object.values(functions).forEach((testFn) => {
     };
 
     const expected1 = [
-      { number: 123, type: "delivery" },
-      { number: 153, type: "delivery" },
-      { number: 123, type: "pickup" },
+      { id: 112, type: "pickup" },
+      { id: 117, type: "pickup" },
+      { id: 123, type: "delivery" },
+      { id: 153, type: "delivery" },
+      { id: 123, type: "pickup" },
     ];
 
     const testCases = [

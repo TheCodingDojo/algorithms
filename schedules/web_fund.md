@@ -9,7 +9,7 @@
 
 1. Mon
    - Orientation
-   - basics review: variables, loops, functions
+   - basics review: variables, arrays, loops, functions
      - [Functions Intro](../src/intro/basicAlgos/intro.md)
 2. Tue
    - [basicAlgos](../src/intro/basicAlgos/index.js)

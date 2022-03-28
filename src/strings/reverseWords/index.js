@@ -27,13 +27,17 @@ function reverseWords(str) {}
 /*****************************************************************************/
 
 /**
+ * Reverses the letters in each words in the given space separated
+ * string of words. Does NOT reverse the order of the words themselves.
  * - Time: O(2n) -> O(n) linear, despite there being a nested loop,
  *    both loops amount to looping over every char in wordsStr, which is 'n'
  *    .split is 1n, and the two for loops are 1n, so 1n + 1n = 2n.
  * - Space: O(2n) -> O(n) linear, the input is stored twice, in words array and
  *    in wordsReversed.
+ * @param {string} wordsStr Contains space separated words.
+ * @returns {string} The given string with each word's letters reversed.
  */
-function reverseWordsSplit(wordsStr) {
+function reverseWordsSplit(wordsStr = "w") {
   const words = wordsStr.split(" ");
   let wordsReversed = "";
 
@@ -56,8 +60,10 @@ function reverseWordsSplit(wordsStr) {
 /**
  * - Time: O(n) linear.
  * - Space: O(n) linear.
+ * @param {string} wordsStr
+ * @returns {string}
  */
-function reverseWords(wordsStr) {
+function reverseWords(wordsStr = "w") {
   // if all spaces
   if (wordsStr == false) {
     return wordsStr;
@@ -90,4 +96,24 @@ function reverseWords(wordsStr) {
   return wordsReversed;
 }
 
-module.exports = { reverseWords, reverseWordsSplit };
+/**
+ * - Time: O(4n) -> O(n) linear. Each method is looping.
+ * - Space: O(4n) -> O(n) linear. Each method creates a new array.
+ * @param {string} wordsStr
+ * @returns {string}
+ */
+const functionalReverseWords = (wordsStr = "") =>
+  wordsStr
+    // Convert to array of words split on space. Whenever the split separated
+    // has repeated duplicates, empty strings will be present in the new array.
+    .split(" ")
+    // Remove falsy values. .filter will call the Boolean constructor and pass
+    // it the current item it is looping over. Boolean("") returns false which
+    // means filter will remove empty strings.
+    .filter(Boolean)
+    // Convert the filtered array into a new array with the words reversed.
+    .map((word) => word.split("").reverse().join(""))
+    // Join the words back together with spaces.
+    .join(" ");
+
+module.exports = { reverseWords, reverseWordsSplit, functionalReverseWords };

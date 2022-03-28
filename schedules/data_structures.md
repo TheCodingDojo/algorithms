@@ -1,6 +1,6 @@
 # [Data Structures](../src/data_structures) Algo Schedule
 
-- [Recursion intro review](../src/recursion/intro-notes/intro.md)
+- [recursion review](../src/recursion/intro-notes/intro.md)
 
 ---
 
@@ -119,7 +119,7 @@ const emptyList = new SinglyLinkedList();
 
 ### Mon
 
-- [Singly Linked List Intro](../src/data_structures/SinglyLinkedList/intro.md)
+- [intro](../src/data_structures/SinglyLinkedList/intro.md)
 
 ```js
 /**
