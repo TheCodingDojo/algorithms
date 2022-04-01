@@ -552,6 +552,23 @@ twoLevelTree.root = new BSTNode(10);
 twoLevelTree.root.left = new BSTNode(5);
 twoLevelTree.root.right = new BSTNode(15);
 
+/* threeLevelTree 
+        root
+        10
+      /   \
+    5     15
+  / \    / \
+2   4  13  20
+*/
+const threeLevelTree = new BinarySearchTree();
+threeLevelTree.root = new BSTNode(10);
+threeLevelTree.root.left = new BSTNode(5);
+threeLevelTree.root.left.left = new BSTNode(2);
+threeLevelTree.root.left.right = new BSTNode(4);
+threeLevelTree.root.right = new BSTNode(15);
+threeLevelTree.root.right.right = new BSTNode(20);
+threeLevelTree.root.right.left = new BSTNode(13);
+
 /* fullTree
                     root
                 <-- 25 -->
@@ -581,7 +598,3 @@ fullTree
   .insert(90);
 
 module.exports = { BSTNode, BinarySearchTree };
-
-// console.log(fullTree.toArrPreorder());
-// console.log(fullTree.toArrInorder());
-console.log(fullTree.toArrPostorder());
