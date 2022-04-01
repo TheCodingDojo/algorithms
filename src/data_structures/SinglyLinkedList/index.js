@@ -1,5 +1,5 @@
 /**
- * Class to represents a single item of a SinglyLinkedList that can be
+ * A class to represents a single item of a SinglyLinkedList that can be
  * linked to other Node instances to form a list of linked nodes.
  */
 class ListNode {
@@ -26,12 +26,8 @@ class ListNode {
 }
 
 /**
- * Class to represent a list of linked nodes. Nodes CAN be linked together
- * without this class to form a linked list, but this class helps by providing
- * a place to keep track of the start (head) of the list at all times and as a
- * place to add methods (functions inside an object) so that every new
- * linked list that is instantiated will inherit helpful the same helpful
- * methods, just like every array you create inherits helpful methods.
+ * This class keeps track of the start (head) of the list and to store all the
+ * functionality (methods) that each list should have.
  */
 class SinglyLinkedList {
   /**

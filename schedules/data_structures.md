@@ -6,9 +6,14 @@
 
 ## [Week 1 - Singly Linked Lists](../src/data_structures/SinglyLinkedList/index.js)
 
+### Mon - SLL
+
+- [intro](../src/data_structures/SinglyLinkedList/intro.md)
+- Today's empty methods are already added in the below snippet under the `constructor`.
+
 ```js
 /**
- * Class to represents a single item of a SinglyLinkedList that can be
+ * A class to represents a single item of a SinglyLinkedList that can be
  * linked to other Node instances to form a list of linked nodes.
  */
 class ListNode {
@@ -35,12 +40,8 @@ class ListNode {
 }
 
 /**
- * Class to represent a list of linked nodes. Nodes CAN be linked together
- * without this class to form a linked list, but this class helps by providing
- * a place to keep track of the start node (head) of the list at all times and
- * as a place to add methods (functions inside an object) so that every new
- * linked list that is instantiated will inherit helpful the same helpful
- * methods, just like every array you create inherits helpful methods.
+ * This class keeps track of the start (head) of the list and to store all the
+ * functionality (methods) that each list should have.
  */
 class SinglyLinkedList {
   /**
@@ -53,6 +54,24 @@ class SinglyLinkedList {
     /** @type {ListNode|null} */
     this.head = null;
   }
+
+  /**
+   * Determines if this list is empty.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {boolean}
+   */
+  isEmpty() {}
+
+  /**
+   * Creates a new node with the given data and inserts it at the back of
+   * this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} data The data to be added to the new node.
+   * @returns {SinglyLinkedList} This list.
+   */
+  insertAtBack(data) {}
 
   /**
    * Calls insertAtBack on each item of the given array.
@@ -115,30 +134,6 @@ const emptyList = new SinglyLinkedList();
 
 // Print your list like so:
 // console.log(firstThreeList.toArr());
-```
-
-### Mon - SLL
-
-- [intro](../src/data_structures/SinglyLinkedList/intro.md)
-
-```js
-/**
- * Determines if this list is empty.
- * - Time: O(?).
- * - Space: O(?).
- * @returns {boolean}
- */
-isEmpty() {}
-
-/**
- * Creates a new node with the given data and inserts it at the back of
- * this list.
- * - Time: O(?).
- * - Space: O(?).
- * @param {any} data The data to be added to the new node.
- * @returns {SinglyLinkedList} This list.
- */
-insertAtBack(data) {}
 ```
 
 - isEmpty
@@ -332,6 +327,11 @@ splitOnVal(val) {}
 - `insert` is not done first because of it being harder than `isEmpty`, `min`, `max`.
 - You can remove the given parameters for recursion if you want students to practice coming up with them on their own after reinforcing the reason more params are often needed for recursion.
 
+### Mon - BST
+
+- [intro](../src/data_structures/BinarySearchTree/intro.md)
+- Today's empty algos are included below the `constructor`.
+
 ```js
 /**
  * Class to represent a Node in a Binary Search Tree (BST).
@@ -372,6 +372,54 @@ class BinarySearchTree {
      */
     this.root = null;
   }
+
+  /**
+   * Determines if this tree is empty.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @returns {boolean} Indicates if this tree is empty.
+   */
+  isEmpty() {}
+
+  /**
+   * Retrieves the smallest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The smallest integer from this tree.
+   */
+  min(current = this.root) {}
+
+  /**
+   * Retrieves the smallest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The smallest integer from this tree.
+   */
+  minRecursive(current = this.root) {}
+
+  /**
+   * Retrieves the largest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The largest integer from this tree.
+   */
+  max(current = this.root) {}
+
+  /**
+   * Retrieves the largest integer data from this tree.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {Node} current The node that is currently accessed from the tree as
+   *    the tree is being traversed.
+   * @returns {number} The largest integer from this tree.
+   */
+  maxRecursive(current = this.root) {}
 
   // Logs this tree horizontally with the root on the left.
   print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
@@ -451,60 +499,6 @@ threeLevelTree.root.right.left = new BSTNode(13);
 //   .insert(44)
 //   .insert(66)
 //   .insert(90);
-```
-
-### Mon - BST
-
-- [intro](../src/data_structures/BinarySearchTree/intro.md)
-
-```js
-/**
- * Determines if this tree is empty.
- * - Time: O(?).
- * - Space: O(?).
- * @returns {boolean} Indicates if this tree is empty.
- */
-isEmpty() {}
-
-/**
- * Retrieves the smallest integer data from this tree.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Node} current The node that is currently accessed from the tree as
- *    the tree is being traversed.
- * @returns {number} The smallest integer from this tree.
- */
-min(current = this.root) {}
-
-/**
- * Retrieves the smallest integer data from this tree.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Node} current The node that is currently accessed from the tree as
- *    the tree is being traversed.
- * @returns {number} The smallest integer from this tree.
- */
-minRecursive(current = this.root) {}
-
-/**
- * Retrieves the largest integer data from this tree.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Node} current The node that is currently accessed from the tree as
- *    the tree is being traversed.
- * @returns {number} The largest integer from this tree.
- */
-max(current = this.root) {}
-
-/**
- * Retrieves the largest integer data from this tree.
- * - Time: O(?).
- * - Space: O(?).
- * @param {Node} current The node that is currently accessed from the tree as
- *    the tree is being traversed.
- * @returns {number} The largest integer from this tree.
- */
-maxRecursive(current = this.root) {}
 ```
 
 1. isEmpty
@@ -1047,21 +1041,54 @@ class LinkedListStack {
  * back and items are removed from the front.
  */
 class Queue {
-  /**
-   * The constructor is executed when instantiating a new Queue() to construct
-   * a new instance.
-   * @returns {Queue} This new Queue instance is returned without having to
-   *    explicitly write 'return' (implicit return).
-   */
   constructor() {
     this.items = [];
   }
 
-  // methods go here
-  hello() {
-    console.log("world");
-  }
+  /**
+   * Adds a new given item to the back of this queue.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @param {any} item The new item to add to the back.
+   * @returns {number} The new size of this queue.
+   */
+  enqueue(item) {}
+
+  /**
+   * Removes and returns the first item of this queue.
+   * - Time: O(n) linear, due to having to shift all the remaining items to
+   *    the left after removing first elem.
+   * - Space: O(1) constant.
+   * @returns {any} The first item or undefined if empty.
+   */
+  dequeue() {}
+
+  /**
+   * Retrieves the first item without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {any} The first item or undefined if empty.
+   */
+  front() {}
+
+  /**
+   * Returns whether or not this queue is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean}
+   */
+  isEmpty() {}
+
+  /**
+   * Retrieves the size of this queue.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {number} The length.
+   */
+  size() {}
 }
+
+/* Rebuild the above class using a linked list instead of an array. */
 ```
 
 - A Queue is a FIFO (First in First Out) data structure
