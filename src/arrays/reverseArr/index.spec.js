@@ -15,15 +15,14 @@ Object.values(functions).forEach((testFn) => {
     const expected4 = [];
 
     const testCases = [
-      { args: [arr1], expected: expected1 },
-      { args: [arr2], expected: expected2 },
-      { args: [arr3], expected: expected3 },
-      { args: [arr4], expected: expected4 },
+      { inputArr: arr1, expected: expected1 },
+      { inputArr: arr2, expected: expected2 },
+      { inputArr: arr3, expected: expected3 },
+      { inputArr: arr4, expected: expected4 },
     ];
 
-    testCases.forEach(({ args, expected, description }) => {
+    testCases.forEach(({ inputArr, expected, description }) => {
       describe("when given " + description, () => {
-        const inputArr = args[0];
         const outputArr = testFn(inputArr);
 
         it("should reverse the given array in place and return the given array.", () => {
