@@ -117,7 +117,7 @@ const emptyList = new SinglyLinkedList();
 // console.log(firstThreeList.toArr());
 ```
 
-### Mon
+### Mon - SLL
 
 - [intro](../src/data_structures/SinglyLinkedList/intro.md)
 
@@ -148,7 +148,7 @@ insertAtBack(data) {}
 - insertAtBackMany
   - adds all the items from a given array to the back of this list.
 
-### Tue
+### Tue - SLL
 
 ```js
 /**
@@ -186,7 +186,7 @@ average() {}
 - EXTRA: average
   - Calculates the average of this list based on the integer data of each node.
 
-### Wed
+### Wed - SLL
 
 ```js
 /**
@@ -239,7 +239,7 @@ recursiveMax(runner = this.head, maxNode = this.head) {}
 - EXTRA: recursiveMax
   - Recursively finds the maximum integer data of the nodes in this list.
 
-### Thur
+### Thur - SLL
 
 ```js
 /**
@@ -281,7 +281,7 @@ prepend(newVal, targetVal) {}
 - EXTRA: prepend
   - Inserts a new node before a node that has the given value as its data.
 
-### Fri
+### Fri - SLL
 
 ```js
 /**
@@ -406,6 +406,23 @@ twoLevelTree.root = new BSTNode(10);
 twoLevelTree.root.left = new BSTNode(5);
 twoLevelTree.root.right = new BSTNode(15);
 
+/* threeLevelTree 
+        root
+        10
+      /   \
+    5     15
+  / \    / \
+2   4  13  20
+*/
+const threeLevelTree = new BinarySearchTree();
+threeLevelTree.root = new BSTNode(10);
+threeLevelTree.root.left = new BSTNode(5);
+threeLevelTree.root.left.left = new BSTNode(2);
+threeLevelTree.root.left.right = new BSTNode(4);
+threeLevelTree.root.right = new BSTNode(15);
+threeLevelTree.root.right.right = new BSTNode(20);
+threeLevelTree.root.right.left = new BSTNode(13);
+
 /* fullTree
                     root
                 <-- 25 -->
@@ -436,7 +453,7 @@ twoLevelTree.root.right = new BSTNode(15);
 //   .insert(90);
 ```
 
-### Mon
+### Mon - BST
 
 - [intro](../src/data_structures/BinarySearchTree/intro.md)
 
@@ -494,7 +511,7 @@ maxRecursive(current = this.root) {}
 2. min & minRecursive (find min)
 3. max & maxRecursive (find max)
 
-### Tue
+### Tue - BST
 
 ```js
 /**
@@ -529,7 +546,7 @@ range(startNode = this.root) {}
 1. contains & containsRecursive (does val exist)
 2. range (range is max minus min)
 
-### Wed
+### Wed - BST
 
 ```js
 /**
@@ -558,7 +575,7 @@ insertRecursive(newVal, curr = this.root) {}
 1. insert & insertRecursive
    - insert the new value in the appropriate place in the tree
 
-### Thur
+### Thur - BST
 
 ```js
 /**
@@ -603,7 +620,7 @@ toArrPostorder(node = this.root, vals = []) {}
 3. toArrPostorder
    - Postorder (Left, Right, Parent): on the provided fullTree var, it should be in this order: [4, 12, 10, 18, 24, 22, 15, 31, 44, 35, 66, 90, 70, 50, 25]
 
-### Fri
+### Fri - BST
 
 ```js
 /**
@@ -932,7 +949,7 @@ insertBefore(targetVal, newVal) {}
 
 ## Week 4 - Stacks and Queues
 
-### Mon [Stacks](../src/data_structures/Stack/index.js)
+### Mon - [Stacks](../src/data_structures/Stack/index.js)
 
 - [intro](../src/data_structures/Queue/intro.md)
 
@@ -1019,7 +1036,7 @@ class LinkedListStack {
   - peek (return top item without removing)
 - Recreate the stack class using a singly linked list to store the items instead of an array
 
-### Tue
+### Tue - Queue
 
 - [Queue.js](../src/data_structures/Queue/index.js)
 
@@ -1060,7 +1077,7 @@ class Queue {
   - Array Queue: enqueue: O(1), dequeue: O(n), size: O(1), front: O(1)
   - Linked List Queue: enqueue: O(1), dequeue: O(1), size: O(1), front: O(1)
 
-### Wed
+### Wed - Queue
 
 - [Queue.js](../src/data_structures/Queue/index.js)
 
@@ -1104,7 +1121,7 @@ class Queue {
   isPalindrome() {}
 ```
 
-### Thur
+### Thur - Queue
 
 - [sumOfHalvesEqual](../src/data_structures/Queue/index.js)
   - Create a method on the array Queue class that returns whether or not the sum of the first half of the queue is equal to the sum of the second half
@@ -1160,7 +1177,7 @@ class TwoStackQueue {
 }
 ```
 
-### Fri
+### Fri - PriorityQueue
 
 - [PriorityQueue](../src/data_structures/PriorityQueue/index.js)
 
