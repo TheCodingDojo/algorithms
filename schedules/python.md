@@ -1,5 +1,6 @@
 # Python Algo Schedule
 
+- [Pair Programming](../pair-programming.md)
 - [Python Olympics](https://docs.google.com/presentation/d/1l8L_gnuIUrA5yZUfrYyMbzyI7hx9ksm2hwRlIjkXRzQ/edit?ts=5cf7ec65#slide=id.p)
   - python syntax practice via timed algo competition
 

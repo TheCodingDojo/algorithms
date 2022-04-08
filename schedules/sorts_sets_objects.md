@@ -1,5 +1,7 @@
 # Sorts, Sets, & Objects Algo Schedule
 
+- [Pair Programming](../pair-programming.md)
+
 ---
 
 ## Week 1 - [Sorts](../src/sorts)
