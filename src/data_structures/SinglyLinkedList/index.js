@@ -509,7 +509,6 @@ class SinglyLinkedList {
     let runner = this.head;
     let prev = this.head;
 
-    // Todo refactor to while runner.next
     while (runner.next) {
       if (runner.next.data < minNode.data) {
         prev = runner;
