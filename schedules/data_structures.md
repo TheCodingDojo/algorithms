@@ -290,8 +290,8 @@ prepend(newVal, targetVal) {}
 concat(addList) {}
 
 /**
- * Finds the node with the smallest number as data and moves it to the front
- * of this list.
+ * Finds the node with the smallest data and moves that node to the front of
+ * this list.
  * - Time: O(?).
  * - Space: O(?).
  * @returns {SinglyLinkedList} This list.

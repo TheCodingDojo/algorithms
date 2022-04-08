@@ -493,7 +493,7 @@ class SinglyLinkedList {
   }
 
   /**
-   * Finds the node with the smallest data and moves it to the front of
+   * Finds the node with the smallest data and moves that node to the front of
    * this list.
    * - Time: O(n) linear, n = list length. This avoids the extra loop in
    *    the above sln.
