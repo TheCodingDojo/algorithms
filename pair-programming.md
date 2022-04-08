@@ -1,5 +1,6 @@
 # Pair Programming
 
+- Students are **_expected_** to assume these roles within a few minutes of entering their breakout rooms.
 - Talking about your experience with pair programming on your resume and in interviews can help you become a more desireable candidate to employers.
 
 ## Roles
