@@ -461,7 +461,7 @@ twoLevelTree.root.right = new BSTNode(15);
       /   \
     5     15
   / \    / \
-2   6  13  20
+2   6  13  
 */
 const threeLevelTree = new BinarySearchTree();
 threeLevelTree.root = new BSTNode(10);
@@ -469,7 +469,6 @@ threeLevelTree.root.left = new BSTNode(5);
 threeLevelTree.root.left.left = new BSTNode(2);
 threeLevelTree.root.left.right = new BSTNode(6);
 threeLevelTree.root.right = new BSTNode(15);
-threeLevelTree.root.right.right = new BSTNode(20);
 threeLevelTree.root.right.left = new BSTNode(13);
 
 /* fullTree
