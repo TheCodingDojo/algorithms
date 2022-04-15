@@ -440,14 +440,8 @@ class BinarySearchTree {
       return total;
     }
     total++;
-
-    if (current.left != null) {
-      total = this.size2(current.left, total);
-    }
-
-    if (current.right != null) {
-      total = this.size2(current.right, total);
-    }
+    total = this.size2(current.left, total);
+    total = this.size2(current.right, total);
     return total;
   }
 
