@@ -84,17 +84,35 @@ class DoublyLinkedList {
    * @returns {DoublyLinkedList} This list.
    */
   insertAtFront(data) {
-    const newNode = new DLLNode(data);
+    const newHead = new DLLNode(data);
 
-    if (!this.head) {
-      this.head = this.tail = newNode;
+    if (this.isEmpty()) {
+      this.head = newHead;
+      this.tail = newHead;
     } else {
-      this.head.prev = newNode;
-      newNode.next = this.head;
-      this.head = newNode;
+      const oldHead = this.head;
+      oldHead.prev = newHead;
+      newHead.next = oldHead;
+      this.head = newHead;
     }
     return this;
   }
+
+  insertAtFront2(data) {
+    const newHead = new DLLNode(data);
+
+    if (this.isEmpty()) {
+      this.head = newHead;
+      this.tail = newHead;
+      return this;
+    }
+
+    this.head.prev = newHead;
+    newHead.next = this.head;
+    this.head = newHead;
+    return this;
+  }
+
   /**
    * Creates a new node and adds it at the back of this list.
    * - Time: O(1) constant. No loop is needed since we have direct access to
@@ -106,9 +124,10 @@ class DoublyLinkedList {
   insertAtBack(data) {
     const newTail = new DLLNode(data);
 
-    if (!this.head) {
+    if (this.isEmpty()) {
       // if no head set the newTail to be both the head and the tail
-      this.head = this.tail = newTail;
+      this.head = newTail;
+      this.tail = newTail;
     } else {
       this.tail.next = newTail;
       newTail.prev = this.tail;
