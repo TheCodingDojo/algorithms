@@ -40,16 +40,6 @@ class DoublyLinkedList {
   }
 
   /**
-   * Determines if this list is empty.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {boolean} Indicates if this list is empty.
-   */
-  isEmpty() {
-    return this.head === null;
-  }
-
-  /**
    * Converts this list to an array of the node's data.
    * - Time: O(n) linear, n = list length.
    * - Space: O(n) linear, array grows as list length increases.
@@ -74,6 +64,16 @@ class DoublyLinkedList {
   insertAtBackMany(items = []) {
     items.forEach((item) => this.insertAtBack(item));
     return this;
+  }
+
+  /**
+   * Determines if this list is empty.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {boolean} Indicates if this list is empty.
+   */
+  isEmpty() {
+    return this.head === null;
   }
 
   /**
