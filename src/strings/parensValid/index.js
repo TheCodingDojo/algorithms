@@ -56,8 +56,10 @@ function parensValid(str = "") {
 }
 
 /**
+ * A stack is helpful, but not necessary, we can have the same time complexity
+ * but a better space complexity by using a counter.
  * - Time: O(n) linear.
- * - Space: O(n) linear.
+ * - Space: O(1) constant.
  * @param {string} str
  * @returns {boolean}
  */
