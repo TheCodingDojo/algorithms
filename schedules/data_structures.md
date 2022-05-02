@@ -75,6 +75,18 @@ class SinglyLinkedList {
   insertAtBack(data) {}
 
   /**
+   * Creates a new node with the given data and inserts it at the back of
+   * this list.
+   * - Time: O(?).
+   * - Space: O(?).
+   * @param {any} data The data to be added to the new node.
+   * @param {?ListNode} runner The current node during the traversal of this list
+   *    or null when the end of the list has been reached.
+   * @returns {SinglyLinkedList} This list.
+   */
+  insertAtBackRecursive(data, runner = this.head) {}
+
+  /**
    * Calls insertAtBack on each item of the given array.
    * - Time: O(n * m) n = list length, m = arr.length.
    * - Space: O(1) constant.
