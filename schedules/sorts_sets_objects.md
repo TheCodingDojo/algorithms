@@ -1,5 +1,6 @@
 # Sorts, Sets, & Objects Algo Schedule
 
+- For Full Time MERN stack.
 - [Pair Programming](../pair-programming.md)
 
 ---

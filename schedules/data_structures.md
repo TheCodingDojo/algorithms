@@ -1,5 +1,6 @@
 # [Data Structures](../src/data_structures) Algo Schedule
 
+- For Full Time C# / Java stacks.
 - [Pair Programming](../pair-programming.md)
 - [recursion review](../src/recursion/intro-notes/intro.md)
 
