@@ -1,12 +1,6 @@
 /* 
   Given an array of strings
-  return a sum to represent how many times each array item is found (a frequency table)
-
-  Useful methods:
-    Object.hasOwnProperty("keyName")
-      - returns true or false if the object has the key or not
-
-    Python: key in dict
+  return the number of times each string occurs (a frequency / hash table)
 */
 
 const arr1 = ["a", "a", "a"];

@@ -20,6 +20,8 @@ const numsB3 = [10];
 const expected3 = [];
 
 /**
+ * Efficiently combine the two sorted arrays into a new array that is the a
+ * sorted set intersection.
  * Venn Diagram Visualization (bottom):
  * @see https://i.ytimg.com/vi/sdflTUW6gHo/maxresdefault.jpg
  * - Time: O(?).
