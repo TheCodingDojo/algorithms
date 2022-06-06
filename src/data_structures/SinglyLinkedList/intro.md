@@ -54,22 +54,19 @@ So how do we work with linked lists? A common pattern is to declare a local vari
 ## Compared To Array
 
 ```js
-const head = {
-  data: 0,
-  next: {
-    data: 1,
-    next: {
-      data: 2,
-      next: {
-        data: "this is just some data it can be any data type",
-        next: null,
-      },
-    },
-  },
-};
+// head means it's the start.
+const head = { data: 1, next: null };
+const node2 = { data: 2, next: null };
+const node3 = { data: 3, next: null };
 
+// Link the nodes together to form a list.
+head.next = node2;
+node2.next = node3;
+
+// Notice head contains all the other nodes. It's easier to see in chrome.
 console.log(head);
 
+// Keep track of the current node so we can iterate from node to next node.
 let runner = head;
 
 while (runner !== null) {
@@ -88,6 +85,7 @@ function recursiveTraversal(curr) {
 
 recursiveTraversal(head);
 
+// You can iterate an array in a similar way as well.
 const arr = [0, 1, 2];
 let currentIdx = 0;
 
@@ -134,4 +132,4 @@ while (currentItem !== undefined) {
 
 ## Things to Reinforce
 
-- reinforce the nested object structure and log it to remind students of the structure and how it is just like accessing a deeply nested key, except the the key is always called `next`, they will forget this
+- Reinforce the nested object structure and log it to remind students of the structure and how it is just like accessing a deeply nested key, except the the key is always called `next`, they will forget this
