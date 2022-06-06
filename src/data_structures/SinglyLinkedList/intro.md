@@ -80,6 +80,7 @@ function recursiveTraversal(curr) {
   }
 
   console.log(curr.data);
+  // This function calls itself, that's what makes it recursive.
   recursiveTraversal(curr.next);
 }
 
