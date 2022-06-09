@@ -57,8 +57,8 @@ function findConsqSums(nums, targetSum) {}
 
 /**
  * Finds all the sets of consecutive numbers that sum to the given target sum.
- * - Time: O(n^2) quadratic.
- * - Space: O(n^2) quadratic.
+ * - Time: O(n^2 * (j-i)). Slice is at most `j - i` iterations.
+ * - Space: O(n^2 * (j-i)).
  * @param {Array<number>} nums Unordered nums.
  * @param {number} targetSum
  * @returns {Array<Array<number>>} 2d array where each nested array is a set of
