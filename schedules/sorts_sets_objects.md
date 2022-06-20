@@ -60,7 +60,8 @@
    - [flattenObjectOfArrays](../src/objects/flattenObjectOfArrays/index.js)
    - [getMaxServings](../src/objects/getMaxServings/index.js)
 5. Fri
-   - [lens](../src/objects/lens/index.js)
+   - [mergeCarts](../src/arrays/mergeCarts/index.js)
+   - [lens](../src/arrays/lens/index.js)
 
 ---
 
