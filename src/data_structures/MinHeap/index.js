@@ -7,7 +7,7 @@
  * - left child is located at: i * 2
  * - right child is located at: i * 2 + 1
  */
-class MinHeap {
+class MinHeapBasic {
   constructor() {
     /**
      * 0th index not used, so null is a placeholder. Not using 0th index makes
@@ -15,6 +15,36 @@ class MinHeap {
      * This also effectively makes our array start at index 1.
      */
     this.heap = [null];
+  }
+
+  /**
+   * @param {number} i
+   */
+  idxOfParent(i) {
+    return Math.floor(i / 2);
+  }
+
+  /**
+   * @param {number} i
+   */
+  idxOfLeftChild(i) {
+    return i * 2;
+  }
+
+  /**
+   * @param {number} i
+   */
+  idxOfRightChild(i) {
+    return i * 2 + 1;
+  }
+
+  /**
+   * Swaps two nodes.
+   * @param {number} i
+   * @param {number} j
+   */
+  swap(i, j) {
+    [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]];
   }
 
   /**
@@ -56,25 +86,21 @@ class MinHeap {
 
   // AKA: siftUp, heapifyUp, bubbleUp to restore order after insert
   shiftUp() {
-    // just to avoid repeatedly typing this.heap
-    const heap = this.heap;
-    let idxOfNodeToShiftUp = heap.length - 1;
+    let idxOfNodeToShiftUp = this.heap.length - 1;
 
     while (idxOfNodeToShiftUp > 1) {
-      const idxOfParent = Math.floor(idxOfNodeToShiftUp / 2);
+      const idxOfParent = this.idxOfParent(idxOfNodeToShiftUp);
 
-      // parent already smaller, no more swapping needed
-      if (heap[idxOfParent] <= heap[idxOfNodeToShiftUp]) {
+      const isParentSmallerOrEqual =
+        this.heap[idxOfParent] <= this.heap[idxOfNodeToShiftUp];
+
+      // Parent is supposed to be smaller so ordering is complete.
+      if (isParentSmallerOrEqual) {
         break;
       }
 
-      // while the parent is not smaller, swap it with it's child (array destructure syntax)
-      // when the while loop is done, the new node is in it's correct place so all parents are smaller than children
-      [heap[idxOfNodeToShiftUp], heap[idxOfParent]] = [
-        heap[idxOfParent],
-        heap[idxOfNodeToShiftUp],
-      ];
-      // since it was swapped with parent, it is now located at the idxOfParent
+      this.swap(idxOfNodeToShiftUp, idxOfParent);
+      // after swapping the node is at idxOfParent now.
       idxOfNodeToShiftUp = idxOfParent;
     }
   }
@@ -114,46 +140,39 @@ class MinHeap {
 
   // AKA: siftDown, heapifyDown, bubbleDown, sinkDown to restore order after extracting min
   shiftDown() {
-    const heap = this.heap;
-
     let idxOfNodeToShiftDown = 1;
-    let idxOfLeftChild = idxOfNodeToShiftDown * 2;
+    let idxOfLeftChild = this.idxOfLeftChild(idxOfNodeToShiftDown);
 
     // while there is at least 1 child
-    while (idxOfLeftChild < heap.length) {
-      const idxOfRightChild = idxOfLeftChild + 1;
+    while (idxOfLeftChild < this.heap.length) {
+      const idxOfRightChild = this.idxOfRightChild(idxOfNodeToShiftDown);
       let idxOfSmallestChild = idxOfLeftChild;
+      const isRightChildInBounds = idxOfRightChild < this.heap.length;
 
-      if (
-        idxOfRightChild < heap.length &&
-        heap[idxOfRightChild] < heap[idxOfLeftChild]
-      ) {
+      // Don't compare right child if it's out of bounds.
+      // less than or greater than undefined has weird behavior (always false).
+      const isRightChildSmaller =
+        isRightChildInBounds &&
+        this.heap[idxOfRightChild] < this.heap[idxOfLeftChild];
+
+      if (isRightChildSmaller) {
         idxOfSmallestChild = idxOfRightChild;
       }
 
-      // no more swapping needed, no children are smaller
-      if (heap[idxOfNodeToShiftDown] <= heap[idxOfSmallestChild]) {
+      const isParentSmallerOrEqual =
+        this.heap[idxOfNodeToShiftDown] <= this.heap[idxOfSmallestChild];
+
+      // Parent is supposed to be smaller, so ordering is complete.
+      if (isParentSmallerOrEqual) {
         break;
       }
 
-      // swap the smallest child with the parent since the parent is not smaller
-      [heap[idxOfNodeToShiftDown], heap[idxOfSmallestChild]] = [
-        heap[idxOfSmallestChild],
-        heap[idxOfNodeToShiftDown],
-      ];
+      this.swap(idxOfNodeToShiftDown, idxOfSmallestChild);
 
-      // follow this node since it was just swapped to see if it needs to be swapped again
+      // after swapping the node is now at the idxOfSmallestChild.
       idxOfNodeToShiftDown = idxOfSmallestChild;
-      idxOfLeftChild = idxOfNodeToShiftDown * 2;
+      idxOfLeftChild = this.idxOfLeftChild(idxOfNodeToShiftDown);
     }
-  }
-
-  // static allows this method to be executed directly on the class itself rather than needing to be executed on an instance or going through the .prototype
-  // converts an array into a new heap
-  static heapify(vals) {
-    const heap = new MinHeap();
-    vals.forEach((val) => heap.insert(val));
-    return heap;
   }
 
   // prints tree with root on left and index in parens in reverse inorder traversal
@@ -181,44 +200,287 @@ class MinHeap {
   }
 }
 
-// Time: O(n log n) linearithmic because .insert is O(log n) and .insert is being done n times
-// unstable
-function heapSort(nums) {
-  const minHeap = MinHeap.heapify(nums);
-  const sorted = [];
+// const testMinHeap = new MinHeapBasic();
+// testMinHeap.insert(5);
+// testMinHeap.insert(4);
+// testMinHeap.insert(7);
+// testMinHeap.insert(3);
+// testMinHeap.insert(6);
+// console.log(testMinHeap.extract());
+// testMinHeap.insert(2);
 
-  // if we had a max heap, we could loop backwards and instead of push assign by index
-  for (let i = 0; i < nums.length; i++) {
-    sorted.push(minHeap.extract());
+// console.log(testMinHeap.extract());
+// console.log(testMinHeap.extract());
+// console.log(testMinHeap.extract());
+// console.log(testMinHeap.extract());
+// console.log(testMinHeap.extract());
+// console.log(testMinHeap.extract());
+
+/* 
+More advanced flexible MinHeap implementation below to support adding objects
+into the heap, such as person objects, or purchase orders, etc., and allows
+specifying what to order on, such as person.age or order.price.
+*/
+
+/* 
+Template isn't needed, it let's use define the type of data that will go into
+the heap so we get type detection. TS is designed to do this better.
+*/
+
+/**
+ * @template HeapItem
+ */
+class MinHeap {
+  /**
+   * Given an item from the heap, the callback selects and returns the number
+   * data from the item that the heap should use for ordering.
+   * @callback HeapSelector
+   * @param {HeapItem} heapItem An item from the heap.
+   * @returns {number} The number data from the heap item to use for ordering.
+   */
+
+  /**
+   * @param {HeapSelector} selector
+   * @example For a heap of person objects that should be ordered by age:
+   * ```
+   * new MinHeap((person) => person.age);
+   * ```
+   * A heap of users that orders by username length:
+   * ```
+   * new MinHeap((user) => user.username.length);
+   * ```
+   */
+  constructor(selector = MinHeap.defaultSelector) {
+    /** @type {?HeapItem[]} */
+    this.heap = [null];
+    this.selector = selector;
   }
-  return sorted;
+
+  /**
+   * @param {number} i
+   */
+  idxOfParent(i) {
+    return Math.floor(i / 2);
+  }
+
+  /**
+   * @param {number} i
+   */
+  idxOfLeftChild(i) {
+    return i * 2;
+  }
+
+  /**
+   * @param {number} i
+   */
+  idxOfRightChild(i) {
+    return i * 2 + 1;
+  }
+
+  /**
+   * Swaps two nodes.
+   * @param {number} i
+   * @param {number} j
+   */
+  swap(i, j) {
+    [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]];
+  }
+
+  /**
+   * Retrieves the size of the heap, ignoring the null placeholder.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {?HeapItem} Null if empty.
+   */
+  size() {
+    return this.heap.length - 1;
+  }
+
+  /**
+   * Retrieves the top (minimum item) in the heap without removing it.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @returns {?HeapItem}
+   */
+  top() {
+    return this.heap.length > 1 ? this.heap[1] : null;
+  }
+
+  /**
+   * Inserts a new item into the heap and reorders heap to maintain order.
+   * - Time: O(log n) logarithmic due to shiftUp.
+   * - Space: O(1) constant.
+   * @param {HeapItem} item The item to add.
+   */
+  insert(item) {
+    this.heap.push(item);
+    this.shiftUp();
+    return this.size();
+  }
+
+  shiftUp() {
+    const heap = this.heap;
+    let idxOfNodeToShiftUp = heap.length - 1;
+
+    while (idxOfNodeToShiftUp > 1) {
+      const idxOfParent = this.idxOfParent(idxOfNodeToShiftUp);
+      const isParentSmallerOrEqual =
+        this.selector(heap[idxOfParent]) <=
+        this.selector(heap[idxOfNodeToShiftUp]);
+
+      if (isParentSmallerOrEqual) {
+        break;
+      }
+
+      this.swap(idxOfNodeToShiftUp, idxOfParent);
+      // after swapping, the node is not at idxOfParent.
+      idxOfNodeToShiftUp = idxOfParent;
+    }
+  }
+
+  /**
+   * Extracts the min num from the heap and then re-orders the heap to
+   * maintain order so the next min is ready to be extracted.
+   * - Time: O(log n) logarithmic due to shiftDown.
+   * - Space: O(1) constant.
+   * @returns {?HeapItem} The min item or null if empty.
+   */
+  extract() {
+    if (this.heap.length === 1) {
+      return null;
+    }
+
+    const heap = this.heap;
+    const min = heap[1];
+    const lastNode = heap.pop();
+
+    // last item is being removed, no more work required
+    if (heap.length === 1) {
+      return min;
+    }
+
+    // last node is overwriting the idx 1 to "remove" idx 1
+    heap[1] = lastNode;
+    // since we put the lastNode at the start, it needs to be swapped down to it's correct position to restore the order
+    this.shiftDown();
+    return min;
+  }
+
+  shiftDown() {
+    const heap = this.heap;
+
+    let idxOfNodeToShiftDown = 1;
+    let idxOfLeftChild = this.idxOfLeftChild(idxOfNodeToShiftDown);
+
+    // while there is at least 1 child
+    while (idxOfLeftChild < heap.length) {
+      const idxOfRightChild = this.idxOfRightChild(idxOfNodeToShiftDown);
+      let idxOfSmallestChild = idxOfLeftChild;
+
+      const isRightChildSmaller =
+        idxOfRightChild < heap.length &&
+        this.selector(heap[idxOfRightChild]) <
+          this.selector(heap[idxOfLeftChild]);
+
+      if (isRightChildSmaller) {
+        idxOfSmallestChild = idxOfRightChild;
+      }
+
+      const isParentSmallerOrEqual =
+        this.selector(heap[idxOfNodeToShiftDown]) <=
+        this.selector(heap[idxOfSmallestChild]);
+
+      if (isParentSmallerOrEqual) {
+        break;
+      }
+
+      this.swap(idxOfNodeToShiftDown, idxOfSmallestChild);
+
+      // follow this node since it was just swapped to see if it needs to be swapped again
+      idxOfNodeToShiftDown = idxOfSmallestChild;
+      idxOfLeftChild = this.idxOfLeftChild(idxOfNodeToShiftDown);
+    }
+  }
+
+  /**
+   * Converts an array into a MinHeap
+   * - Time: O(n log(n)) linearithmic.
+   * - Space: O(n) linear.
+   * @param {HeapItem[]} items
+   * @param {HeapSelector} selector
+   */
+  static heapify(items = [], selector = MinHeap.defaultSelector) {
+    const heap = new MinHeap(selector);
+    items.forEach((val) => heap.insert(val));
+    return heap;
+  }
+
+  /**
+   * Sorts the given array into a new array.
+   * - Time: O(n log(n)) linearithmic.
+   * - Space: O(n) linear.
+   * @param {HeapItem[]} items
+   * @param {HeapSelector} selector
+   */
+  static heapSort(items = [], selector = MinHeap.defaultSelector) {
+    const minHeap = MinHeap.heapify(items, selector);
+    const sorted = [];
+
+    // if we had a max heap, we could loop backwards and instead of push assign by index
+    for (let i = 0; i < items.length; i++) {
+      sorted.push(minHeap.extract());
+    }
+    return sorted;
+  }
+
+  /**
+   * Sorts the given array in place.
+   * - Time: O(n log(n)) linearithmic.
+   * - Space: O(n) linear.
+   * @param {HeapItem[]} items
+   * @param {HeapSelector} selector
+   */
+  static heapSortInPlace(items = [], selector = MinHeap.defaultSelector) {
+    const minHeap = MinHeap.heapify(items, selector);
+
+    for (let i = 0; i < items.length; i++) {
+      items[i] = minHeap.extract();
+    }
+    return items;
+  }
 }
 
-function heapSortInPlace(nums) {
-  const minHeap = MinHeap.heapify(nums);
+/**
+ * A default selector for when heap items are already numbers, the selector
+ * just selects the number to be used.
+ */
+MinHeap.defaultSelector = (heapItem) => heapItem;
 
-  for (let i = 0; i < nums.length; i++) {
-    nums[i] = minHeap.extract();
+class Person {
+  /**
+   * @param {string} name
+   * @param {number} age
+   */
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
   }
-  return nums;
 }
 
-const minHeap = new MinHeap();
-minHeap.insert(5);
-minHeap.insert(4);
-minHeap.insert(7);
-minHeap.insert(3);
-minHeap.insert(6);
-minHeap.insert(2);
-//   minHeap.insert(1)
-//   minHeap.insert(0);
-// console.log(`extracted ${minHeap.extract()}`);
+/** @type {MinHeap<Person>} */
+const heapOfPeople = new MinHeap((person) => person.age);
 
-minHeap.extract();
-minHeap.extract();
-minHeap.extract();
-minHeap.extract();
-minHeap.extract();
-minHeap.extract();
+heapOfPeople.insert(new Person("one", 30));
+heapOfPeople.insert(new Person("two", 40));
+heapOfPeople.insert(new Person("three", 35));
+heapOfPeople.insert(new Person("four", 25));
+console.log(heapOfPeople.extract());
+heapOfPeople.insert(new Person("five", 32));
+
+console.log(heapOfPeople.extract());
+console.log(heapOfPeople.extract());
+console.log(heapOfPeople.extract());
+console.log(heapOfPeople.extract());
+console.log(heapOfPeople.extract());
 
 module.exports = { MinHeap };
