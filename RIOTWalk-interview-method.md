@@ -1,6 +1,8 @@
 # Riot Walk Method
 
 - For algorithm interviews.
+- Be sure to ask some initial clarifying questions:
+  - Are you going to want this code to be compiled (if compiled language) and ran with test cases or is some pseudocode ok?
 
 ## Repeat
 
@@ -24,7 +26,7 @@ Do you need to worry about bad inputs? Ask and you may be told to assume the inp
 
 ## Walk
 
-Before you start writing, walk through your initial thought process (out loud) on how to approach the problem, check to see how the interviewer reacts to your thought process, they want to see how you think and communicate code concepts and approaches, but they also might reveal a facial expression that alerts you that your approach has a problem or is going down a completely wrong path.
+Before you start writing, walk through your initial thought process (out loud) on how to approach the problem and comment a the general idea. Check to see how the interviewer reacts to your thought process, they want to see how you think and communicate code concepts and approaches, but they also might reveal a facial expression that alerts you that your approach has a problem or is going down a completely wrong path.
 
 Then walk through your solution with test cases when finished.
 
@@ -34,11 +36,11 @@ You can also ask if they want you to optimize for time or for space, but if it's
 
 KEEP walking through your thought process out loud every step of the way.
 
-Start with some pseudo code to get the most important logic down before you get bogged down in small details if it's a complex problem, e.g., just writing out `iterate(list)` instead of writing out a full loop then write indented comments below for what you want to do in the loop until you have a basic outline down that you can fill in with the fine details.
+Start with some commented pseudo code to get the most important logic down before you get bogged down in small details if it's a complex problem, e.g., just writing out `iterate(list)` instead of writing out a full loop then write indented comments below for what you want to do in the loop until you have a basic outline down that you can fill in with the fine details.
 
 If you pseudo-code the correct logic, they may be happy with that and not want you to spend the time to write out the actual code.
 
-Asterisk any code you aren't sure works or if the syntax is correct to make sure the interviewer knows you are aware of potential issues.
+Asterisk any code you aren't sure works or if unsure of the syntax to make sure the interviewer knows you are aware of potential issues.
 
 You can also double check with the interviewer on some syntax or what order the arguments go in if you forget, they will often help because they'd rather see you focus on the meat of the problem than get bogged down by small syntax details.
 
