@@ -304,3 +304,5 @@ console.log(heapOfPeople.extract());
 console.log(heapOfPeople.extract());
 console.log(heapOfPeople.extract());
 console.log(heapOfPeople.extract());
+
+module.exports = { BinaryHeap };
