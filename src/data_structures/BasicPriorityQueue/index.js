@@ -1,3 +1,5 @@
+// See BinaryHeap folder for a more efficient & robust type of priority queue.
+
 /*
   Draw a to do list or urgent care list with two columns: item, and importance
     - the to do, is your queue item
@@ -25,10 +27,10 @@ class QElement {
 }
 
 /**
- * Class to represent a PriorityQueue with methods that enforce the correct
- * order of queue items.
+ * Class to represent a basic priority queue with methods that enforce the
+ * correct order of queue items.
  */
-class PriorityQueue {
+class BasicPriorityQueue {
   // An array is used to implement priority
   constructor() {
     this.items = [];
@@ -99,7 +101,7 @@ class PriorityQueue {
   }
 
   /**
-   * Checks if this PriorityQueue is empty.
+   * Checks if this BasicPriorityQueue is empty.
    * - Time: O(1) constant.
    * - Space: O(1) constant.
    * @returns {boolean}
@@ -117,7 +119,7 @@ class PriQNode {
   }
 }
 
-class LinkedListPriorityQueue {
+class LinkedListBasicPriorityQueue {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -146,4 +148,4 @@ class LinkedListPriorityQueue {
   }
 }
 
-module.exports = { PriorityQueue, LinkedListPriorityQueue };
+module.exports = { BasicPriorityQueue, LinkedListBasicPriorityQueue };

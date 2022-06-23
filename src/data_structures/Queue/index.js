@@ -1,4 +1,3 @@
-const { PriorityQueue } = require("../PriorityQueue");
 const { Stack } = require("../Stack");
 
 /**
@@ -192,113 +191,7 @@ class Queue {
     }
     return leftSum === rightSum;
   }
-
-  /* 
-    Bonus:
-    Visualize a pallet of products, it is a 
-    grid (rows and columns, like a chess board) where each grid space has a
-    products stacked on top of each other.
-
-    Your task is to unload a shipment of pallets that arrived, process them in
-    the order they were received (FIFO):
-
-    Given a queue of pallets (this queue) write a processPallets method,
-    a pallet is a 2d grid (2d array)
-    where the nested arrays contain stacks of product objects containing a name and price key.
-
-    Work through the queue of pallets to unload all the products on each pallet.
-    Unloading simply means removing all the items from the queues and stacks
-    via the appropriate class methods.
-
-    return a bill of goods containing all the names of products received and the total value of the merchandise
-
-    Bonus: unload the products into a priority queue based on a
-    daysUntilExpiration key on the product
-    return the priority queue along with the bill of goods report.
-  */
-  processPallets() {
-    const billOfGoods = {
-      productsReceived: [],
-      totalValue: 0,
-    };
-
-    const priorityQueue = new PriorityQueue();
-
-    while (!this.isEmpty()) {
-      const pallet = this.dequeue();
-
-      for (const row of pallet) {
-        for (const stackOfProducts of row) {
-          while (!stackOfProducts.isEmpty()) {
-            const product = stackOfProducts.pop();
-            billOfGoods.productsReceived.push(product.name);
-            billOfGoods.totalValue += product.price;
-
-            priorityQueue.enqueue(product, product.daysUntilExpiration);
-          }
-        }
-      }
-    }
-    return { billOfGoods, priorityQueue };
-  }
 }
-
-// a 2d grid array
-const palletA = [
-  // first row in grid
-  [
-    new Stack([
-      { name: "1", price: 1, daysUntilExpiration: 10 },
-      { name: "2", price: 1, daysUntilExpiration: 10 },
-      { name: "3", price: 1, daysUntilExpiration: 1 },
-    ]),
-    new Stack([
-      { name: "4", price: 1, daysUntilExpiration: 10 },
-      { name: "5", price: 1, daysUntilExpiration: 2 },
-      { name: "6", price: 1, daysUntilExpiration: 8 },
-    ]),
-  ],
-  // 2nd row in grid
-  [
-    new Stack([
-      { name: "7", price: 1, daysUntilExpiration: 9 },
-      { name: "8", price: 1, daysUntilExpiration: 2 },
-      { name: "9", price: 1, daysUntilExpiration: 5 },
-    ]),
-    new Stack([
-      { name: "10", price: 1, daysUntilExpiration: 3 },
-      { name: "11", price: 1, daysUntilExpiration: 1 },
-      { name: "12", price: 1, daysUntilExpiration: 6 },
-    ]),
-  ],
-];
-
-const palletB = [
-  [
-    new Stack([
-      { name: "13", price: 1, daysUntilExpiration: 7 },
-      { name: "14", price: 1, daysUntilExpiration: 9 },
-      { name: "15", price: 1, daysUntilExpiration: 3 },
-    ]),
-    new Stack([
-      { name: "16", price: 1, daysUntilExpiration: 8 },
-      { name: "17", price: 1, daysUntilExpiration: 10 },
-      { name: "18", price: 1, daysUntilExpiration: 4 },
-    ]),
-  ],
-  [
-    new Stack([
-      { name: "19", price: 1, daysUntilExpiration: 6 },
-      { name: "20", price: 1, daysUntilExpiration: 10 },
-      { name: "21", price: 1, daysUntilExpiration: 5 },
-    ]),
-    new Stack([
-      { name: "22", price: 1, daysUntilExpiration: 8 },
-      { name: "23", price: 1, daysUntilExpiration: 4 },
-      { name: "24", price: 1, daysUntilExpiration: 9 },
-    ]),
-  ],
-];
 
 /* 
   In order to maintain an O(1) enqueue time complexity like .push with an array
