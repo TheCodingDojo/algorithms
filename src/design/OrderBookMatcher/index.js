@@ -58,3 +58,30 @@ The total is 610 now until a new batch of orders comes in and are processed
 with each other and the remaining orders that haven't been matched.
 */
 const expected1 = 610;
+
+/*****************************************************************************/
+
+/* 
+Thought process:
+
+Notice the smallest sell is needed to be matched to the largest buy
+and then the next smallest sell needs to be matched to the next largest buy.
+
+Whenever you repeatedly need to get the smallest or repeatedly get the largest
+from a set of numbers or items, a MinHeap (smallest) and / or MaxHeap (largest)
+are useful because they are built to efficiently handle that need.
+
+Realizing the need for a MinHeap for sells and a MaxHeap for buys is already a
+big step forward towards solving the algo.
+
+Next it's a pretty simple thought to decide to simply add all the orders we are
+given into the heaps, insert sells into a MinHeap and buys into a MaxHeap.
+Doing this as step 1 also already solves the issue of having left over orders
+that found no match, because new orders will be added into the heaps that may
+contain old orders that are waiting for matches.
+
+After we have all the new orders added to our heaps, we need to
+continuously (while) remove the smallest sell and the largest buy orders as
+long as there is a sell and a buy left AND as long as they can be matched,
+if the sell price is <= the buy price.
+*/
