@@ -1,9 +1,19 @@
 /* 
-Instead of creating a MinHeap and a MaxHeap that share 95% of the same code
+Instead of creating a MinHeap and a MaxHeap that share almost all the same code
 but have different comparison logic, a more abstract heap can be designed to
 allow providing a comparison function like `.sort` so that the order each new
 heap uses can be chosen.
 */
+
+// Sorting examples:
+const ascending = [20, 10, 50, 30, 0, 40].sort((a, b) => a - b);
+const descending = [20, 10, 50, 30, 0, 40].sort((a, b) => b - a);
+
+const ascendingAgePeople = [
+  { name: "three", age: 30 },
+  { name: "one", age: 10 },
+  { name: "two", age: 20 },
+].sort((a, b) => a.age - b.age);
 
 /* 
 Template isn't needed, it let's us define the type of data that will go into
