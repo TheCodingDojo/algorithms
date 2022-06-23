@@ -16,8 +16,10 @@ const ascendingAgePeople = [
 ].sort((a, b) => a.age - b.age);
 
 /* 
-Template isn't needed, it let's us define the type of data that will go into
-the heap so we get type detection. TS is designed to handle types better.
+JSDoc note:
+This has some advanced JSDoc syntax that you don't need to know or use. It just
+makes it possibly to specify the types and get type detection / autocomplete,
+but that's what TypeScript is designed to do better than JSDoc.
 */
 
 /**
