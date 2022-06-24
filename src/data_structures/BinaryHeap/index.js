@@ -270,28 +270,29 @@ class Person {
 }
 
 /** @type {BinaryHeap<number>} */
-// smallest first:
+/* smallest first: */
 const heapOfScores = new BinaryHeap();
-// largest first:
+/* largest first: */
 // const heapOfScores = new BinaryHeap((a, b) => b - a);
-heapOfScores.insert(40);
-heapOfScores.insert(30);
-heapOfScores.insert(30);
-heapOfScores.insert(50);
-heapOfScores.insert(-10);
-heapOfScores.insert(0);
-console.log(heapOfScores.extract());
-heapOfScores.insert(10);
-heapOfScores.insert(20);
 
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
-console.log(heapOfScores.extract());
+// heapOfScores.insert(40);
+// heapOfScores.insert(30);
+// heapOfScores.insert(30);
+// heapOfScores.insert(50);
+// heapOfScores.insert(-10);
+// heapOfScores.insert(0);
+// console.log(heapOfScores.extract());
+// heapOfScores.insert(10);
+// heapOfScores.insert(20);
+
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
+// console.log(heapOfScores.extract());
 
 /** @type {BinaryHeap<Person>} */
 /* youngest first: */
@@ -304,17 +305,17 @@ const heapOfPeople = new BinaryHeap(
 //   (personA, personB) => personB.age - personA.age
 // );
 
-heapOfPeople.insert(new Person("one", 30));
-heapOfPeople.insert(new Person("two", 40));
-heapOfPeople.insert(new Person("three", 35));
-heapOfPeople.insert(new Person("four", 25));
-console.log(heapOfPeople.extract());
-heapOfPeople.insert(new Person("five", 32));
+// heapOfPeople.insert(new Person("one", 30));
+// heapOfPeople.insert(new Person("two", 40));
+// heapOfPeople.insert(new Person("three", 35));
+// heapOfPeople.insert(new Person("four", 25));
+// console.log(heapOfPeople.extract());
+// heapOfPeople.insert(new Person("five", 32));
 
-console.log(heapOfPeople.extract());
-console.log(heapOfPeople.extract());
-console.log(heapOfPeople.extract());
-console.log(heapOfPeople.extract());
-console.log(heapOfPeople.extract());
+// console.log(heapOfPeople.extract());
+// console.log(heapOfPeople.extract());
+// console.log(heapOfPeople.extract());
+// console.log(heapOfPeople.extract());
+// console.log(heapOfPeople.extract());
 
 module.exports = { BinaryHeap };
