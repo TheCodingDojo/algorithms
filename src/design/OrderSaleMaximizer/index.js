@@ -20,6 +20,10 @@ be matched when new orders come in.
  * @property {number} quantity
  */
 
+/** @typedef {Order & { action: 'sell'}} SellOrder */
+/** @typedef {Order & { action: 'buy'}} BuyOrder */
+
+/** @type {Order[]} */
 const incomingOrders1 = [
   {
     price: 155,
@@ -80,27 +84,28 @@ Thought process:
 Notice the smallest sell is needed to be matched to the largest buy
 and then the next smallest sell needs to be matched to the next largest buy.
 
-Whenever you repeatedly need to repeatedly get the smallest or the largest
-from a set of numbers or items, a MinHeap (smallest) and / or MaxHeap (largest)
+Whenever you need to repeatedly get the smallest or the largest from a set
+of numbers or items, a MinHeap (smallest) and / or MaxHeap (largest)
 are useful because they are built to efficiently handle that need.
 
 Realizing the need for a MinHeap for sells and a MaxHeap for buys is already a
-big step forward towards solving this algorithm.
+big step towards solving this algorithm because it clarifies the main problem
+of how to match a sell to a buy.
 
-Next it's a pretty straightforward to decide to add all the orders we are
-given into the heaps, insert sells into a MinHeap and buys into a MaxHeap.
+Next it's  pretty straightforward to decide to add all the orders we are
+given into the heaps so they are ready to be extracted in the correct order,
+insert sells into a MinHeap and buys into a MaxHeap.
 Doing this as step 1 also already solves the issue of having left over orders
-that found no match, because new orders will be added into the heaps that may
-contain old orders that are waiting for matches.
+that found no match, because the next batch of orders will be added into the
+heaps that may contain old orders from the prior batch are waiting for matches.
 
 After we have all the new orders added to our heaps, all that is left is
 straightforward logic to continuously (while) get the smallest sell and
-largest buy and check if the sell is <= the buy price and then compare and
-adjust the quantities and total sale price and extract any orders that run
-out of quantity.
+largest buy if the heaps aren't empty and check if
+the sell is <= the buy price and then compare and adjust the quantities
+and tally the total sale price.
+Lastly, extract any orders that run out of quantity.
 */
-
-// TODO separate sell and buy types.
 
 const { BinaryHeap } = require("../../data_structures/BinaryHeap");
 
@@ -108,12 +113,12 @@ class OrderSaleMaximizer {
   constructor() {
     this.total = 0;
 
-    /** @type {BinaryHeap<Order>} */
+    /** @type {BinaryHeap<SellOrder>} */
     this.minSellOrders = new BinaryHeap(
       (orderA, orderB) => orderA.price - orderB.price
     );
 
-    /** @type {BinaryHeap<Order>} */
+    /** @type {BinaryHeap<BuyOrder>} */
     this.maxBuyOrders = new BinaryHeap(
       (orderA, orderB) => orderB.price - orderA.price
     );
