@@ -39,8 +39,12 @@
 
 ## Recursion
 
-- [displayFolderStructure](../src/recursion/displayFolderStructure/index.js)
 - [removeConsecDupeWords](../src/recursion/removeConsecDupeWords/index.js)
+
+## DOM
+
+- [displayFolderStructure](../src/DOM/displayFolderStructure/index.js)
+- [iterativelyRenderTree](../src/DOM/iterativelyRenderTree/index.js)
 
 ## [Bit Arithmetic](../src/bit_arithmetic)
 
