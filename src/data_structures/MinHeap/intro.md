@@ -49,7 +49,8 @@
 
 ## Uses
 
-- To always have `O(1)` constant time access to the min (min heap) or max (max heap) value.
+- You should use a heap when you need to repeatedly retrieve the min or max while also having new items being added--in this scenario, a heap will be more efficient than sorting.
+- Always have `O(1)` constant time access to the min (min heap) or max (max heap) value.
 - `O(log n)` time for `insert` and `extract` instead of `O(n)` linear time required for a regular sorted array.
 - Languages with a built in Priority Queue data structure likely are implemented via a heap.
 
