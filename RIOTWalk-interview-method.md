@@ -1,8 +1,6 @@
 # Riot Walk Method
 
 - For algorithm interviews.
-- Be sure to ask some initial clarifying questions:
-  - Are you going to want this code to be compiled (if compiled language) and ran with test cases or is some pseudocode ok?
 
 ## Repeat
 
@@ -24,9 +22,11 @@ Related to input / output, but with some focus on edge cases, bad inputs, and ve
 
 Do you need to worry about bad inputs? Ask and you may be told to assume the input will be valid or always structured a certain way.
 
+"Are you going to want this code to be compiled (if compiled language) and ran with test cases?" Clarify this so you know if your code needs to work exactly or if the general idea of the solution and some pseudocode may be acceptable.
+
 ## Walk
 
-Before you start writing, walk through your initial thought process (out loud) on how to approach the problem and comment a the general idea. Check to see how the interviewer reacts to your thought process, they want to see how you think and communicate code concepts and approaches, but they also might reveal a facial expression that alerts you that your approach has a problem or is going down a completely wrong path.
+Before you start writing, walk through your initial thought process (out loud) on how to approach the problem and comment the high-level idea you have. Check to see how the interviewer reacts to your thought process, they want to see how you think and communicate code concepts and approaches, but they also might reveal a facial expression that alerts you that your approach has a problem or is going down a completely wrong path.
 
 Then walk through your solution with test cases when finished.
 
@@ -34,7 +34,7 @@ You can also ask if they want you to optimize for time or for space, but if it's
 
 ## Code Solution
 
-KEEP walking through your thought process out loud every step of the way.
+KEEP walking through your thought process out loud every step of the way and comment your code along the way for some concise documentation.
 
 Start with some commented pseudo code to get the most important logic down before you get bogged down in small details if it's a complex problem, e.g., just writing out `iterate(list)` instead of writing out a full loop then write indented comments below for what you want to do in the loop until you have a basic outline down that you can fill in with the fine details.
 
