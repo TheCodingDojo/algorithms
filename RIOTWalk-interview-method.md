@@ -223,3 +223,5 @@ function amazonMusicRuntime3(busDuration, songDurations) {
   return songPair;
 }
 ```
+
+- Calculating space complexity follows the same principles except focusing on any new data that is created in the function and checking seeing if it's constant size or if the size of the new data grows in relation to the size of the inputs. E.g., copying an array input of size `n` requires a new array be created of size `n` so it is `O(n)` size complexity. Or when filtering an array, the worst case is no items happen to be removed based on the condition that removes them, so it's `O(n)` space complexity.
