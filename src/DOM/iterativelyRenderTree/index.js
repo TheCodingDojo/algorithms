@@ -44,21 +44,28 @@ Expected1:
 </ul>
 */
 
-/**
+/** TODO
  * Iteratively renders an HTML list containing child lists corresponding to
  * the parent-child-relationship based on the given ids and displays the id.
  * @param {{parent: string, id: string}[]} data
  */
 function iterativelyRenderTree(data) {
-  // TODO: create this structure from given data
-  const pcr = {
-    root: {
-      id: "A",
-      children: [
-        { parent: "A", id: "B", children: [{ parent: "B", id: "E" }] },
-        { parent: "A", id: "C", children: [{ parent: "C", id: "F" }] },
-        { parent: "A", id: "D", children: [{ parent: "D", id: "G" }] },
-      ],
-    },
-  };
+  let rootId = null;
+  const idToChildrenMap = new Map();
+
+  for (const elem of data) {
+    if (elem.parent === null) {
+      rootId = elem.id;
+    }
+
+    if (idToChildrenMap.has(elem.id) === false) {
+      idToChildrenMap.set(elem.id, []);
+    }
+
+    idToChildrenMap.get(elem.id).push(elem);
+  }
+
+  const stack = [];
+  for (const [id, children] of idToChildrenMap.entries()) {
+  }
 }

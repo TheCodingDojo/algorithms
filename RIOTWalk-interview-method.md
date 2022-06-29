@@ -130,10 +130,10 @@ function amazonMusicRuntime(busDuration, songDurations) {
 }
 ```
 
-- Add up the above terms, but ignore all the constants. All that's left is an `O(n)` loop nested inside an `O(n)` loop, so we multiply since what is inside a loop is multiplied by how many times the loop iterates.
+- Add up the above terms, but ignore all the constants. All that's left is an `O(n)` loop nested inside an `O(n)` loop, so we multiply them together because something in a loop is multiplied by the number of iterations of the loop it's inside.
 
   - `O(n) * O(n)`
-  - Simplify: `O(n^2)`.
+  - Simplify: `O(n * n)` -> `O(n^2)` quadratic.
 
 ---
 
@@ -182,7 +182,7 @@ function amazonMusicRuntime2(busDuration, songDurations) {
 - After ignoring constants, all we have are two `O(n)` loops, but they are not nested, so we add them together.
 - `O(n) + O(n)`.
 - Simplify: `O(2n)`.
-- Drop the constant: `O(n)`.
+- Drop the constant: `O(n)` linear.
 
 ---
 
