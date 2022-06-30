@@ -297,6 +297,8 @@ async function fetchUsers(userIds = []) {
   return await Promise.allSettled(userFetchPromises);
 }
 
+// Endpoint found in the docs click on 'guide'
+// https://jsonplaceholder.typicode.com/guide/
 async function fetchPostsByUser(userId) {
   const url = `${apiBaseUrl}/users/${userId}/posts`;
 
