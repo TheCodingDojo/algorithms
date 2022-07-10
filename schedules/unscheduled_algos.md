@@ -3,6 +3,7 @@
 ## Objects
 
 - [discordAlertTimeout](../src/objects/discordAlertTimeout/index.js)
+- [lens](../src/arrays/lens/index.js)
 
 ## Strings
 

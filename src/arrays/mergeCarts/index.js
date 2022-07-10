@@ -173,7 +173,7 @@ function mergeCarts(shoppingCart = [], wishList = []) {
     let isDuplicate = false;
 
     // Loop over shoppingCart instead of mergedCart because they start as the
-    // same items and we don't need to loop over the new items pushed into
+    // same items and we don't need to loop over the new items pushed
     // into mergedCart.
     for (const existingProduct of shoppingCart) {
       if (existingProduct.id === wishProduct.id) {
@@ -222,26 +222,32 @@ function mergeCartsWithHashTable(shoppingCart, wishList) {
 }
 
 /**
- * Creates a new array of products containing all the shoppingCart items and
- * any wishList item that wasn't already in the shoppingCart.
- * - Time: O(n) linear. The `concat` is `n + m`, the `.map` after is `n + m`
- *    then the `...` spread is over `Map` instance's `.values` is over the same
- *    `n + m` items. Only additions in the O notation means it's linear time.
- *    It looks like there could be a nested loop, but if you avoided the built
- *    in methods you would see it as `for` loops one after the other.
+ * - Time: O(n) linear.
+ *    n = shoppingCart.length, m = wishList.length.
+ *    n + m to merge the lists, n + m again to .reduce merged list, n + m
+ *    again to convert the Map into a list: O(3(n + m)), drop the constant
+ *    3 and n + m is still considered O(n).
  * - Space: O(n + m) -> O(n) linear.
  * @param {Product[]} shoppingCart
  * @param {Product[]} wishList
  * @returns {Product[]} A new merged array that is deduped.
  */
 const mergeCartsWithMap = (shoppingCart = [], wishList = []) => [
-  // Use a Map instead of object to preserve order.
-  // spread the Map values into an array since array should be returned
-  ...new Map(
-    // Map constructor takes a 2d array of key value pairs. So the all products
-    // array is transformed into that structure.
-    shoppingCart.concat(wishList).map((product) => [product.id, product])
-  ).values(),
+  // Spread the deduped products from hashMap.values() into an array
+  ...[
+    // Merge both lists into one, which will have dupes
+    ...shoppingCart,
+    ...wishList,
+  ]
+    // reduce merged list to a hashMap to dedupe by id. Object can also be used
+    // but Maps preserve order and usually perform better.
+    .reduce((hashMap, product) => {
+      // Dupes will overwrite but it doesn't matter since it's the same data
+      hashMap.set(product.id, product);
+      return hashMap;
+    }, new Map())
+    // get the product's from the hashMap to convert into an array.
+    .values(),
 ];
 
 module.exports = { mergeCarts, mergeCartsWithHashTable, mergeCartsWithMap };

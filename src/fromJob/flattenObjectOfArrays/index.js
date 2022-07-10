@@ -82,7 +82,12 @@ function flattenObjectOfArrays(obj) {
 /**
  * Takes an object containing arrays of objects and places all the nested
  * objects into a new one-dim array.
- * - Time: O(n + (n * m)). n = num of keys on object, m = longest length of
+ * - Time: O(n + (n * m) + (n * m)) -> O(n + 2(n * m)) -> O(n + (n * m)).
+ *    n = num of keys on object, m = longest length of.
+ *    The first n is from Object.values looping over all keys to make an array.
+ *    Then n * m b/c flat loops over a 2d array to flatten it,
+ *    then n * m again b/c .map has to loop over the n * m amount of items that
+ *    are now in a flattened array.
  *    nested array.
  * - Space: O(n * m).
  * @param {Object} o Containing arrays of objects.
@@ -91,8 +96,8 @@ function flattenObjectOfArrays(obj) {
 const functionalFlattenObjectOfArrays = (o) =>
   // Get an array of the object's values. Since they are arrays it will be 2d.
   Object.values(o)
-    // Reduce the nested arrays into a single array.
-    .reduce((mergedArr, arrOfObjects) => mergedArr.concat(arrOfObjects), [])
+    // Flatten 2d to 1d array.
+    .flat()
     // Transform the data to the structure we want (not all keys are wanted).
     .map(({ id, type }) => ({
       id,
