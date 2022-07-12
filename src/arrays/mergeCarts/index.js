@@ -1,5 +1,8 @@
 /* 
+This was taken from a friend's job when he was working on an e-commerce site.
+
 You are building the functionality to "add all wish list items to cart"
+in a single click.
 
 Given two arrays of product objects: a shopping cart and a wish list,
 
