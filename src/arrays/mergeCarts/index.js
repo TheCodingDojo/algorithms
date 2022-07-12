@@ -1,8 +1,10 @@
 /* 
-Given two arrays of product objects, a shopping cart and a wish list,
+You are building the functionality to "add all wish list items to cart"
 
-return a new array with all of the shopping cart items and all of the wish
-list items that were not already in the shopping cart.
+Given two arrays of product objects: a shopping cart and a wish list,
+
+return a new array with all of the shopping cart items AND all of the wish
+list items that were not already in the shopping cart (no dupes).
 
 Do NOT compare products by reference, assume they came from an API / DB so they
 are fresh copies and may not be references.
