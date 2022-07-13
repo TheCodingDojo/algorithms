@@ -1217,15 +1217,11 @@ class TwoStackQueue {
 }
 ```
 
-### Fri - BasicPriorityQueue
+### Fri - MinHeap Interview Algo Demo
 
-- [BasicPriorityQueue](../src/data_structures/BasicPriorityQueue/index.js)
-
-  - Create enqueue and dequeue methods. _You can loop and index the underlying array._
-  - Design a new PriorityQueue class where the queue maintains an ascending order when items are added based on a queue item's provided priority integer value. A priority value of 1 is most important which means it should be at the front of the queue, the first to be dequeued.
-  - A priority queue item could be any data type.
-
-- Rebuild the PriorityQueue using a linked list.
+- Briefly review the more robust [BinaryHeap](../src/data_structures/BinaryHeap/index.js) implementation--focus on high-level explanation ("focus on understanding the overall concept, you don't need to understand the specifics right now."). Draw attention to how it is 90% the same code they saw when doing `MinHeap`, but with the added compare function just like `.sort` uses to make it more flexible so you can choose if you want it to be a Min or a Max heap (since min and max heap are almost same code) and you can specify how to work with other kind's of data, like a heap of people based on age, or a heap of jobs based on salary instead of only working on numbers.
+  - Then use most of the time to demo using it to solve [OrderSaleMaximizer interview algo](../src/design/OrderSaleMaximizer/index.js)
+  - Other languages (e.g., Java) have a built in heap that uses a similar compare function, but JS doesn't have a built in heap. The interview may sometimes tell you to assume it exists in JS to save time if you already came up with the idea to use a heap to solve the algo.
 
 ---
 
