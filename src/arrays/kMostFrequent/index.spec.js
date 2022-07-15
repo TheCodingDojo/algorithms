@@ -12,14 +12,10 @@ Object.values(functions).forEach((testFn) => {
     const expected2 = [0];
     // Explanation: k being 1 means return the single most frequent element
 
-    const nums3 = [3, 1, 1, 2, 1, 2, 3];
+    // 6 occurs 6 times, 3 occurs 3 times, 2 occurs 2 times, 1 occurs 1 time.
+    const nums3 = [1, 6, 3, 3, 6, 6, 3, 6, 2, 2, 6, 6];
     const k3 = 3;
-    const expected3 = [1, 2, 3];
-    /* 
-      Explanation: 3 is the only value that would be passed in for k because it is the only value for k that has
-      a valid solution. Since 1, 2, and 3, all occur 3 times, they are all the most frequent ints, so there is no
-      1 most frequent int, or 2 most frequent int, but there are 3 most frequent ints. 
-    */
+    const expected3 = [6, 3, 2];
 
     const testCases = [
       {

@@ -19,14 +19,10 @@ const k2 = 1;
 const expected2 = [0];
 // Explanation: k being 1 means return the single most frequent element
 
-const nums3 = [1, 1, 2, 2, 3, 3];
+// 6 occurs 6 times, 3 occurs 3 times, 2 occurs 2 times, 1 occurs 1 time.
+const nums3 = [1, 6, 3, 3, 6, 6, 3, 6, 2, 2, 6, 6];
 const k3 = 3;
-const expected3 = [1, 2, 3];
-/* 
-  Explanation: 3 is the only value that would be passed in for k because it is the only value for k that has
-  a valid solution. Since 1, 2, and 3, all occur 3 times, they are all the most frequent ints, so there is no
-  1 most frequent int, or 2 most frequent int, but there are 3 most frequent ints. 
-*/
+const expected3 = [6, 3, 2];
 
 /**
  * Returns the k most frequently occurring numbers from the given unordered
@@ -53,46 +49,55 @@ function kMostFrequent(nums, k) {}
  */
 function kMostFrequent(nums, k) {
   const mostFreqNums = [];
-  const numToFrequency = {};
-  const frequencyToNums = {};
+  const numToFrequency = new Map();
+  const frequencyToNums = new Map();
   let maxFreq = 0;
 
   for (const num of nums) {
-    if (numToFrequency.hasOwnProperty(num)) {
-      numToFrequency[num]++;
+    if (numToFrequency.has(num) === false) {
+      numToFrequency.set(num, 0);
+    }
+    const newFrequency = numToFrequency.get(num) + 1;
+    numToFrequency.set(num, newFrequency);
 
-      if (numToFrequency[num] > maxFreq) {
-        maxFreq = numToFrequency[num];
-      }
-    } else {
-      numToFrequency[num] = 1;
+    if (newFrequency > maxFreq) {
+      maxFreq = newFrequency;
     }
   }
 
-  // build a frequency table that is a reverse of the above to help avoid O(n^2)
-  // since multiple ints can have the same frequency, value must be an array of the ints that have that frequency
-  // since keys are strings, convert the numKey back to an int when adding it to the array
-  for (const numKey in numToFrequency) {
-    const frequency = numToFrequency[numKey];
+  /* 
+  build a frequency table that is a reverse of the above so we can look up
+  starting from a frequency to find what numbers have that frequency.
+  since multiple nums can have the same frequency, the value of this table
+  needs to be an array.
 
-    if (frequencyToNums.hasOwnProperty(frequency)) {
-      frequencyToNums[frequency].push(+numKey);
-    } else {
-      // create the array with the first num found that has this frequency
-      frequencyToNums[frequency] = [+numKey];
+  Alternatively, this could be a 2d sparse array, often referred to as
+  'buckets' where each nested array is a 'bucket' / container to hold
+  items.
+  */
+  for (const [num, frequency] of numToFrequency) {
+    if (frequencyToNums.has(frequency) === false) {
+      frequencyToNums.set(frequency, []);
     }
+    frequencyToNums.get(frequency).push(num);
   }
+
+  console.log("numToFrequency:", numToFrequency);
+  console.log("frequencyToNums:", frequencyToNums);
+  console.log("maxFreq:", maxFreq);
 
   let nextMostFreq = maxFreq;
 
   while (mostFreqNums.length < k && nextMostFreq > 0) {
+    // .has, .get, .push, .pop are all O(1) constant time.
     if (
-      frequencyToNums.hasOwnProperty(nextMostFreq) &&
-      frequencyToNums[nextMostFreq].length > 0
+      frequencyToNums.has(nextMostFreq) &&
+      frequencyToNums.get(nextMostFreq).length > 0
     ) {
-      mostFreqNums.push(frequencyToNums[nextMostFreq].pop());
+      const nextMostFreqNum = frequencyToNums.get(nextMostFreq).pop();
+      mostFreqNums.push(nextMostFreqNum);
     } else {
-      // no nums have this frequency, decr to check for next most freq
+      // no nums have this frequency, decrement to check for next most freq
       nextMostFreq--;
     }
   }
