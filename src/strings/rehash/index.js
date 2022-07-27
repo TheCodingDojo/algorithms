@@ -32,19 +32,15 @@ function rehash(str) {
 
   for (let i = 1; i < str.length; i++) {
     const num = parseInt(str[i]);
+    const isNum = !isNaN(num);
+    const isLetter = isNaN(num);
 
-    /**
-     * Not Not a Number means it is a number. The below if is not an else b/c
-     * both of these need to run on the last iteration since it ends on a num
-     * we have to concat the num first so we finish processing the last letter
-     * and it's corresponding numbers.
-     */
-    if (!isNaN(num)) {
+    if (isNum) {
       numStr += str[i];
     }
 
-    // letter found, means we have passed digits or at end.
-    if (isNaN(num) || i === str.length - 1) {
+    // Not an else since it needs to run on last iteration ending with a num.
+    if (isLetter || i === str.length - 1) {
       const letterCount = parseInt(numStr);
 
       if (letter in letterHashCounts) {

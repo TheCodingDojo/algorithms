@@ -46,11 +46,12 @@ function lengthOfLongestSubString(str) {
   let subStr = "";
 
   for (let i = 0; i < str.length; i++) {
+    const remainingLength = str.length - i;
     subStr = "";
 
     // if remaining chars left are fewer than current maxLen
     // it's not possible for there to be a longer subStr
-    if (str.length - i < maxLen) {
+    if (remainingLength < maxLen) {
       return maxLen;
     }
 
@@ -78,21 +79,21 @@ function lengthOfLongestSubString2(str) {
 
   for (let i = 0; i < str.length; i++) {
     let count = 0;
-    let seen = {};
+    const seen = new Set();
+    const remainingLength = str.length - i;
 
-    // if remaining chars left are fewer than current maxLen
     // it's not possible for there to be a longer subStr
-    if (str.length - i < maxLen) {
+    if (remainingLength < maxLen) {
       return maxLen;
     }
 
     for (let j = i; j < str.length; j++) {
       let char = str[j];
 
-      if (seen.hasOwnProperty(char)) {
+      if (seen.has(char)) {
         break;
       } else {
-        seen[char] = true;
+        seen.add(char);
         count++;
       }
     }
