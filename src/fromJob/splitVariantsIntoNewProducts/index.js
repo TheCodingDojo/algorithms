@@ -133,6 +133,17 @@ function splitVariantsIntoNewProducts(datoEntity, variantLimit = 2) {}
 
 /*****************************************************************************/
 
+function shopifyProductFactory(datoEntity) {
+  const { title, sku } = datoEntity.attributes;
+
+  return {
+    id: null,
+    title,
+    sku,
+    variants: [],
+  };
+}
+
 function splitVariantsIntoNewProducts(datoEntity, variantLimit = 2) {
   const newProducts = [];
   let currentNewProduct = shopifyProductFactory(datoEntity);
@@ -155,17 +166,72 @@ function splitVariantsIntoNewProducts(datoEntity, variantLimit = 2) {
   return newProducts;
 }
 
-function shopifyProductFactory(datoEntity) {
-  const { title, sku } = datoEntity.attributes;
+/**
+ * - Time: O(n) linear. Because the loops are based on the
+ *    newProductsNeededCount which is allVariants.length / variantLimit so the
+ *    loops multiply back to the original allVariants.length.
+ *    n = Math.ceil(n = allVariants.length / variantLimit),
+ *    m = allVariants.length
+ * - Space: O(n) linear, Math.ceil(n = allVariants.length / variantLimit)
+ */
+function splitVariantsIntoNewProducts2(datoEntity, variantLimit = 2) {
+  const newProducts = [];
+  const allVariants = datoEntity.attributes.variants;
+  const newProductsNeededCount = Math.ceil(allVariants.length / variantLimit);
+  let currentVariantIdx = 0;
 
-  return {
-    id: null,
-    title,
-    sku,
-    variants: [],
-  };
+  for (let i = 0; i < newProductsNeededCount; i++) {
+    const newProduct = shopifyProductFactory(datoEntity);
+
+    for (
+      let j = 0;
+      j < variantLimit && currentVariantIdx < allVariants.length;
+      j++
+    ) {
+      const { name, price } = allVariants[currentVariantIdx].attributes;
+      currentVariantIdx++;
+      newProduct.variants.push({ name, price });
+    }
+    newProducts.push(newProduct);
+  }
+
+  return newProducts;
+}
+
+/**
+ * - Time: O(3n) -> O(n). .slice, .map, and while are the 3 loops.
+ * - Space: O(n) linear, Math.ceil(n = allVariants.length / variantLimit)
+ */
+function splitVariantsIntoNewProducts3(datoEntity, variantLimit = 2) {
+  const newShopifyProducts = [];
+  // Break reference with slice or spread so we can mutate the copy later
+  // without mutating the original.
+  const allVariants = datoEntity.attributes.variants
+    .slice()
+    // map variants into the new structure that we need.
+    .map((variant) => {
+      const { attributes } = variant;
+      const { name, price } = attributes;
+      return {
+        name,
+        price,
+      };
+    });
+
+  while (allVariants.length > 0) {
+    // Splice out as many variants as each product can hold.
+    const variantsToAdd = allVariants.splice(0, variantLimit);
+    const newShopifyProduct = shopifyProductFactory(datoEntity);
+    newShopifyProduct.variants = variantsToAdd;
+    // newShopifyProduct.variants.push(...variantsToAdd);
+    newShopifyProducts.push(newShopifyProduct);
+  }
+
+  return newShopifyProducts;
 }
 
 module.exports = {
   splitVariantsIntoNewProducts,
+  splitVariantsIntoNewProducts2,
+  splitVariantsIntoNewProducts3,
 };
