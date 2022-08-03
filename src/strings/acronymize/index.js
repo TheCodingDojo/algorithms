@@ -25,7 +25,7 @@ const expected4 = "GIT";
  * Turns the given str into an acronym.
  * - Time: O(?).
  * - Space: O(?).
- * @param {string} str A string to be turned into an acronym.
+ * @param {string} wordsStr A string to be turned into an acronym.
  * @returns {string} The acronym.
  */
 function acronymize(str) {}
@@ -36,7 +36,7 @@ function acronymize(str) {}
  * - Time: O(n + m) linear -> O(n) where n is wordsStr.length and
  *    m is wordsArr.length.
  * - Space: O(n) linear.
- * @param {string} str
+ * @param {string} wordsStr
  * @returns {string}
  */
 function acronymizeWithSplit(wordsStr = "") {
@@ -46,6 +46,8 @@ function acronymizeWithSplit(wordsStr = "") {
   for (const word of wordsArr) {
     // Splitting can result in empty strings.
     if (word !== "") {
+      // upper case each letter as it's added so toUpperCase doesn't have
+      // to loop over each acronym char at the end to upper case.
       acronym += word[0].toUpperCase();
     }
   }
@@ -55,10 +57,65 @@ function acronymizeWithSplit(wordsStr = "") {
 /**
  * - Time: O(n) linear
  * - Space: O(n) linear.
- * @param {string} str
+ * @param {string} wordsStr
  * @returns {string}
  */
 function acronymize(wordsStr = "") {
+  let acronym = "";
+
+  for (let i = 0; i < wordsStr.length; i++) {
+    // These booleans add readability because they are named descriptively,
+    // they also simplify how many conditional statements or nested conditions
+    // are needed.
+    const currentChar = wordsStr[i];
+    const isCurrentCharSpace = currentChar === " ";
+    const isPreviousCharSpace = wordsStr[i - 1] === " ";
+    const isFirstLetterOfWord =
+      (i === 0 && !isCurrentCharSpace) ||
+      (!isCurrentCharSpace && isPreviousCharSpace);
+
+    if (isFirstLetterOfWord) {
+      acronym += currentChar.toUpperCase();
+    }
+  }
+  return acronym;
+}
+
+/**
+ * - Time: O(n) linear
+ * - Space: O(n) linear.
+ * @param {string} wordsStr
+ * @returns {string}
+ */
+function acronymize2(wordsStr = "") {
+  let acronym = "";
+
+  for (let i = 0; i < wordsStr.length; i++) {
+    const currentChar = wordsStr[i];
+    const isCurrentCharSpace = currentChar === " ";
+    const isPreviousCharSpace = wordsStr[i - 1] === " ";
+    let isFirstLetterOfWord = !isCurrentCharSpace && isPreviousCharSpace;
+
+    // Special case for idx 0 being start of word.
+    if (i === 0 && !isCurrentCharSpace) {
+      isFirstLetterOfWord = true;
+    }
+
+    if (isFirstLetterOfWord) {
+      acronym += currentChar.toUpperCase();
+    }
+  }
+  return acronym;
+}
+
+/**
+ * Manually split into words to get the first letter of each.
+ * - Time: O(n) linear
+ * - Space: O(n) linear.
+ * @param {string} wordsStr
+ * @returns {string}
+ */
+function acronymize3(wordsStr = "") {
   let acronym = "";
   let currentWord = "";
 
@@ -102,5 +159,7 @@ const functionalAcronymize = (s = "") =>
 module.exports = {
   acronymizeWithSplit,
   acronymize,
+  acronymize2,
+  acronymize3,
   functionalAcronymize,
 };
