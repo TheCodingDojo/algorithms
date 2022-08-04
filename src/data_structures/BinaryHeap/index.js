@@ -158,19 +158,41 @@ class BinaryHeap {
     }
 
     const heap = this.heap;
-    const min = heap[1];
+    const firstNode = heap[1];
+    // .pop to avoid .shift loop.
     const lastNode = heap.pop();
 
     // last item is being removed, no more work required
     if (heap.length === 1) {
-      return min;
+      return firstNode;
     }
 
     // last node is overwriting the idx 1 to "remove" idx 1
     heap[1] = lastNode;
     // since we put the lastNode at the start, it needs to be swapped down to it's correct position to restore the order
     this.shiftDown();
-    return min;
+    return firstNode;
+  }
+
+  /**
+   * Runs extract `amount` times to return an array of the extracted items.
+   * - Time: O(amount * log(n)).
+   * - Space: O(amount).
+   * @param {number} amount The amount to extract.
+   * @returns {HeapItem[]}
+   */
+  extractMany(amount = 1) {
+    /** @type {HeapItem[]} */
+    const extractedItems = [];
+
+    for (let i = 0; i < amount; i++) {
+      if (this.top() === null) {
+        return extractedItems;
+      }
+
+      extractedItems.push(this.extract());
+    }
+    return extractedItems;
   }
 
   shiftDown() {

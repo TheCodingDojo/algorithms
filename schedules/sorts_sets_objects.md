@@ -82,5 +82,5 @@
    - [containerWithMostWater](../src/arrays/containerWithMostWater/index.js)
    - [compareVersionNumbers](../src/strings/compareVersionNumbers/index.js)
 5. Fri
-   - [amazonMusicRuntime](../src/arrays/amazonMusicRuntime/index.js)
+   - [musicRuntime](../src/amazon/musicRuntime/index.js)
    - [canBuildS1FromS2](../src/strings/canBuildS1FromS2/index.js)

@@ -41,7 +41,7 @@ const expected3 = [-1, -1]; // not found.
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
-function amazonMusicRuntime(busDuration, songDurations) {}
+function musicRuntime(busDuration, songDurations) {}
 
 /*****************************************************************************/
 
@@ -56,7 +56,7 @@ function amazonMusicRuntime(busDuration, songDurations) {}
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
-function amazonMusicRuntime(busDuration, songDurations) {
+function musicRuntime(busDuration, songDurations) {
   let songPair = [-1, -1];
   const targetDuration = busDuration - 30;
 
@@ -99,7 +99,7 @@ function amazonMusicRuntime(busDuration, songDurations) {
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
-function amazonMusicRuntime2(busDuration, songDurations) {
+function musicRuntime2(busDuration, songDurations) {
   let songPair = [-1, -1];
   const targetPairDuration = busDuration - 30;
   const songTable = {};
@@ -152,7 +152,7 @@ function amazonMusicRuntime2(busDuration, songDurations) {
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
-function amazonMusicRuntime3(busDuration, songDurations) {
+function musicRuntime3(busDuration, songDurations) {
   let songPair = [-1, -1];
   const targetPairDuration = busDuration - 30;
   const songTable = {};
@@ -199,7 +199,7 @@ function amazonMusicRuntime3(busDuration, songDurations) {
 }
 
 module.exports = {
-  amazonMusicRuntime,
-  amazonMusicRuntime2,
-  amazonMusicRuntime3,
+  musicRuntime,
+  musicRuntime2,
+  musicRuntime3,
 };
