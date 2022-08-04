@@ -26,7 +26,7 @@ const expected1 = [
 ];
 
 /**
- * Finds the `k` amount of delivery coordinates that are ordered by shortest
+ * Finds the `numDeliveries` amount of delivery coordinates that are ordered by shortest
  * distance to the starting point of [0, 0].
  * - Time: O(?).
  * - Space: O(?).
@@ -48,16 +48,16 @@ maintaining the sort, which is where BinaryHeaps help with time efficiency.
 */
 
 /**
- * Finds the `k` amount of delivery coordinates that are ordered by shortest
- * distance to the starting point of [0, 0].
- * - Time: O(n + (n * log(n)) + n + n) -> O(3n + (n * log(n)))
+ * Finds the `numDeliveries` amount of delivery coordinates that are ordered by
+ * shortest distance to the starting point of [0, 0].
+ * - Time: O(n + (n * log(n)) + n) -> O(2n + (n * log(n)))
  *    -> O(n + (n * log(n))) linearithmic.
  *    `.sort` is n log(n) and the rest are O(n). At worst, numDeliveries is
  *    the full length so that's why the `.slice` is also O(n).
  * - Space: O(numDeliveries) since that many are returned.
  * @param {[number, number][]} deliveryCoords A 2d array of delivery coordinates.
- * @param {number} numDeliveries The amount of delivery coordinates to return that are
- *    ordered by shortest distance to the starting point of [0, 0].
+ * @param {number} numDeliveries The amount of coordinates to return.
+ * @returns {[number, number][]}
  */
 const shortestDeliveries1 = (
   deliveryCoords = [],
@@ -65,13 +65,14 @@ const shortestDeliveries1 = (
   startCoord = [0, 0]
 ) =>
   deliveryCoords
-    .map((coord) => ({
-      coord: coord,
-      distance: distanceBetweenCoords(startCoord, coord),
-    }))
-    .sort((a, b) => a.distance - b.distance)
-    .slice(0, numDeliveries)
-    .map((coordAndDist) => coordAndDist.coord);
+    // Copy to avoid mutating the original with .sort.
+    .slice()
+    .sort(
+      (coordA, coordB) =>
+        distanceBetweenCoords(startCoord, coordA) -
+        distanceBetweenCoords(startCoord, coordB)
+    )
+    .slice(0, numDeliveries);
 
 /**
  * - Time: O(n log(n) + n log(n)) -> O(2n log(n)) -> O(n log(n)) linearithmic.
