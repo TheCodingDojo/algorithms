@@ -1,13 +1,20 @@
 # [Min Heap / Binary Heap](./index.js)
 
+## Overview
+
 - [visualize min heap](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
 - [visualgo max heap](https://visualgo.net/en/heap?slide=1)
-- Is a type of priority queue that is **visualized as a binary tree but implemented using an array**.
+- A Binary Heap is a type of priority queue that is **visualized as a binary tree but implemented using an array**.
   - Since it is visualized as a tree, the items of the array may be referred to as nodes even though they may simply be ints rather than an instance of some node class.
-  - A node class could be used though, which stores the data and a priority int value for that data
-- Is a complete tree: a tree in which every level, except possibly the last, is completely filled and all nodes are as far left as possible.
+- It is a complete tree: a tree in which every level, except possibly the last, is completely filled and all nodes are as far left as possible.
   - Every parent node has a left and a right child except the last level may have only 1 child, in which case it would be a left child.
 - Every child is also a parent if it has children too.
+
+### When To Use
+
+- A binary heap is useful for solving problems that require you to be able to retrieve the min or max and then to keep retrieving the next min or max while also having more items being added while maintaining the order so the min or max is always ready to be removed or accessed.
+  - These are the conditions where a binary heap is more efficient than sorting because to add a new item to a sorted array is O(n) because you either have to loop to the end to insert or if you insert closer to the front you have to shift more items down to make space.
+  - Removing from a sorted array can be more efficient if you sort it in reverse order so you can `.pop` from the back instead of removing from the front, but you can't speed up the inserting new items in the right location to keep it sorted without using a different data structure like the binary heap.
 
 ---
 

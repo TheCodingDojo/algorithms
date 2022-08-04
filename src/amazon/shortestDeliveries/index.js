@@ -40,6 +40,13 @@ function shortestDeliveries(deliveries = [], numDeliveries = 1) {}
 
 const { BinaryHeap } = require("../../data_structures/BinaryHeap");
 
+/* 
+This algo isn't a great example of a BinaryHeap being better than .sort because
+the solution using .sort did not have to actually remove items from the sorted
+array while also supporting adding new items to the sorted array while
+maintaining the sort, which is where BinaryHeaps help with time efficiency.
+*/
+
 /**
  * Finds the `k` amount of delivery coordinates that are ordered by shortest
  * distance to the starting point of [0, 0].
