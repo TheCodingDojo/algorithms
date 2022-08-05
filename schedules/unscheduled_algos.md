@@ -1,5 +1,9 @@
 # Unscheduled Algos
 
+## Amazon
+
+- [shortestDeliveries](../src/amazon/shortestDeliveries/index.js)
+
 ## Objects
 
 - [discordAlertTimeout](../src/objects/discordAlertTimeout/index.js)
@@ -16,6 +20,7 @@
 - [rot13](../src/strings/rot13/index.js)
 - [timeInWords](../src/strings/timeInWords/index.js)
 - [addHonorific](../src/strings/addHonorific/index.js)
+- [makeAnagrams](../src/strings/makeAnagrams/index.js)
 
 ## Design
 
