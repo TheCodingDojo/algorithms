@@ -135,15 +135,18 @@ of how to match a sell to a buy.
 Next it's  pretty straightforward to decide to add all the orders we are
 given into the heaps so they are ready to be extracted in the correct order,
 insert sells into a MinHeap and buys into a MaxHeap.
+
 Doing this as step 1 also already solves the issue of having left over orders
 that found no match, because the next batch of orders will be added into the
-heaps that may contain old orders from the prior batch are waiting for matches.
+heaps that may contain old orders from the prior batch and the heap will
+sort them.
 
 After we have all the new orders added to our heaps, all that is left is
 straightforward logic to continuously (while) get the smallest sell and
 largest buy if the heaps aren't empty and check if
 the sell is <= the buy price and then compare and adjust the quantities
 and tally the total sale price.
+
 Lastly, extract any orders that run out of quantity.
 */
 
