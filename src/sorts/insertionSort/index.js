@@ -17,8 +17,8 @@
   - the left portion will become sorted, the right portion
       (that hasn't been iterated over yet) is unsorted.
 
-  // can shift OR swap target element until it reaches desired position
-  // shifting steps:
+  can shift OR swap target element until it reaches desired position
+  shifting steps:
   1. consider the first item as sorted
   2. move to the next item
   3. store current item in a temp var (to make this position available to shift items)
@@ -28,7 +28,7 @@
   6. insert current item
   7. move to the next item and repeat
 
-  // swap steps:
+  swap steps:
   1. consider the first item as sorted
   2. move to the next item
   4. if item to left of current item is less than current, swap
@@ -49,7 +49,7 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
-function insertionSort(nums) {}
+function insertionSort(nums = []) {}
 
 /*****************************************************************************/
 
@@ -61,7 +61,7 @@ function insertionSort(nums) {}
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
-function insertionSort(nums) {
+function insertionSort(nums = []) {
   for (let i = 1; i < nums.length; i++) {
     // save the current 'target' so this space is available to use for shifting
     let numToInsert = nums[i];
@@ -78,7 +78,7 @@ function insertionSort(nums) {
   return nums;
 }
 
-function insertionSortSwap(nums) {
+function insertionSortSwap(nums = []) {
   for (let i = 1; i < nums.length; i++) {
     let currIdx = i; // to avoid altering i directly
     let leftIdx = currIdx - 1; // compare to the left

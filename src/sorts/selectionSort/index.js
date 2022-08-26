@@ -35,7 +35,7 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
-function selectionSort(nums) {}
+function selectionSort(nums = []) {}
 
 /*****************************************************************************/
 
@@ -47,7 +47,7 @@ function selectionSort(nums) {}
  * @param   {Array<number>} nums
  * @return  {Array<number>} The given array after being sorted.
  */
-function selectionSort(nums) {
+function selectionSort(nums = []) {
   const len = nums.length;
   let selectedIdx = 0;
   let idxOfCurrMin = 0;

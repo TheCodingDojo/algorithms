@@ -50,7 +50,7 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} A new sorted array containing all the elements of
  *    both given halves.
  */
-function merge(left, right) {}
+function merge(left = [], right = []) {}
 
 // mergeSort
 const numsOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -67,7 +67,7 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} A New sorted array.
  */
-function mergeSort(nums) {}
+function mergeSort(nums = []) {}
 
 /*****************************************************************************/
 
@@ -81,7 +81,7 @@ function mergeSort(nums) {}
  * @returns {Array<number>} A new sorted array containing all the elements of
  *    both given halves.
  */
-function merge(left, right) {
+function merge(left = [], right = []) {
   let result = [];
   let indexLeft = 0;
   let indexRight = 0;
@@ -122,7 +122,7 @@ function merge(left, right) {
  * @param {Array<number>} nums
  * @returns {Array<number>} A New sorted array.
  */
-function mergeSort(nums) {
+function mergeSort(nums = []) {
   if (nums.length === 1) {
     // return once we hit an array with a single item
     return nums;
