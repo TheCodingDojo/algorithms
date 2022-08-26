@@ -11,8 +11,9 @@
 
 1. Mon
    - [bubbleSort](../src/sorts/bubbleSort/index.js)
-   - [selectionSort](../src/sorts/selectionSort/index.js)
+     - During review, show the flexible implementation as well compared to the built in sort. Every sort can be made more flexible in this way. Without this, our sort implementations are only useful in a single situation: sorting numbers in ascending order.
 2. Tue
+   - [selectionSort](../src/sorts/selectionSort/index.js)
    - [insertionSort](../src/sorts/insertionSort/index.js)
 3. Wed
    - [mergeSort](../src/sorts/mergeSort/index.js)
