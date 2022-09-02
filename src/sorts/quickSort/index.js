@@ -84,7 +84,9 @@ function quickSort(nums = [], left = 0, right = nums.length - 1) {
 }
 
 /**
- * Iteratively sorts the given array in-place by mutating the array.
+ * Iteratively sorts the given array in-place by mutating the array. This is
+ * faster than recursion because it's the same iterations but fewer function
+ * calls.
  * Best: O(n log(n)) linearithmic.
  * Average: O(n log(n)) linearithmic.
  * Worst: O(n^2) quadratic.
@@ -97,7 +99,7 @@ function quickSort(nums = [], left = 0, right = nums.length - 1) {
  *    given array being processed.
  * @returns {Array<number>} The given array after being sorted.
  */
-function quickSortIterative(nums = [], left = 0, right = nums.length - 1) {
+function quickerSort(nums = [], left = 0, right = nums.length - 1) {
   const stack = [
     {
       leftIdx: left,
@@ -132,4 +134,4 @@ function quickSortIterative(nums = [], left = 0, right = nums.length - 1) {
   return nums;
 }
 
-module.exports = { quickSort, quickSortIterative };
+module.exports = { quickSort, quickerSort };
