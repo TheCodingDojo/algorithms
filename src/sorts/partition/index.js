@@ -69,8 +69,7 @@ module.exports = { partition };
  * Hoare’s partitioning scheme, named for Sir Charles Anthony Richard Hoare,
  * who developed the quicksort algorithm in 1959. It does fewer swaps than
  * other schemes
- * NOTE that in this scheme, the pivot’s final location is not necessarily at
- * the index that was returned (some edge cases).
+ *
  * - Time: O(n) linear despite nested loops because we still don't visit an
  *    index more than once.
  * - Space: O(1) constant.
