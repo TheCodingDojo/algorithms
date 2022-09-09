@@ -80,7 +80,7 @@ function twoSumMap(nums, targetSum) {
     const numB = targetSum - numA;
 
     if (numsToIndex.has(numB)) {
-      const idxB = numsToIndex[numB];
+      const idxB = numsToIndex.get(numB);
       return [idxB, i];
     }
     numsToIndex.set(numA, i);
@@ -103,4 +103,4 @@ function twoSumSpaceOptimized(nums, targetSum) {
   return [];
 }
 
-module.exports = { twoSum, twoSumSpaceOptimized };
+module.exports = { twoSum, twoSumMap, twoSumSpaceOptimized };
