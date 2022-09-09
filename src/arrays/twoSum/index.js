@@ -60,6 +60,35 @@ function twoSum(nums, targetSum) {
 }
 
 /**
+ * NOTE: The `Map` object is often preferred over the plain object when
+ * dynamically adding keys and in many other circumstances that you can
+ * read more about.
+ *
+ * Finds the indexes of the nums that add up to the given target sum.
+ * - Time: O(n) linear.
+ * - Space: O(n) linear.
+ * @param {Array<number>} nums Unordered nums.
+ * @param {number} targetSum
+ * @returns {Array<number>} The two indexes of the numbers in the given nums
+ *    that add up to the targetSum.
+ */
+function twoSumMap(nums, targetSum) {
+  const numsToIndex = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const numA = nums[i];
+    const numB = targetSum - numA;
+
+    if (numsToIndex.has(numB)) {
+      const idxB = numsToIndex[numB];
+      return [idxB, i];
+    }
+    numsToIndex.set(numA, i);
+  }
+  return [];
+}
+
+/**
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
  */
