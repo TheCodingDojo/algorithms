@@ -95,8 +95,8 @@ const expected4 = [
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<Object>} items The items to be filtered.
- * @param {string} searchBy The key to search by.
  * @param {string} searchFor The value of the given key to search for.
+ * @param {string} searchBy The key to search by.
  * @returns {Array<Objects>} The matched items.
  */
 function functionalFilterByKey(items, searchFor, searchBy) {}
@@ -110,8 +110,8 @@ function functionalFilterByKey(items, searchFor, searchBy) {}
  *    methods which loop through the strings to lowerCase them.
  * - Space: O(1) constant.
  * @param {Array<Object>} items The items to be filtered.
- * @param {string} searchBy The key to search by.
  * @param {string} searchFor The value of the given key to search for.
+ * @param {string} searchBy The key to search by.
  * @returns {Array<Objects>} The matched items.
  */
 function functionalFilterByKey(
