@@ -46,37 +46,51 @@ function canBuildS1FromS2(s1, s2) {}
  * - Time: O(n + m) -> O(n) linear, n = neededChars length,
  *    m = availableChars length.
  * - Space: O(m) -> O(n) since it's still linear just call it n for simplicity.
- * @param {string} neededChars
- * @param {string} availableChars
+ * @param {string} neededCharacters
+ * @param {string} availableCharacters
  * @returns {boolean}
  */
-function canBuildS1FromS2(neededChars, availableChars) {
-  if (availableChars.length < neededChars.length) {
+function canBuildS1FromS2(neededCharacters, availableCharacters) {
+  if (availableCharacters.length < neededCharacters.length) {
     return false;
   }
 
-  const availableCharsFreq = {};
+  const availableCharacterCounts = new Map();
 
-  for (const availableChar of availableChars) {
-    const availableCharLower = availableChar.toLowerCase();
+  for (const availableCharacter of availableCharacters) {
+    const availableCharacterLowerCase = availableCharacter.toLowerCase();
 
-    if (availableCharsFreq.hasOwnProperty(availableCharLower)) {
-      availableCharsFreq[availableCharLower]++;
-    } else {
-      availableCharsFreq[availableCharLower] = 1;
+    if (availableCharacterCounts.has(availableCharacterLowerCase) === false) {
+      availableCharacterCounts.set(availableCharacterLowerCase, 0);
     }
+
+    const availableCount = availableCharacterCounts.get(
+      availableCharacterLowerCase
+    );
+    availableCharacterCounts.set(
+      availableCharacterLowerCase,
+      availableCount + 1
+    );
   }
 
-  for (const neededChar of neededChars) {
-    const neededCharLower = neededChar.toLowerCase();
+  for (const neededCharacter of neededCharacters) {
+    const neededCharacterLowerCase = neededCharacter.toLowerCase();
+    const availableCount = availableCharacterCounts.get(
+      neededCharacterLowerCase
+    );
 
-    if (
-      availableCharsFreq.hasOwnProperty(neededCharLower) === false ||
-      availableCharsFreq[neededCharLower] === 0
-    ) {
-      return false;
+    // Only compare availableCount with > after confirming it's not undefined.
+    const isCharacterAvailable =
+      availableCharacterCounts.has(neededCharacterLowerCase) &&
+      availableCount > 0;
+
+    if (isCharacterAvailable) {
+      availableCharacterCounts.set(
+        neededCharacterLowerCase,
+        availableCount - 1
+      );
     } else {
-      availableCharsFreq[neededCharLower]--;
+      return false;
     }
   }
   return true;
