@@ -85,7 +85,7 @@ module.exports = { partition };
  */
 function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
   const midIdx = Math.floor((leftIdx + rightIdx) / 2);
-  const pivotVal = nums[midIdx];
+  const pivotValue = nums[midIdx];
   const tempPivotIdx = rightIdx;
 
   // Swap the pivot to the end of the section being partitioned so its
@@ -99,12 +99,12 @@ function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
   // the other side so one swap can move both of them to the correct side.
   while (true) {
     // Move leftIdx until we find a num that is out of place.
-    while (nums[leftIdx] < pivotVal) {
+    while (nums[leftIdx] < pivotValue) {
       leftIdx += 1;
     }
 
     // Move rightIdx until we find a num that is out of place.
-    while (nums[rightIdx] > pivotVal) {
+    while (nums[rightIdx] > pivotValue) {
       rightIdx -= 1;
     }
 
