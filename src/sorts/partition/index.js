@@ -54,7 +54,7 @@ const nums4 = [2, 1];
  *    being processed.
  * @param {number} right The index indicating the end of the slice of array
  *    being processed.
- * @returns {Array<number>} The idx where left section of smaller items ends.
+ * @returns {number} The idx where left section of smaller items ends.
  */
 function partition(nums = [], left = 0, right = nums.length - 1) {}
 
