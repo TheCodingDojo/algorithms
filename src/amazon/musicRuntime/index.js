@@ -37,7 +37,7 @@ const expected3 = [-1, -1]; // not found.
  * - Time: O(?).
  * - Space: O(?).
  * @param {number} busDuration Seconds.
- * @param {number} songDurations Seconds.
+ * @param {Array<number>} songDurations Seconds.
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
@@ -52,7 +52,7 @@ function musicRuntime(busDuration, songDurations) {}
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
  * @param {number} busDuration Seconds.
- * @param {number} songDurations Seconds.
+ * @param {Array<number>} songDurations Seconds.
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
@@ -148,7 +148,7 @@ function musicRuntime2(busDuration, songDurations) {
  * - Time: O(n) linear.
  * - Space: O(n) linear.
  * @param {number} busDuration Seconds.
- * @param {number} songDurations Seconds.
+ * @param {Array<number>} songDurations Seconds.
  * @returns {Array<number, number>} The song pair indexes, or [-1, -1] if no
  *    pair is found.
  */
