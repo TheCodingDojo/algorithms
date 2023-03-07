@@ -38,7 +38,7 @@
    - [symmetricDifferences](../src/sets/symmetricDifferences/index.js)
 4. Thur
    - [allNonConsecutive](../src/arrays/allNonConsecutive/index.js)
-   - [findConsqSums](../src/arrays/findConsqSums/index.js)
+   - [findConsecutiveSums](../src/arrays/findConsecutiveSums/index.js)
 5. Fri
    - [twoSum](../src/arrays/twoSum/index.js)
    - [kMostFrequent](../src/arrays/kMostFrequent/index.js)
