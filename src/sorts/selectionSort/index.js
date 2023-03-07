@@ -44,31 +44,28 @@ function selectionSort(numbers = []) {}
  * Best: O(n^2) quadratic.
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic.
- * @param   {Array<number>} numbers
- * @return  {Array<number>} The given array after being sorted.
+ * @param {Array<number>} numbers
+ * @return {Array<number>} The given array after being sorted.
  */
 function selectionSort(numbers = []) {
-  const len = numbers.length;
-  let selectedIdx = 0;
-  let idxOfCurrMin = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    const selectedNumber = numbers[i];
+    let indexOfMin = i;
+    let currentMin = numbers[indexOfMin];
 
-  while (selectedIdx < len) {
-    for (let i = selectedIdx; i < len; i++) {
-      if (numbers[i] < numbers[idxOfCurrMin]) {
-        idxOfCurrMin = i;
+    for (let j = i + 1; j < numbers.length; j++) {
+      const nextNumber = numbers[j];
+
+      if (nextNumber < currentMin) {
+        indexOfMin = j;
+        currentMin = numbers[j];
       }
     }
 
-    if (numbers[selectedIdx] !== numbers[idxOfCurrMin]) {
+    if (currentMin < selectedNumber) {
       // Swap.
-      [numbers[selectedIdx], numbers[idxOfCurrMin]] = [
-        numbers[idxOfCurrMin],
-        numbers[selectedIdx],
-      ];
+      [numbers[i], numbers[indexOfMin]] = [numbers[indexOfMin], numbers[i]];
     }
-    selectedIdx += 1;
-    // reset idxOfCurrMin to the next selected index we are going to work with to find the next min
-    idxOfCurrMin = selectedIdx;
   }
   return numbers;
 }
