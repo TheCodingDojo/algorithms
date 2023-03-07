@@ -36,9 +36,9 @@
   6. move to next item and repeat
 */
 
-const numsOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const numsRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
-const numsReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const numbersOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbersRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+const numbersReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 /**
@@ -46,10 +46,10 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * Best: O(n) linear when array is already sorted.
  * Average: O(n^2) quadratic.
  * Worst: O(n^2) quadratic when the array is reverse sorted.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @returns {Array<number>} The given array after being sorted.
  */
-function insertionSort(nums = []) {}
+function insertionSort(numbers = []) {}
 
 /*****************************************************************************/
 
@@ -58,41 +58,44 @@ function insertionSort(nums = []) {}
  * - Best: O(n) linear when array is already sorted.
  * - Average: O(n^2) quadratic.
  * - Worst: O(n^2) quadratic when the array is reverse sorted.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @returns {Array<number>} The given array after being sorted.
  */
-function insertionSort(nums = []) {
-  for (let i = 1; i < nums.length; i++) {
+function insertionSort(numbers = []) {
+  for (let i = 1; i < numbers.length; i++) {
     // save the current 'target' so this space is available to use for shifting
-    let numToInsert = nums[i];
+    let numToInsert = numbers[i];
     let leftIdx = i - 1;
 
-    while (leftIdx >= 0 && nums[leftIdx] > numToInsert) {
+    while (leftIdx >= 0 && numbers[leftIdx] > numToInsert) {
       // shift to the right because it's greater than the item we are going to insert
-      nums[leftIdx + 1] = nums[leftIdx];
+      numbers[leftIdx + 1] = numbers[leftIdx];
       leftIdx--;
     }
     // shifting complete, insert position located
-    nums[leftIdx + 1] = numToInsert;
+    numbers[leftIdx + 1] = numToInsert;
   }
-  return nums;
+  return numbers;
 }
 
-function insertionSortSwap(nums = []) {
-  for (let i = 1; i < nums.length; i++) {
+function insertionSortSwap(numbers = []) {
+  for (let i = 1; i < numbers.length; i++) {
     let currIdx = i; // to avoid altering i directly
     let leftIdx = currIdx - 1; // compare to the left
 
-    while (leftIdx >= 0 && nums[leftIdx] > nums[currIdx]) {
+    while (leftIdx >= 0 && numbers[leftIdx] > numbers[currIdx]) {
       // destructure swap notation
-      [nums[leftIdx], nums[currIdx]] = [nums[currIdx], nums[leftIdx]];
+      [numbers[leftIdx], numbers[currIdx]] = [
+        numbers[currIdx],
+        numbers[leftIdx],
+      ];
 
       // curr got swapped to the left, so currIdx is now 1 to the left
       currIdx--;
       leftIdx = currIdx - 1;
     }
   }
-  return nums;
+  return numbers;
 }
 
 module.exports = { insertionSort, insertionSortSwap };

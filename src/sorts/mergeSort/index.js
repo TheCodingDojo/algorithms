@@ -53,21 +53,21 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function merge(left = [], right = []) {}
 
 // mergeSort
-const numsOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const numsRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
-const numsReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+const numbersOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbersRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
+const numbersReversed = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 /**
- * Creates a new sorted array based on the given nums being recursively split
+ * Creates a new sorted array based on the given numbers being recursively split
  * and merged.
  * Best: O(n log(n)) linearithmic.
  * Avg: O(n log(n)) linearithmic.
  * Worst: O(n log(n)) linearithmic.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @returns {Array<number>} A New sorted array.
  */
-function mergeSort(nums = []) {}
+function mergeSort(numbers = []) {}
 
 /*****************************************************************************/
 
@@ -114,23 +114,23 @@ function merge(left = [], right = []) {
 }
 
 /**
- * Creates a new sorted array based on the given nums being recursively split
+ * Creates a new sorted array based on the given numbers being recursively split
  * and merged.
  * Best: O(n log(n)) linearithmic.
  * Avg: O(n log(n)) linearithmic.
  * Worst: O(n log(n)) linearithmic.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @returns {Array<number>} A New sorted array.
  */
-function mergeSort(nums = []) {
-  if (nums.length === 1) {
+function mergeSort(numbers = []) {
+  if (numbers.length === 1) {
     // return once we hit an array with a single item
-    return nums;
+    return numbers;
   }
 
-  const middleIdx = Math.floor(nums.length / 2);
-  const left = nums.slice(0, middleIdx);
-  const right = nums.slice(middleIdx);
+  const middleIdx = Math.floor(numbers.length / 2);
+  const left = numbers.slice(0, middleIdx);
+  const right = numbers.slice(middleIdx);
   const sortedLeft = mergeSort(left);
   const sortedRight = mergeSort(right);
   return merge(sortedLeft, sortedRight);

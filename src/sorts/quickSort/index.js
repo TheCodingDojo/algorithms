@@ -30,16 +30,16 @@
 
 const { partition } = require("../partition");
 
-const nums1 = [11, 8, 14, 3, 6, 2, 7];
+const numbers1 = [11, 8, 14, 3, 6, 2, 7];
 const expected1 = [2, 3, 6, 7, 8, 11, 14];
 
-const nums2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
+const numbers2 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
 const expected2 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
 
-const nums3 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
+const numbers3 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
 const expected3 = [2, 3, 3, 3, 6, 7, 8, 11, 14];
 
-const nums4 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
+const numbers4 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
 const expected4 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
 
 /**
@@ -49,14 +49,14 @@ const expected4 = [1, 3, 4, 9, 12, 13, 17, 21, 27];
  * Worst: O(n^2) quadratic.
  * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
  *    visualization.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @param {number} left The index indicating the start of the slice of the
  *    given array being processed.
  * @param {number} right The index indicating the end of the slice of the
  *    given array being processed.
  * @returns {Array<number>} The given array after being sorted.
  */
-function quickSort(nums = [], left = 0, right = nums.length - 1) {}
+function quickSort(numbers = [], left = 0, right = numbers.length - 1) {}
 
 /*****************************************************************************/
 
@@ -67,20 +67,20 @@ function quickSort(nums = [], left = 0, right = nums.length - 1) {}
  * Worst: O(n^2) quadratic.
  * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
  *    visualization.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @param {number} left The index indicating the start of the slice of the
  *    given array being processed.
  * @param {number} right The index indicating the end of the slice of the
  *    given array being processed.
  * @returns {Array<number>} The given array after being sorted.
  */
-function quickSort(nums = [], left = 0, right = nums.length - 1) {
+function quickSort(numbers = [], left = 0, right = numbers.length - 1) {
   if (left < right) {
-    const pivotIndex = partition(nums, left, right);
-    quickSort(nums, left, pivotIndex);
-    quickSort(nums, pivotIndex + 1, right);
+    const pivotIndex = partition(numbers, left, right);
+    quickSort(numbers, left, pivotIndex);
+    quickSort(numbers, pivotIndex + 1, right);
   }
-  return nums;
+  return numbers;
 }
 
 /**
@@ -92,14 +92,14 @@ function quickSort(nums = [], left = 0, right = nums.length - 1) {
  * Worst: O(n^2) quadratic.
  * @see https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
  *    visualization.
- * @param {Array<number>} nums
+ * @param {Array<number>} numbers
  * @param {number} left The index indicating the start of the slice of the
  *    given array being processed.
  * @param {number} right The index indicating the end of the slice of the
  *    given array being processed.
  * @returns {Array<number>} The given array after being sorted.
  */
-function quickerSort(nums = [], left = 0, right = nums.length - 1) {
+function quickerSort(numbers = [], left = 0, right = numbers.length - 1) {
   const stack = [
     {
       leftIdx: left,
@@ -111,7 +111,7 @@ function quickerSort(nums = [], left = 0, right = nums.length - 1) {
     const { leftIdx, rightIdx } = stack.pop();
 
     if (leftIdx < rightIdx) {
-      const pivotIndex = partition(nums, leftIdx, rightIdx);
+      const pivotIndex = partition(numbers, leftIdx, rightIdx);
 
       /* 
       Each item popped will result in 2 being pushed for the left and right
@@ -131,7 +131,7 @@ function quickerSort(nums = [], left = 0, right = nums.length - 1) {
     }
   }
 
-  return nums;
+  return numbers;
 }
 
 module.exports = { quickSort, quickerSort };
