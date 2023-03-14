@@ -9,66 +9,66 @@
   Hard Bonus: make it O(n) time
 */
 
-const nums1 = [1, 1, 1, 2, 2, 3];
+const numbers1 = [1, 1, 1, 2, 2, 3];
 const k1 = 2;
 const expected1 = [1, 2];
 // Explanation: return the two most frequent elements, 1 and 2 are the two most frequent elements
 
-const nums2 = [0, 0, 0, 2, 2, 3];
+const numbers2 = [0, 0, 0, 2, 2, 3];
 const k2 = 1;
 const expected2 = [0];
 // Explanation: k being 1 means return the single most frequent element
 
 // 6 occurs 6 times, 3 occurs 3 times, 2 occurs 2 times, 1 occurs 1 time.
-const nums3 = [1, 6, 3, 3, 6, 6, 3, 6, 2, 2, 6, 6];
+const numbers3 = [1, 6, 3, 3, 6, 6, 3, 6, 2, 2, 6, 6];
 const k3 = 3;
 const expected3 = [6, 3, 2];
 
 /**
  * Returns the k most frequently occurring numbers from the given unordered
- * nums.
+ * numbers.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<number>} nums Unordered.
+ * @param {Array<number>} numbers Unordered.
  * @param {number} k Represents the amount of numbers that should be returned.
  * @returns {Array<number>} The k most frequently occurring numbers.
  */
-function kMostFrequent(nums, k) {}
+function kMostFrequent(numbers, k) {}
 
 /*****************************************************************************/
 
 /**
  * Returns the k most frequently occurring numbers from the given unordered
- * nums.
+ * numbers.
  * - Time: O(n) linear because the the methods called inside loops are
  *    O(1) constant time: .push, .pop, .hasOwnProperty.
  * - Space: O(3n) -> O(n) linear.
- * @param {Array<number>} nums Unordered.
+ * @param {Array<number>} numbers Unordered.
  * @param {number} k Represents the amount of numbers that should be returned.
  * @returns {Array<number>} The k most frequently occurring numbers.
  */
-function kMostFrequent(nums, k) {
-  const mostFreqNums = [];
+function kMostFrequent(numbers, k) {
+  const mostFrequentNumbers = [];
   const numToFrequency = new Map();
-  const frequencyToNums = new Map();
-  let maxFreq = 0;
+  const frequencyToNumbers = new Map();
+  let maxFrequency = 0;
 
-  for (const num of nums) {
+  for (const num of numbers) {
     if (numToFrequency.has(num) === false) {
       numToFrequency.set(num, 0);
     }
     const newFrequency = numToFrequency.get(num) + 1;
     numToFrequency.set(num, newFrequency);
 
-    if (newFrequency > maxFreq) {
-      maxFreq = newFrequency;
+    if (newFrequency > maxFrequency) {
+      maxFrequency = newFrequency;
     }
   }
 
   /* 
   build a frequency table that is a reverse of the above so we can look up
   starting from a frequency to find what numbers have that frequency.
-  since multiple nums can have the same frequency, the value of this table
+  since multiple numbers can have the same frequency, the value of this table
   needs to be an array.
 
   Alternatively, this could be a 2d sparse array, often referred to as
@@ -76,32 +76,32 @@ function kMostFrequent(nums, k) {
   items.
   */
   for (const [num, frequency] of numToFrequency) {
-    if (frequencyToNums.has(frequency) === false) {
-      frequencyToNums.set(frequency, []);
+    if (frequencyToNumbers.has(frequency) === false) {
+      frequencyToNumbers.set(frequency, []);
     }
-    frequencyToNums.get(frequency).push(num);
+    frequencyToNumbers.get(frequency).push(num);
   }
 
   console.log("numToFrequency:", numToFrequency);
-  console.log("frequencyToNums:", frequencyToNums);
-  console.log("maxFreq:", maxFreq);
+  console.log("frequencyToNumbers:", frequencyToNumbers);
+  console.log("maxFreq:", maxFrequency);
 
-  let nextMostFreq = maxFreq;
+  let nextMostFrequent = maxFrequency;
 
-  while (mostFreqNums.length < k && nextMostFreq > 0) {
+  while (mostFrequentNumbers.length < k && nextMostFrequent > 0) {
     // .has, .get, .push, .pop are all O(1) constant time.
     if (
-      frequencyToNums.has(nextMostFreq) &&
-      frequencyToNums.get(nextMostFreq).length > 0
+      frequencyToNumbers.has(nextMostFrequent) &&
+      frequencyToNumbers.get(nextMostFrequent).length > 0
     ) {
-      const nextMostFreqNum = frequencyToNums.get(nextMostFreq).pop();
-      mostFreqNums.push(nextMostFreqNum);
+      const nextMostFreqNum = frequencyToNumbers.get(nextMostFrequent).pop();
+      mostFrequentNumbers.push(nextMostFreqNum);
     } else {
-      // no nums have this frequency, decrement to check for next most freq
-      nextMostFreq--;
+      // no numbers have this frequency, decrement to check for next most freq
+      nextMostFrequent--;
     }
   }
-  return mostFreqNums;
+  return mostFrequentNumbers;
 }
 
 /**
@@ -109,26 +109,26 @@ function kMostFrequent(nums, k) {
  *    case.
  * - Space: O(n) linear.
  */
-function kMostFrequentSort(nums, k) {
-  const freq = new Map();
+function kMostFrequentSort(numbers, k) {
+  const frequencies = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
+  for (let i = 0; i < numbers.length; i++) {
+    const num = numbers[i];
 
-    if (freq.has(num)) {
-      freq.set(num, freq.get(num) + 1);
+    if (frequencies.has(num)) {
+      frequencies.set(num, frequencies.get(num) + 1);
     } else {
-      freq.set(num, 1);
+      frequencies.set(num, 1);
     }
   }
 
-  const keys = [...freq.keys()];
+  const keys = [...frequencies.keys()];
 
   // sort gives us two elements side by side, A and B, a - b sorts ascending, b - a for descending
   keys.sort((numA, numB) => {
-    const freqA = freq.get(numA);
-    const freqB = freq.get(numB);
-    return freqB - freqA;
+    const frequencyA = frequencies.get(numA);
+    const frequencyB = frequencies.get(numB);
+    return frequencyB - frequencyA;
   });
 
   // slice only the first k keys, if using a plain object for the freq table instead of the

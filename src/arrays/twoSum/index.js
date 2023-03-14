@@ -8,53 +8,53 @@
   Bonus: Make it O(n) time
 */
 
-const nums1 = [2, 11, 7, 15];
+const numbers1 = [2, 11, 7, 15];
 const targetSum1 = 9;
 const expected1 = [0, 2];
-// Explanation: nums[0] + nums[2] = 2 + 7 = 9. Return order doesn't matter.
+// Explanation: numbers[0] + numbers[2] = 2 + 7 = 9. Return order doesn't matter.
 
-const nums2 = [10, 3, 2, 5, 4, -1];
+const numbers2 = [10, 3, 2, 5, 4, -1];
 const targetSum2 = 6;
 const expected2 = [2, 4];
 
-const nums3 = [3, 8, 4, 1, 9, 0, -2];
+const numbers3 = [3, 8, 4, 1, 9, 0, -2];
 const targetSum3 = 6;
 const expected3 = [1, 6];
 
 /**
- * Finds the indexes of the nums that add up to the given target sum.
+ * Finds the indexes of the numbers that add up to the given target sum.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<number>} nums Unordered nums.
+ * @param {Array<number>} numbers Unordered numbers.
  * @param {number} targetSum
- * @returns {Array<number>} The two indexes of the numbers in the given nums
+ * @returns {Array<number>} The two indexes of the numbers in the given numbers
  *    that add up to the targetSum.
  */
-function twoSum(nums, targetSum) {}
+function twoSum(numbers, targetSum) {}
 
 /*****************************************************************************/
 
 /**
- * Finds the indexes of the nums that add up to the given target sum.
+ * Finds the indexes of the numbers that add up to the given target sum.
  * - Time: O(n) linear.
  * - Space: O(n) linear.
- * @param {Array<number>} nums Unordered nums.
+ * @param {Array<number>} numbers Unordered numbers.
  * @param {number} targetSum
- * @returns {Array<number>} The two indexes of the numbers in the given nums
+ * @returns {Array<number>} The two indexes of the numbers in the given numbers
  *    that add up to the targetSum.
  */
-function twoSum(nums, targetSum) {
-  const numsToIndex = {};
+function twoSum(numbers, targetSum) {
+  const numbersToIndex = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    const numA = nums[i];
+  for (let i = 0; i < numbers.length; i++) {
+    const numA = numbers[i];
     const numB = targetSum - numA;
 
-    if (numsToIndex.hasOwnProperty(numB)) {
-      const idxB = numsToIndex[numB];
+    if (numbersToIndex.hasOwnProperty(numB)) {
+      const idxB = numbersToIndex[numB];
       return [idxB, i];
     }
-    numsToIndex[numA] = i;
+    numbersToIndex[numA] = i;
   }
   return [];
 }
@@ -64,26 +64,26 @@ function twoSum(nums, targetSum) {
  * dynamically adding keys and in many other circumstances that you can
  * read more about.
  *
- * Finds the indexes of the nums that add up to the given target sum.
+ * Finds the indexes of the numbers that add up to the given target sum.
  * - Time: O(n) linear.
  * - Space: O(n) linear.
- * @param {Array<number>} nums Unordered nums.
+ * @param {Array<number>} numbers Unordered numbers.
  * @param {number} targetSum
- * @returns {Array<number>} The two indexes of the numbers in the given nums
+ * @returns {Array<number>} The two indexes of the numbers in the given numbers
  *    that add up to the targetSum.
  */
-function twoSumMap(nums, targetSum) {
-  const numsToIndex = new Map();
+function twoSumMap(numbers, targetSum) {
+  const numbersToIndex = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
-    const numA = nums[i];
+  for (let i = 0; i < numbers.length; i++) {
+    const numA = numbers[i];
     const numB = targetSum - numA;
 
-    if (numsToIndex.has(numB)) {
-      const idxB = numsToIndex.get(numB);
+    if (numbersToIndex.has(numB)) {
+      const idxB = numbersToIndex.get(numB);
       return [idxB, i];
     }
-    numsToIndex.set(numA, i);
+    numbersToIndex.set(numA, i);
   }
   return [];
 }
@@ -92,10 +92,10 @@ function twoSumMap(nums, targetSum) {
  * - Time: O(n^2) quadratic.
  * - Space: O(1) constant.
  */
-function twoSumSpaceOptimized(nums, targetSum) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; ++j) {
-      if (nums[i] + nums[j] === targetSum) {
+function twoSumSpaceOptimized(numbers, targetSum) {
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; ++j) {
+      if (numbers[i] + numbers[j] === targetSum) {
         return [i, j];
       }
     }

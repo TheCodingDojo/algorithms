@@ -5,23 +5,23 @@
   integers that adds up to the sum passed in as one of the inputs.
 */
 
-const nums1 = [2, 5, 3, 6, 7, 23, 12];
+const numbers1 = [2, 5, 3, 6, 7, 23, 12];
 const sum1 = 16;
 const expected1 = [
   [2, 5, 3, 6],
   [3, 6, 7],
 ];
 
-const nums2 = [];
+const numbers2 = [];
 const sum2 = 5;
 const expected2 = [];
 
-const nums3 = [10, 15, 20, 35, 30];
+const numbers3 = [10, 15, 20, 35, 30];
 const sum3 = 5;
 const expected3 = [];
 
 // Bonus:
-const nums4 = [2, 5, 3, 6, 7, 0, 0, 23, 12];
+const numbers4 = [2, 5, 3, 6, 7, 0, 0, 23, 12];
 const sum4 = 16;
 const expected4 = [
   [2, 5, 3, 6],
@@ -31,7 +31,7 @@ const expected4 = [
 ];
 
 // Bonus:
-const nums5 = [-2, -5, -3, -6, -7, -0, -0, -23, -12];
+const numbers5 = [-2, -5, -3, -6, -7, -0, -0, -23, -12];
 const sum5 = -16;
 const expected5 = [
   [-2, -5, -3, -6],
@@ -44,14 +44,14 @@ const expected5 = [
  * Finds all the sets of consecutive numbers that sum to the given target sum.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<number>} nums Unordered nums.
+ * @param {Array<number>} numbers Unordered numbers.
  * @param {number} targetSum
  * @returns {Array<Array<number>>} 2d array where each nested array is a set of
  *    consecutive numbers that add up to the given targetSum. Consecutive in
  *    this context means the numbers whose indexes are one after the other
  *    only.
  */
-function findConsqSums(nums, targetSum) {}
+function findConsecutiveSums(numbers, targetSum) {}
 
 /*****************************************************************************/
 
@@ -59,27 +59,27 @@ function findConsqSums(nums, targetSum) {}
  * Finds all the sets of consecutive numbers that sum to the given target sum.
  * - Time: O(n^2 * (j-i)). Slice is at most `j - i` iterations.
  * - Space: O(n^2 * (j-i)).
- * @param {Array<number>} nums Unordered nums.
+ * @param {Array<number>} numbers Unordered numbers.
  * @param {number} targetSum
  * @returns {Array<Array<number>>} 2d array where each nested array is a set of
  *    consecutive numbers that add up to the given targetSum. Consecutive in
  *    this context means the numbers whose indexes are one after the other
  *    only.
  */
-function findConsqSums(nums, targetSum) {
+function findConsecutiveSums(numbers, targetSum) {
   const summableSubsets = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    let sum = nums[i];
+  for (let i = 0; i < numbers.length; i++) {
+    let sum = numbers[i];
 
-    for (let j = i + 1; j <= nums.length; j++) {
+    for (let j = i + 1; j <= numbers.length; j++) {
       if (sum === targetSum) {
-        summableSubsets.push(nums.slice(i, j));
+        summableSubsets.push(numbers.slice(i, j));
       }
-      sum += nums[j];
+      sum += numbers[j];
     }
   }
   return summableSubsets;
 }
 
-module.exports = { findConsqSums };
+module.exports = { findConsecutiveSums };
