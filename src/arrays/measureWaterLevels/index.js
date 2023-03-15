@@ -2,9 +2,8 @@
  * From a Chipotle interview.
  * encodeStr algo was also given in this interview (aaabbcdd => a3b2cd2).
  *
- * It ain't much, but it's honest work. A worker who measures water level
- * fluctuations in a river is asked to find the largest fluctuation in water
- * levels during a day, but only for rises in water levels.
+ * It ain't much, but it's honest work. A worker who measures water level fluctuations in a river is asked to find the
+ * largest fluctuation in water levels during a day, but only for rises in water levels.
  */
 
 const riverLevels1 = [15, 17, 30];
@@ -32,9 +31,8 @@ const riverLevels8 = [42];
 const expected8 = -1;
 
 /**
- * It ain't much, but it's honest work. A worker who measures water level
- * fluctuations in a river is asked to find the largest fluctuation in water
- * levels during a day, but only for rises in water levels.
+ * It ain't much, but it's honest work. A worker who measures water level fluctuations in a river is asked to find the
+ * largest fluctuation in water levels during a day, but only for rises in water levels.
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} waterLevels Non-empty .
@@ -45,9 +43,8 @@ function measureWaterLevels(waterLevels) {}
 /*****************************************************************************/
 
 /**
- * It ain't much, but it's honest work. A worker who measures water level
- * fluctuations in a river is asked to find the largest fluctuation in water
- * levels during a day, but only for rises in water levels.
+ * It ain't much, but it's honest work. A worker who measures water level fluctuations in a river is asked to find the
+ * largest fluctuation in water levels during a day, but only for rises in water levels.
  * - Time: O(n) linear.
  * - Space: O(1) constant.
  * @param {Array<number>} waterLevels Non-empty .

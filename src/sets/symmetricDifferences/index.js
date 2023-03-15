@@ -43,12 +43,9 @@ const expected5 = [1, 2, 3];
  * - Time: O(?).
  * - Space: O(?).
  * @param  {Array<number>} numbersA
- * @param  {Array<number>} numbersB
- *    Both given sets are multisets in any order (contain dupes).
- * @returns {Array<number>} The union of the given sets but excluding the shared
- *    values (union without intersection).
- *    i.e., if the element is in one array and NOT the other, it should be
- *    included in the return.
+ * @param  {Array<number>} numbersB Both given sets are multisets in any order (contain dupes).
+ * @returns {Array<number>} The union of the given sets but excluding the shared values (union without intersection).
+ *    i.e., if the element is in one array and NOT the other, it should be included in the return.
  */
 function symmetricDifferences(numbersA, numbersB) {}
 
@@ -58,36 +55,32 @@ function symmetricDifferences(numbersA, numbersB) {}
  * Produces the symmetric differences, aka disjunctive union of two sets.
  * Venn Diagram Visualization:
  * @see https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
- * - Time: O(2(n * m)) -> O(n * m), n = numbersA.length, m = numbersB.length the two
- *    constant 2 was because we are doing the n * m twice. The constant 2 is
- *    dropped.
+ * - Time: O(2(n * m)) -> O(n * m), n = numbersA.length, m = numbersB.length the two constant 2 was because we are
+ *    doing the n * m twice. The constant 2 is dropped.
  * - Space:  O(n + m) because potentially all items from each are kept.
  * @param  {Array<number>} numbersA
- * @param  {Array<number>} numbersB
- *    Both given sets are multisets in any order (contain dupes).
- * @returns {Array<number>} The union of the given sets but excluding the shared
- *    values (union without intersection).
- *    i.e., if the element is in one array and NOT the other, it should be
- *    included in the return.
+ * @param  {Array<number>} numbersB Both given sets are multisets in any order (contain dupes).
+ * @returns {Array<number>} The union of the given sets but excluding the shared values (union without intersection).
+ *    i.e., if the element is in one array and NOT the other, it should be included in the return.
  */
 function symmetricDifferences(numbersA, numbersB) {
   const disjunctiveUnion = [];
 
-  for (const n of numbersA) {
+  for (const numberA of numbersA) {
     if (
-      numbersB.includes(n) === false &&
-      disjunctiveUnion.includes(n) === false
+      numbersB.includes(numberA) === false &&
+      disjunctiveUnion.includes(numberA) === false
     ) {
-      disjunctiveUnion.push(n);
+      disjunctiveUnion.push(numberA);
     }
   }
 
-  for (const n of numbersB) {
+  for (const numberB of numbersB) {
     if (
-      numbersA.includes(n) === false &&
-      disjunctiveUnion.includes(n) === false
+      numbersA.includes(numberB) === false &&
+      disjunctiveUnion.includes(numberB) === false
     ) {
-      disjunctiveUnion.push(n);
+      disjunctiveUnion.push(numberB);
     }
   }
   return disjunctiveUnion;
@@ -95,10 +88,9 @@ function symmetricDifferences(numbersA, numbersB) {
 
 /**
  * - Time: O(2(n + m)) -> O(n) linear, n = numbersA.length, m = numbersB.length.
- *    Each is looped over twice, once from the arr then again over it's seen
- *    hash table.
- * - Space: O(2(n + m)) -> O(n) linear. Each arr is stored twice, once in it's
- *    own seen table and once in the output array.
+ *    Each is looped over twice, once from the arr then again over it's seen hash table.
+ * - Space: O(2(n + m)) -> O(n) linear. Each arr is stored twice, once in it's own seen table and once in the output
+ *    array.
  */
 function symmetricDifferencesHashTable(numbersA, numbersB) {
   const seenA = {};
@@ -120,20 +112,20 @@ function symmetricDifferencesHashTable(numbersA, numbersB) {
 
   // O(n) - could be smaller because of dicts not storing dupes, but if no
   // dupes it's same length.
-  for (const key in seenA) {
+  for (const keyA in seenA) {
     // O(1)
-    if (seenB.hasOwnProperty(key) === false) {
+    if (seenB.hasOwnProperty(keyA) === false) {
       // O(1)
-      disjunctiveUnion.push(seenA[key]);
+      disjunctiveUnion.push(seenA[keyA]);
     }
   }
 
   // O(m)
-  for (const key in seenB) {
+  for (const keyB in seenB) {
     // O(1)
-    if (seenA.hasOwnProperty(key) === false) {
+    if (seenA.hasOwnProperty(keyB) === false) {
       // O(1)
-      disjunctiveUnion.push(seenB[key]);
+      disjunctiveUnion.push(seenB[keyB]);
     }
   }
   return disjunctiveUnion;
@@ -151,11 +143,11 @@ function symmetricDifferencesSets(numbersA, numbersB) {
   // be re-added below if there were a dupe
   const setB = new Set(numbersB);
 
-  for (const item of setB) {
-    if (disjunctiveUnion.has(item)) {
-      disjunctiveUnion.delete(item);
+  for (const itemB of setB) {
+    if (disjunctiveUnion.has(itemB)) {
+      disjunctiveUnion.delete(itemB);
     } else {
-      disjunctiveUnion.add(item);
+      disjunctiveUnion.add(itemB);
     }
   }
   return [...disjunctiveUnion];
