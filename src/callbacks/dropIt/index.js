@@ -11,19 +11,19 @@
   Return an empty array if the callback never returns true
 */
 
-const nums1 = [1, 4, 3, 6, 9, 15];
+const numbers1 = [1, 4, 3, 6, 9, 15];
 const callback1 = (elem) => {
   return elem > 5;
 };
 const expected1 = [6, 9, 15];
 
-const nums2 = [...nums1];
+const numbers2 = [...numbers1];
 const callback2 = (elem) => {
   return elem > 2;
 };
 const expected2 = [4, 3, 6, 9, 15];
 
-const nums3 = [...nums1];
+const numbers3 = [...numbers1];
 const callback3 = (elem) => false;
 const expected3 = [];
 
