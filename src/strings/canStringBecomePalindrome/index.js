@@ -67,6 +67,27 @@ function canStringBecomePalindrome(str) {
     return false;
   }
 
+  const leftoverCharsMap = new Map();
+
+  for (const char of str) {
+    if (leftoverCharsMap.has(char)) {
+      leftoverCharsMap.delete(char);
+    } else {
+      leftoverCharsMap.set(char, true);
+    }
+  }
+  return leftoverCharsMap.size <= 1 ? true : false;
+}
+
+/**
+ * - Time: O(n) linear, n = str.length.
+ * - Space: O(n) linear.
+ */
+function canStringBecomePalindromeHashTable(str) {
+  if (str.length === 0) {
+    return false;
+  }
+
   const leftoverCharsMap = {};
 
   for (const char of str) {
