@@ -51,7 +51,7 @@ function binarySearch(sortedNumbers, searchNum) {
   let rightIdx = sortedNumbers.length - 1;
 
   while (leftIdx <= rightIdx) {
-    let midIdx = Math.floor((leftIdx + rightIdx) / 2);
+    let midIdx = Math.floor(leftIdx + (rightIdx - leftIdx) / 2);
 
     if (sortedNumbers[midIdx] === searchNum) {
       return true;
